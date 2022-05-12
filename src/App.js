@@ -8,7 +8,7 @@ import "./App.scss";
 
 const { Header, Footer } = Layout;
 
-const MainHeader = () => {
+const MainHeader = ({items}) => {
   const headerRef = useRef();
   const [hide, setHide] = useState(false);
 
@@ -20,18 +20,11 @@ const MainHeader = () => {
     [hide]
   );
 
-  const items1 = ["1", "2", "3"].map((key) => ({
-    key,
-    label: `nav ${key}`,
-  }));
-
   return (
     <div
       ref={headerRef}
       className="headerWraper"
       style={{
-        top: 0,
-        position: "sticky",
         transform: hide ? "translateY(-95%)" : "translateY(0%)",
         transition: "transform 400ms ease-out",
       }}
@@ -42,24 +35,31 @@ const MainHeader = () => {
         if (hide) headerRef.current.style.transform = "translateY(-95%)";
       }}
     >
-      <Header className="header">
-        <div className="logo" />
+      <div className="header">
+        <a href="/" className="headerLogo">
+          <img src={require("./static/images/logo_max.svg").default} />
+        </a>
         <Menu
           className="headerMenu"
           mode="horizontal"
           defaultSelectedKeys={["2"]}
-          items={items1}
+          items={items}
+          onSelect={(x) => console.log({ x })}
         />
-      </Header>
+      </div>
     </div>
   );
 };
+
+const MainFooter = () => {
+  return <Footer className="footer">footer</Footer>;
+};
+
 function App() {
   return (
-    <Layout>
-      <MainHeader />
+    <Layout className={"mainContainer"}>
       <Home />
-      <Footer className="footer">footer</Footer>
+      {/* <MainFooter /> */}
     </Layout>
   );
 }

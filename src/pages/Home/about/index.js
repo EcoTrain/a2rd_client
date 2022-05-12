@@ -7,7 +7,7 @@ const { Content } = Layout;
 
 const HomeAbout = () => {
   return (
-    <Layout className="section">
+    <Layout className="section" id={"homeAboutSection"}>
       <Content className="card">
         <div className="previewTitle">A2RD</div>
         <div className="previewText">Test site</div>

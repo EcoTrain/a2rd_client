@@ -1,0 +1,24 @@
+.headerWraper {
+    z-index: 1;
+    top: 0;
+    position: sticky;
+    width: 100%;
+    height: 60px;
+    .header {
+        display: flex;
+        height: 100%;
+        background-color: var(--lightGrayTransparent);
+        .headerLogo {
+            height: 100%;
+            padding: 10px;
+            img {
+                height: 100%;
+            }
+        }
+        .headerMenu {
+            width: 100%;
+            background-color: initial;
+            justify-content: right;
+        }
+    }
+}

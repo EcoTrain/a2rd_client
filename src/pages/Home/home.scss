@@ -1,0 +1,20 @@
+.sectionListOverlay {
+    // height: 100vh;
+    // overflow-y: scroll;
+    // scroll-snap-type: y mandatory;
+}
+
+.section {
+    position: relative;
+    background-color: var(--lightGray);
+    z-index: 0;
+    padding: 30px;
+    height: 100vh;
+    // scroll-snap-align: start;
+    // scroll-snap-stop: normal;
+}
+
+.card {
+    box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 10px;
+}
