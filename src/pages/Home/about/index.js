@@ -5,9 +5,9 @@ import "./about.scss";
 
 const { Content } = Layout;
 
-const HomeAbout = ({id}) => {
+const HomeAbout = () => {
   return (
-    <Layout className="section" id={id}>
+    <Layout className="section">
       <Content className="card">
         <div className="previewTitle">A2RD</div>
         <div className="previewText">Test site</div>
