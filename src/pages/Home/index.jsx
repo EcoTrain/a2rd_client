@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { animateScroll as scroll, scroller } from "react-scroll";
+
 import "antd/dist/antd.min.css";
 import HomePreview from "./preview";
 import HomeAbout from "./about";
 import Header from "../../components/Header";
 
 import "./home.scss";
+import useOnScreen from "../../hooks/useOnScreen";
+import { useScrollPosition } from "../../hooks/useScrollPosition";
 
 const Home = () => {
   const items = [
@@ -14,81 +18,77 @@ const Home = () => {
     key: `${item.id}`,
     label: `${item.label}`,
   }));
+
   return (
-    <div className="sectionListOverlay" id={"homeSection"}>
+    <div>
       <Header items={items} />
-      <HomePreview />
-      <HomeAbout />
-      <HomeAbout />
-      <HomeAbout />
+      <PageScroller id={"homeSection"}>
+        <HomePreview id={"homePreviewSection"} />
+        <HomeAbout id={"homeAboutSection"} />
+        <HomeAbout />
+        <HomeAbout />
+      </PageScroller>
     </div>
   );
 };
 
-// const Home = () => {
-//   return (
-//     <PageScroller style={{ display: "flex", flexDirection: "column" }}>
-//       <HomePreview />
-//       <HomeAbout />
-//       <HomeAbout />
-//       <HomeAbout />
-//     </PageScroller>
-//   );
-// };
+const PageScroller = ({ children }) => {
+  const scrollDirection = useRef();
 
-// const PageScroller = ({ children }) => {
-//   const [scrollPos, setScrollPos] = useState(0);
-//   const [pageIndex, setPageIndex] = useState(0);
-//   const [scrollEnabled, setScrollEnabled] = useState(true);
-//   const pages = children.length;
+  useScrollPosition(({ prevPos, currPos }) => {
+    const onScrollUp = currPos.y > prevPos.y;
+    scrollDirection.current = onScrollUp ? "up" : "down";
+  });
 
-//   console.log({ children });
+  const scrollTo = (elemId) => {
+    scroller.scrollTo(elemId, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
 
-//   useEffect(() => {
-//     window.addEventListener("scroll", handleScroll);
-//     // return window.removeEventListener("scroll", handleScroll);
-//   }, []);
+  const onPageIntersectScreen = ({ elem, id }) => {
+    console.log("onPageIntersectScreen", elem);
+    console.log("scrollDirection", scrollDirection);
+    if (scrollDirection.current == "up") {
+      // const pos = elem.ref.current.offsetTop + elem.ref.current.clientHeight;
+      const pos = elem.ref.current.offsetTop;
+      console.log("pos", pos);
+      scrollTo(elem.props.children.props.id);
+    } else {
+      scrollTo(elem.props.children.props.id);
+    }
+  };
 
-//   const handleScroll = () => {
-//     const winHeight = window.innerHeight;
+  return (
+    <div className="sectionListOverlay">
+      {children.map((elem, i) => (
+        <Page key={i} onIntersect={onPageIntersectScreen}>
+          {elem}
+        </Page>
+      ))}
+    </div>
+  );
+};
 
-//     console.log({ pageIndex });
-//     console.log({ winHeight });
-//     console.log({ scrollPos });
+const Page = ({ children, onIntersect }) => {
+  const elemRef = useRef();
+  const onScreen = useOnScreen(elemRef);
 
-//     if (scrollEnabled) {
-//       if (document.body.getBoundingClientRect().top > scrollPos) {
-//         // handle scroll up
-//         if (pageIndex - 1 >= 0) {
-//           scroll(winHeight, pageIndex - 1);
-//         }
-//       } else {
-//         // handle scroll down
-//         if (pageIndex + 1 <= pages - 1) {
-//           console.log("scroll down");
-//           scroll(winHeight, pageIndex + 1);
-//         }
-//       }
-//     }
-//   };
+  const getWrappedPage = () => {
+    return <div ref={elemRef}>{children}</div>;
+  };
 
-//   const scroll = (winHeight, pageIndex) => {
-//     window.scrollTo(0, winHeight * pageIndex);
+  useEffect(() => {
+    if (onScreen) {
+      console.log("onScreen", children);
+      const elem = getWrappedPage();
+      onIntersect({ elem, id: elem.props.children.props.id });
+    }
+  }, [onScreen]);
 
-//     console.log("scroll winHeight", winHeight);
-//     console.log("scroll pageIndex", pageIndex);
-//     console.log("scroll", 0 - document.body.getBoundingClientRect().top);
-
-//     const scrollLocker = setTimeout(() => {
-//       setScrollEnabled(false);
-//     }, 1000);
-
-//     setScrollPos(0 - document.body.getBoundingClientRect().top);
-//     setPageIndex(pageIndex);
-//     setScrollEnabled(true);
-//   };
-
-//   return children;
-// };
+  return getWrappedPage();
+};
 
 export default Home;

@@ -31,9 +31,9 @@ const bgVideo = () => (
   </video>
 );
 
-const HomePreview = () => {
+const HomePreview = ({ id }) => {
   return (
-    <Layout>
+    <Layout id={id}>
       {bgVideo()}
       <Content className="previewOverlay">
         <div className="previewTitle">A2RD</div>
