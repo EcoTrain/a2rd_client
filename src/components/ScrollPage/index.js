@@ -15,7 +15,7 @@ const PageScroller = ({ children }) => {
 
   const scrollTo = (elemId) => {
     scroller.scrollTo(elemId, {
-      duration: 800,
+      duration: 1000,
       //   delay: 10,
       smooth: "easeInOutQuart",
       ignoreCancelEvents: true,
