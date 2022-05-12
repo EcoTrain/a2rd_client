@@ -1,0 +1,25 @@
+$lightGrayTransparent: hsl(0, 0, 78%, 0.7);
+
+html {
+    --lightGray: #f4f4f4;
+}
+html[theme="light"] {
+}
+html[theme="dark"] {
+}
+
+.headerWraper {
+    z-index: 1;
+    .header {
+        background-color: $lightGrayTransparent;
+        padding: 0;
+        margin-bottom: 5%;
+        .headerMenu {
+            background-color: initial;
+        }
+    }
+}
+
+.footer {
+    z-index: 0;
+}

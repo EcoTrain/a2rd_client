@@ -1,0 +1,17 @@
+#bgVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+.previewOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+}
