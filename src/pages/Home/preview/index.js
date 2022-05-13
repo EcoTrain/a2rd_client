@@ -11,7 +11,6 @@ const BgVideo = () => {
   const handleScroll = () => {
     const position = window.pageYOffset;
     setOpacity(1 - position / window.screen.height);
-    console.log({ opacity });
   };
 
   useEffect(() => {

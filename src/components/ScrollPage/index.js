@@ -13,13 +13,24 @@ const PageScroller = ({ children }) => {
     scrollDirection.current = isScrollUp ? "up" : "down";
   });
 
+  const scrollDuration = 1000;
+  //   const lockScroll = () => {
+  //     console.log("lockScroll");
+  //     const resp = () => false;
+  //     window.addEventListener("scroll", resp);
+  //     setTimeout(
+  //       () => window.removeEventListener("scroll", resp),
+  //       scrollDuration
+  //     );
+  //   };
   const scrollTo = (elemId) => {
+    // lockScroll();
     scroller.scrollTo(elemId, {
-      duration: 1000,
-      //   delay: 10,
-      smooth: "easeInOutQuart",
-      ignoreCancelEvents: true,
+      duration: scrollDuration,
+      smooth: "easeOutQuint",
       isDynamic: true,
+      //   ignoreCancelEvents: true,
+      //   delay: 10,
     });
   };
 
@@ -45,7 +56,7 @@ const PageScroller = ({ children }) => {
 
 const Page = ({ children, index, onIntersect }) => {
   const elemRef = useRef();
-  const onScreen = useOnScreen({ ref: elemRef, rootMargin: "-5px" });
+  const onScreen = useOnScreen({ ref: elemRef, rootMargin: "-100px" });
 
   const getWrappedPage = () => {
     return (

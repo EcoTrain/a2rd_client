@@ -18,10 +18,6 @@ const Header = ({ items }) => {
     [hide]
   );
 
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
-
   const scrollTo = (elemId) => {
     scroller.scrollTo(elemId, {
       duration: 800,
