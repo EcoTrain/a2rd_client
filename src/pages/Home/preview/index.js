@@ -109,6 +109,7 @@ class Demo extends React.Component {
                   type: "from",
                   ease: "easeInOutQuint",
                   duration: 600,
+                  delay: -150,
                 },
                 {
                   x: "-100%",
@@ -214,6 +215,19 @@ const HomePreview = () => {
     return (
       <>
         <div className="banner">
+          <TweenOne
+            className="bannerBg"
+            style={{ opacity: 0 }}
+            animation={{
+              type: "from",
+              opacity: 0,
+              duration: 1000,
+              delay: 1000,
+            }}
+            key="icon"
+          >
+            <div></div>
+          </TweenOne>
           <Demo />
         </div>
 

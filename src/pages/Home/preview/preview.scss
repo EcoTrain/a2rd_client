@@ -17,14 +17,20 @@
     position: relative;
 
     .banner {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 30px;
         aspect-ratio: 1 / 1;
-        background-color: var(--lightGrayTransparent);
-        border-radius: 50%;
-
+        .bannerBg {
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background-color: var(--lightGrayTransparent);
+            position: absolute;
+        }
         .bannerText {
             color: #fff;
             width: max-content;
