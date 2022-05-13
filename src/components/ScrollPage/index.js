@@ -14,23 +14,12 @@ const PageScroller = ({ children }) => {
   });
 
   const scrollDuration = 1000;
-  //   const lockScroll = () => {
-  //     console.log("lockScroll");
-  //     const resp = () => false;
-  //     window.addEventListener("scroll", resp);
-  //     setTimeout(
-  //       () => window.removeEventListener("scroll", resp),
-  //       scrollDuration
-  //     );
-  //   };
   const scrollTo = (elemId) => {
-    // lockScroll();
     scroller.scrollTo(elemId, {
       duration: scrollDuration,
       smooth: "easeOutQuint",
       isDynamic: true,
       //   ignoreCancelEvents: true,
-      //   delay: 10,
     });
   };
 
@@ -74,7 +63,7 @@ const Page = ({ children, index, onIntersect }) => {
 
   useEffect(() => {
     if (onScreen) {
-      console.log("onScreen", children);
+    //   console.log("onScreen", children);
       const elem = wrappedChild;
       onIntersect({ elem });
     }
