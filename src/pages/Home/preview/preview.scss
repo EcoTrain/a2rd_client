@@ -31,13 +31,16 @@
             background-color: var(--lightGrayTransparent);
             position: absolute;
         }
-        .bannerText {
+        .bannerContent {
             color: #fff;
             width: max-content;
             height: max-content;
             position: relative;
 
-            .bannerText-shape {
+            .bannerText {
+                text-align: center;
+            }
+            .bannerContent-shape {
                 position: absolute;
                 height: 100%;
                 width: 100%;
@@ -77,15 +80,19 @@
             }
         }
     }
-    .bottomScrollBtn {
+
+    .nextPageBtn {
         position: absolute;
-        bottom: 0;
-        height: 30px;
-        width: 30px;
-        border-radius: 15px;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        bottom: 10px;
+        .nextPageBtnContent {
+            height: 30px;
+            width: 30px;
+            border-radius: 15px;
+            background-color: var(--lightGrayTransparent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
     }
 }

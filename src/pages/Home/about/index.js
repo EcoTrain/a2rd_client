@@ -50,7 +50,7 @@ const AboutFounder = () => {
 
 const HomeAbout = () => {
   return (
-    <Layout className="section">
+    <Layout className="section" id="homeAbout">
       <Content className="card">
         <QueueAnim type={["left", "right"]} style={{ display: "flex" }}>
           {AboutFounder()}
