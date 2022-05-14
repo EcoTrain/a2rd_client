@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.20.4",
+    "gh-pages": "^4.0.0",
     "rc-queue-anim": "^2.0.0",
     "rc-texty": "^0.2.0",
     "rc-tween-one": "^3.0.6",
@@ -19,7 +20,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
