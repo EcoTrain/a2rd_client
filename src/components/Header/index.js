@@ -26,7 +26,7 @@ const Header = ({ items }) => {
     });
   };
 
-  const headerBottomPadding = 10;
+  const headerBottomPadding = 11;
   return (
     <div
       ref={headerRef}
@@ -47,7 +47,7 @@ const Header = ({ items }) => {
       }}
     >
       <div className="header">
-        <a href="/" className="headerLogo">
+        <a href="/" className="headerLogo" target={"_self"}>
           <img src={require("../../static/images/logo_max.svg").default} />
         </a>
         <Menu

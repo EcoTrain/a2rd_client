@@ -88,15 +88,15 @@ const Banner = () => {
   };
 
   const getSplit = (e) => {
-    const t = e.split(" ");
-    const c = [];
-    t.forEach((str, i) => {
-      c.push(<span key={`${str}-${i}`}>{str}</span>);
-      if (i < t.length - 1) {
-        c.push(<span key={` -${i}`}> </span>);
+    const text = e.split(" ");
+    const char = [];
+    text.forEach((str, i) => {
+      char.push(<span key={`${str}-${i}`}>{str}</span>);
+      if (i < text.length - 1) {
+        char.push(<span key={` -${i}`}> </span>);
       }
     });
-    return c;
+    return char;
   };
 
   return (
@@ -138,7 +138,7 @@ const Banner = () => {
         </div>
       </div>
       <TextyAnim
-        className="title bannerText"
+        className="font-title-large"
         type="mask-top"
         delay={400}
         enter={getEnter}
@@ -181,13 +181,7 @@ const Banner = () => {
           ease: "easeInOutExpo",
         }}
       />
-      <TextyAnim
-        className="content bannerText"
-        type="bottom"
-        split={getSplit}
-        delay={2200}
-        interval={30}
-      >
+      <TextyAnim type="bottom" split={getSplit} delay={2200} interval={30}>
         Research and Develpoment Lab
       </TextyAnim>
     </div>
@@ -195,19 +189,13 @@ const Banner = () => {
 };
 
 const HomePreview = () => {
-  const elemRef = useRef();
-  const onScreen = useOnScreen({ ref: elemRef, rootMargin: "-100px" });
   const video = BgVideo();
-
-  const [isFirstInit, setIsFirstInit] = useState(true);
+  const pageRef = useRef();
+  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-100px" });
 
   useEffect(() => {
     if (onScreen) {
-      console.log("Preview onScreen");
-      if (isFirstInit) {
-        console.log("FIRST INIT");
-        setIsFirstInit(false);
-      }
+      document.title = "A2RD Lab";
     }
   }, [onScreen]);
 
@@ -250,7 +238,7 @@ const HomePreview = () => {
   };
 
   return (
-    <Layout ref={elemRef}>
+    <Layout ref={pageRef}>
       {video}
       <Content className="previewOverlay">
         {renderBanner()} {renderNextPageBtn()}

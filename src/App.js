@@ -4,6 +4,7 @@ import "antd/dist/antd.min.css";
 
 import Home from "./pages/Home";
 import "./App.scss";
+import "./Text.scss";
 
 function App() {
   return (

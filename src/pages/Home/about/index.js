@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 import "./about.scss";
+import useOnScreen from "../../../hooks/useOnScreen";
 
 const { Content } = Layout;
 
 const AboutDescription = () => {
   return (
-    <div key="AboutDescription" style={{ width: "50%" }}>
-      <div id={"aboutDescTitle"}>Title</div>
-      <div id={"aboutDescText"}>
+    <div key="AboutDescription">
+      <div className="font-title-h1 text-center">
+        About
+      </div>
+      <div className="font-text-big description">
         At the A2 Research and Development lab we are motivated by more than the
         simple pursuit of business success. We aim to make the world sustainable
         and better than it was before. We work in various fields using our
@@ -37,24 +40,40 @@ const AboutFounder = () => {
   const imgAlexey = require("../../../static/images/index/alexey.webp");
   console.log("imgAlexey", imgAlexey);
   return (
-    <div key="AboutFounder" style={{ width: "50%" }}>
-      <img src={imgAlexey} style={{ height: 100, width: 100 }} />
-      <div>
-        With the highest consideration from the A2 Research and Development lab
+    <div key="AboutFounder" id="aboutFounder">
+      <img
+        className="avatar"
+        src={imgAlexey}
+        style={{ height: 100, width: 100 }}
+      />
+      <div className="founder-text">
+        <div>
+          With the highest consideration from the A2 Research and Development
+          lab
+        </div>
+        <div>Aleksey A. ROMANOV</div>
+        <div>CEO, founder</div>
       </div>
-      <div>Aleksey A. ROMANOV</div>
-      <div>CEO, founder</div>
     </div>
   );
 };
 
 const HomeAbout = () => {
+  const pageRef = useRef();
+  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-100px" });
+
+  useEffect(() => {
+    if (onScreen) {
+      document.title = "A2RD Lab: About"
+    }
+  }, [onScreen]);
+
   return (
-    <Layout className="section" id="homeAbout">
-      <Content className="card">
-        <QueueAnim type={["left", "right"]} style={{ display: "flex" }}>
-          {AboutFounder()}
+    <Layout className="section section-lightGray" id="homeAbout" ref={pageRef}>
+      <Content className="aboutContent">
+        <QueueAnim type={["left", "right"]}>
           {AboutDescription()}
+          {AboutFounder()}
         </QueueAnim>
       </Content>
     </Layout>

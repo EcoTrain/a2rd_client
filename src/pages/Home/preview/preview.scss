@@ -1,12 +1,3 @@
-@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
-    $k: ($f-max - $f-min)/ ($v-max - $v-min);
-    $b: $f-min - $k * $v-min;
-
-    $b: $b * 1px;
-
-    @return calc(#{$k} * 100vw + #{$b});
-}
-
 #bgVideo {
     position: fixed;
     top: 50%;
@@ -45,10 +36,7 @@
             width: max-content;
             height: max-content;
             position: relative;
-
-            .bannerText {
-                text-align: center;
-            }
+            text-align: center;
             .bannerContent-shape {
                 position: absolute;
                 height: 100%;
@@ -72,7 +60,6 @@
                 }
             }
             .title {
-                font-size: calcFluidFontSize(36, 58, 480, 1280);
                 letter-spacing: 8px;
                 position: relative;
                 width: 100%;
@@ -83,9 +70,6 @@
                 width: 0;
                 height: 2px;
                 background: #fff;
-            }
-            .content {
-                font-size: calcFluidFontSize(12, 18, 480, 1280);
             }
         }
     }

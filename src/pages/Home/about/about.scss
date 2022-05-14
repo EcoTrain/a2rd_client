@@ -1,1 +1,14 @@
-
+#homeAbout {
+}
+.aboutContent {
+    #aboutFounder {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        .founder-text {
+            margin-left: 1em;
+        }
+    }
+}

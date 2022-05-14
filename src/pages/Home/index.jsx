@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import PageScroller from "../../components/ScrollPage";
 
 import "./home.scss";
+import HomeActivities from "./activities";
 
 const Home = () => {
   const items = [
@@ -23,8 +24,7 @@ const Home = () => {
       <PageScroller id={"homeSection"}>
         <HomePreview />
         <HomeAbout />
-        <HomeAbout />
-        <HomeAbout />
+        <HomeActivities />
       </PageScroller>
     </>
   );

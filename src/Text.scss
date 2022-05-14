@@ -1,0 +1,73 @@
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max, $units: px) {
+    $k: ($f-max - $f-min) / ($v-max - $v-min);
+    $b: $f-min - $k * $v-min;
+
+    $b: $b + $units;
+
+    @return calc(#{$k} * 100vw + #{$b});
+}
+
+body {
+    font-size: calcFluidFontSize(14, 18, 480, 1280);
+}
+
+.font-title-large {
+    font-weight: bold;
+    font-size: calcFluidFontSize(2.2, 2.6, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(2.2, 2.6, 480, 1280, em);
+    }
+}
+
+h1,
+.font-title-h1 {
+    font-weight: bold;
+    font-size: calcFluidFontSize(1.8, 2.2, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(1.8, 2.2, 480, 1280, em);
+    }
+}
+
+h2,
+.font-title-h2 {
+    font-weight: bold;
+    font-size: calcFluidFontSize(1.4, 1.6, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(1.4, 16, 480, 1280, em);
+    }
+}
+
+h3,
+.font-title-h3 {
+    font-weight: bold;
+    font-size: calcFluidFontSize(1.1, 1.2, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(1.1, 1.2, 480, 1280, em);
+    }
+}
+h4,
+.font-title-h4 {
+    font-weight: bold;
+    font-size: calcFluidFontSize(0.9, 1, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(0.9, 1, 480, 1280, em);
+    }
+}
+
+.font-text-big {
+    font-size: calcFluidFontSize(1.2, 1.4, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(1.2, 1.4, 480, 1280, em);
+    }
+}
+
+.font-text-small {
+    font-size: calcFluidFontSize(0.8, 0.9, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(0.8, 0.9, 480, 1280, em);
+    }
+}
+
+.text-center {
+    text-align: center;
+}
