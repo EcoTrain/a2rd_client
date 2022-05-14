@@ -176,9 +176,8 @@ const Banner = () => {
         className="bar"
         animation={{
           delay: 2000,
-          width: 0,
-          x: 158,
-          type: "from",
+          width: "100%",
+          type: "to",
           ease: "easeInOutExpo",
         }}
       />
@@ -189,7 +188,7 @@ const Banner = () => {
         delay={2200}
         interval={30}
       >
-        Research and Develpoment
+        Research and Develpoment Lab
       </TextyAnim>
     </div>
   );
@@ -212,53 +211,50 @@ const HomePreview = () => {
     }
   }, [onScreen]);
 
+  const renderNextPageBtn = () => (
+    <Link className="nextPageBtn" to="homeAbout" smooth={true} duration={500}>
+      <TweenOne
+        className="nextPageBtnContent"
+        animation={{
+          y: "-=20",
+          yoyo: true,
+          repeat: -1,
+          duration: 1000,
+        }}
+        key="icon"
+      >
+        <DownOutlined />
+      </TweenOne>
+    </Link>
+  );
+
   const renderBanner = () => {
     return (
-      <>
-        <div className="banner">
-          <TweenOne
-            className="bannerBg"
-            style={{ opacity: 0 }}
-            animation={{
-              type: "from",
-              opacity: 0,
-              duration: 1000,
-              delay: 1000,
-            }}
-            key="icon"
-          >
-            <div></div>
-          </TweenOne>
-          <Banner />
-        </div>
-
-        <Link
-          className="nextPageBtn"
-          to="homeAbout"
-          smooth={true}
-          duration={500}
+      <div className="banner">
+        <TweenOne
+          className="bannerBg"
+          style={{ opacity: 0 }}
+          animation={{
+            type: "from",
+            opacity: 0,
+            duration: 1000,
+            delay: 1000,
+          }}
+          key="icon"
         >
-          <TweenOne
-            className="nextPageBtnContent"
-            animation={{
-              y: "-=20",
-              yoyo: true,
-              repeat: -1,
-              duration: 1000,
-            }}
-            key="icon"
-          >
-            <DownOutlined />
-          </TweenOne>
-        </Link>
-      </>
+          <div></div>
+        </TweenOne>
+        <Banner />
+      </div>
     );
   };
 
   return (
     <Layout ref={elemRef}>
       {video}
-      <Content className="previewOverlay">{renderBanner()}</Content>
+      <Content className="previewOverlay">
+        {renderBanner()} {renderNextPageBtn()}
+      </Content>
     </Layout>
   );
 };
