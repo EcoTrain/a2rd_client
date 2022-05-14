@@ -1,14 +1,12 @@
+
 :root {
     --lightGrayTransparent: rgba(200, 200, 200, 0.7);
     --lightGray: #f4f4f4;
 }
-html[theme="light"] {
-}
-html[theme="dark"] {
-}
 
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 ::-webkit-scrollbar {
