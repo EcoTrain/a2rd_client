@@ -10,9 +10,7 @@ const { Content } = Layout;
 const AboutDescription = () => {
   return (
     <div key="AboutDescription">
-      <div className="font-title-h1 text-center">
-        About
-      </div>
+      <div className="font-title-h1 text-center">About</div>
       <div className="font-text-big description">
         At the A2 Research and Development lab we are motivated by more than the
         simple pursuit of business success. We aim to make the world sustainable
@@ -37,7 +35,7 @@ const AboutDescription = () => {
 };
 
 const AboutFounder = () => {
-  const imgAlexey = require("../../../static/images/index/alexey.webp");
+  const imgAlexey = process.env.PUBLIC_URL + "/static/images/index/alexey.webp";
   console.log("imgAlexey", imgAlexey);
   return (
     <div key="AboutFounder" id="aboutFounder">
@@ -64,7 +62,7 @@ const HomeAbout = () => {
 
   useEffect(() => {
     if (onScreen) {
-      document.title = "A2RD Lab: About"
+      document.title = "A2RD Lab: About";
     }
   }, [onScreen]);
 

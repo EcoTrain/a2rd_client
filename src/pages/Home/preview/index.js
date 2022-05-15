@@ -34,16 +34,16 @@ const BgVideo = () => {
       autoPlay
       playsInline
       muted
-      poster={require("../../../static/images/city_logo.webp")}
+      poster={process.env.PUBLIC_URL + "/static/images/city_logo.webp"}
       id="bgVideo"
       style={{ opacity: opacity }}
     >
       <source
-        src={require("../../../static/videos/main_video.webm")}
+        src={process.env.PUBLIC_URL + "/static/videos/main_video.webm"}
         type="video/webm"
       />
       <source
-        src={require("../../../static/videos/main_video.mp4")}
+        src={process.env.PUBLIC_URL + "/static/videos/main_video.mp4"}
         type="video/mp4"
       />
       <source

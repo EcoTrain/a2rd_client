@@ -48,7 +48,7 @@ const Header = ({ items }) => {
     >
       <div className="header">
         <a href="/" className="headerLogo" target={"_self"}>
-          <img src={require("../../static/images/logo_max.svg").default} />
+          <img src={process.env.PUBLIC_URL + "/static/images/logo_max.svg"} />
         </a>
         <Menu
           className="headerMenu"
