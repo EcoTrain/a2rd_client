@@ -10,7 +10,7 @@ const useOnScreen = ({ ref, rootMargin = "0px" }) => {
       },
       {
         rootMargin,
-        // threshold: [0, 0.2, 0.5, 0.8, 1],
+        threshold: [0, 0.2, 0.5, 0.8, 1],
       }
     );
     if (ref.current) {

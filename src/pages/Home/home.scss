@@ -1,38 +1,47 @@
+@for $i from 1 through 10 {
+    .homePageSection:nth-child(#{$i}) {
+        z-index: ($i);
+    }
+}
 .sectionListOverlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-}
+    .homePageSection {
+        position: sticky;
+        top: 0;
 
-.section {
-    position: relative;
-    z-index: 0;
-    min-height: 100vh;
-    justify-content: center;
+        .section {
+            position: relative;
+            z-index: 0;
+            min-height: 100vh;
+            justify-content: center;
 
-    .section-content {
-        display: flex;
-        flex-wrap: wrap;
-        .section-content-text {
-            flex-grow: 1;
-            flex-basis: 50%;
-            align-self: center;
-            min-width: 400px;
-            padding: 4em 2em;
-            li {
-                .icon {
-                    margin: 0 10px;
+            .section-content {
+                display: flex;
+                flex-wrap: wrap;
+                .section-content-text {
+                    flex-grow: 1;
+                    flex-basis: 50%;
+                    align-self: center;
+                    min-width: 400px;
+                    padding: 4em 2em;
+                    li {
+                        .icon {
+                            margin: 0 10px;
+                        }
+                    }
                 }
-            }
-        }
-        .section-content-img {
-            flex-grow: 1;
-            flex-basis: 50%;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+                .section-content-img {
+                    flex-grow: 1;
+                    flex-basis: 50%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
             }
         }
     }

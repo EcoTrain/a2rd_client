@@ -64,6 +64,7 @@ const Page = ({ children, index, onIntersect }) => {
   useEffect(() => {
     if (onScreen) {
       const elem = wrappedChild;
+      console.log("onScreen", elem);
       onIntersect({ elem });
     }
   }, [onScreen]);
