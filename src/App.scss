@@ -1,4 +1,5 @@
 :root {
+    --primary: #336666;
     --lightGrayTransparent: rgba(200, 200, 200, 0.7);
     --lightGray: #f4f4f4;
     --darkGray: rgb(80, 80, 80);
@@ -19,4 +20,8 @@ li {
 
 .footer {
     z-index: 0;
+}
+
+a {
+    text-decoration: none;
 }

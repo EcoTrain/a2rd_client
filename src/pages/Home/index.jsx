@@ -10,6 +10,7 @@ import "./home.scss";
 
 import HomeActivities from "./textSections/activities";
 import HomeAnalytic from "./textSections/acnalytic";
+import HomeContacts from "./contacts";
 
 const Home = () => {
   const items = [
@@ -28,6 +29,7 @@ const Home = () => {
         <HomeAbout />
         <HomeActivities />
         <HomeAnalytic />
+        <HomeContacts />
       </PageScroller>
     </>
   );
