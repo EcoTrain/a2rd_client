@@ -2,7 +2,7 @@ import React from "react";
 
 import "antd/dist/antd.min.css";
 import HomePreview from "./preview";
-import HomeAbout from "./about";
+import HomeAbout from "./textSections/about";
 import Header from "../../components/Header";
 import PageScroller from "../../components/ScrollPage";
 

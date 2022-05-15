@@ -2,13 +2,12 @@ import React, { useEffect, useRef } from "react";
 import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
-import "./about.scss";
 import useOnScreen from "../../../hooks/useOnScreen";
 
 const AboutDescription = () => {
   return (
     <div key="AboutDescription" className="section-content-text">
-      {/* <div className="font-title-h1 text-center">About</div> */}
+      <div className="font-title-h1 text-center">About</div>
       <div className="font-text-big description">
         We are motivated by more than the simple pursuit of business success. We
         aim to make the world sustainable and better than it was before. At the

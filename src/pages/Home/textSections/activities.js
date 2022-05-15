@@ -37,31 +37,34 @@ const HomeActivities = () => {
       ref={pageRef}
     >
       <Content className="section-content">
-        <QueueAnim type={["left", "right"]} className="section-content-text">
-          <div>
-            We work in various fields using our background to solve industrial,
-            environmental challenges and various issues.
-          </div>
-          <br />
-          <div>Our activities:</div>
-          {activitiesList1.map((text, i) => (
-            <li key={i} style={{ display: "flex" }}>
-              <div className="icon">
-                <CheckOutlined />
-              </div>
-              <TextyAnim
-                type="mask-top"
-                split={splitTextByWords}
-                delay={i * 300}
-                interval={10}
-              >
-                {text}
-              </TextyAnim>
-            </li>
-          ))}
-        </QueueAnim>
         <div className="section-content-img">
           <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
+        </div>
+        <div className="section-content-text">
+          <div className="font-title-h1 text-center">Our activities</div>
+          <QueueAnim type={["left", "right"]}>
+            <div>
+              We work in various fields using our background to solve
+              industrial, environmental challenges and various issues.
+            </div>
+            <br />
+            <div>Our activities:</div>
+            {activitiesList1.map((text, i) => (
+              <li key={i} style={{ display: "flex" }}>
+                <div className="icon">
+                  <CheckOutlined />
+                </div>
+                <TextyAnim
+                  type="mask-top"
+                  split={splitTextByWords}
+                  delay={i * 300}
+                  interval={10}
+                >
+                  {text}
+                </TextyAnim>
+              </li>
+            ))}
+          </QueueAnim>
         </div>
       </Content>
     </Layout>

@@ -25,22 +25,25 @@ const HomeAnalytic = () => {
       ref={pageRef}
     >
       <Content className="section-content">
+        <div className="section-content-text">
+          <div className="font-title-h1 text-center">Our analytic</div>
+          <TextyAnim
+            type="bottom"
+            split={splitTextByWords}
+            delay={2200}
+            interval={10}
+          >
+            Our analytics, cutting edge reviews and models are in demand by
+            companies from the energy, industrial, medical, financial,
+            insurance, and other sectors. Our analytics help industrial
+            companies improve their ESG-strategies and development programs
+            based on cutting edge reviews (scientific reports, IP research,
+            publications).
+          </TextyAnim>
+        </div>
         <div className="section-content-img">
           <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
         </div>
-        <TextyAnim
-          className="section-content-text"
-          type="bottom"
-          split={splitTextByWords}
-          delay={2200}
-          interval={10}
-        >
-          Our analytics, cutting edge reviews and models are in demand by
-          companies from the energy, industrial, medical, financial, insurance,
-          and other sectors. Our analytics help industrial companies improve
-          their ESG-strategies and development programs based on cutting edge
-          reviews (scientific reports, IP research, publications).
-        </TextyAnim>
       </Content>
     </Layout>
   );
