@@ -6,7 +6,7 @@ import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
 import useOnScreen from "../../../hooks/useOnScreen";
-import "./activities.scss";
+import { splitTextByWords } from "../../../fucntions/splitText";
 
 const { Content } = Layout;
 
@@ -20,47 +20,49 @@ const HomeActivities = () => {
     }
   }, [onScreen]);
 
-  const activitiesList = [
+  const activitiesList1 = [
+    "RAW/BIG data processing and analysis",
     "Computational modeling",
-    "Machine Learning (AI)",
-    "Neural network",
+    "Machine Learning (AI) and Neural network",
     "Predictive Analytics",
     "Spatial analysis (geographic information technology and remote sensing)",
     "Technology consulting",
     "App development",
   ];
 
-  const getSplit = (e) => {
-    const text = e.split(" ");
-    const char = [];
-    text.forEach((str, i) => {
-      char.push(<span key={`${str}-${i}`}>{str}</span>);
-      if (i < text.length - 1) {
-        char.push(<span key={` -${i}`}> </span>);
-      }
-    });
-    return char;
-  };
-
   return (
-    <Layout className="section section-darkGray" id="homeAbout" ref={pageRef}>
-      <Content className="aboutContent">
-        <div className="font-title-h1 text-center">Activities</div>
-        <QueueAnim type={["left", "right"]}>
-          {activitiesList.map((text, i) => (
+    <Layout
+      className="section section-darkGray"
+      id="homeActivities"
+      ref={pageRef}
+    >
+      <Content className="section-content">
+        <QueueAnim type={["left", "right"]} className="section-content-text">
+          <div>
+            We work in various fields using our background to solve industrial,
+            environmental challenges and various issues.
+          </div>
+          <br />
+          <div>Our activities:</div>
+          {activitiesList1.map((text, i) => (
             <li key={i} style={{ display: "flex" }}>
-              <CheckOutlined />
+              <div className="icon">
+                <CheckOutlined />
+              </div>
               <TextyAnim
                 type="mask-top"
+                split={splitTextByWords}
                 delay={i * 300}
-                split={getSplit}
-                interval={30}
+                interval={10}
               >
                 {text}
               </TextyAnim>
             </li>
           ))}
         </QueueAnim>
+        <div className="section-content-img">
+          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
+        </div>
       </Content>
     </Layout>
   );

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-scroll/modules";
-import QueueAnim from "rc-queue-anim";
 import TweenOne from "rc-tween-one";
 import TextyAnim from "rc-texty";
 
@@ -10,6 +9,7 @@ import "antd/dist/antd.min.css";
 
 import useOnScreen from "../../../hooks/useOnScreen";
 import "./preview.scss";
+import { splitTextByWords } from "../../../fucntions/splitText";
 
 const { Content } = Layout;
 
@@ -87,17 +87,7 @@ const Banner = () => {
     return t;
   };
 
-  const getSplit = (e) => {
-    const text = e.split(" ");
-    const char = [];
-    text.forEach((str, i) => {
-      char.push(<span key={`${str}-${i}`}>{str}</span>);
-      if (i < text.length - 1) {
-        char.push(<span key={` -${i}`}> </span>);
-      }
-    });
-    return char;
-  };
+
 
   return (
     <div className="bannerContent">
@@ -181,7 +171,7 @@ const Banner = () => {
           ease: "easeInOutExpo",
         }}
       />
-      <TextyAnim type="bottom" split={getSplit} delay={2200} interval={30}>
+      <TextyAnim type="bottom" split={splitTextByWords} delay={2200} interval={30}>
         Research and Develpoment Lab
       </TextyAnim>
     </div>
@@ -216,22 +206,35 @@ const HomePreview = () => {
     </Link>
   );
 
+  const renderBannerBg = () => {
+    return (
+      <TweenOne
+        className="bannerBg"
+        style={{ opacity: 0 }}
+        animation={{
+          type: "from",
+          opacity: 0,
+          duration: 1000,
+          delay: 1000,
+        }}
+        key="icon"
+      >
+        <div className="triangle-container">
+          <svg
+            className="triangle"
+            viewBox="0 0 100 100"
+          >
+            <polygon points="50,0 0,100 100,100" />
+          </svg>
+        </div>
+      </TweenOne>
+    );
+  };
+
   const renderBanner = () => {
     return (
       <div className="banner">
-        <TweenOne
-          className="bannerBg"
-          style={{ opacity: 0 }}
-          animation={{
-            type: "from",
-            opacity: 0,
-            duration: 1000,
-            delay: 1000,
-          }}
-          key="icon"
-        >
-          <div></div>
-        </TweenOne>
+        {renderBannerBg()}
         <Banner />
       </div>
     );
@@ -241,7 +244,8 @@ const HomePreview = () => {
     <Layout ref={pageRef}>
       {video}
       <Content className="previewOverlay">
-        {renderBanner()} {renderNextPageBtn()}
+        {renderBanner()}
+        {renderNextPageBtn()}
       </Content>
     </Layout>
   );

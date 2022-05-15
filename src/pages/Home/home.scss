@@ -8,10 +8,34 @@
 .section {
     position: relative;
     z-index: 0;
-    padding: 2em;
     min-height: 100vh;
-    padding-top: 4em;
-    padding-bottom: 4em;
+    justify-content: center;
+
+    .section-content {
+        display: flex;
+        flex-wrap: wrap;
+        .section-content-text {
+            flex-grow: 1;
+            flex-basis: 50%;
+            align-self: center;
+            min-width: 400px;
+            padding: 4em 2em;
+            li {
+                .icon {
+                    margin: 0 10px;
+                }
+            }
+        }
+        .section-content-img {
+            flex-grow: 1;
+            flex-basis: 50%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 }
 .section-lightGray {
     background-color: var(--lightGray);
