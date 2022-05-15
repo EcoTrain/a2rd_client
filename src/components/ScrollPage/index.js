@@ -13,13 +13,13 @@ const PageScroller = ({ children }) => {
     scrollDirection.current = isScrollUp ? "up" : "down";
   });
 
-  const scrollDuration = 1000;
+  const scrollDuration = 600;
   const scrollTo = (elemId) => {
     scroller.scrollTo(elemId, {
       duration: scrollDuration,
       smooth: "easeOutQuint",
       isDynamic: true,
-      //   ignoreCancelEvents: true,
+      // ignoreCancelEvents: true,
     });
   };
 
@@ -33,7 +33,7 @@ const PageScroller = ({ children }) => {
   };
 
   return (
-    <div className="sectionListOverlay">
+    <div className="sectionPageScroller">
       {children.map((elem, i) => (
         <Page key={i} index={i} onIntersect={onPageIntersectScreen}>
           {elem}
@@ -49,11 +49,7 @@ const Page = ({ children, index, onIntersect }) => {
 
   const getWrappedPage = () => {
     return (
-      <div
-        id={`homeSection${index}`}
-        className={"homePageSection"}
-        ref={elemRef}
-      >
+      <div id={`homeSection${index}`} className={"sectionPage"} ref={elemRef}>
         {children}
       </div>
     );

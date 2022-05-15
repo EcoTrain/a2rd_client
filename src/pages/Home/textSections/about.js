@@ -7,7 +7,7 @@ import useOnScreen from "../../../hooks/useOnScreen";
 const AboutDescription = () => {
   return (
     <div key="AboutDescription" className="section-content-text">
-      <div className="font-title-h1 text-center">About</div>
+      <div className="font-title-h1 text-center">About Us</div>
       <div className="font-text-big description">
         We are motivated by more than the simple pursuit of business success. We
         aim to make the world sustainable and better than it was before. At the
@@ -47,7 +47,7 @@ const AboutFounder = () => {
 
 const HomeAbout = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-100px" });
+  const onScreen = useOnScreen({ ref: pageRef });
 
   useEffect(() => {
     if (onScreen) {

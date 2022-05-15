@@ -10,7 +10,7 @@ const { Content } = Layout;
 
 const HomeAnalytic = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-100px" });
+  const onScreen = useOnScreen({ ref: pageRef});
 
   useEffect(() => {
     if (onScreen) {

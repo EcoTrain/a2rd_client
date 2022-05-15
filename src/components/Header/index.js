@@ -19,11 +19,11 @@ const Header = ({ items }) => {
   );
 
   const scrollTo = (elemId) => {
-    scroller.scrollTo(elemId, {
-      duration: 800,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    });
+    // scroller.scrollTo(elemId, {
+    //   duration: 900,
+    //   delay: 0,
+    //   smooth: "easeInOutQuart",
+    // });
   };
 
   const headerBottomPadding = 11;

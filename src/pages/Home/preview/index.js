@@ -95,14 +95,14 @@ const Banner = () => {
             className="shape-plug"
             animation={[
               {
-                x: "100%",
+                x: "101%",
                 type: "from",
                 ease: "easeInOutQuint",
                 duration: 600,
                 delay: -150,
               },
               {
-                x: "-100%",
+                x: "-101%",
                 ease: "easeInOutQuart",
                 duration: 450,
                 delay: -150,
@@ -184,7 +184,7 @@ const Banner = () => {
 const HomePreview = () => {
   const video = BgVideo();
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-100px" });
+  const onScreen = useOnScreen({ ref: pageRef });
 
   useEffect(() => {
     if (onScreen) {
@@ -241,7 +241,7 @@ const HomePreview = () => {
   };
 
   return (
-    <Layout ref={pageRef}>
+    <Layout ref={pageRef} id={"homePreview"}>
       {video}
       <Content className="previewOverlay">
         {renderBanner()}

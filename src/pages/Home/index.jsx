@@ -6,17 +6,16 @@ import HomeAbout from "./textSections/about";
 import Header from "../../components/Header";
 import PageScroller from "../../components/ScrollPage";
 
+import "../Base/sections.scss";
 import "./home.scss";
 
 import HomeActivities from "./textSections/activities";
-import HomeAnalytic from "./textSections/acnalytic";
-import HomeContacts from "./contacts";
+import HomeAnalytic from "./textSections/analytic";
+import HomeContacts from "../Base/contacts";
+import HomeFeedback from "./feedback";
 
 const Home = () => {
-  const items = [
-    { id: "homeSection", label: "Home" },
-    { id: "homeAboutSection", label: "About" },
-  ].map((item) => ({
+  const items = [{ id: "/", label: "About Us" }].map((item) => ({
     key: `${item.id}`,
     label: `${item.label}`,
   }));
@@ -24,11 +23,12 @@ const Home = () => {
   return (
     <>
       <Header items={items} />
-      <PageScroller id={"homeSection"}>
+      <PageScroller>
         <HomePreview />
         <HomeAbout />
         <HomeActivities />
         <HomeAnalytic />
+        <HomeFeedback />
         <HomeContacts />
       </PageScroller>
     </>
