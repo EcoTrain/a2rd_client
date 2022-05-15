@@ -87,8 +87,6 @@ const Banner = () => {
     return t;
   };
 
-
-
   return (
     <div className="bannerContent">
       <div className="bannerContent-shape">
@@ -171,7 +169,12 @@ const Banner = () => {
           ease: "easeInOutExpo",
         }}
       />
-      <TextyAnim type="bottom" split={splitTextByWords} delay={2200} interval={30}>
+      <TextyAnim
+        type="bottom"
+        split={splitTextByWords}
+        delay={2200}
+        interval={30}
+      >
         Research and Develpoment Lab
       </TextyAnim>
     </div>
@@ -220,11 +223,8 @@ const HomePreview = () => {
         key="icon"
       >
         <div className="triangle-container">
-          <svg
-            className="triangle"
-            viewBox="0 0 100 100"
-          >
-            <polygon points="50,0 0,100 100,100" />
+          <svg className="triangle" viewBox="0 0 100 70">
+            <polygon points="50,0 0,70 100,70" />
           </svg>
         </div>
       </TweenOne>

@@ -43,7 +43,7 @@ const HomeActivities = () => {
         <div className="section-content-text">
           <div className="font-title-h1 text-center">Our activities</div>
           <QueueAnim type={["left", "right"]}>
-            <div>
+            <div className="description">
               We work in various fields using our background to solve
               industrial, environmental challenges and various issues.
             </div>

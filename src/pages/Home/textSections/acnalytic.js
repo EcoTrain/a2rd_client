@@ -28,6 +28,7 @@ const HomeAnalytic = () => {
         <div className="section-content-text">
           <div className="font-title-h1 text-center">Our analytic</div>
           <TextyAnim
+            className="description"
             type="bottom"
             split={splitTextByWords}
             delay={2200}
