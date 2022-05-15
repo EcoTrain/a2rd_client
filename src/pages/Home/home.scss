@@ -37,12 +37,16 @@
         }
     }
 }
+
+.section-white {
+    background-color: var(--white);
+}
 .section-lightGray {
     background-color: var(--lightGray);
 }
 .section-darkGray {
     background-color: var(--darkGray);
-    color: white;
+    color: var(--white);
 }
 
 .card {

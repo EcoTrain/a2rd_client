@@ -23,11 +23,15 @@ const AboutDescription = () => {
 const AboutFounder = () => {
   const imgAlexey = process.env.PUBLIC_URL + "/static/images/index/alexey.webp";
   return (
-    <div key="AboutFounder" id="aboutFounder" className="section-content-text text-center">
+    <div
+      key="AboutFounder"
+      id="aboutFounder"
+      className="section-content-text text-center"
+    >
       <img
         className="avatar"
         src={imgAlexey}
-        style={{ height: 100, width: 100 }}
+        style={{ height: 100, width: 100, marginBottom: "1em" }}
       />
       <div className="founder-text">
         <div>
@@ -52,7 +56,7 @@ const HomeAbout = () => {
   }, [onScreen]);
 
   return (
-    <Layout className="section section-lightGray" id="homeAbout" ref={pageRef}>
+    <Layout className="section section-white" id="homeAbout" ref={pageRef}>
       <QueueAnim type={["left", "right"]} className="section-content">
         {AboutDescription()}
         {AboutFounder()}
