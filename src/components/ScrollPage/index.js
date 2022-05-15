@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { animateScroll as scroll, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 
 import "antd/dist/antd.min.css";
 import useOnScreen from "../../hooks/useOnScreen";
@@ -24,10 +24,10 @@ const PageScroller = ({ children }) => {
   };
 
   const onPageIntersectScreen = ({ elem }) => {
-    if (scrollDirection.current == "up") {
-      const pos = elem.ref.current.offsetTop;
+    if (scrollDirection.current === "up") {
+      // const pos = elem.ref.current.offsetTop;
       scrollTo(elem.props.id);
-    } else if (scrollDirection.current == "down") {
+    } else if (scrollDirection.current === "down") {
       scrollTo(elem.props.id);
     }
   };
