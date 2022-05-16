@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-const useOnScreen = ({ ref, rootMargin = "0px" }) => {
+const useOnScreen = ({ ref, rootMargin = "10px" }) => {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setTimeout(() => setIntersecting(entry.isIntersecting), 300);
+        setTimeout(() => setIntersecting(entry.isIntersecting), 500);
       },
       {
         rootMargin,

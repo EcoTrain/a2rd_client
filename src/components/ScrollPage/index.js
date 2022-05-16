@@ -13,7 +13,7 @@ const PageScroller = ({ children }) => {
     scrollDirection.current = isScrollUp ? "up" : "down";
   });
 
-  const scrollDuration = 600;
+  const scrollDuration = 800;
   const scrollTo = (elemId) => {
     scroller.scrollTo(elemId, {
       duration: scrollDuration,

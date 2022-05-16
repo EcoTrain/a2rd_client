@@ -184,7 +184,7 @@ const Banner = () => {
 const HomePreview = () => {
   const video = BgVideo();
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-50px"  });
+  const onScreen = useOnScreen({ ref: pageRef  });
 
   useEffect(() => {
     if (onScreen) {

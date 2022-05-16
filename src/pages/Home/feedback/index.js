@@ -10,11 +10,11 @@ const { Content } = Layout;
 
 const HomeFeedback = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-50px" });
+  const onScreen = useOnScreen({ ref: pageRef });
 
-  const [email, setEmail] = useState();
-  const [name, setName] = useState();
-  const [text, setText] = useState();
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [text, setText] = useState("");
 
   useEffect(() => {
     if (onScreen) {
@@ -52,7 +52,7 @@ const HomeFeedback = () => {
                   name="email"
                   id="feedbackEmail"
                   value={email}
-                  onChange={(v) => setEmail(v)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </label>
               <label htmlFor="feedbackName">
@@ -62,7 +62,7 @@ const HomeFeedback = () => {
                   name="name"
                   id="feedbackName"
                   value={name}
-                  onChange={(v) => setName(v)}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </label>
               <label htmlFor="feedbackText">
@@ -72,7 +72,7 @@ const HomeFeedback = () => {
                   name="text"
                   id="feedbackText"
                   value={text}
-                  onChange={(v) => setText(v)}
+                  onChange={(e) => setText(e.target.value)}
                 />
               </label>
               <input type="submit" value="Submit" />
