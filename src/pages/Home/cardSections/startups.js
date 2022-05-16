@@ -4,7 +4,6 @@ import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
 import { startupsCardsInfo } from "../../ExtendedPages/startups";
-import { baseUrl } from "../../../config";
 
 import "./gridCard.scss";
 import "./lineGridCard.scss";
@@ -79,7 +78,7 @@ const renderCard = (info, i) => {
               <button
                 className="gridCardViewLink"
                 onClick={() =>
-                  (window.location.href = `${baseUrl}/startups/${info.id}`)
+                  (window.location.href = `${process.env.REACT_APP_URL}/startups/${info.id}`)
                 }
               >
                 Read more

@@ -4,7 +4,6 @@ import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
-import { baseUrl } from "../../../config";
 
 import { projectsCardsInfo } from "../../ExtendedPages/projects";
 
@@ -104,7 +103,7 @@ const renderCard = (info, i) => {
             <button
               className="gridCardViewLink"
               onClick={() =>
-                (window.location.href = `${baseUrl}/projects/${info.id}`)
+                (window.location.href = `${process.env.REACT_APP_URL}/projects/${info.id}`)
               }
             >
               Read more

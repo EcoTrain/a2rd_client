@@ -10,21 +10,32 @@ import Projects from "./pages/ExtendedPages/projects";
 import "./App.scss";
 import "./Text.scss";
 import Startups from "./pages/ExtendedPages/startups";
-import { baseUrl } from "./config.js";
 
 console.log(process.env);
+console.log(`${process.env.REACT_APP_URL}/`);
 
-console.log({ baseUrl });
 function App() {
   return (
     <Layout>
       <Header />
       <Routes>
-        <Route path={`${baseUrl}/`} element={<Home />} />
-        <Route path={`${baseUrl}/projects/`} element={<Projects />} />
-        <Route path={`${baseUrl}/projects/:id`} element={<Projects />} />
-        <Route path={`${baseUrl}/startups/`} element={<Startups />} />
-        <Route path={`${baseUrl}/startups/:id`} element={<Startups />} />
+        <Route path={`${process.env.REACT_APP_URL}/`} element={<Home />} />
+        <Route
+          path={`${process.env.REACT_APP_URL}/projects/`}
+          element={<Projects />}
+        />
+        <Route
+          path={`${process.env.REACT_APP_URL}/projects/:id`}
+          element={<Projects />}
+        />
+        <Route
+          path={`${process.env.REACT_APP_URL}/startups/`}
+          element={<Startups />}
+        />
+        <Route
+          path={`${process.env.REACT_APP_URL}/startups/:id`}
+          element={<Startups />}
+        />
       </Routes>
     </Layout>
   );

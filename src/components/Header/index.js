@@ -5,7 +5,6 @@ import "antd/dist/antd.min.css";
 
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 import "./header.scss";
-import { baseUrl } from "../../config";
 
 const Header = () => {
   const headerBottomPadding = 11;
@@ -18,11 +17,10 @@ const Header = () => {
     window.screen.width < 920 ? logoMin : logoMax
   );
 
-  console.log({baseUrl})
   const items = [
-    { url: `${baseUrl}/`, label: "About Us" },
-    { url: `${baseUrl}/projects/`, label: "Projects" },
-    { url: `${baseUrl}/startups/`, label: "Startups" },
+    { url: `${process.env.REACT_APP_URL}/`, label: "About Us" },
+    { url: `${process.env.REACT_APP_URL}/projects/`, label: "Projects" },
+    { url: `${process.env.REACT_APP_URL}/startups/`, label: "Startups" },
   ].map((item) => ({
     key: `${item.url}`,
     label: `${item.label}`,
@@ -64,7 +62,11 @@ const Header = () => {
       }}
     >
       <div className="header">
-        <a href="/" className="headerLogo" target={"_self"}>
+        <a
+          href={`${process.env.REACT_APP_URL}/`}
+          className="headerLogo"
+          target={"_self"}
+        >
           <img src={logo} />
         </a>
         <Menu
