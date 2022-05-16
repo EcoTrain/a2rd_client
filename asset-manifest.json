@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/a2rd_react/static/css/main.e284c805.css",
-    "main.js": "/a2rd_react/static/js/main.ae5c2704.js",
+    "main.js": "/a2rd_react/static/js/main.dcbe6659.js",
     "static/js/27.bbb44909.chunk.js": "/a2rd_react/static/js/27.bbb44909.chunk.js",
     "index.html": "/a2rd_react/index.html"
   },
   "entrypoints": [
     "static/css/main.e284c805.css",
-    "static/js/main.ae5c2704.js"
+    "static/js/main.dcbe6659.js"
   ]
 }
