@@ -12,7 +12,7 @@ import "./Text.scss";
 import Startups from "./pages/ExtendedPages/startups";
 import { baseUrl } from "./config.js";
 
-console.log(process.env.NODE_ENV);
+console.log(process.env);
 
 console.log({ baseUrl });
 function App() {

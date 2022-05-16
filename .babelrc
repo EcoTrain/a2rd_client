@@ -1,12 +1,6 @@
 {
-    "plugins": [
-        [
-            "transform-inline-environment-variables",
-            {
-                "include": [
-                    "NODE_ENV"
-                ]
-            }
-        ]
-    ]
+    "presets": [
+        "react-app"
+    ],
+    "plugins": []
 }
