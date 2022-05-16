@@ -20,8 +20,8 @@ function App() {
       <Header />
       <Routes>
         <Route path={`${baseUrl}/`} element={<Home />} />
-        <Route path={`${baseUrl}/projects`} element={<Projects />} />
-        <Route path={`${baseUrl}/startups`} element={<Startups />} />
+        <Route path={`${baseUrl}/projects/:id`} element={<Projects />} />
+        <Route path={`${baseUrl}/startups/:id`} element={<Startups />} />
       </Routes>
     </Layout>
   );

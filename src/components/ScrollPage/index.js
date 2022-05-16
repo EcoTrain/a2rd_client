@@ -1,11 +1,21 @@
 import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-scroll/modules";
 import { scroller } from "react-scroll";
+import TweenOne from "rc-tween-one";
+import { DownOutlined } from "@ant-design/icons";
 
 import "antd/dist/antd.min.css";
 import useOnScreen from "../../hooks/useOnScreen";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 
+import "./scroll.scss";
+
 const PageScroller = ({ children }) => {
+  PageScroller.propTypes = {
+    children: PropTypes.array,
+  };
+
   const scrollDirection = useRef();
 
   useScrollPosition(({ prevPos, currPos }) => {
@@ -44,6 +54,12 @@ const PageScroller = ({ children }) => {
 };
 
 const Page = ({ children, index, onIntersect }) => {
+  Page.propTypes = {
+    children: PropTypes.element,
+    index: PropTypes.number,
+    onIntersect: PropTypes.func,
+  };
+
   const elemRef = useRef();
   const onScreen = useOnScreen({ ref: elemRef, rootMargin: "-100px" });
 
@@ -72,5 +88,22 @@ const Page = ({ children, index, onIntersect }) => {
 
   return wrappedChild;
 };
+
+export const renderNextPageBtn = ({id}) => (
+  <Link className="nextPageBtn" to={id} smooth={true} duration={500}>
+    <TweenOne
+      className="nextPageBtnContent"
+      animation={{
+        y: "-=20",
+        yoyo: true,
+        repeat: -1,
+        duration: 1000,
+      }}
+      key="icon"
+    >
+      <DownOutlined />
+    </TweenOne>
+  </Link>
+);
 
 export default PageScroller;

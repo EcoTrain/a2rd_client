@@ -87,19 +87,4 @@
             }
         }
     }
-
-    .nextPageBtn {
-        position: absolute;
-        bottom: 10px;
-        .nextPageBtnContent {
-            height: 30px;
-            width: 30px;
-            border-radius: 15px;
-            background-color: var(--lightGrayTransparent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-    }
 }

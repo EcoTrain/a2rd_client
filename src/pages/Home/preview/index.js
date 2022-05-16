@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-scroll/modules";
 import TweenOne from "rc-tween-one";
 import TextyAnim from "rc-texty";
 
 import { Layout } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+
 import "antd/dist/antd.min.css";
 
 import useOnScreen from "../../../hooks/useOnScreen";
 import "./preview.scss";
 import { splitTextByWords } from "../../../fucntions/splitText";
+import { renderNextPageBtn } from "../../../components/ScrollPage";
 
 const { Content } = Layout;
 
@@ -192,23 +192,6 @@ const HomePreview = () => {
     }
   }, [onScreen]);
 
-  const renderNextPageBtn = () => (
-    <Link className="nextPageBtn" to="homeAbout" smooth={true} duration={500}>
-      <TweenOne
-        className="nextPageBtnContent"
-        animation={{
-          y: "-=20",
-          yoyo: true,
-          repeat: -1,
-          duration: 1000,
-        }}
-        key="icon"
-      >
-        <DownOutlined />
-      </TweenOne>
-    </Link>
-  );
-
   const renderBannerBg = () => {
     return (
       <TweenOne
@@ -245,7 +228,7 @@ const HomePreview = () => {
       {video}
       <Content className="previewOverlay">
         {renderBanner()}
-        {renderNextPageBtn()}
+        {renderNextPageBtn({ id: "homeAbout" })}
       </Content>
     </Layout>
   );

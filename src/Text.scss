@@ -62,9 +62,9 @@ h4,
 }
 
 .font-text-small {
-    font-size: calcFluidFontSize(0.8, 0.9, 480, 1280, em);
+    font-size: calcFluidFontSize(0.9, 0.95, 480, 1280, em);
     & > * {
-        font-size: calcFluidFontSize(0.8, 0.9, 480, 1280, em);
+        font-size: calcFluidFontSize(0.9, 0.95, 480, 1280, em);
     }
 }
 

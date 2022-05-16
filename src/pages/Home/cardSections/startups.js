@@ -9,52 +9,6 @@ import { startupsCardsInfo } from "../../ExtendedPages/startups";
 import "./gridCard.scss";
 import "./lineGridCard.scss";
 
-const renderCard = (info, i) => {
-  const cardRef = useRef();
-  const [hover, setHover] = useState(false);
-
-  const onHover = () => {
-    cardRef.current.style.background = info.bg;
-    cardRef.current.style.minWidth = "300px";
-    cardRef.current.style.transition = "min-width 1.5s linear;";
-    setHover(true);
-  };
-
-  const onUnHover = () => {
-    cardRef.current.style.background = null;
-    cardRef.current.style.minWidth = "unset";
-    setHover(false);
-  };
-
-  return (
-    <div key={i} className="gridCardWrapper lineGridCardWrapper" ref={cardRef}>
-      <div
-        className="gridCard lineGridCard"
-        onMouseEnter={onHover}
-        onMouseLeave={onUnHover}
-      >
-        {!hover ? (
-          <div className="gridCardPreview lineGridCardPreview">
-            <div className="font-title-h3">{info.title}</div>
-            <div className="description">{info.smallText}</div>
-          </div>
-        ) : (
-          <div className="gridCardView lineGridCardView">
-            <div className="font-title-h3">{info.title}</div>
-            <div className="description">{info.smallText}</div>
-            <button
-              className="gridCardViewLink"
-              onClick={() => (window.location.href = "/startups")}
-            >
-              Read more
-            </button>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
 const HomeStartups = () => {
   const pageRef = useRef();
   const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-100px" });
@@ -79,6 +33,66 @@ const HomeStartups = () => {
         </div>
       </QueueAnim>
     </Layout>
+  );
+};
+
+const renderCard = (info, i) => {
+  const cardRef = useRef();
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    cardRef.current.style.background = info.bg;
+    cardRef.current.style.minWidth = "300px";
+    cardRef.current.style.transition = "min-width 1.5s linear;";
+    setHover(true);
+  };
+
+  const onUnHover = () => {
+    cardRef.current.style.background = null;
+    cardRef.current.style.minWidth = "unset";
+    setHover(false);
+  };
+
+  return (
+    <div
+      key={i}
+      className="gridCardWrapper lineGridCardWrapper"
+      ref={cardRef}
+      onMouseDown={hover ? onUnHover : onHover}
+      onMouseLeave={onUnHover}
+    >
+      <div className="gridCard lineGridCard" onMouseEnter={onHover}>
+        {!hover ? (
+          <div className="gridCardPreview lineGridCardPreview">
+            <div className="font-title-h3">{info.title}</div>
+            <div className="description">{info.smallText}</div>
+          </div>
+        ) : (
+          <div className="gridCardView lineGridCardView">
+            <div className="font-title-h3">{info.title}</div>
+            <div className="description">{info.smallText}</div>
+            <div className="gridCardViewLinks">
+              <button
+                className="gridCardViewLink"
+                onClick={() => (window.location.href = `/startups/${info.id}`)}
+              >
+                Read more
+              </button>
+              {info.links &&
+                info.links.map((x, i) => (
+                  <button
+                    key={i}
+                    className="gridCardViewLink"
+                    onClick={() => (window.location.href = x.link)}
+                  >
+                    {x.title}
+                  </button>
+                ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 

@@ -8,6 +8,47 @@ import { projectsCardsInfo } from "../../ExtendedPages/projects";
 
 import "./gridCard.scss";
 
+const HomeProjects = () => {
+  const pageRef = useRef();
+  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-100px" });
+
+  useEffect(() => {
+    if (onScreen) {
+      document.title = "A2RD Lab: Projects";
+    }
+  }, [onScreen]);
+
+  return (
+    <Layout
+      className="section section-lightGray"
+      id="homeProjects"
+      ref={pageRef}
+    >
+      <QueueAnim
+        type={["left", "right"]}
+        style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+      >
+        <div className="font-title-h1 text-center" style={{ marginTop: "2em" }}>
+          Our projects
+        </div>
+        <div className="text-center" style={{margin: "0 2em"}}>
+          At the A2 Research and Development lab, we provide analytics,
+          cutting-edge reviews, and models to optimize the operating companies
+          processes concerning industry specifics, focusing on the best
+          available and future-oriented solutions considering ESG and SDG
+          trends.
+        </div>
+        <div
+          className="gridCardsView"
+          style={{ marginTop: "1em", marginBottom: "1em" }}
+        >
+          {projectsCardsInfo.map((x, i) => renderCard(x, i))}
+        </div>
+      </QueueAnim>
+    </Layout>
+  );
+};
+
 const renderCard = (info, i) => {
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
@@ -52,7 +93,7 @@ const renderCard = (info, i) => {
             <div className="description">{info.text}</div>
             <button
               className="gridCardViewLink"
-              onClick={() => (window.location.href = "/projects")}
+              onClick={() => (window.location.href = `/projects/${info.id}`)}
             >
               Read more
             </button>
@@ -60,47 +101,6 @@ const renderCard = (info, i) => {
         )}
       </div>
     </div>
-  );
-};
-
-const HomeProjects = () => {
-  const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-100px" });
-
-  useEffect(() => {
-    if (onScreen) {
-      document.title = "A2RD Lab: Projects";
-    }
-  }, [onScreen]);
-
-  return (
-    <Layout
-      className="section section-lightGray"
-      id="homeProjects"
-      ref={pageRef}
-    >
-      <QueueAnim
-        type={["left", "right"]}
-        style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
-      >
-        <div className="font-title-h1 text-center" style={{ marginTop: "2em" }}>
-          Our projects
-        </div>
-        <div className="text-center">
-          At the A2 Research and Development lab, we provide analytics,
-          cutting-edge reviews, and models to optimize the operating companies
-          processes concerning industry specifics, focusing on the best
-          available and future-oriented solutions considering ESG and SDG
-          trends.
-        </div>
-        <div
-          className="gridCardsView"
-          style={{ marginTop: "1em", marginBottom: "1em" }}
-        >
-          {projectsCardsInfo.map((x, i) => renderCard(x, i))}
-        </div>
-      </QueueAnim>
-    </Layout>
   );
 };
 
