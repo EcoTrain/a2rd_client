@@ -8,7 +8,7 @@ const ScrollOverPack = ScrollAnim.OverPack;
 
 const AboutDescription = () => {
   return (
-    <div key="AboutDescription" className="section-content-text">
+    <div key="aboutDescription" className="section-content-text">
       <div className="font-title-h1 text-center">About Us</div>
       <div className="font-text-big description">
         We are motivated by more than the simple pursuit of business success. We
@@ -26,7 +26,7 @@ const AboutFounder = () => {
   const imgAlexey = process.env.PUBLIC_URL + "/static/images/index/alexey.webp";
   return (
     <div
-      key="AboutFounder"
+      key="aboutFounder"
       id="aboutFounder"
       className="section-content-text text-center"
     >

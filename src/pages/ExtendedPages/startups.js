@@ -64,7 +64,7 @@ const Startups = () => {
   return (
     <PageScroller>
       {startupsCardsInfo.map((x, i) => (
-        <Startup key={i} item={x} sticky={true} />
+        <Startup key={i} item={x} position={"sticky"} />
       ))}
     </PageScroller>
   );

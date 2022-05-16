@@ -34,14 +34,14 @@ const HomeActivities = () => {
         <div className="section-content-text">
           <div className="font-title-h1 text-center">Our activities</div>
           <ScrollOverPack replay always={false} playScale={0}>
-            <QueueAnim type={["left", "right"]}>
-              <div className="description">
+            <QueueAnim type={["top", "bottom"]}>
+              <div key={"activities_description"} className="description">
                 We work in various fields using our background to solve
                 industrial, environmental challenges and various issues.
               </div>
               <br />
-              <div>Our activities:</div>
-              <ul>
+              <div key={"activities_title"}>Our activities:</div>
+              <ul key={"activities_list"}>
                 {activitiesList1.map((text, i) => (
                   <li key={i} style={{ display: "flex" }}>
                     <div className="icon">

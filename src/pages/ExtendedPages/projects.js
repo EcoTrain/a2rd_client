@@ -72,7 +72,7 @@ const Projects = () => {
   return (
     <PageScroller>
       {projectsCardsInfo.map((x, i) => (
-        <Project key={i} item={x} sticky={true} />
+        <Project key={i} item={x} position={'sticky'} />
       ))}
     </PageScroller>
   );

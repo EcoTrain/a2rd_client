@@ -5,6 +5,7 @@ import "antd/dist/antd.min.css";
 
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 import "./header.scss";
+import { baseUrl } from "../../config";
 
 const Header = () => {
   const headerBottomPadding = 11;
@@ -17,10 +18,11 @@ const Header = () => {
     window.screen.width < 920 ? logoMin : logoMax
   );
 
+  console.log({baseUrl})
   const items = [
-    { url: "/", label: "About Us" },
-    { url: "/projects", label: "Projects" },
-    { url: "/startups", label: "Startups" },
+    { url: `${baseUrl}/`, label: "About Us" },
+    { url: `${baseUrl}/projects/`, label: "Projects" },
+    { url: `${baseUrl}/startups/`, label: "Startups" },
   ].map((item) => ({
     key: `${item.url}`,
     label: `${item.label}`,

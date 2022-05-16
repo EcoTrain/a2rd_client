@@ -9,6 +9,8 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.20.4",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
+    "dotenv": "^16.0.1",
     "eslint-plugin-react": "^7.29.4",
     "gh-pages": "^4.0.0",
     "rc-queue-anim": "^2.0.0",

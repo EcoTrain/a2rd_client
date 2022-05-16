@@ -10,17 +10,21 @@ import Projects from "./pages/ExtendedPages/projects";
 import "./App.scss";
 import "./Text.scss";
 import Startups from "./pages/ExtendedPages/startups";
+import { baseUrl } from "./config.js";
 
-// console.log(process.env.NODE_ENV);
+console.log(process.env.NODE_ENV);
 
+console.log({ baseUrl });
 function App() {
   return (
     <Layout>
       <Header />
       <Routes>
-        <Route path={"/"} element={<Home />} />
-        <Route path={"/projects/:id"} element={<Projects />} />
-        <Route path={"/startups/:id"} element={<Startups />} />
+        <Route path={`${baseUrl}/`} element={<Home />} />
+        <Route path={`${baseUrl}/projects/`} element={<Projects />} />
+        <Route path={`${baseUrl}/projects/:id`} element={<Projects />} />
+        <Route path={`${baseUrl}/startups/`} element={<Startups />} />
+        <Route path={`${baseUrl}/startups/:id`} element={<Startups />} />
       </Routes>
     </Layout>
   );

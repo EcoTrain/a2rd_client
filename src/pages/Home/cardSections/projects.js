@@ -4,6 +4,7 @@ import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
+import { baseUrl } from "../../../config";
 
 import { projectsCardsInfo } from "../../ExtendedPages/projects";
 
@@ -107,7 +108,9 @@ const renderCard = (info, i) => {
             <div className="description">{info.text}</div>
             <button
               className="gridCardViewLink"
-              onClick={() => (window.location.href = `/projects/${info.id}`)}
+              onClick={() =>
+                (window.location.href = `${baseUrl}/projects/${info.id}`)
+              }
             >
               Read more
             </button>
