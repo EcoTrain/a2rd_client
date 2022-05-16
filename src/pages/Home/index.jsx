@@ -18,10 +18,10 @@ import HomeStartups from "./cardSections/startups";
 const Home = () => {
   return (
     <PageScroller>
-      <HomePreview/>
+      <HomePreview />
       <HomeAbout title="About" />
-      <HomeActivities title="Activities" />
-      <HomeAnalytic title="Analytic" />
+      <HomeActivities title="Activities" position={"sticky"} />
+      <HomeAnalytic title="Analytic" position={"sticky"} />
       <HomeProjects title="Projects" />
       <HomeStartups title="Startups" />
       <HomeFeedback title="Feedback" />

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import QueueAnim from "rc-queue-anim";
+import ScrollAnim from "rc-scroll-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -8,21 +9,34 @@ import { startupsCardsInfo } from "../../ExtendedPages/startups";
 import "./gridCard.scss";
 import "./lineGridCard.scss";
 
+const ScrollOverPack = ScrollAnim.OverPack;
+
 const HomeStartups = () => {
   const pageRef = useRef();
   return (
     <Layout className="section section-white" id="homeProjects" ref={pageRef}>
-      <QueueAnim
-        type={["left", "right"]}
-        style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+      <ScrollOverPack
+        replay
+        always={false}
+        playScale={0}
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "2em" }}>
           Our startups
         </div>
-        <div className="gridCardsView lineGridCardsView">
+        <QueueAnim
+          type={["bottom", "top"]}
+          delay={200}
+          duration={1000}
+          className="gridCardsView lineGridCardsView"
+        >
           {startupsCardsInfo.map((x, i) => renderCard(x, i))}
-        </div>
-      </QueueAnim>
+        </QueueAnim>
+      </ScrollOverPack>
     </Layout>
   );
 };

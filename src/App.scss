@@ -1,8 +1,10 @@
 :root {
     --primary: #336666;
     --white: #f4f4f4;
-    --lightGray: #d1d1d1;
+    --lightGray: rgba(180, 180, 180);
     --lightGrayTransparent: rgba(180, 180, 180, 0.8);
+    --gray: rgba(120, 120, 120);
+    --grayTransparent: rgba(120, 120, 120, 0.8);
     --darkGray: rgb(80, 80, 80);
     --darkGrayTransparent: rgb(80, 80, 80, 0.8);
 }

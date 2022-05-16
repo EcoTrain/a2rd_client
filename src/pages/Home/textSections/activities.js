@@ -26,11 +26,7 @@ const HomeActivities = () => {
   ];
 
   return (
-    <Layout
-      className="section section-lightGray"
-      id="homeActivities"
-      ref={pageRef}
-    >
+    <Layout className="section section-gray" id="homeActivities" ref={pageRef}>
       <Content className="section-content">
         <div className="section-content-img">
           <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />

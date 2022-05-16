@@ -11,17 +11,16 @@ import "./App.scss";
 import "./Text.scss";
 import Startups from "./pages/ExtendedPages/startups";
 
-console.log(process.env.NODE_ENV);
-const baseUrl = process.env.NODE_ENV === "production" ? "/a2rd_react" : "";
+// console.log(process.env.NODE_ENV);
 
 function App() {
   return (
     <Layout>
       <Header />
       <Routes>
-        <Route path={`${baseUrl}/`} element={<Home />} />
-        <Route path={`${baseUrl}/projects/:id`} element={<Projects />} />
-        <Route path={`${baseUrl}/startups/:id`} element={<Startups />} />
+        <Route path={"/"} element={<Home />} />
+        <Route path={"/projects/:id"} element={<Projects />} />
+        <Route path={"/startups/:id"} element={<Startups />} />
       </Routes>
     </Layout>
   );

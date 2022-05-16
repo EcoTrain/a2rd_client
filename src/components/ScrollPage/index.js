@@ -48,7 +48,7 @@ const Page = ({ children, index }) => {
         id={`section${index}`}
         className={"sectionPage"}
         ref={elemRef}
-        style={children.props.sticky && { position: "sticky" }}
+        style={{ position: children.props.position || "relative" }}
       >
         {children}
       </div>

@@ -1,11 +1,16 @@
 import React, { useRef, useState } from "react";
 import QueueAnim from "rc-queue-anim";
+import TextyAnim from "rc-texty";
+import ScrollAnim from "rc-scroll-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
 import { projectsCardsInfo } from "../../ExtendedPages/projects";
 
 import "./gridCard.scss";
+import { splitTextByWords } from "../../../fucntions/splitText";
+
+const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeProjects = () => {
   const pageRef = useRef();
@@ -15,27 +20,45 @@ const HomeProjects = () => {
       id="homeProjects"
       ref={pageRef}
     >
-      <QueueAnim
-        type={["left", "right"]}
-        style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
-      >
-        <div className="font-title-h1 text-center" style={{ marginTop: "2em" }}>
-          Our projects
-        </div>
-        <div className="text-center" style={{ margin: "0 2em" }}>
-          At the A2 Research and Development lab, we provide analytics,
-          cutting-edge reviews, and models to optimize the operating companies
-          processes concerning industry specifics, focusing on the best
-          available and future-oriented solutions considering ESG and SDG
-          trends.
-        </div>
-        <div
-          className="gridCardsView"
-          style={{ marginTop: "1em", marginBottom: "1em" }}
+      <ScrollOverPack replay always={false} playScale={0}>
+        <QueueAnim
+          type={["left", "right"]}
+          style={{
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+          }}
+          delay={300}
+          duration={1000}
         >
-          {projectsCardsInfo.map((x, i) => renderCard(x, i))}
-        </div>
-      </QueueAnim>
+          <div
+            className="font-title-h1 text-center"
+            style={{ marginTop: "2em" }}
+          >
+            Our projects
+          </div>
+          <TextyAnim
+            type="mask-top"
+            split={splitTextByWords}
+            delay={300}
+            interval={10}
+            className="text-center"
+            style={{ margin: "0 2em" }}
+          >
+            At the A2 Research and Development lab, we provide analytics,
+            cutting-edge reviews, and models to optimize the operating companies
+            processes concerning industry specifics, focusing on the best
+            available and future-oriented solutions considering ESG and SDG
+            trends.
+          </TextyAnim>
+          <div
+            className="gridCardsView"
+            style={{ marginTop: "1em", marginBottom: "1em" }}
+          >
+            {projectsCardsInfo.map((x, i) => renderCard(x, i))}
+          </div>
+        </QueueAnim>
+      </ScrollOverPack>
     </Layout>
   );
 };
