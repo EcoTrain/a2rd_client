@@ -55,9 +55,9 @@ h4,
 }
 
 .font-text-big {
-    font-size: calcFluidFontSize(1.2, 1.4, 480, 1280, em);
+    font-size: calcFluidFontSize(1.4, 1.6, 480, 1280, em);
     & > * {
-        font-size: calcFluidFontSize(1.2, 1.4, 480, 1280, em);
+        font-size: calcFluidFontSize(1.4, 1.6, 480, 1280, em);
     }
 }
 

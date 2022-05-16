@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import QueueAnim from "rc-queue-anim";
 import TextyAnim from "rc-texty";
+import ScrollAnim from "rc-scroll-anim";
+
 import { CheckOutlined } from "@ant-design/icons";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
@@ -9,10 +11,11 @@ import useOnScreen from "../../../hooks/useOnScreen";
 import { splitTextByWords } from "../../../fucntions/splitText";
 
 const { Content } = Layout;
+const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeActivities = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef});
+  const onScreen = useOnScreen({ ref: pageRef });
 
   useEffect(() => {
     if (onScreen) {
@@ -42,29 +45,33 @@ const HomeActivities = () => {
         </div>
         <div className="section-content-text">
           <div className="font-title-h1 text-center">Our activities</div>
-          <QueueAnim type={["left", "right"]}>
-            <div className="description">
-              We work in various fields using our background to solve
-              industrial, environmental challenges and various issues.
-            </div>
-            <br />
-            <div>Our activities:</div>
-            {activitiesList1.map((text, i) => (
-              <li key={i} style={{ display: "flex" }}>
-                <div className="icon">
-                  <CheckOutlined />
-                </div>
-                <TextyAnim
-                  type="mask-top"
-                  split={splitTextByWords}
-                  delay={i * 300}
-                  interval={10}
-                >
-                  {text}
-                </TextyAnim>
-              </li>
-            ))}
-          </QueueAnim>
+          <ScrollOverPack replay always={false} playScale={0}>
+            <QueueAnim type={["left", "right"]}>
+              <div className="description">
+                We work in various fields using our background to solve
+                industrial, environmental challenges and various issues.
+              </div>
+              <br />
+              <div>Our activities:</div>
+              <ul>
+                {activitiesList1.map((text, i) => (
+                  <li key={i} style={{ display: "flex" }}>
+                    <div className="icon">
+                      <CheckOutlined />
+                    </div>
+                    <TextyAnim
+                      type="mask-top"
+                      split={splitTextByWords}
+                      delay={i * 300}
+                      interval={10}
+                    >
+                      {text}
+                    </TextyAnim>
+                  </li>
+                ))}
+              </ul>
+            </QueueAnim>
+          </ScrollOverPack>
         </div>
       </Content>
     </Layout>

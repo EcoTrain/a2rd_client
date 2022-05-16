@@ -65,7 +65,7 @@ const HomeContacts = () => {
 
   return (
     <Layout
-      className="section section-lightGray"
+      className="section"
       id="homeContacts"
       ref={pageRef}
     >

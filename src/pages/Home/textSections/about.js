@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import QueueAnim from "rc-queue-anim";
+import ScrollAnim from "rc-scroll-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 import useOnScreen from "../../../hooks/useOnScreen";
+
+const ScrollOverPack = ScrollAnim.OverPack;
 
 const AboutDescription = () => {
   return (
@@ -47,7 +50,7 @@ const AboutFounder = () => {
 
 const HomeAbout = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef});
+  const onScreen = useOnScreen({ ref: pageRef });
 
   useEffect(() => {
     if (onScreen) {
@@ -57,10 +60,12 @@ const HomeAbout = () => {
 
   return (
     <Layout className="section section-white" id="homeAbout" ref={pageRef}>
-      <QueueAnim type={["left", "right"]} className="section-content">
-        {AboutDescription()}
-        {AboutFounder()}
-      </QueueAnim>
+      <ScrollOverPack replay always={false} playScale={0}>
+        <QueueAnim type={["left", "right"]} className="section-content">
+          {AboutDescription()}
+          {AboutFounder()}
+        </QueueAnim>
+      </ScrollOverPack>
     </Layout>
   );
 };

@@ -43,7 +43,7 @@ const PageScroller = ({ children }) => {
   );
 };
 
-const Page = ({ children, index, onIntersect }) => {
+const Page = ({ children, index, onIntersect}) => {
   const elemRef = useRef();
   const onScreen = useOnScreen({ ref: elemRef, rootMargin: "-100px" });
 
