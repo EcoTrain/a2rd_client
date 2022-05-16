@@ -13,7 +13,7 @@
             width: 100%;
             min-height: 50vh;
             display: flex;
-            padding: 0 1em;
+            padding: 1em;
             .gridCardPreview {
                 display: flex;
                 flex-direction: column;
@@ -21,6 +21,7 @@
                 justify-content: center;
                 text-align: center;
                 width: 100%;
+                min-height: 150px;
                 .gridCardImg {
                     height: 5em;
                     width: 5em;
@@ -36,6 +37,14 @@
                 align-items: center;
                 justify-content: center;
                 width: 100%;
+                .gridCardViewLink {
+                    background: transparent;
+                    border: 1px solid;
+                    border-radius: 20px;
+                    padding: 0 10px;
+                    margin-top: 1em;
+                    cursor: pointer;
+                }
             }
         }
     }

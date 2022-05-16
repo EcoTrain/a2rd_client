@@ -6,6 +6,7 @@
     .lineGridCardWrapper {
         height: 100vh;
         .lineGridCard {
+            min-height: unset;
             .lineGridCardPreview {
                 flex-direction: column;
             }

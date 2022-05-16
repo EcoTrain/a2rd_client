@@ -41,7 +41,13 @@ const renderCard = (info, i) => {
         ) : (
           <div className="gridCardView lineGridCardView">
             <div className="font-title-h3">{info.title}</div>
-            <div className="description">{info.text}</div>
+            <div className="description">{info.smallText}</div>
+            <button
+              className="gridCardViewLink"
+              onClick={() => (window.location.href = "/startups")}
+            >
+              Read more
+            </button>
           </div>
         )}
       </div>

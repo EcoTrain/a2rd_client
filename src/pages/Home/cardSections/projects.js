@@ -23,7 +23,7 @@ const renderCard = (info, i) => {
 
   const onUnHover = () => {
     cardRef.current.style.background = `url(${info.icon})  no-repeat center center / cover`;
-    cardRef.current.style.minWidth = "unset";
+    cardRef.current.style.minWidth = "150px";
     cardRef.current.style.color = info.color;
     setHover(false);
   };
@@ -50,6 +50,12 @@ const renderCard = (info, i) => {
           <div className="gridCardView">
             <div className="font-title-h3">{info.title}</div>
             <div className="description">{info.text}</div>
+            <button
+              className="gridCardViewLink"
+              onClick={() => (window.location.href = "/projects")}
+            >
+              Read more
+            </button>
           </div>
         )}
       </div>
