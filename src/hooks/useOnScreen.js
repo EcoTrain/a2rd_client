@@ -6,11 +6,11 @@ const useOnScreen = ({ ref, rootMargin = "0px" }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setTimeout(() => setIntersecting(entry.isIntersecting), 500);
+        setTimeout(() => setIntersecting(entry.isIntersecting), 300);
       },
       {
         rootMargin,
-        threshold: [0, 0.2, 0.5, 0.8, 1],
+        // threshold: [0, 0.2, 0.5, 0.8, 1],
       }
     );
     if (ref.current) {

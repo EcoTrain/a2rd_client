@@ -10,11 +10,11 @@ const { Content } = Layout;
 
 const HomeAnalytic = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef});
+  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-50px" });
 
   useEffect(() => {
     if (onScreen) {
-      document.title = "A2RD Lab: Our analytic";
+      document.title = "A2RD Lab: Analytic";
     }
   }, [onScreen]);
 

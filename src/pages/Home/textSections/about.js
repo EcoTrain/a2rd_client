@@ -47,7 +47,7 @@ const AboutFounder = () => {
 
 const HomeAbout = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef });
+  const onScreen = useOnScreen({ ref: pageRef, rootMargin: "-50px" });
 
   useEffect(() => {
     if (onScreen) {

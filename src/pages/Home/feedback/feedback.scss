@@ -2,5 +2,33 @@
     form {
         display: flex;
         flex-direction: column;
+        margin-top: 1em;
+        label {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            input {
+                border-radius: 0.3em;
+                padding: 0.2em 0.5em;
+                border: none;
+                outline: none;
+            }
+            textarea {
+                border-radius: 0.3em;
+                border: none;
+                outline: none;
+                min-height: 10em;
+                max-height: 30vh;
+                padding: 0.2em 0.5em;
+            }
+        }
+        input[type="submit"] {
+            margin-top: 1em;
+            background: var(--primary);
+            color: var(--white);
+            outline: none;
+            border: none;
+            border-radius: 0.3em;
+        }
     }
 }
