@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll/modules";
-import { animateScroll as scroll, scroller } from "react-scroll";
 import TweenOne from "rc-tween-one";
 import { DownOutlined } from "@ant-design/icons";
 
@@ -17,38 +16,16 @@ const PageScroller = ({ children }) => {
   };
 
   const scrollDirection = useRef();
-  const scrollDuration = 900;
 
   useScrollPosition(({ prevPos, currPos }) => {
     const isScrollUp = currPos.y > prevPos.y;
     scrollDirection.current = isScrollUp ? "up" : "down";
   });
 
-  const onPageIntersectScreen = ({ elem }) => {
-    const scrollY = elem.ref.current.offsetTop;
-    const elemHeight = elem.ref.current.offsetHeight;
-    const windowHeight = window.innerHeight;
-    const elemTopPos = scrollY;
-    const elemBottomPos = scrollY + elemHeight - windowHeight;
-    if (scrollDirection.current === "up") {
-      scroll.scrollTo(elemBottomPos, {
-        duration: scrollDuration,
-        smooth: "easeOutQuint",
-        // ignoreCancelEvents: true,
-      });
-    } else if (scrollDirection.current === "down") {
-      scroll.scrollTo(elemTopPos, {
-        duration: scrollDuration,
-        smooth: "easeOutQuint",
-        // ignoreCancelEvents: true,
-      });
-    }
-  };
-
   return (
     <div className="sectionPageScroller">
       {children.map((elem, i) => (
-        <Page key={i} index={i} onIntersect={onPageIntersectScreen}>
+        <Page key={i} index={i}>
           {elem}
         </Page>
       ))}
@@ -56,18 +33,14 @@ const PageScroller = ({ children }) => {
   );
 };
 
-const Page = ({ children, index, onIntersect }) => {
+const Page = ({ children, index }) => {
   Page.propTypes = {
     children: PropTypes.element,
     index: PropTypes.number,
-    onIntersect: PropTypes.func,
   };
 
   const elemRef = useRef();
-  const { onScreen, target } = useOnScreen({
-    ref: elemRef,
-    rootMargin: "-100px",
-  });
+  const onScreen = useOnScreen({ ref: elemRef });
 
   const getWrappedPage = () => {
     return (
@@ -86,12 +59,8 @@ const Page = ({ children, index, onIntersect }) => {
 
   useEffect(() => {
     if (onScreen) {
-      const elem = wrappedChild;
       const title = children.props.title;
       document.title = title ? `A2RD Lab: ${title}` : "A2RD Lab";
-      console.log("elem", elem.ref.current);
-      console.log("target", target);
-      if (elem.ref.current == target) onIntersect({ elem });
     }
   }, [onScreen]);
 
