@@ -3,7 +3,7 @@ import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 import useOnScreen from "../../../hooks/useOnScreen";
-import "./projects.scss";
+import "./cards.scss";
 
 const cardsInfo = [
   {
@@ -29,7 +29,7 @@ const cardsInfo = [
     text: "Review of modern trends and promising projects focused on global sustainable development challenges. We prepare analytics based on preliminary and thematic processing of satellite data, industrial databases, corporate reports, scientific publications, and targeted computational modelling for consumers.",
     note: "",
     icon: process.env.PUBLIC_URL + "/static/images/index/projects/trends.webp",
-    bg: "lightgrey",
+    bg: "wheat",
   },
   {
     title: "Energy transition modelling",
@@ -95,7 +95,11 @@ const HomeProjects = () => {
   }, [onScreen]);
 
   return (
-    <Layout className="section section-white" id="homeProjects" ref={pageRef}>
+    <Layout
+      className="section section-lightGray"
+      id="homeProjects"
+      ref={pageRef}
+    >
       <QueueAnim
         type={["left", "right"]}
         style={{ height: "100vh", display: "flex", "flex-direction": "column" }}

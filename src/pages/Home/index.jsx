@@ -13,7 +13,8 @@ import HomeActivities from "./textSections/activities";
 import HomeAnalytic from "./textSections/analytic";
 import HomeContacts from "../Base/contacts";
 import HomeFeedback from "./feedback";
-import HomeProjects from "./projects";
+import HomeProjects from "./cardSections/projects";
+import HomeStartups from "./cardSections/startups";
 
 const Home = () => {
   const items = [{ id: "/", label: "About Us" }].map((item) => ({
@@ -30,6 +31,7 @@ const Home = () => {
         <HomeActivities />
         <HomeAnalytic />
         <HomeProjects />
+        <HomeStartups />
         <HomeFeedback />
         <HomeContacts />
       </PageScroller>
