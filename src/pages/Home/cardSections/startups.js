@@ -14,7 +14,7 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const HomeStartups = () => {
   const pageRef = useRef();
   return (
-    <Layout className="section section-white" id="homeProjects" ref={pageRef}>
+    <Layout className="section section-white" id="homeStartups" ref={pageRef}>
       <ScrollOverPack
         replay
         always={false}
@@ -25,7 +25,7 @@ const HomeStartups = () => {
           flexDirection: "column",
         }}
       >
-        <div className="font-title-h1 text-center" style={{ marginTop: "2em" }}>
+        <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
           Our startups
         </div>
         <div className="gridCardsView lineGridCardsView">

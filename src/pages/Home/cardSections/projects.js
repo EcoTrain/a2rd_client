@@ -14,13 +14,8 @@ import { splitTextByWords } from "../../../fucntions/splitText";
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeProjects = () => {
-  const pageRef = useRef();
   return (
-    <Layout
-      className="section section-lightGray"
-      id="homeProjects"
-      ref={pageRef}
-    >
+    <Layout className="section section-lightGray" id="homeProjects">
       <ScrollOverPack replay always={false} playScale={0}>
         <QueueAnim
           type={["left", "right"]}
@@ -34,7 +29,7 @@ const HomeProjects = () => {
         >
           <div
             className="font-title-h1 text-center"
-            style={{ marginTop: "2em" }}
+            style={{ marginTop: "3em" }}
           >
             Our projects
           </div>
@@ -44,7 +39,7 @@ const HomeProjects = () => {
             delay={300}
             interval={10}
             className="text-center"
-            style={{ margin: "0 2em" }}
+            style={{ margin: "0 3em" }}
           >
             At the A2 Research and Development lab, we provide analytics,
             cutting-edge reviews, and models to optimize the operating companies
