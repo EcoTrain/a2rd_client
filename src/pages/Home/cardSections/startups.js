@@ -61,7 +61,7 @@ const renderCard = (info, i) => {
       key={i}
       className="gridCardWrapper lineGridCardWrapper"
       ref={cardRef}
-      onMouseDown={hover ? onUnHover : onHover}
+      // onMouseDown={hover ? onUnHover : onHover}
       onMouseLeave={onUnHover}
     >
       <div className="gridCard lineGridCard" onMouseEnter={onHover}>

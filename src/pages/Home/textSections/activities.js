@@ -50,7 +50,7 @@ const HomeActivities = () => {
                     <TextyAnim
                       type="mask-top"
                       split={splitTextByWords}
-                      delay={i * 300}
+                      delay={i * 200}
                       interval={10}
                     >
                       {text}
