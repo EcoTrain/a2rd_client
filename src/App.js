@@ -8,13 +8,16 @@ import Header from "./components/Header";
 import "./App.scss";
 import "./Text.scss";
 
+console.log(process.env.NODE_ENV);
+const baseUrl = process.env.NODE_ENV === "production" ? "/a2rd_react" : "";
+
 function App() {
   return (
     <Layout>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Home />} />
+        <Route path={`${baseUrl}/`} element={<Home />} />
+        <Route path={`${baseUrl}/projects`} element={<Home />} />
       </Routes>
     </Layout>
   );
