@@ -13,7 +13,7 @@ const cardsInfo = [
     icon:
       process.env.PUBLIC_URL +
       "/static/images/index/projects/airflow_emissions.webp",
-    bg: "bisque",
+    bg: "lightblue",
   },
   {
     title: "Transport systems modelling",
@@ -22,14 +22,14 @@ const cardsInfo = [
     icon:
       process.env.PUBLIC_URL +
       "/static/images/index/projects/transport_system.webp",
-    bg: "cornflowerblue",
+    bg: "lightsteelblue",
   },
   {
     title: "Trends analysis",
     text: "Review of modern trends and promising projects focused on global sustainable development challenges. We prepare analytics based on preliminary and thematic processing of satellite data, industrial databases, corporate reports, scientific publications, and targeted computational modelling for consumers.",
     note: "",
     icon: process.env.PUBLIC_URL + "/static/images/index/projects/trends.webp",
-    bg: "aquamarine",
+    bg: "lightgrey",
   },
   {
     title: "Energy transition modelling",

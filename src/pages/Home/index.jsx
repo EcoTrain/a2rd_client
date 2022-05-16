@@ -13,7 +13,6 @@ import HomeActivities from "./textSections/activities";
 import HomeAnalytic from "./textSections/analytic";
 import HomeContacts from "../Base/contacts";
 import HomeFeedback from "./feedback";
-import HomeAdvantages from "./advantages";
 import HomeProjects from "./projects";
 
 const Home = () => {
@@ -30,7 +29,6 @@ const Home = () => {
         <HomeAbout />
         <HomeActivities />
         <HomeAnalytic />
-        {/* <HomeAdvantages /> */}
         <HomeProjects />
         <HomeFeedback />
         <HomeContacts />
