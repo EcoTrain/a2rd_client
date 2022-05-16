@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "https://ecotrain.github.io/a2rd_react/static/css/main.4287f97c.css",
-    "main.js": "https://ecotrain.github.io/a2rd_react/static/js/main.a39c3fc4.js",
+    "main.js": "https://ecotrain.github.io/a2rd_react/static/js/main.20426196.js",
     "static/js/27.bbb44909.chunk.js": "https://ecotrain.github.io/a2rd_react/static/js/27.bbb44909.chunk.js",
     "index.html": "https://ecotrain.github.io/a2rd_react/index.html"
   },
   "entrypoints": [
     "static/css/main.4287f97c.css",
-    "static/js/main.a39c3fc4.js"
+    "static/js/main.20426196.js"
   ]
 }
