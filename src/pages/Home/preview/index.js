@@ -95,14 +95,14 @@ const Banner = () => {
             className="shape-plug"
             animation={[
               {
-                x: "101%",
+                x: "100%",
                 type: "from",
                 ease: "easeInOutQuint",
                 duration: 600,
                 delay: -150,
               },
               {
-                x: "-101%",
+                x: "-100%",
                 ease: "easeInOutQuart",
                 duration: 450,
                 delay: -150,
@@ -115,12 +115,12 @@ const Banner = () => {
             className="shape-plug"
             animation={[
               {
-                x: -158,
+                x: "-100%",
                 type: "from",
                 ease: "easeInOutQuint",
                 duration: 600,
               },
-              { x: 158, ease: "easeInOutQuart", duration: 450, delay: -150 },
+              { x: "100%", ease: "easeInOutQuart", duration: 450, delay: -150 },
             ]}
           />
         </div>
@@ -184,7 +184,7 @@ const Banner = () => {
 const HomePreview = () => {
   const video = BgVideo();
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef  });
+  const onScreen = useOnScreen({ ref: pageRef });
 
   useEffect(() => {
     if (onScreen) {

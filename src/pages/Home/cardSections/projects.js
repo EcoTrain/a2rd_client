@@ -13,7 +13,6 @@ const renderCard = (info, i) => {
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
-    // cardRef.current.style.background = `url(${info.icon})`;
     cardRef.current.style.background = info.bg;
     cardRef.current.style.minWidth = "300px";
     cardRef.current.style.transition = "min-width 1.5s linear;";
@@ -29,16 +28,17 @@ const renderCard = (info, i) => {
   };
 
   return (
-    <div
-      key={i}
-      className="gridCardWrapper"
-      ref={cardRef}
-      style={{
-        background: `url(${info.icon})  no-repeat center center / cover`,
-        color: info.color,
-      }}
-    >
-      <div className="gridCard" onMouseEnter={onHover} onMouseLeave={onUnHover}>
+    <div key={i} className="gridCardWrapper">
+      <div
+        className="gridCard"
+        ref={cardRef}
+        onMouseEnter={onHover}
+        onMouseLeave={onUnHover}
+        style={{
+          background: `url(${info.icon})  no-repeat center center / cover`,
+          color: info.color,
+        }}
+      >
         {!hover ? (
           <div className="gridCardPreview">
             {/* <div className="gridCardImg">
@@ -93,7 +93,10 @@ const HomeProjects = () => {
           available and future-oriented solutions considering ESG and SDG
           trends.
         </div>
-        <div className="gridCardsView" style={{ marginTop: "1em" }}>
+        <div
+          className="gridCardsView"
+          style={{ marginTop: "1em", marginBottom: "1em" }}
+        >
           {projectsCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
       </QueueAnim>
