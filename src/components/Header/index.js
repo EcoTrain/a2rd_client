@@ -6,9 +6,17 @@ import "antd/dist/antd.min.css";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 import "./header.scss";
 
-const Header = ({ items }) => {
+const Header = () => {
   const headerRef = useRef();
   const [hide, setHide] = useState(false);
+
+  const items = [
+    { url: "/", label: "About Us" },
+    { url: "/projects", label: "Projects" },
+  ].map((item) => ({
+    key: `${item.url}`,
+    label: `${item.label}`,
+  }));
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -57,7 +65,8 @@ const Header = ({ items }) => {
           items={items}
           onSelect={(elem) => {
             console.log({ elem });
-            scrollTo(elem.key);
+            // scrollTo(elem.key);
+            window.location.href = elem.key;
           }}
         />
       </div>

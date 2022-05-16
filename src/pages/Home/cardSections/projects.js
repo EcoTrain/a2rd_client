@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
+
 import useOnScreen from "../../../hooks/useOnScreen";
-import "./cards.scss";
+
+import "./gridCard.scss";
 
 const cardsInfo = [
   {
@@ -14,6 +16,7 @@ const cardsInfo = [
       process.env.PUBLIC_URL +
       "/static/images/index/projects/airflow_emissions.webp",
     bg: "lightblue",
+    color: "white",
   },
   {
     title: "Transport systems modelling",
@@ -23,6 +26,7 @@ const cardsInfo = [
       process.env.PUBLIC_URL +
       "/static/images/index/projects/transport_system.webp",
     bg: "lightsteelblue",
+    color: "white",
   },
   {
     title: "Trends analysis",
@@ -30,6 +34,7 @@ const cardsInfo = [
     note: "",
     icon: process.env.PUBLIC_URL + "/static/images/index/projects/trends.webp",
     bg: "wheat",
+    color: "black",
   },
   {
     title: "Energy transition modelling",
@@ -38,6 +43,7 @@ const cardsInfo = [
     icon:
       process.env.PUBLIC_URL + "/static/images/index/projects/locomotives.webp",
     bg: "darkgrey",
+    color: "black",
   },
 ];
 
@@ -50,31 +56,37 @@ const renderCard = (info, i) => {
     cardRef.current.style.background = info.bg;
     cardRef.current.style.minWidth = "300px";
     cardRef.current.style.transition = "min-width 1.5s linear;";
+    cardRef.current.style.color = "black";
     setHover(true);
   };
 
   const onUnHover = () => {
-    cardRef.current.style.background = null;
+    cardRef.current.style.background = `url(${info.icon})  no-repeat center center / cover`;
     cardRef.current.style.minWidth = "unset";
+    cardRef.current.style.color = info.color;
     setHover(false);
   };
 
   return (
-    <div key={i} className="fullGridCardWrapper" ref={cardRef}>
-      <div
-        className="fullGridCard"
-        onMouseEnter={onHover}
-        onMouseLeave={onUnHover}
-      >
+    <div
+      key={i}
+      className="gridCardWrapper"
+      ref={cardRef}
+      style={{
+        background: `url(${info.icon})  no-repeat center center / cover`,
+        color: info.color,
+      }}
+    >
+      <div className="gridCard" onMouseEnter={onHover} onMouseLeave={onUnHover}>
         {!hover ? (
-          <div className="fullGridCardPreview">
-            <div className="fullGridCardImg">
+          <div className="gridCardPreview">
+            {/* <div className="gridCardImg">
               <img src={info.icon} />
-            </div>
-            <div className="font-title-h3">{info.title}</div>
+            </div> */}
+            <div className="font-title-h1">{info.title}</div>
           </div>
         ) : (
-          <div className="fullGridCardView">
+          <div className="gridCardView">
             <div className="font-title-h3">{info.title}</div>
             <div className="description">{info.text}</div>
           </div>
@@ -102,7 +114,7 @@ const HomeProjects = () => {
     >
       <QueueAnim
         type={["left", "right"]}
-        style={{ height: "100vh", display: "flex", "flex-direction": "column" }}
+        style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "2em" }}>
           Our projects
@@ -114,7 +126,7 @@ const HomeProjects = () => {
           available and future-oriented solutions considering ESG and SDG
           trends.
         </div>
-        <div className="fullGridCardsView">
+        <div className="gridCardsView" style={{ marginTop: "1em" }}>
           {cardsInfo.map((x, i) => renderCard(x, i))}
         </div>
       </QueueAnim>

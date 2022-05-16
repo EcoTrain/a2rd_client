@@ -3,7 +3,6 @@ import React from "react";
 import "antd/dist/antd.min.css";
 import HomePreview from "./preview";
 import HomeAbout from "./textSections/about";
-import Header from "../../components/Header";
 import PageScroller from "../../components/ScrollPage";
 
 import "../Base/sections.scss";
@@ -17,25 +16,17 @@ import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";
 
 const Home = () => {
-  const items = [{ id: "/", label: "About Us" }].map((item) => ({
-    key: `${item.id}`,
-    label: `${item.label}`,
-  }));
-
   return (
-    <>
-      <Header items={items} />
-      <PageScroller>
-        <HomePreview />
-        <HomeAbout />
-        <HomeActivities />
-        <HomeAnalytic />
-        <HomeProjects />
-        <HomeStartups />
-        <HomeFeedback />
-        <HomeContacts />
-      </PageScroller>
-    </>
+    <PageScroller>
+      <HomePreview />
+      <HomeAbout />
+      <HomeActivities />
+      <HomeAnalytic />
+      <HomeProjects />
+      <HomeStartups />
+      <HomeFeedback />
+      <HomeContacts />
+    </PageScroller>
   );
 };
 

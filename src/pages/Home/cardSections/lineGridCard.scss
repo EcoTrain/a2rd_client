@@ -1,0 +1,24 @@
+.lineGridCardsView {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    flex-wrap: nowrap;
+    .lineGridCardWrapper {
+        height: 100vh;
+        .lineGridCard {
+            .lineGridCardPreview {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .lineGridCardsView {
+        position: relative;
+        flex-direction: column;
+        .lineGridCardWrapper {
+            width: 100%;
+        }
+    }
+}
