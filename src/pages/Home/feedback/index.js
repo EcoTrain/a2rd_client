@@ -1,26 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
-import useOnScreen from "../../../hooks/useOnScreen";
 import "./feedback.scss";
 
 const { Content } = Layout;
 
 const HomeFeedback = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef });
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [text, setText] = useState("");
-
-  useEffect(() => {
-    if (onScreen) {
-      document.title = "A2RD Lab: Feedback";
-    }
-  }, [onScreen]);
 
   const handleSubmit = (event) => {
     alert("Feedback sent");

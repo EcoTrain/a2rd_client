@@ -6,7 +6,6 @@ import { Layout } from "antd";
 
 import "antd/dist/antd.min.css";
 
-import useOnScreen from "../../../hooks/useOnScreen";
 import "./preview.scss";
 import { splitTextByWords } from "../../../fucntions/splitText";
 import { renderNextPageBtn } from "../../../components/ScrollPage";
@@ -184,13 +183,6 @@ const Banner = () => {
 const HomePreview = () => {
   const video = BgVideo();
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef });
-
-  useEffect(() => {
-    if (onScreen) {
-      document.title = "A2RD Lab";
-    }
-  }, [onScreen]);
 
   const renderBannerBg = () => {
     return (

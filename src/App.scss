@@ -7,9 +7,12 @@
     --darkGrayTransparent: rgb(80, 80, 80, 0.8);
 }
 
+html,
 body {
     margin: 0;
     font-family: "Roboto", sans-serif;
+    overscroll-behavior: none;
+    transition: transform 1000ms;
 }
 
 ::-webkit-scrollbar {

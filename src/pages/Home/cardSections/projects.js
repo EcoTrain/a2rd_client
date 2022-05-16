@@ -1,23 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
-import useOnScreen from "../../../hooks/useOnScreen";
 import { projectsCardsInfo } from "../../ExtendedPages/projects";
 
 import "./gridCard.scss";
 
 const HomeProjects = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef });
-
-  useEffect(() => {
-    if (onScreen) {
-      document.title = "A2RD Lab: Projects";
-    }
-  }, [onScreen]);
-
   return (
     <Layout
       className="section section-lightGray"
@@ -31,7 +22,7 @@ const HomeProjects = () => {
         <div className="font-title-h1 text-center" style={{ marginTop: "2em" }}>
           Our projects
         </div>
-        <div className="text-center" style={{margin: "0 2em"}}>
+        <div className="text-center" style={{ margin: "0 2em" }}>
           At the A2 Research and Development lab, we provide analytics,
           cutting-edge reviews, and models to optimize the operating companies
           processes concerning industry specifics, focusing on the best

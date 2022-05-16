@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
-import useOnScreen from "../../../hooks/useOnScreen";
 import "./contacts.scss";
 
 const ContactsLinks = () => {
@@ -55,20 +54,8 @@ const ContactsIcons = () => {
 
 const HomeContacts = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef });
-
-  useEffect(() => {
-    if (onScreen) {
-      document.title = "A2RD Lab: Contacts";
-    }
-  }, [onScreen]);
-
   return (
-    <Layout
-      className="section"
-      id="homeContacts"
-      ref={pageRef}
-    >
+    <Layout className="section" id="homeContacts" ref={pageRef}>
       <QueueAnim type={["left", "right"]} className="section-content">
         <div id="contactsContent" className="section-content-text text-center">
           {ContactsLinks()}

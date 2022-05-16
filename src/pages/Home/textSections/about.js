@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import QueueAnim from "rc-queue-anim";
 import ScrollAnim from "rc-scroll-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
-import useOnScreen from "../../../hooks/useOnScreen";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
@@ -50,14 +49,6 @@ const AboutFounder = () => {
 
 const HomeAbout = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef });
-
-  useEffect(() => {
-    if (onScreen) {
-      document.title = "A2RD Lab: About";
-    }
-  }, [onScreen]);
-
   return (
     <Layout className="section section-white" id="homeAbout" ref={pageRef}>
       <ScrollOverPack replay always={false} playScale={0}>

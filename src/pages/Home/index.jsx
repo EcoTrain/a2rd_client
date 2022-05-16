@@ -18,14 +18,14 @@ import HomeStartups from "./cardSections/startups";
 const Home = () => {
   return (
     <PageScroller>
-      <HomePreview />
-      <HomeAbout />
-      <HomeActivities />
-      <HomeAnalytic />
-      <HomeProjects />
-      <HomeStartups />
-      <HomeFeedback />
-      <HomeContacts />
+      <HomePreview/>
+      <HomeAbout title="About" />
+      <HomeActivities title="Activities" />
+      <HomeAnalytic title="Analytic" />
+      <HomeProjects title="Projects" />
+      <HomeStartups title="Startups" />
+      <HomeFeedback title="Feedback" />
+      <HomeContacts title="Contacts" />
     </PageScroller>
   );
 };

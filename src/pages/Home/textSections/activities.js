@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import QueueAnim from "rc-queue-anim";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
@@ -7,7 +7,6 @@ import { CheckOutlined } from "@ant-design/icons";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
-import useOnScreen from "../../../hooks/useOnScreen";
 import { splitTextByWords } from "../../../fucntions/splitText";
 
 const { Content } = Layout;
@@ -15,13 +14,6 @@ const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeActivities = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef });
-
-  useEffect(() => {
-    if (onScreen) {
-      document.title = "A2RD Lab: Activities";
-    }
-  }, [onScreen]);
 
   const activitiesList1 = [
     "RAW/BIG data processing and analysis",

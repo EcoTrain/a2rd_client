@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
-import useOnScreen from "../../../hooks/useOnScreen";
 import { startupsCardsInfo } from "../../ExtendedPages/startups";
 
 import "./gridCard.scss";
@@ -11,14 +10,6 @@ import "./lineGridCard.scss";
 
 const HomeStartups = () => {
   const pageRef = useRef();
-  const onScreen = useOnScreen({ ref: pageRef });
-
-  useEffect(() => {
-    if (onScreen) {
-      document.title = "A2RD Lab: Projects";
-    }
-  }, [onScreen]);
-
   return (
     <Layout className="section section-white" id="homeProjects" ref={pageRef}>
       <QueueAnim

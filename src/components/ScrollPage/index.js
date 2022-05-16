@@ -34,13 +34,13 @@ const PageScroller = ({ children }) => {
       scroll.scrollTo(elemBottomPos, {
         duration: scrollDuration,
         smooth: "easeOutQuint",
-        ignoreCancelEvents: true,
+        // ignoreCancelEvents: true,
       });
     } else if (scrollDirection.current === "down") {
-      scroller.scrollTo(elemTopPos, {
+      scroll.scrollTo(elemTopPos, {
         duration: scrollDuration,
         smooth: "easeOutQuint",
-        ignoreCancelEvents: true,
+        // ignoreCancelEvents: true,
       });
     }
   };
@@ -64,7 +64,10 @@ const Page = ({ children, index, onIntersect }) => {
   };
 
   const elemRef = useRef();
-  const onScreen = useOnScreen({ ref: elemRef, rootMargin: "-100px" });
+  const { onScreen, target } = useOnScreen({
+    ref: elemRef,
+    rootMargin: "-100px",
+  });
 
   const getWrappedPage = () => {
     return (
@@ -84,8 +87,11 @@ const Page = ({ children, index, onIntersect }) => {
   useEffect(() => {
     if (onScreen) {
       const elem = wrappedChild;
-      // console.log("onScreen", elem);
-      onIntersect({ elem });
+      const title = children.props.title;
+      document.title = title ? `A2RD Lab: ${title}` : "A2RD Lab";
+      console.log("elem", elem.ref.current);
+      console.log("target", target);
+      if (elem.ref.current == target) onIntersect({ elem });
     }
   }, [onScreen]);
 
