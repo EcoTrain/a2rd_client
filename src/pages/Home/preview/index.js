@@ -102,7 +102,7 @@ const Banner = () => {
                 delay: -150,
               },
               {
-                x: "-100%",
+                x: "-150%",
                 ease: "easeInOutQuart",
                 duration: 450,
                 delay: -150,
@@ -120,7 +120,7 @@ const Banner = () => {
                 ease: "easeInOutQuint",
                 duration: 600,
               },
-              { x: "100%", ease: "easeInOutQuart", duration: 450, delay: -150 },
+              { x: "150%", ease: "easeInOutQuart", duration: 450, delay: -150 },
             ]}
           />
         </div>

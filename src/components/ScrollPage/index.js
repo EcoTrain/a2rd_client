@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll/modules";
-import { scroller } from "react-scroll";
+import { animateScroll as scroll, scroller } from "react-scroll";
 import TweenOne from "rc-tween-one";
 import { DownOutlined } from "@ant-design/icons";
 
@@ -17,28 +17,31 @@ const PageScroller = ({ children }) => {
   };
 
   const scrollDirection = useRef();
+  const scrollDuration = 900;
 
   useScrollPosition(({ prevPos, currPos }) => {
     const isScrollUp = currPos.y > prevPos.y;
     scrollDirection.current = isScrollUp ? "up" : "down";
   });
 
-  const scrollDuration = 600;
-  const scrollTo = (elemId) => {
-    scroller.scrollTo(elemId, {
-      duration: scrollDuration,
-      smooth: "easeOutQuint",
-      isDynamic: true,
-      // ignoreCancelEvents: true,
-    });
-  };
-
   const onPageIntersectScreen = ({ elem }) => {
+    const scrollY = elem.ref.current.offsetTop;
+    const elemHeight = elem.ref.current.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const elemTopPos = scrollY;
+    const elemBottomPos = scrollY + elemHeight - windowHeight;
     if (scrollDirection.current === "up") {
-      // const pos = elem.ref.current.offsetTop;
-      scrollTo(elem.props.id);
+      scroll.scrollTo(elemBottomPos, {
+        duration: scrollDuration,
+        smooth: "easeOutQuint",
+        ignoreCancelEvents: true,
+      });
     } else if (scrollDirection.current === "down") {
-      scrollTo(elem.props.id);
+      scroller.scrollTo(elemTopPos, {
+        duration: scrollDuration,
+        smooth: "easeOutQuint",
+        ignoreCancelEvents: true,
+      });
     }
   };
 
@@ -81,7 +84,7 @@ const Page = ({ children, index, onIntersect }) => {
   useEffect(() => {
     if (onScreen) {
       const elem = wrappedChild;
-      console.log("onScreen", elem);
+      // console.log("onScreen", elem);
       onIntersect({ elem });
     }
   }, [onScreen]);
@@ -89,7 +92,7 @@ const Page = ({ children, index, onIntersect }) => {
   return wrappedChild;
 };
 
-export const renderNextPageBtn = ({id}) => (
+export const renderNextPageBtn = ({ id }) => (
   <Link className="nextPageBtn" to={id} smooth={true} duration={500}>
     <TweenOne
       className="nextPageBtnContent"

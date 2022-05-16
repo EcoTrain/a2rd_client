@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import { animateScroll as scroll, scroller } from "react-scroll";
 import { Menu } from "antd";
 import "antd/dist/antd.min.css";
@@ -7,8 +7,15 @@ import { useScrollPosition } from "../../hooks/useScrollPosition";
 import "./header.scss";
 
 const Header = () => {
+  const headerBottomPadding = 11;
+  const logoMax = process.env.PUBLIC_URL + "/static/images/logo_max.svg";
+  const logoMin = process.env.PUBLIC_URL + "/static/images/logo_min.svg";
+
   const headerRef = useRef();
   const [hide, setHide] = useState(false);
+  const [logo, setLogo] = useState(
+    window.screen.width < 920 ? logoMin : logoMax
+  );
 
   const items = [
     { url: "/", label: "About Us" },
@@ -27,15 +34,14 @@ const Header = () => {
     [hide]
   );
 
-  const scrollTo = (elemId) => {
-    // scroller.scrollTo(elemId, {
-    //   duration: 900,
-    //   delay: 0,
-    //   smooth: "easeInOutQuart",
-    // });
+  const handleResize = () => {
+    setLogo(window.innerWidth < 920 ? logoMin : logoMax);
   };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return window.addEventListener("resize", null);
+  }, []);
 
-  const headerBottomPadding = 11;
   return (
     <div
       ref={headerRef}
@@ -57,7 +63,7 @@ const Header = () => {
     >
       <div className="header">
         <a href="/" className="headerLogo" target={"_self"}>
-          <img src={process.env.PUBLIC_URL + "/static/images/logo_max.svg"} />
+          <img src={logo} />
         </a>
         <Menu
           className="headerMenu"
@@ -65,8 +71,6 @@ const Header = () => {
           defaultSelectedKeys={["2"]}
           items={items}
           onSelect={(elem) => {
-            console.log({ elem });
-            // scrollTo(elem.key);
             window.location.href = elem.key;
           }}
         />
