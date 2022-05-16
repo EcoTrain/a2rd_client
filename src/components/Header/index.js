@@ -13,6 +13,7 @@ const Header = () => {
   const items = [
     { url: "/", label: "About Us" },
     { url: "/projects", label: "Projects" },
+    { url: "/startups", label: "Startups" },
   ].map((item) => ({
     key: `${item.url}`,
     label: `${item.label}`,

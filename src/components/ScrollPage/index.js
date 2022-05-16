@@ -43,13 +43,18 @@ const PageScroller = ({ children }) => {
   );
 };
 
-const Page = ({ children, index, onIntersect}) => {
+const Page = ({ children, index, onIntersect }) => {
   const elemRef = useRef();
   const onScreen = useOnScreen({ ref: elemRef, rootMargin: "-100px" });
 
   const getWrappedPage = () => {
     return (
-      <div id={`homeSection${index}`} className={"sectionPage"} ref={elemRef}>
+      <div
+        id={`section${index}`}
+        className={"sectionPage"}
+        ref={elemRef}
+        style={children.props.sticky && { position: "sticky" }}
+      >
         {children}
       </div>
     );
