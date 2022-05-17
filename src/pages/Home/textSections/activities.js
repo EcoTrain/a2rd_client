@@ -35,8 +35,7 @@ const HomeActivities = () => {
               We work in various fields using our background to solve
               industrial, environmental challenges and various issues.
             </div>
-            <br/>
-            <ul>
+            <ul style={{ marginTop: "1em" }}>
               <QueueAnim type={["right"]} delay={300} duration={1000}>
                 {activitiesList1.map((text, i) => (
                   <li key={i} style={{ display: "flex" }}>
