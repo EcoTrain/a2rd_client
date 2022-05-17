@@ -26,7 +26,7 @@ const HomeActivities = () => {
   ];
 
   return (
-    <Layout className="section section-gray" id="homeActivities" ref={pageRef}>
+    <Layout className="section section-darkWhite" id="homeActivities" ref={pageRef}>
       <Content className="section-content">
         <div className="section-content-text center-block-800">
           <div className="font-title-h1 text-center">Our activities</div>
@@ -48,6 +48,9 @@ const HomeActivities = () => {
               </QueueAnim>
             </ul>
           </ScrollOverPack>
+        </div>
+        <div className="section-content-img">
+          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
         </div>
       </Content>
     </Layout>

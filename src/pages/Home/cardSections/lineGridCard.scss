@@ -7,7 +7,7 @@
             content: "";
             height: 50%;
             width: 1px;
-            background: var(--lightGray);
+            background: var(--coldGray);
         }
     }
 }
@@ -19,8 +19,8 @@
         &:after {
             content: "";
             width: 50%;
-            height: 1px;
-            background: var(--lightGray);
+            height: 0.1px;
+            background: var(--coldGray);
         }
         .lineGridCard {
             min-height: unset;
@@ -34,6 +34,9 @@
                     height: 100%;
                     width: 100%;
                 }
+            }
+            .lineGridViewLeft {
+                align-items: flex-start;
             }
         }
     }

@@ -1,7 +1,7 @@
 #homeContacts {
     background-color: var(--primary);
     a {
-        color: white;
+        color: var(--white);
     }
     #contactsIcons {
         display: flex;
@@ -13,7 +13,7 @@
             height: 3em;
             width: 3em;
             svg {
-                fill: white;
+                fill: var(--white);
             }
         }
     }

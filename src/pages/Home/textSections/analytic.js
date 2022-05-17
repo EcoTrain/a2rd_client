@@ -13,7 +13,7 @@ const HomeAnalytic = () => {
   const pageRef = useRef();
   return (
     <Layout
-      className="section section-gray"
+      className="section section-darkWhite"
       id="homeActivities"
       ref={pageRef}
     >
@@ -36,6 +36,9 @@ const HomeAnalytic = () => {
               publications).
             </TextyAnim>
           </ScrollOverPack>
+        </div>
+        <div className="section-content-img">
+          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
         </div>
       </Content>
     </Layout>

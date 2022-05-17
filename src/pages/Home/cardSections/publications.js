@@ -31,7 +31,7 @@ const HomePublications = () => {
         <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
           Our publications
         </div>
-        <div className="text-center">
+        <div className="text-center" style={{ margin: "0px 2em" }}>
           At the A2 Research and Development lab, we are open to collaborating
           with investment companies and the research community, so some of our
           study results have already been published in scientific journals.
@@ -70,28 +70,27 @@ const renderCard = (info, i) => {
       ref={cardRef}
       onMouseLeave={onUnHover}
     >
-      <div className="gridCard lineGridCard" onMouseEnter={onHover}>
+      <div
+        className="gridCard lineGridCard"
+        onMouseEnter={onHover}
+      >
         <div className="lineGridCardIcon">
           <a href={info.icon.link} target="_blank" rel="noreferrer">
             <img src={info.icon.src} alt={info.icon.alt} />
           </a>
         </div>
 
-        <div className="gridCardView">
-          <div
-            className="font-title-h3 text-center"
-            style={{ textAlign: "left" }}
-          >
+        <div className="gridCardView lineGridViewLeft">
+          <div className="font-title-h3" style={{ textAlign: "left" }}>
             {info.title}
           </div>
-          <div className="description">{info.smallText}</div>
           {hover && (
-            <div className="gridCardViewLinks">
+            <div className="gridCardViewLinkBtns">
               {info.links &&
                 info.links.map((x, i) => (
                   <button
                     key={i}
-                    className="gridCardViewLink"
+                    className="gridCardViewLinkBtn"
                     onClick={() => (window.location.href = x.link)}
                   >
                     {x.title}

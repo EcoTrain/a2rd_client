@@ -9,7 +9,8 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    font-size: calcFluidFontSize(18, 20, 480, 1280);
+    // font-size: calcFluidFontSize(14, 16, 480, 1280);
+    font-size: calcFluidFontSize(16, 18, 480, 1280);
 }
 
 .font-title-large {
@@ -63,7 +64,7 @@ h4,
 }
 
 .font-text-big {
-    font-size: calcFluidFontSize(1.2, 1.4, 480, 1280, em);
+    font-size: calcFluidFontSize(1.1, 1.3, 480, 1280, em);
     & > * {
         font-size: calcFluidFontSize(1.4, 1.6, 480, 1280, em);
     }

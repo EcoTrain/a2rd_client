@@ -38,7 +38,7 @@ const HomeProjects = () => {
             delay={300}
             interval={10}
             className="text-center"
-            style={{ margin: "0 3em" }}
+            style={{ margin: "0 2em" }}
           >
             At the A2 Research and Development lab, we provide analytics,
             cutting-edge reviews, and models to optimize the operating companies
@@ -95,7 +95,7 @@ const renderCard = (info, i) => {
             <div className="font-title-h3 text-center">{info.title}</div>
             <div className="description">{info.text}</div>
             <button
-              className="gridCardViewLink"
+              className="gridCardViewLinkBtn"
               onClick={() =>
                 (window.location.href = `${process.env.REACT_APP_URL}/projects/${info.id}`)
               }

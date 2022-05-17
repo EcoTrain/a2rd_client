@@ -1,12 +1,18 @@
 :root {
     --primary: #336666;
     --white: #f4f4f4;
-    --lightGray: rgba(180, 180, 180);
-    --lightGrayTransparent: rgba(180, 180, 180, 0.8);
-    --gray: rgba(120, 120, 120);
-    --grayTransparent: rgba(120, 120, 120, 0.8);
-    --darkGray: rgb(80, 80, 80);
-    --darkGrayTransparent: rgb(80, 80, 80, 0.8);
+    --darkWhite: rgba(230, 230, 230);
+    --darkWhiteTransparent: rgba(230, 230, 230, 0.8);
+    --lightGray: rgba(210, 210, 210);
+    --lightGrayTransparent: rgba(210, 210, 210, 0.8);
+    --coldGray: rgba(170, 170, 170);
+    --coldGrayTransparent: rgba(170, 170, 170, 0.8);
+    --gray: rgba(130, 130, 130);
+    --grayTransparent: rgba(130, 130, 113070, 0.8);
+    --darkGray: rgb(90, 90, 90);
+    --darkGrayTransparent: rgb(90, 90, 90, 0.8);
+    --coldBlack: rgb(40, 40, 40);
+    --coldBlackTransparent: rgb(40, 40, 40, 0.8);
 }
 
 html,

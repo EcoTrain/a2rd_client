@@ -47,7 +47,6 @@ const renderCard = (info, i) => {
 
   const onHover = () => {
     if (cardRef.current) {
-      console.log(cardRef.current.style);
       cardRef.current.style.background = info.bg;
     }
     setHover(true);
@@ -70,18 +69,15 @@ const renderCard = (info, i) => {
       onMouseLeave={onUnHover}
     >
       <div className="gridCard lineGridCard">
-        {!hover ? (
-          <div className="gridCardView">
-            <div className="font-title-h3 text-center">{info.title}</div>
-            <div className="description">{info.smallText}</div>
+        <div className="gridCardView">
+          <div className="gridCardViewTitle font-title-h3 text-center ">
+            {info.title}
           </div>
-        ) : (
-          <div className="gridCardView">
-            <div className="font-title-h3 text-center">{info.title}</div>
-            <div className="description">{info.smallText}</div>
-            <div className="gridCardViewLinks">
+          <div className="description">{info.smallText}</div>
+          {hover && (
+            <div className="gridCardViewLinkBtns">
               <button
-                className="gridCardViewLink"
+                className="gridCardViewLinkBtn"
                 onClick={() =>
                   (window.location.href = `${process.env.REACT_APP_URL}/startups/${info.id}`)
                 }
@@ -92,15 +88,15 @@ const renderCard = (info, i) => {
                 info.links.map((x, i) => (
                   <button
                     key={i}
-                    className="gridCardViewLink"
+                    className="gridCardViewLinkBtn"
                     onClick={() => (window.location.href = x.link)}
                   >
                     {x.title}
                   </button>
                 ))}
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
