@@ -12,11 +12,10 @@ const AboutDescription = () => {
       <div className="font-title-h1 text-center">About Us</div>
       <div className="font-text-big description">
         We are motivated by more than the simple pursuit of business success. We
-        aim to make the world sustainable and better than it was before. At the
-        A2 Research and Development lab, we are open to collaborating with
-        investment companies and the research community, so some of our study
-        results have already been published in scientific journals. Others are
-        submitted for peer review.
+        aim to make the world sustainable and better than it was before. We aim
+        to improve the lives of millions of people worldwide and make the
+        process of following/conducting therapy more comfortable for both
+        patients and doctors.
       </div>
     </div>
   );

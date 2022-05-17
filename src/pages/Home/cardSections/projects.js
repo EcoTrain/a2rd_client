@@ -64,15 +64,12 @@ const renderCard = (info, i) => {
 
   const onHover = () => {
     cardRef.current.style.background = info.bg;
-    cardRef.current.style.minWidth = "300px";
-    cardRef.current.style.transition = "min-width 1.5s linear;";
     cardRef.current.style.color = "black";
     setHover(true);
   };
 
   const onUnHover = () => {
     cardRef.current.style.background = `url(${info.icon})  no-repeat center center / cover`;
-    cardRef.current.style.minWidth = "150px";
     cardRef.current.style.color = info.color;
     setHover(false);
   };
@@ -91,14 +88,11 @@ const renderCard = (info, i) => {
       >
         {!hover ? (
           <div className="gridCardPreview">
-            {/* <div className="gridCardImg">
-              <img src={info.icon} />
-            </div> */}
-            <div className="font-title-h1">{info.title}</div>
+            <div className="font-title-h1 text-center">{info.title}</div>
           </div>
         ) : (
           <div className="gridCardView">
-            <div className="font-title-h3">{info.title}</div>
+            <div className="font-title-h3 text-center">{info.title}</div>
             <div className="description">{info.text}</div>
             <button
               className="gridCardViewLink"

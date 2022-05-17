@@ -23,14 +23,6 @@
                 text-align: center;
                 width: 100%;
                 min-height: 150px;
-                .gridCardImg {
-                    height: 5em;
-                    width: 5em;
-                    img {
-                        height: 100%;
-                        width: 100%;
-                    }
-                }
             }
             .gridCardView {
                 display: flex;
@@ -69,9 +61,6 @@
                     flex-direction: row;
                     width: 100%;
                     justify-content: left;
-                    .gridCardImg {
-                        margin-right: 1em;
-                    }
                 }
             }
         }
