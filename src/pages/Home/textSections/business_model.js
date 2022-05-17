@@ -29,7 +29,7 @@ const HomeBusinessModel = () => {
               type="bottom"
               split={splitTextByWords}
               delay={0}
-              interval={10}
+              interval={5}
             >
               The basis of the business model is the expansion of the network of
               partners, providing the exchange of analytical materials and data

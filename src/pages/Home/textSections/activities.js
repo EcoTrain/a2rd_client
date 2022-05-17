@@ -36,7 +36,7 @@ const HomeActivities = () => {
               industrial, environmental challenges and various issues.
             </div>
             <ul style={{ marginTop: "1em" }}>
-              <QueueAnim type={["right"]} delay={300} duration={1000}>
+              <QueueAnim type={["right"]}>
                 {activitiesList1.map((text, i) => (
                   <li key={i} style={{ display: "flex" }}>
                     <div className="icon">

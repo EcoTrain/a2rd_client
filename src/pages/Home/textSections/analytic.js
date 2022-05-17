@@ -26,7 +26,7 @@ const HomeAnalytic = () => {
               type="bottom"
               split={splitTextByWords}
               delay={0}
-              interval={10}
+              interval={5}
             >
               Our analytics, cutting edge reviews and models are in demand by
               companies from the energy, industrial, medical, financial,
