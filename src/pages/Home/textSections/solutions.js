@@ -30,12 +30,15 @@ const HomeSolutions = () => {
   ];
 
   return (
-    <Layout
-      className="section section-white"
-      id="homeSolutions"
-      ref={pageRef}
-    >
+    <Layout className="section section-white" id="homeSolutions" ref={pageRef}>
       <Content className="section-content">
+        <div className="section-content-img">
+          <img
+            src={
+              process.env.PUBLIC_URL + "/static/images/index/businessDeal.jpeg"
+            }
+          />
+        </div>
         <div className="section-content-text center-block-800">
           <div className="font-title-h1 text-center">Our solutions</div>
           <ScrollOverPack replay always={false} playScale={0}>

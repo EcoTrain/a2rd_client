@@ -12,20 +12,17 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const HomeBusinessModel = () => {
   const pageRef = useRef();
   return (
-    <Layout
-      className="section section-darkWhite"
-      id="homeBusinessModel"
-      ref={pageRef}
-    >
+    <Layout className="section" id="homeBusinessModel" ref={pageRef}>
       <Content className="section-content">
-        <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
-        </div>
-        <div className="section-content-text">
+        <div
+          className="section-content-img"
+          style={{ backgroung: "transparent" }}
+        ></div>
+        <div className="section-content-text  section-white">
           <div className="font-title-h1 text-center">Business model</div>
           <ScrollOverPack replay always={false} playScale={0}>
             <TextyAnim
-              className="description"
+              className="font-text-big description"
               type="bottom"
               split={splitTextByWords}
               delay={0}

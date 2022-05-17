@@ -50,7 +50,7 @@ const HomeActivities = () => {
           </ScrollOverPack>
         </div>
         <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
+          <img src={process.env.PUBLIC_URL + "/static/images/index/activities.jpeg"} />
         </div>
       </Content>
     </Layout>

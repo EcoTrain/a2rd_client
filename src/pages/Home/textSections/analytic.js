@@ -12,13 +12,9 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const HomeAnalytic = () => {
   const pageRef = useRef();
   return (
-    <Layout
-      className="section section-darkWhite"
-      id="homeActivities"
-      ref={pageRef}
-    >
+    <Layout className="section" id="homeActivities" ref={pageRef}>
       <Content className="section-content">
-        <div className="section-content-text center-block-800">
+        <div className="section-content-text section-darkWhite center-block-800">
           <div className="font-title-h1 text-center">Our analytic</div>
           <ScrollOverPack replay always={false} playScale={0}>
             <TextyAnim
@@ -37,9 +33,7 @@ const HomeAnalytic = () => {
             </TextyAnim>
           </ScrollOverPack>
         </div>
-        <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
-        </div>
+        <div className="section-content-img"></div>
       </Content>
     </Layout>
   );

@@ -19,6 +19,44 @@ const HomeFeedback = () => {
     event.preventDefault();
   };
 
+  const getForm = () => {
+    return (
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="feedbackEmail">
+          Your email:
+          <input
+            type="email"
+            name="email"
+            id="feedbackEmail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
+        <label htmlFor="feedbackName">
+          Your name:
+          <input
+            type="name"
+            name="name"
+            id="feedbackName"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <label htmlFor="feedbackText">
+          Your question:
+          <textarea
+            type="text"
+            name="text"
+            id="feedbackText"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  };
+
   return (
     <Layout
       className="section section-darkWhite"
@@ -27,7 +65,9 @@ const HomeFeedback = () => {
     >
       <Content className="section-content">
         <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
+          <img
+            src={process.env.PUBLIC_URL + "/static/images/index/feedback5.jpeg"}
+          />
         </div>
         <div className="section-content-text">
           <div className="font-title-h1 text-center">Feedback</div>
@@ -36,39 +76,7 @@ const HomeFeedback = () => {
               Please fill out the form to ask questions or discuss a possible
               collaboration. We will reply as soon as possible
             </div>
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="feedbackEmail">
-                Your email:
-                <input
-                  type="email"
-                  name="email"
-                  id="feedbackEmail"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </label>
-              <label htmlFor="feedbackName">
-                Your name:
-                <input
-                  type="name"
-                  name="name"
-                  id="feedbackName"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </label>
-              <label htmlFor="feedbackText">
-                Your question:
-                <textarea
-                  type="text"
-                  name="text"
-                  id="feedbackText"
-                  value={text}
-                  onChange={(e) => setText(e.target.value)}
-                />
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
+            {getForm()}
           </QueueAnim>
         </div>
       </Content>
