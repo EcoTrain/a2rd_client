@@ -8,6 +8,7 @@
             flex-direction: column;
             cursor: pointer;
             input {
+                height: 1.5rem;
                 border-radius: 0.3em;
                 padding: 0.2em 0.5em;
                 border: none;
@@ -17,8 +18,9 @@
                 border-radius: 0.3em;
                 border: none;
                 outline: none;
-                min-height: 10em;
-                max-height: 30vh;
+                min-height: 2em;
+                max-height: 4em;
+                resize: none;
                 padding: 0.2em 0.5em;
             }
         }

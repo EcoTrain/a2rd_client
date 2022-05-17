@@ -14,7 +14,7 @@ const HomeAnalytic = () => {
   return (
     <Layout className="section" id="homeActivities" ref={pageRef}>
       <Content className="section-content">
-        <div className="section-content-text section-darkWhite center-block-800">
+        <div className="section-content-text section-darkWhite">
           <div className="font-title-h1 text-center">Our analytic</div>
           <ScrollOverPack replay always={false} playScale={0}>
             <TextyAnim

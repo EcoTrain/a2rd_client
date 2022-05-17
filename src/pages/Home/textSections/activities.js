@@ -26,9 +26,13 @@ const HomeActivities = () => {
   ];
 
   return (
-    <Layout className="section section-darkWhite" id="homeActivities" ref={pageRef}>
+    <Layout
+      className="section section-darkWhite"
+      id="homeActivities"
+      ref={pageRef}
+    >
       <Content className="section-content">
-        <div className="section-content-text center-block-800">
+        <div className="section-content-text">
           <div className="font-title-h1 text-center">Our activities</div>
           <ScrollOverPack replay always={false} playScale={0}>
             <div className="font-text-big description">
@@ -50,7 +54,11 @@ const HomeActivities = () => {
           </ScrollOverPack>
         </div>
         <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/index/activities.jpeg"} />
+          <img
+            src={
+              process.env.PUBLIC_URL + "/static/images/index/activities.jpeg"
+            }
+          />
         </div>
       </Content>
     </Layout>
