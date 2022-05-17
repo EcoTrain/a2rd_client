@@ -1,29 +1,53 @@
-.lineGridCardsView {
-    position: absolute;
-    top: 0;
+.lineGridCardsViewRow {
     flex-wrap: nowrap;
     .lineGridCardWrapper {
+        position: relative;
         height: 100vh;
+        &:after {
+            content: "";
+            height: 50%;
+            width: 1px;
+            background: var(--lightGray);
+        }
+    }
+}
+.lineGridCardsViewColumn {
+    flex-direction: column;
+    .lineGridCardWrapper {
+        width: 100vw;
+        flex-direction: column;
+        &:after {
+            content: "";
+            width: 50%;
+            height: 1px;
+            background: var(--lightGray);
+        }
         .lineGridCard {
             min-height: unset;
-            border-left: 1px solid lightgray;
-            .lineGridCardPreview {
-                flex-direction: column;
+            .lineGridCardIcon {
+                height: 100%;
+                width: max-content;
+                max-width: 150px;
+                max-height: 150px;
+                margin: 0 1em;
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
             }
         }
     }
 }
 
 @media screen and (max-width: 640px) {
-    .lineGridCardsView {
-        position: relative;
+    .lineGridCardsViewRow {
+        position: relative !important;
         flex-direction: column;
         .lineGridCardWrapper {
             width: 100%;
             .lineGridCard {
                 border-left: none;
                 border-top: 1px solid lightgray;
-                // border-bottom: 1px solid lightgray;
             }
         }
     }

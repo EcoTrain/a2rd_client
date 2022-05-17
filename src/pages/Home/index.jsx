@@ -16,6 +16,7 @@ import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";
 import HomeSolutions from "./textSections/solutions";
 import HomeBusinessModel from "./textSections/business_model";
+import HomePublications from "./cardSections/publications";
 
 const Home = () => {
   return (
@@ -29,6 +30,7 @@ const Home = () => {
       <HomeProjects title="Projects" />
       <HomeStartups title="Startups" />
 
+      <HomePublications title="Publications" />
       <HomeSolutions title="Solutions" position={"sticky"} />
       <HomeBusinessModel title="Solutions" position={"sticky"} />
 

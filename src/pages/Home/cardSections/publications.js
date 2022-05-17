@@ -3,17 +3,21 @@ import ScrollAnim from "rc-scroll-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
-import { startupsCardsInfo } from "./cardsConfig";
+import { publicationsCardsInfo } from "./cardsConfig";
 
 import "./gridCard.scss";
 import "./lineGridCard.scss";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
-const HomeStartups = () => {
+const HomePublications = () => {
   const pageRef = useRef();
   return (
-    <Layout className="section section-white" id="homeStartups" ref={pageRef}>
+    <Layout
+      className="section section-lightGray"
+      id="homePublications"
+      ref={pageRef}
+    >
       <ScrollOverPack
         replay
         always={false}
@@ -25,16 +29,16 @@ const HomeStartups = () => {
         }}
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
-          Our startups
+          Our publications
         </div>
-        <div
-          className="gridCardsView lineGridCardsViewRow"
-          style={{
-            position: "absolute",
-            top: "0",
-          }}
-        >
-          {startupsCardsInfo.map((x, i) => renderCard(x, i))}
+        <div className="text-center">
+          At the A2 Research and Development lab, we are open to collaborating
+          with investment companies and the research community, so some of our
+          study results have already been published in scientific journals.
+          Others are submitted for peer review.
+        </div>
+        <div className="gridCardsView lineGridCardsViewColumn">
+          {publicationsCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
       </ScrollOverPack>
     </Layout>
@@ -47,7 +51,6 @@ const renderCard = (info, i) => {
 
   const onHover = () => {
     if (cardRef.current) {
-      console.log(cardRef.current.style);
       cardRef.current.style.background = info.bg;
     }
     setHover(true);
@@ -65,29 +68,25 @@ const renderCard = (info, i) => {
       key={i}
       className="gridCardWrapper lineGridCardWrapper"
       ref={cardRef}
-      // onMouseDown={hover ? onUnHover : onHover}
-      onMouseEnter={onHover}
       onMouseLeave={onUnHover}
     >
-      <div className="gridCard lineGridCard">
-        {!hover ? (
-          <div className="gridCardView">
-            <div className="font-title-h3 text-center">{info.title}</div>
-            <div className="description">{info.smallText}</div>
+      <div className="gridCard lineGridCard" onMouseEnter={onHover}>
+        <div className="lineGridCardIcon">
+          <a href={info.icon.link} target="_blank" rel="noreferrer">
+            <img src={info.icon.src} alt={info.icon.alt} />
+          </a>
+        </div>
+
+        <div className="gridCardView">
+          <div
+            className="font-title-h3 text-center"
+            style={{ textAlign: "left" }}
+          >
+            {info.title}
           </div>
-        ) : (
-          <div className="gridCardView">
-            <div className="font-title-h3 text-center">{info.title}</div>
-            <div className="description">{info.smallText}</div>
+          <div className="description">{info.smallText}</div>
+          {hover && (
             <div className="gridCardViewLinks">
-              <button
-                className="gridCardViewLink"
-                onClick={() =>
-                  (window.location.href = `${process.env.REACT_APP_URL}/startups/${info.id}`)
-                }
-              >
-                Read more
-              </button>
               {info.links &&
                 info.links.map((x, i) => (
                   <button
@@ -99,11 +98,11 @@ const renderCard = (info, i) => {
                   </button>
                 ))}
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
-export default HomeStartups;
+export default HomePublications;
