@@ -1,15 +1,10 @@
-@for $i from 1 through 10 {
+@for $i from 1 through 100 {
     .sectionPage:nth-child(#{$i}) {
         z-index: ($i);
     }
 }
 .sectionPageScroller {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
     .sectionPage {
-        // position: sticky;
         top: 0;
 
         .section {

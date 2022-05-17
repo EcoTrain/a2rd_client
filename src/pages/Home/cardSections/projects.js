@@ -5,7 +5,7 @@ import ScrollAnim from "rc-scroll-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
-import { projectsCardsInfo } from "../../ExtendedPages/projects";
+import { projectsCardsInfo } from "./cardsConfig";
 
 import "./gridCard.scss";
 import { splitTextByWords } from "../../../fucntions/splitText";
