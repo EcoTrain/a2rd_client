@@ -13,7 +13,7 @@ const HomeBusinessModel = () => {
   const pageRef = useRef();
   return (
     <Layout
-      className="section section-lightGray"
+      className="section section-darkWhite"
       id="homeBusinessModel"
       ref={pageRef}
     >

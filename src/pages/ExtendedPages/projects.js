@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
@@ -44,16 +44,14 @@ const Project = ({ item }) => {
     },
   };
 
-  const pageRef = useRef();
   return (
     <Layout
       id={item.id}
       className="section section-lightGray"
-      ref={pageRef}
-      style={{ position: "sticky", top: 0, background: item.bg }}
+      style={{ background: item.bg }}
     >
       <Content className="section-content">
-        <div className="section-content-text">
+        <div className="section-content-text center-block-1200">
           <div className="font-title-h1 text-center">{item.title}</div>
           <ScrollOverPack replay always={false} playScale={0}>
             <TextyAnim
@@ -77,7 +75,7 @@ const Project = ({ item }) => {
           </ScrollOverPack>
         </div>
         <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
+          <img src={item.icon} />
         </div>
       </Content>
     </Layout>

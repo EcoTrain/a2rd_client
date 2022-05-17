@@ -54,7 +54,7 @@ const Startup = ({ item }) => {
       style={{ position: "sticky", top: 0, background: item.bg }}
     >
       <Content className="section-content">
-        <div className="section-content-text">
+        <div className="section-content-text center-block-1200">
           <div className="font-title-h1 text-center">{item.title}</div>
           <ScrollOverPack replay always={false} playScale={0}>
             <TextyAnim

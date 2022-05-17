@@ -7,15 +7,15 @@ import "./contacts.scss";
 const ContactsLinks = () => {
   return (
     <div key="ContactsLinks" id="contactsLinks">
-      <div className="font-text-big">
+      <div className="font-text-large">
         <a href="https://t.me/a2_development" target="_blank" rel="noreferrer">
           +33 6 19 20 31 25
         </a>
       </div>
-      <div className="font-text-big">
+      <div className="font-text-large">
         <a href="mailto:info@a2rd.com">info@a2rd.com</a>
       </div>
-      <div className="font-text-big">
+      <div className="font-text-large">
         <a href="https://t.me/a2_development" target="_blank" rel="noreferrer">
           @a2_development
         </a>

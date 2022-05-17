@@ -21,7 +21,7 @@ const HomeFeedback = () => {
 
   return (
     <Layout
-      className="section section-lightGray"
+      className="section section-darkWhite"
       id="homeFeedback"
       ref={pageRef}
     >

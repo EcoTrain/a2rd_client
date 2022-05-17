@@ -14,7 +14,7 @@ const HomePublications = () => {
   const pageRef = useRef();
   return (
     <Layout
-      className="section section-lightGray"
+      className="section section-darkWhite"
       id="homePublications"
       ref={pageRef}
     >
