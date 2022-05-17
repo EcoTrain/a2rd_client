@@ -10,7 +10,7 @@ const AboutDescription = () => {
   return (
     <div key="aboutDescription" className="section-content-text">
       <div className="font-title-h1 text-center">About Us</div>
-      <div className="font-text-big description">
+      <div className="font-text-large description">
         We are motivated by more than the simple pursuit of business success. We
         aim to make the world sustainable and better than it was before. We aim
         to improve the lives of millions of people worldwide and make the

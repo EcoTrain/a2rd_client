@@ -12,16 +12,17 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const HomeSolutions = () => {
   const pageRef = useRef();
   return (
-    <Layout className="section section-lightGray" id="homeSolutions" ref={pageRef}>
+    <Layout
+      className="section section-lightGray"
+      id="homeSolutions"
+      ref={pageRef}
+    >
       <Content className="section-content">
-        <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
-        </div>
-        <div className="section-content-text">
+        <div className="section-content-text center-block-800">
           <div className="font-title-h1 text-center">Our solutions</div>
           <ScrollOverPack replay always={false} playScale={0}>
             <TextyAnim
-              className="description"
+              className="font-text-big description"
               type="bottom"
               split={splitTextByWords}
               delay={0}
@@ -32,7 +33,7 @@ const HomeSolutions = () => {
               partners from various sectors.
             </TextyAnim>
             <TextyAnim
-              className="description"
+              className="font-text-big description"
               type="bottom"
               split={splitTextByWords}
               delay={0}

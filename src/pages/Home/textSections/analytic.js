@@ -18,14 +18,11 @@ const HomeAnalytic = () => {
       ref={pageRef}
     >
       <Content className="section-content">
-        <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
-        </div>
-        <div className="section-content-text">
+        <div className="section-content-text center-block-800">
           <div className="font-title-h1 text-center">Our analytic</div>
           <ScrollOverPack replay always={false} playScale={0}>
             <TextyAnim
-              className="description"
+              className="font-text-big description "
               type="bottom"
               split={splitTextByWords}
               delay={0}

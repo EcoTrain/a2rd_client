@@ -28,25 +28,22 @@ const HomeActivities = () => {
   return (
     <Layout className="section section-gray" id="homeActivities" ref={pageRef}>
       <Content className="section-content">
-        <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
-        </div>
-        <div className="section-content-text">
+        <div className="section-content-text center-block-800">
           <div className="font-title-h1 text-center">Our activities</div>
           <ScrollOverPack replay always={false} playScale={0}>
-            <div key={"activities_description"} className="description">
+            <div className="font-text-big description">
               We work in various fields using our background to solve
               industrial, environmental challenges and various issues.
             </div>
-            <div key={"activities_title"}>Our activities:</div>
-            <ul key={"activities_list"}>
+            <br/>
+            <ul>
               <QueueAnim type={["right"]} delay={300} duration={1000}>
                 {activitiesList1.map((text, i) => (
                   <li key={i} style={{ display: "flex" }}>
                     <div className="icon">
                       <CheckOutlined />
                     </div>
-                    <div>{text}</div>
+                    <div className="font-text-big">{text}</div>
                   </li>
                 ))}
               </QueueAnim>

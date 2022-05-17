@@ -55,8 +55,15 @@ h4,
     }
 }
 
-.font-text-big {
+.font-text-large {
     font-size: calcFluidFontSize(1.4, 1.6, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(1.4, 1.6, 480, 1280, em);
+    }
+}
+
+.font-text-big {
+    font-size: calcFluidFontSize(1.2, 1.4, 480, 1280, em);
     & > * {
         font-size: calcFluidFontSize(1.4, 1.6, 480, 1280, em);
     }
@@ -71,6 +78,11 @@ h4,
 
 .text-center {
     text-align: center;
+}
+
+.center-block-800 {
+    max-width: 800px;
+    margin: auto;
 }
 
 .description {
