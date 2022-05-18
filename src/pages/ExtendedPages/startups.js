@@ -55,18 +55,20 @@ const Startup = ({ item }) => {
     >
       <Content className="section-content">
         <div className="section-content-text center-block-1200">
-          <div className="font-title-h1 text-center">{item.title}</div>
-          <ScrollOverPack replay always={false} playScale={0}>
-            <TextyAnim
-              className="description"
-              type="bottom"
-              split={splitTextByWords}
-              delay={0}
-              interval={10}
-            >
-              {item.text}
-            </TextyAnim>
-          </ScrollOverPack>
+          <div className="section-text-block">
+            <div className="font-title-h1 text-center">{item.title}</div>
+            <ScrollOverPack replay always={false} playScale={0}>
+              <TextyAnim
+                className="description"
+                type="bottom"
+                split={splitTextByWords}
+                delay={0}
+                interval={10}
+              >
+                {item.text}
+              </TextyAnim>
+            </ScrollOverPack>
+          </div>
         </div>
         {/* <div className="section-content-img">
           <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />

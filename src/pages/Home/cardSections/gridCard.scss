@@ -3,12 +3,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
     .gridCardWrapper {
         flex-grow: 1;
         flex-basis: 50%;
         display: flex;
-        align-items: center;
+        // align-items: center;
         .gridCard {
             width: 100%;
             min-height: 50vh;

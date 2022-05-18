@@ -20,16 +20,10 @@ const HomeStartups = () => {
         playScale={0}
         className="fullscreen-column-block"
       >
-        <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
+        <div className="font-title-h1 text-center" style={{ marginTop: "5%" }}>
           Our startups
         </div>
-        <div
-          className="gridCardsView lineGridCardsViewRow"
-          style={{
-            position: "absolute",
-            top: "0",
-          }}
-        >
+        <div className="gridCardsView lineGridCardsViewRow">
           {startupsCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
       </ScrollOverPack>
@@ -69,7 +63,11 @@ const renderCard = (info, i) => {
           <div className="gridCardViewTitle font-title-h3 text-center ">
             {info.title}
           </div>
-          <div className="description">{info.smallText}</div>
+          {hover ? (
+            <div className="description">{info.smallText}</div>
+          ) : (
+            <div className="description">{info.previewText}</div>
+          )}
           {hover && (
             <div className="gridCardViewLinkBtns">
               <button
