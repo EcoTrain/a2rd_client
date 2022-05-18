@@ -18,13 +18,9 @@ const HomeProjects = () => {
       <ScrollOverPack replay always={false} playScale={0}>
         <QueueAnim
           type={["left", "right"]}
-          style={{
-            minHeight: "100vh",
-            display: "flex",
-            flexDirection: "column",
-          }}
           delay={300}
           duration={1000}
+          className="fullscreen-column-block"
         >
           <div
             className="font-title-h1 text-center"

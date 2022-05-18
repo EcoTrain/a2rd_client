@@ -18,11 +18,7 @@ const HomeStartups = () => {
         replay
         always={false}
         playScale={0}
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-        }}
+        className="fullscreen-column-block"
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
           Our startups

@@ -22,11 +22,7 @@ const HomePublications = () => {
         replay
         always={false}
         playScale={0}
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-        }}
+        className="fullscreen-column-block"
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
           Our publications
@@ -70,10 +66,7 @@ const renderCard = (info, i) => {
       ref={cardRef}
       onMouseLeave={onUnHover}
     >
-      <div
-        className="gridCard lineGridCard"
-        onMouseEnter={onHover}
-      >
+      <div className="gridCard lineGridCard" onMouseEnter={onHover}>
         <div className="lineGridCardIcon">
           <a href={info.icon.link} target="_blank" rel="noreferrer">
             <img src={info.icon.src} alt={info.icon.alt} />
