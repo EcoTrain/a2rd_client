@@ -62,7 +62,11 @@ const HomeFeedback = () => {
       <Content className="section-content">
         <div className="section-content-text section-darkWhite">
           <div className="font-title-h1 text-center">Feedback</div>
-          <QueueAnim type={["left", "right"]} id="feedback">
+          <QueueAnim
+            type={["left", "right"]}
+            id="feedback"
+            className="section-text-block"
+          >
             <div className="description">
               Please fill out the form to ask questions or discuss a possible
               collaboration. We will reply as soon as possible

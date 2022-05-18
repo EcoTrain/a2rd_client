@@ -80,6 +80,7 @@ const renderCard = (info, i) => {
         style={{
           background: `url(${info.icon})  no-repeat center center / cover`,
           color: info.color,
+          minHeight: "50vh",
         }}
       >
         {!hover ? (

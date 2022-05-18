@@ -28,17 +28,24 @@ const HomeTextPage = ({ title, texts, img, sectionTheme, direction }) => {
   );
 
   const getImage = () => (
-    <div className="section-content-img">{img && <img src={img} />}</div>
+    <div key={`${title.toLowerCase()}_image`} className="section-content-img">
+      {img && <img src={img} />}
+    </div>
   );
 
   const getContent = () => (
-    <div className={`section-content-text  ${sectionTheme}`}>
-      <div className="font-title-h1 text-center">{title}</div>
-      <ScrollOverPack replay always={false} playScale={0}>
-        {texts.map((x, i) => (
-          <div key={i}>{getTextAnim(x, i)}</div>
-        ))}
-      </ScrollOverPack>
+    <div
+      key={`${title.toLowerCase()}_content`}
+      className={`section-content-text  ${sectionTheme}`}
+    >
+      <div className="section-text-block">
+        <div className="font-title-h1 text-center">{title}</div>
+        <ScrollOverPack replay always={false} playScale={0}>
+          {texts.map((x, i) => (
+            <div key={i}>{getTextAnim(x, i)}</div>
+          ))}
+        </ScrollOverPack>
+      </div>
     </div>
   );
 

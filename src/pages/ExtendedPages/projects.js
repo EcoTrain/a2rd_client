@@ -51,28 +51,30 @@ const Project = ({ item }) => {
       style={{ background: item.bg }}
     >
       <Content className="section-content">
-        <div className="section-content-text center-block-1200">
-          <div className="font-title-h1 text-center">{item.title}</div>
-          <ScrollOverPack replay always={false} playScale={0}>
-            <TextyAnim
-              className="description"
-              type="bottom"
-              split={splitTextByWords}
-              delay={0}
-              interval={10}
-            >
-              {item.text}
-            </TextyAnim>
-            <TextyAnim
-              className="description font-text-small"
-              type="bottom"
-              split={splitTextByWords}
-              delay={0}
-              interval={10}
-            >
-              {item.note}
-            </TextyAnim>
-          </ScrollOverPack>
+        <div className="section-content-text">
+          <div className="section-text-block">
+            <div className="font-title-h1 text-center">{item.title}</div>
+            <ScrollOverPack replay always={false} playScale={0}>
+              <TextyAnim
+                className="description"
+                type="bottom"
+                split={splitTextByWords}
+                delay={0}
+                interval={10}
+              >
+                {item.text}
+              </TextyAnim>
+              <TextyAnim
+                className="description font-text-small"
+                type="bottom"
+                split={splitTextByWords}
+                delay={0}
+                interval={10}
+              >
+                {item.note}
+              </TextyAnim>
+            </ScrollOverPack>
+          </div>
         </div>
         <div className="section-content-img">
           <img src={item.icon} />

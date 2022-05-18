@@ -8,7 +8,11 @@
     }
 }
 .sectionPageScroller {
+    // height: 100vh;
+    // scroll-snap-type: y mandatory;
+    // overflow-y: scroll;
     .sectionPage {
+        // scroll-snap-align: start;
         top: 0;
 
         .section {
@@ -20,9 +24,6 @@
             .section-content {
                 display: flex;
                 flex-wrap: wrap;
-
-                max-height: 100vh;
-                overflow: scroll;
 
                 .section-content-text {
                     flex-grow: 1;
@@ -78,16 +79,24 @@
     color: var(--white);
 }
 
-@media screen and (max-width: 960px) {
+@media (max-width: 960px) {
     .sectionPage {
         .section {
             .section-content {
                 flex-direction: column;
                 .section-content-text {
                     order: 1;
+                    max-height: 80vh;
+                    overflow: scroll;
+                    justify-content: flex-start !important;
+                    & > * {
+                        margin: auto;
+                    }
                 }
                 .section-content-img {
+                    min-height: 20vh;
                     max-height: 20vh;
+                    width: 100vw;
                 }
             }
         }

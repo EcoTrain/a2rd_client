@@ -26,13 +26,13 @@ const Header = () => {
     label: `${item.label}`,
   }));
 
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
+  useScrollPosition({
+    effect: ({ prevPos, currPos }) => {
       const isHide = currPos.y < prevPos.y;
       if (isHide !== hide) setHide(isHide);
     },
-    [hide]
-  );
+    deps: [hide],
+  });
 
   const handleResize = () => {
     setLogo(window.innerWidth < 920 ? logoMin : logoMax);

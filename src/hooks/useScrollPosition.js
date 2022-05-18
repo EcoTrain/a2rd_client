@@ -13,7 +13,7 @@ function getScrollPosition({ element, useWindow }) {
     : { x: position.left, y: position.top };
 }
 
-export function useScrollPosition(effect, deps, element, useWindow, wait) {
+export function useScrollPosition({ effect, deps, element, useWindow, wait }) {
   const position = useRef(getScrollPosition({ useWindow }));
 
   let throttleTimeout = null;
@@ -42,3 +42,15 @@ export function useScrollPosition(effect, deps, element, useWindow, wait) {
   }, deps);
 }
 
+export function useElementPosition({ effect, deps, element, useWindow, wait }) {
+  const handleScroll = () => {
+    console.log({ element });
+    element && effect(element.getBoundingClientRect());
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, deps);
+}

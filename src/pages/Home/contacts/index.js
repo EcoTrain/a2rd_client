@@ -64,7 +64,7 @@ const ContactsIcons = () => {
       </g>
     </svg>
   );
-  
+
   return (
     <div key="ContactsIcons" id="contactsIcons">
       <div className="contactIcon">
@@ -92,7 +92,11 @@ const HomeContacts = () => {
       <Content className="section-content">
         <div className="section-content-img"></div>
         <div className="section-content-text  section-darkWhite">
-          <QueueAnim type={["left", "right"]} id="feedback">
+          <QueueAnim
+            type={["left", "right"]}
+            id="contacts"
+            className="section-text-block"
+          >
             {ContactsLinks()}
             {ContactsIcons()}
           </QueueAnim>

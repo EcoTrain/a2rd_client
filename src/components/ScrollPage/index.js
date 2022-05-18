@@ -6,7 +6,10 @@ import { DownOutlined } from "@ant-design/icons";
 
 import "antd/dist/antd.min.css";
 import useOnScreen from "../../hooks/useOnScreen";
-import { useScrollPosition } from "../../hooks/useScrollPosition";
+import {
+  useElementPosition,
+  useScrollPosition,
+} from "../../hooks/useScrollPosition";
 
 import "./scroll.scss";
 
@@ -14,13 +17,6 @@ const PageScroller = ({ children }) => {
   PageScroller.propTypes = {
     children: PropTypes.array,
   };
-
-  const scrollDirection = useRef();
-
-  useScrollPosition(({ prevPos, currPos }) => {
-    const isScrollUp = currPos.y > prevPos.y;
-    scrollDirection.current = isScrollUp ? "up" : "down";
-  });
 
   return (
     <div className="sectionPageScroller">
@@ -42,13 +38,19 @@ const Page = ({ children, index }) => {
   const elemRef = useRef();
   const onScreen = useOnScreen({ ref: elemRef });
 
+  // useEffect(() => {
+  //   console.log("useEffect", onScreen, elemRef.current);
+  // }, [onScreen]);
+
   const getWrappedPage = () => {
     return (
       <div
         id={`section${index}`}
         className={"sectionPage"}
         ref={elemRef}
-        style={{ position: children.props.position || "relative" }}
+        style={{
+          position: children.props.position || "relative",
+        }}
       >
         {children}
       </div>

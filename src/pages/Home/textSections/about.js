@@ -9,13 +9,15 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const AboutDescription = () => {
   return (
     <div key="aboutDescription" className="section-content-text">
-      <div className="font-title-h1 text-center">About Us</div>
-      <div className="font-text-large description">
-        We are motivated by more than the simple pursuit of business success. We
-        aim to make the world sustainable and better than it was before. We aim
-        to improve the lives of millions of people worldwide and make the
-        process of following/conducting therapy more comfortable for both
-        patients and doctors.
+      <div className="section-text-block">
+        <div className="font-title-h1 text-center">About Us</div>
+        <div className="font-text-large description">
+          We are motivated by more than the simple pursuit of business success.
+          We aim to make the world sustainable and better than it was before. We
+          aim to improve the lives of millions of people worldwide and make the
+          process of following/conducting therapy more comfortable for both
+          patients and doctors.
+        </div>
       </div>
     </div>
   );
@@ -28,20 +30,22 @@ const AboutFounder = () => {
       key="aboutFounder"
       id="aboutFounder"
       className="section-content-text text-center"
-      style={{ marginTop: "1em" }}
+      style={{ margin: "1em 0" }}
     >
-      <img
-        className="avatar"
-        src={imgAlexey}
-        style={{ height: 100, width: 100, marginBottom: "1em" }}
-      />
-      <div className="founder-text">
-        <div>
-          With the highest consideration from the A2 Research and Development
-          lab
+      <div className="section-text-block">
+        <img
+          className="avatar"
+          src={imgAlexey}
+          style={{ height: 100, width: 100, marginBottom: "1em" }}
+        />
+        <div className="founder-text">
+          <div>
+            With the highest consideration from the A2 Research and Development
+            lab
+          </div>
+          <div>Aleksey A. ROMANOV</div>
+          <div>CEO, founder</div>
         </div>
-        <div>Aleksey A. ROMANOV</div>
-        <div>CEO, founder</div>
       </div>
     </div>
   );
