@@ -6,11 +6,8 @@ import { DownOutlined } from "@ant-design/icons";
 
 import "antd/dist/antd.min.css";
 import useOnScreen from "../../hooks/useOnScreen";
-import {
-  useElementPosition,
-  useScrollPosition,
-} from "../../hooks/useScrollPosition";
 
+import "./sections.scss";
 import "./scroll.scss";
 
 const PageScroller = ({ children }) => {
@@ -37,10 +34,6 @@ const Page = ({ children, index }) => {
 
   const elemRef = useRef();
   const onScreen = useOnScreen({ ref: elemRef });
-
-  // useEffect(() => {
-  //   console.log("useEffect", onScreen, elemRef.current);
-  // }, [onScreen]);
 
   const getWrappedPage = () => {
     return (

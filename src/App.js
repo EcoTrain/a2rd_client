@@ -11,9 +11,6 @@ import "./App.scss";
 import "./Text.scss";
 import Startups from "./pages/ExtendedPages/startups";
 
-console.log(process.env);
-console.log(`${process.env.REACT_APP_URL}/`);
-
 function App() {
   return (
     <Layout>

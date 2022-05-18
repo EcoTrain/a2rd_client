@@ -16,7 +16,6 @@ const ScrollOverPack = ScrollAnim.OverPack;
 
 const Projects = () => {
   const params = useParams();
-  console.log({ params });
 
   useEffect(() => {
     document.title = "A2RD Lab: Projects";

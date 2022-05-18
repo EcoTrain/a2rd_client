@@ -13,7 +13,7 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const HomeTextPage = ({ title, texts, img, sectionTheme, direction }) => {
   const pageRef = useRef();
 
-  console.log({ title, texts, img, sectionTheme, direction });
+  // console.log({ title, texts, img, sectionTheme, direction });
 
   const getTextAnim = (text, i) => (
     <TextyAnim

@@ -5,7 +5,6 @@ import HomePreview from "./preview";
 import HomeAbout from "./textSections/about";
 import PageScroller from "../../components/ScrollPage";
 
-import "../Base/sections.scss";
 import "./home.scss";
 
 import HomeTextPage from "./textSections/TextPage";
