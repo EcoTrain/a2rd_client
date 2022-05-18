@@ -36,15 +36,28 @@ const Startups = () => {
 
 const Startup = ({ item }) => {
   Startup.propTypes = {
-    item: {
+    item: () => ({
       id: PropTypes.string,
       title: PropTypes.string,
       smallText: PropTypes.string,
       text: PropTypes.string,
       bg: PropTypes.string,
-    },
+    }),
   };
   const pageRef = useRef();
+
+  const getTextAnim = (text, i) => (
+    <TextyAnim
+      className="font-text-big description"
+      type="bottom"
+      split={splitTextByWords}
+      delay={i * 300}
+      duration={300}
+      interval={10}
+    >
+      {text}
+    </TextyAnim>
+  );
 
   return (
     <Layout
@@ -58,15 +71,9 @@ const Startup = ({ item }) => {
           <div className="section-text-block">
             <div className="font-title-h1 text-center">{item.title}</div>
             <ScrollOverPack replay always={false} playScale={0}>
-              <TextyAnim
-                className="description"
-                type="bottom"
-                split={splitTextByWords}
-                delay={0}
-                interval={10}
-              >
-                {item.text}
-              </TextyAnim>
+              {item.texts.map((x, i) => (
+                <div key={i}>{getTextAnim(x, i)}</div>
+              ))}
             </ScrollOverPack>
           </div>
         </div>

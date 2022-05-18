@@ -61,12 +61,15 @@ const renderCard = (info, i) => {
   const onHover = () => {
     cardRef.current.style.background = info.bg;
     cardRef.current.style.color = "black";
+    cardRef.current.style.textShadow = "";
     setHover(true);
   };
 
   const onUnHover = () => {
     cardRef.current.style.background = `url(${info.icon})  no-repeat center center / cover`;
     cardRef.current.style.color = info.color;
+    cardRef.current.style.textShadow =
+      info.color == "white" && "0px 0px 0.2em var(--coldBlack)";
     setHover(false);
   };
 
@@ -80,7 +83,7 @@ const renderCard = (info, i) => {
         style={{
           background: `url(${info.icon})  no-repeat center center / cover`,
           color: info.color,
-          minHeight: "50vh",
+          textShadow: info.color == "white" && "0px 0px 0.2em var(--coldBlack)",
         }}
       >
         {!hover ? (

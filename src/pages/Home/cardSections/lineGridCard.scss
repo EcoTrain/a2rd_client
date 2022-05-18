@@ -9,6 +9,9 @@
             width: 1px;
             background: var(--coldGray);
         }
+        &:last-child:after {
+            content: none;
+        }
     }
 }
 .lineGridCardsViewColumn {
@@ -21,9 +24,13 @@
             width: 50%;
             height: 0.1px;
             background: var(--coldGray);
+            align-self: center;
+        }
+        &:last-child:after {
+            content: none;
         }
         .lineGridCard {
-            min-height: unset;
+            width: unset;
             .lineGridCardIcon {
                 height: 100%;
                 width: max-content;
@@ -42,15 +49,19 @@
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 920px) {
     .lineGridCardsViewRow {
-        flex-direction: column;
+        // flex-direction: column;
         align-items: stretch;
         .lineGridCardWrapper {
-            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            &:after {
+                width: 50%;
+                height: 1px;
+            }
             .lineGridCard {
-                border-left: none;
-                border-top: 1px solid lightgray;
+                flex: 1;
                 margin: 0;
             }
         }

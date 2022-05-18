@@ -20,7 +20,7 @@ const HomeTextPage = ({ title, texts, img, sectionTheme, direction }) => {
       className="font-text-big description"
       type="bottom"
       split={splitTextByWords}
-      delay={0}
+      delay={i * 300}
       interval={5}
     >
       {text}

@@ -56,7 +56,7 @@ const Project = ({ item }) => {
             <div className="font-title-h1 text-center">{item.title}</div>
             <ScrollOverPack replay always={false} playScale={0}>
               <TextyAnim
-                className="description"
+                className="description font-text-big"
                 type="bottom"
                 split={splitTextByWords}
                 delay={0}
@@ -65,7 +65,7 @@ const Project = ({ item }) => {
                 {item.text}
               </TextyAnim>
               <TextyAnim
-                className="description font-text-small"
+                className="description"
                 type="bottom"
                 split={splitTextByWords}
                 delay={0}
