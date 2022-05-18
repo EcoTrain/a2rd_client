@@ -18,7 +18,6 @@ const HomeProjects = () => {
       <ScrollOverPack replay always={false} playScale={0}>
         <QueueAnim
           type={["left", "right"]}
-          delay={300}
           duration={1000}
           className="fullscreen-column-block"
         >
@@ -31,7 +30,6 @@ const HomeProjects = () => {
           <TextyAnim
             type="mask-top"
             split={splitTextByWords}
-            delay={300}
             interval={10}
             className="text-center"
             style={{ margin: "0 2em" }}

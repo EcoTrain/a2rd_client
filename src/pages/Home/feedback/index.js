@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import QueueAnim from "rc-queue-anim";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
@@ -8,11 +8,22 @@ import "./feedback.scss";
 const { Content } = Layout;
 
 const HomeFeedback = () => {
+  const imgMin = process.env.PUBLIC_URL + "/static/images/index/sections/min/feedbackMin.jpeg";
+  const imgMax = process.env.PUBLIC_URL + "/static/images/index/sections/max/feedbackMax.jpeg";
   const pageRef = useRef();
 
+  const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [text, setText] = useState("");
+
+  const handleResize = () => {
+    setImg(window.innerWidth < 960 ? imgMin : imgMax);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return window.addEventListener("resize", null);
+  }, []);
 
   const handleSubmit = (event) => {
     alert("Feedback sent");
@@ -61,23 +72,19 @@ const HomeFeedback = () => {
     <Layout className="section" id="homeFeedback" ref={pageRef}>
       <Content className="section-content">
         <div className="section-content-text section-darkWhite">
-          <div className="font-title-h1 text-center">Feedback</div>
-          <QueueAnim
-            type={["left", "right"]}
-            id="feedback"
-            className="section-text-block"
-          >
-            <div className="description">
-              Please fill out the form to ask questions or discuss a possible
-              collaboration. We will reply as soon as possible
-            </div>
-            {getForm()}
-          </QueueAnim>
+          <div className="section-text-block">
+            <div className="font-title-h1 text-center">Feedback</div>
+            <QueueAnim type={["left", "right"]} id="feedback">
+              <div className="description">
+                Please fill out the form to ask questions or discuss a possible
+                collaboration. We will reply as soon as possible
+              </div>
+              {getForm()}
+            </QueueAnim>
+          </div>
         </div>
         <div className="section-content-img">
-          <img
-            src={process.env.PUBLIC_URL + "/static/images/index/feedback5.jpeg"}
-          />
+          <img src={img} />
         </div>
       </Content>
     </Layout>

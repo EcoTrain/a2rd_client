@@ -58,7 +58,6 @@ const Project = ({ item }) => {
                 className="description font-text-big"
                 type="bottom"
                 split={splitTextByWords}
-                delay={0}
                 interval={10}
               >
                 {item.text}
@@ -67,7 +66,6 @@ const Project = ({ item }) => {
                 className="description"
                 type="bottom"
                 split={splitTextByWords}
-                delay={0}
                 interval={10}
               >
                 {item.note}

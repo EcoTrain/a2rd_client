@@ -42,7 +42,7 @@ export function useScrollPosition({ effect, deps, element, useWindow, wait }) {
   }, deps);
 }
 
-export function useElementPosition({ effect, deps, element, useWindow, wait }) {
+export function useElementPosition({ effect, deps, element}) {
   const handleScroll = () => {
     // console.log({ element });
     element && effect(element.getBoundingClientRect());

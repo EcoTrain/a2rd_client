@@ -14,7 +14,7 @@ const Header = () => {
   const headerRef = useRef();
   const [hide, setHide] = useState(false);
   const [logo, setLogo] = useState(
-    window.screen.width < 920 ? logoMin : logoMax
+    window.screen.width < 960 ? logoMin : logoMax
   );
 
   const items = [
@@ -35,7 +35,7 @@ const Header = () => {
   });
 
   const handleResize = () => {
-    setLogo(window.innerWidth < 920 ? logoMin : logoMax);
+    setLogo(window.innerWidth < 960 ? logoMin : logoMax);
   };
   useEffect(() => {
     window.addEventListener("resize", handleResize);

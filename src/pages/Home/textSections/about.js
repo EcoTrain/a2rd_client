@@ -56,11 +56,7 @@ const HomeAbout = () => {
   return (
     <Layout className="section section-white" id="homeAbout" ref={pageRef}>
       <ScrollOverPack replay always={false} playScale={0}>
-        <QueueAnim
-          type={["bottom", "top"]}
-          className="section-content"
-          delay={200}
-        >
+        <QueueAnim type={["bottom", "top"]} className="section-content">
           {AboutDescription()}
           {AboutFounder()}
         </QueueAnim>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
@@ -10,10 +10,26 @@ import { splitTextByWords } from "../../../fucntions/splitText";
 const { Content } = Layout;
 const ScrollOverPack = ScrollAnim.OverPack;
 
-const HomeTextPage = ({ title, texts, img, sectionTheme, direction }) => {
+const HomeTextPage = ({
+  title,
+  texts,
+  imgMin,
+  imgMax,
+  sectionTheme,
+  direction,
+}) => {
+  const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
   const pageRef = useRef();
 
   // console.log({ title, texts, img, sectionTheme, direction });
+
+  const handleResize = () => {
+    setImg(window.innerWidth < 960 ? imgMin : imgMax);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return window.addEventListener("resize", null);
+  }, []);
 
   const getTextAnim = (text, i) => (
     <TextyAnim
@@ -63,7 +79,8 @@ const HomeTextPage = ({ title, texts, img, sectionTheme, direction }) => {
 HomeTextPage.propTypes = {
   title: PropTypes.string,
   texts: PropTypes.array,
-  img: PropTypes.string,
+  imgMin: PropTypes.string,
+  imgMax: PropTypes.string,
   sectionTheme: PropTypes.string,
   direction: PropTypes.string,
 };
@@ -71,7 +88,8 @@ HomeTextPage.propTypes = {
 HomeTextPage.defaultProps = {
   title: "",
   texts: [],
-  img: "",
+  imgMin: "",
+  imgMax: "",
   sectionTheme: "section-white",
   direction: "left",
 };

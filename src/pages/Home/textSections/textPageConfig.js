@@ -26,6 +26,7 @@ export const textPageConfig = {
       "The basis of the business model is the expansion of the network of partners, providing the exchange of analytical materials and data for the sustainable support of our customers (medical sector, insurance companies and banks, service, tourism, airlines).",
     ],
     direction: "right",
-    img: process.env.PUBLIC_URL + "/static/images/index/businessDeal.jpeg",
+    imgMax: process.env.PUBLIC_URL + "/static/images/index/sections/max/businessDealMax.jpeg",
+    imgMin: process.env.PUBLIC_URL + "/static/images/index/sections/min/businessDealMin.jpeg",
   },
 };

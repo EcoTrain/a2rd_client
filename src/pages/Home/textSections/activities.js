@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import QueueAnim from "rc-queue-anim";
 import ScrollAnim from "rc-scroll-anim";
 
@@ -10,6 +10,14 @@ const { Content } = Layout;
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeActivities = () => {
+  const imgMin =
+    process.env.PUBLIC_URL +
+    "/static/images/index/sections/min/activitiesMin.jpeg";
+  const imgMax =
+    process.env.PUBLIC_URL +
+    "/static/images/index/sections/max/activitiesMax.jpeg";
+  const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
+
   const pageRef = useRef();
 
   const activitiesList1 = [
@@ -21,6 +29,14 @@ const HomeActivities = () => {
     "Technology consulting",
     "App development",
   ];
+
+  const handleResize = () => {
+    setImg(window.innerWidth < 960 ? imgMin : imgMax);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return window.addEventListener("resize", null);
+  }, []);
 
   return (
     <Layout
@@ -53,11 +69,7 @@ const HomeActivities = () => {
           </div>
         </div>
         <div className="section-content-img">
-          <img
-            src={
-              process.env.PUBLIC_URL + "/static/images/index/activities.jpeg"
-            }
-          />
+          <img src={img} />
         </div>
       </Content>
     </Layout>
