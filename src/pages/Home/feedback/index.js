@@ -58,18 +58,14 @@ const HomeFeedback = () => {
   };
 
   return (
-    <Layout
-      className="section section-darkWhite"
-      id="homeFeedback"
-      ref={pageRef}
-    >
+    <Layout className="section" id="homeFeedback" ref={pageRef}>
       <Content className="section-content">
         <div className="section-content-img">
           <img
             src={process.env.PUBLIC_URL + "/static/images/index/feedback5.jpeg"}
           />
         </div>
-        <div className="section-content-text">
+        <div className="section-content-text section-darkWhite">
           <div className="font-title-h1 text-center">Feedback</div>
           <QueueAnim type={["left", "right"]} id="feedback">
             <div className="description">
