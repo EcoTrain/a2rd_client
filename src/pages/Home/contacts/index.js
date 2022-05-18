@@ -98,12 +98,6 @@ const HomeContacts = () => {
           </QueueAnim>
         </div>
       </Content>
-      {/* <QueueAnim type={["left", "right"]} className="section-content">
-        <div id="contactsContent" className="section-content-text text-center">
-          {ContactsLinks()}
-          {ContactsIcons()}
-        </div>
-      </QueueAnim> */}
     </Layout>
   );
 };

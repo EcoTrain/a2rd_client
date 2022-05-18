@@ -32,7 +32,6 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    min-width: 320px;
 
                     li {
                         .icon {
@@ -43,7 +42,9 @@
                 .section-content-img {
                     flex-grow: 1;
                     flex-basis: 50%;
+                    position: relative;
                     img {
+                        position: absolute;
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
@@ -77,16 +78,16 @@
     color: var(--white);
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 960px) {
     .sectionPage {
         .section {
             .section-content {
+                flex-direction: column;
                 .section-content-text {
                     order: 1;
-                    height: 80vh;
                 }
                 .section-content-img {
-                    height: 20vh;
+                    max-height: 20vh;
                 }
             }
         }

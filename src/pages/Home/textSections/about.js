@@ -28,6 +28,7 @@ const AboutFounder = () => {
       key="aboutFounder"
       id="aboutFounder"
       className="section-content-text text-center"
+      style={{ marginTop: "1em" }}
     >
       <img
         className="avatar"
