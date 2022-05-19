@@ -44,7 +44,10 @@ const HomeTextPage = ({
   );
 
   const getImage = () => (
-    <div key={`${title.toLowerCase()}_image`} className="section-content-img">
+    <div
+      key={`${(title || "").toLowerCase()}_image`}
+      className="section-content-img"
+    >
       {img && <img src={img} />}
     </div>
   );
