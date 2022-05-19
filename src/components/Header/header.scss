@@ -11,6 +11,7 @@
         background-color: var(--lightGrayTransparent);
         .headerLogo {
             padding: 10px;
+            min-width: 100px;
             svg {
                 height: 100%;
                 width: 100%;
@@ -19,16 +20,41 @@
         }
         .headerActions {
             display: flex;
-            flex-direction: row;
-            flex: 1;
-            justify-content: flex-end;
             width: 100%;
             margin: 0 20px;
+            max-width: 50vw;
             .headerMenu {
+                display: flex;
                 width: 100%;
                 background-color: initial;
                 justify-content: right;
+                flex-flow: row;
+                border: none;
             }
         }
+    }
+}
+
+.ant-menu {
+    transition: none;
+    li {
+        top: 0 !important;
+    }
+    .ant-menu-item-active {
+        background: var(--coldGray) !important;
+        &::after {
+            display: none !important;
+        }
+        // &:hover::before {
+        //     content: "";
+        //     position: absolute;
+        //     top: 0;
+        //     right: 20px;
+        //     left: 20px;
+        //     border-top: 4px solid var(--gray) !important;
+        // }
+        // &:hover::after {
+        //     border-bottom: 4px solid var(--gray) !important;
+        // }
     }
 }

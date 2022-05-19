@@ -56,18 +56,18 @@ const renderCard = (info, i) => {
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
+  const titleShadow = info.color == "white" && "0px 0px 0.2em black";
+  const bg = `url(${info.icon})  no-repeat center center / cover`;
+
   const onHover = () => {
     cardRef.current.style.background = info.bg;
-    cardRef.current.style.color = "black";
     cardRef.current.style.textShadow = "";
     setHover(true);
   };
 
   const onUnHover = () => {
-    cardRef.current.style.background = `url(${info.icon})  no-repeat center center / cover`;
-    cardRef.current.style.color = info.color;
-    cardRef.current.style.textShadow =
-      info.color == "white" && "0px 0px 0.2em var(--coldBlack)";
+    cardRef.current.style.background = bg;
+    cardRef.current.style.textShadow = titleShadow;
     setHover(false);
   };
 
@@ -79,14 +79,18 @@ const renderCard = (info, i) => {
         onMouseEnter={onHover}
         onMouseLeave={onUnHover}
         style={{
-          background: `url(${info.icon})  no-repeat center center / cover`,
-          color: info.color,
-          textShadow: info.color == "white" && "0px 0px 0.2em var(--coldBlack)",
+          background: bg,
+          textShadow: titleShadow,
         }}
       >
         {!hover ? (
           <div className="gridCardPreview">
-            <div className="font-title-h1 text-center">{info.title}</div>
+            <div
+              className="font-title-h1 text-center"
+              style={{ color: info.color }}
+            >
+              {info.title}
+            </div>
           </div>
         ) : (
           <div className="gridCardView">

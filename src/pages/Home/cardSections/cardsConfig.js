@@ -28,7 +28,7 @@ export const projectsCardsInfo = [
     note: "",
     icon: process.env.PUBLIC_URL + "/static/images/index/projects/trends.webp",
     bg: "var(--darkWhite)",
-    color: "black",
+    color: "white",
   },
   {
     id: "project_locomotives",
@@ -49,8 +49,8 @@ export const startupsCardsInfo = [
     smallText:
       "Intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs. ",
     texts: [
-      "Wellness Monitor – intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs.", 
-      "The assistant is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users.", 
+      "Wellness Monitor – intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs.",
+      "The assistant is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users.",
       "Wellness Monitor is a part of the x-Health&Wellness framework – an interface for interaction with the medical sector (hospitals), insurance companies, airlines, and travel services. Our goal is to develop and maintain Wellness Monitor as a convenient intelligent assistant that provides a safe, fast, and reliable service of equal opportunities for all categories of users.",
     ],
     bg: "var(--darkWhite)",
@@ -75,7 +75,7 @@ export const startupsCardsInfo = [
       "The x-Health&Wellness framework is a specially developed ecosystem that combines various services (medicine, insurance, banks, tourism, air travel, restaurants) to make the users’ life most productive, freeing up time from worries for constant monitoring of health parameters and medical therapy.",
       "The x-Health&Wellness framework provides constant communication with the supervising doctor and the medical centre, allows you to safely travel to new countries, be confident in medical control and personalized support from medical services, restaurant services, and many others. User data is securely stored in the registry in encrypted form and is only accessible through authorized access to personalize therapy or diet and in the event of a sudden emergency.",
     ],
-      bg: "var(--lightGray)",
+    bg: "var(--lightGray)",
     id: "startup_xwm",
   },
   {
@@ -85,10 +85,10 @@ export const startupsCardsInfo = [
     smallText:
       "Modeling of surface air flows and estimation of pollutant concentrations based on Lagrangian mathematics",
     texts: [
-      "Surface airflows modeling and pollutant concentrations estimation are very complex processes requiring the development of unique mathematical models that consider regional features and many other factors. We use the best approaches to model and evaluate the negative impact of pollutants on the environment and public health by tracking them from the source to a specific point in space.", 
+      "Surface airflows modeling and pollutant concentrations estimation are very complex processes requiring the development of unique mathematical models that consider regional features and many other factors. We use the best approaches to model and evaluate the negative impact of pollutants on the environment and public health by tracking them from the source to a specific point in space.",
       "The core of our solution is Lagrangian mathematics; technical solutions are implemented based on Python, C++, PostgreSQL, QGIS. We are ready to implement our solutions in the information environment of your company.",
     ],
-      bg: "var(--darkWhite)",
+    bg: "var(--darkWhite)",
     id: "startup_atmos",
   },
 ];
