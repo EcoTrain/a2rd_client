@@ -54,7 +54,7 @@ const HomeTextPage = ({
 
   const getContent = () => (
     <div
-      key={`${title.toLowerCase()}_content`}
+      key={`${(title || "").toLowerCase()}_content`}
       className={`section-content-text  ${sectionTheme}`}
     >
       <div className="section-text-block">

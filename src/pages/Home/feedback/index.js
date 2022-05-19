@@ -8,8 +8,12 @@ import "./feedback.scss";
 const { Content } = Layout;
 
 const HomeFeedback = () => {
-  const imgMin = process.env.PUBLIC_URL + "/static/images/index/sections/min/feedbackMin.jpeg";
-  const imgMax = process.env.PUBLIC_URL + "/static/images/index/sections/max/feedbackMax.jpeg";
+  const imgMin =
+    process.env.PUBLIC_URL +
+    "/static/images/index/sections/min/feedbackMin.jpeg";
+  const imgMax =
+    process.env.PUBLIC_URL +
+    "/static/images/index/sections/max/feedbackMax.jpeg";
   const pageRef = useRef();
 
   const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
@@ -25,9 +29,32 @@ const HomeFeedback = () => {
     return window.addEventListener("resize", null);
   }, []);
 
+  const onSuccess = (res) => {
+    console.log("Feedback result", res)
+    setEmail("");
+    setName("");
+    setText("");
+  }
   const handleSubmit = (event) => {
-    alert("Feedback sent");
     event.preventDefault();
+
+    const url = process.env.REACT_APP_SERVER_URL + "/api/send_email";
+    const body = {
+      email,
+      name,
+      text,
+    };
+
+    let response = fetch(url, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(body),
+    })
+      .then(onSuccess)
+      .catch((err) => console.log("Feedback error", err));
   };
 
   const getForm = () => {
