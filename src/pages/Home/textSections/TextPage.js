@@ -44,14 +44,17 @@ const HomeTextPage = ({
   );
 
   const getImage = () => (
-    <div key={`${title.toLowerCase()}_image`} className="section-content-img">
+    <div
+      key={`${(title || "").toLowerCase()}_image`}
+      className="section-content-img"
+    >
       {img && <img src={img} />}
     </div>
   );
 
   const getContent = () => (
     <div
-      key={`${title.toLowerCase()}_content`}
+      key={`${(title || "").toLowerCase()}_content`}
       className={`section-content-text  ${sectionTheme}`}
     >
       <div className="section-text-block">
