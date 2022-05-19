@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 import ClockLoader from "react-spinners/ClockLoader";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
+import { toast } from "react-toastify";
 
 import "./feedback.scss";
 
@@ -39,11 +40,18 @@ const HomeFeedback = () => {
   }, []);
 
   const onSuccess = (res) => {
-    console.log("Feedback result", res);
+    // console.log("Feedback result", res);
     setEmail("");
     setName("");
     setText("");
+    toast.success("Письмо отправлено!");
   };
+
+  const onError = (err) => {
+    console.log("Feedback error", err)
+    toast.error("Письмо не отправлено!");
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -64,7 +72,7 @@ const HomeFeedback = () => {
       body: JSON.stringify(body),
     })
       .then(onSuccess)
-      .catch((err) => console.log("Feedback error", err))
+      .catch(onError)
       .finally(() => setLoading(false));
   };
 
