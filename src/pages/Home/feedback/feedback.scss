@@ -13,6 +13,7 @@
                 padding: 0.2em 0.5em;
                 border: none;
                 outline: none;
+                background: var(--bgWhite);
             }
             textarea {
                 border-radius: 0.3em;
@@ -22,6 +23,7 @@
                 max-height: 4em;
                 resize: none;
                 padding: 0.2em 0.5em;
+                background: var(--bgWhite);
             }
         }
         input[type="submit"] {

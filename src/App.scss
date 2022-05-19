@@ -1,26 +1,47 @@
 :root {
+    --white: white;
+}
+:root[data-theme="light"] {
     --primary: #336666;
-    --white: #f4f4f4;
-    --black: black;
+
+    --bgWhite: rgba(245, 245, 245);
     --darkWhite: rgba(230, 230, 230);
     --lightGray: rgba(220, 220, 220);
-    --lightGrayTransparent: rgba(220, 220, 220, 0.8);
+    --lightGrayTransparent: rgba(220, 220, 220, 0.9);
     --coldGray: rgba(190, 190, 190);
     --gray: rgba(160, 160, 160);
     --darkGray: rgb(130, 130, 130);
     --coldBlack: rgb(40, 40, 40);
+    --black: black;
 
-    --lightBlue: rgb(220 233 255);
-    --lightGreen: rgb(218 243 227);
-    --lightYellow: rgb(242, 249, 226);
-    --lightOrange: rgb(249, 243, 226);
-    --lightRed: rgb(249, 231, 226);
+    --textPrimary: rgb(40, 40, 40);
+    --textInverse: rgba(220, 220, 220);
+}
+:root[data-theme="dark"] {
+    --primary: hsl(180, 33%, 60%);
+
+    --bgWhite: rgba(50, 50, 50);
+    --darkWhite: rgb(60, 60, 60);
+    --lightGray: rgb(80, 80, 80);
+    --lightGrayTransparent: rgba(80, 80, 80, 0.8);
+    --coldGray: rgba(100, 100, 100);
+    --gray: rgba(120, 120, 120);
+    --darkGray: rgba(140, 140, 140);
+    --coldBlack: rgba(160, 160, 160);
+    --black: white;
+
+    --textPrimary: rgba(220, 220, 220);
+    --textInverse: rgb(40, 40, 40);
 }
 
 html,
 body {
+    background-color: var(--bgWhite);
     margin: 0;
     overscroll-behavior: none;
+    * {
+        color: var(--textPrimary);
+    }
 }
 
 ::-webkit-scrollbar {

@@ -56,7 +56,8 @@ const BgVideo = () => {
 };
 
 const Banner = () => {
-  const text = "A2RD";
+  const title = "A2RD";
+  const label = "Research and Develpoment Lab";
 
   const getInterval = (e) => {
     switch (e.index) {
@@ -86,44 +87,48 @@ const Banner = () => {
     return t;
   };
 
+  const getShape = () => (
+    <div className="bannerContent-shape">
+      <div className="shape-left">
+        <TweenOne
+          className="shape-plug"
+          animation={[
+            {
+              x: "100%",
+              type: "from",
+              ease: "easeInOutQuint",
+              duration: 600,
+              delay: -150,
+            },
+            {
+              x: "-150%",
+              ease: "easeInOutQuart",
+              duration: 450,
+              delay: -150,
+            },
+          ]}
+        />
+      </div>
+      <div className="shape-right">
+        <TweenOne
+          className="shape-plug"
+          animation={[
+            {
+              x: "-100%",
+              type: "from",
+              ease: "easeInOutQuint",
+              duration: 600,
+            },
+            { x: "150%", ease: "easeInOutQuart", duration: 450, delay: -150 },
+          ]}
+        />
+      </div>
+    </div>
+  );
+
   return (
     <div className="bannerContent">
-      <div className="bannerContent-shape">
-        <div className="shape-left">
-          <TweenOne
-            className="shape-plug"
-            animation={[
-              {
-                x: "100%",
-                type: "from",
-                ease: "easeInOutQuint",
-                duration: 600,
-                delay: -150,
-              },
-              {
-                x: "-150%",
-                ease: "easeInOutQuart",
-                duration: 450,
-                delay: -150,
-              },
-            ]}
-          />
-        </div>
-        <div className="shape-right">
-          <TweenOne
-            className="shape-plug"
-            animation={[
-              {
-                x: "-100%",
-                type: "from",
-                ease: "easeInOutQuint",
-                duration: 600,
-              },
-              { x: "150%", ease: "easeInOutQuart", duration: 450, delay: -150 },
-            ]}
-          />
-        </div>
-      </div>
+      {getShape()}
       <TextyAnim
         className="font-title-large"
         type="mask-top"
@@ -157,7 +162,7 @@ const Banner = () => {
           ],
         }}
       >
-        {text}
+        {title}
       </TextyAnim>
       <TweenOne
         className="bar"
@@ -169,12 +174,13 @@ const Banner = () => {
         }}
       />
       <TextyAnim
+        // className="font-text-big"
         type="bottom"
         split={splitTextByWords}
         delay={2200}
         interval={30}
       >
-        Research and Develpoment Lab
+        {label}
       </TextyAnim>
     </div>
   );
