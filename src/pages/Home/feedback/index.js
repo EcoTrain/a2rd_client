@@ -55,7 +55,7 @@ const HomeFeedback = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const url = process.env.REACT_APP_SERVER_URL + "/api/send_email";
+    const url = process.env.REACT_APP_SERVER_URL + "/send_email";
     const body = {
       email,
       name,
