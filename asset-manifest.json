@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "https://ecotrain.github.io/a2rd_react/static/css/main.623d6cc3.css",
-    "main.js": "https://ecotrain.github.io/a2rd_react/static/js/main.975930d7.js",
+    "main.js": "https://ecotrain.github.io/a2rd_react/static/js/main.32df5a68.js",
     "static/js/27.bbb44909.chunk.js": "https://ecotrain.github.io/a2rd_react/static/js/27.bbb44909.chunk.js",
     "static/media/logo_max.svg": "https://ecotrain.github.io/a2rd_react/static/media/logo_max.4aa2452364aadb5be45b37aa9ae45b29.svg",
     "static/media/logo_min.svg": "https://ecotrain.github.io/a2rd_react/static/media/logo_min.80e77d7cbbf514fc3a1215b17dfff654.svg",
     "index.html": "https://ecotrain.github.io/a2rd_react/index.html",
     "static/media/sun.svg": "https://ecotrain.github.io/a2rd_react/static/media/sun.57944c9958167edc316f0205cdd775cb.svg",
-    "static/media/moon.svg": "https://ecotrain.github.io/a2rd_react/static/media/moon.f32b70fbdefa1bb48a339f97bc673aa7.svg"
+    "static/media/moon.svg": "https://ecotrain.github.io/a2rd_react/static/media/moon.9cc187f0d4b84db5e6a181fb183124dd.svg"
   },
   "entrypoints": [
     "static/css/main.623d6cc3.css",
-    "static/js/main.975930d7.js"
+    "static/js/main.32df5a68.js"
   ]
 }
