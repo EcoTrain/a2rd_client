@@ -39,21 +39,35 @@ const HomeFeedback = () => {
     return window.addEventListener("resize", null);
   }, []);
 
-  const onSuccess = (res) => {
-    // console.log("Feedback result", res);
-    setEmail("");
-    setName("");
-    setText("");
-    toast.success("Письмо отправлено!");
-  };
+  const isFormValid = () => {
+    const validateEmail = (email) => {
+      return email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    };
 
-  const onError = (err) => {
-    console.log("Feedback error", err)
-    toast.error("Письмо не отправлено!");
+    if (!email || !name || !text) {
+      toast.error("Заполните все поля!");
+      return false;
+    } else if (!validateEmail(email)) {
+      toast.error("Некорректный адрес почты!");
+      return false;
+    } else return true;
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const onSuccess = (res) => {
+      // console.log("Feedback result", res);
+      setEmail("");
+      setName("");
+      setText("");
+      toast.success("Письмо отправлено!");
+    };
+
+    const onError = (err) => {
+      console.log("Feedback error", err);
+      toast.error("Письмо не отправлено!");
+    };
 
     const url = process.env.REACT_APP_SERVER_URL + "/send_email";
     const body = {
@@ -62,18 +76,20 @@ const HomeFeedback = () => {
       text,
     };
 
-    setLoading(true);
-    let response = fetch(url, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(body),
-    })
-      .then(onSuccess)
-      .catch(onError)
-      .finally(() => setLoading(false));
+    if (isFormValid()) {
+      setLoading(true);
+      fetch(url, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(body),
+      })
+        .then(onSuccess)
+        .catch(onError)
+        .finally(() => setLoading(false));
+    }
   };
 
   const getForm = () => {
