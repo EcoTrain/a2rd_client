@@ -1,11 +1,18 @@
 import React, { useRef, useState, useEffect } from "react";
 import QueueAnim from "rc-queue-anim";
+import { css } from "@emotion/react";
+import ClockLoader from "react-spinners/ClockLoader";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
 import "./feedback.scss";
 
 const { Content } = Layout;
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: black;
+`;
 
 const HomeFeedback = () => {
   const imgMin =
@@ -21,6 +28,8 @@ const HomeFeedback = () => {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
 
+  let [loading, setLoading] = useState(false);
+
   const handleResize = () => {
     setImg(window.innerWidth < 960 ? imgMin : imgMax);
   };
@@ -30,11 +39,11 @@ const HomeFeedback = () => {
   }, []);
 
   const onSuccess = (res) => {
-    console.log("Feedback result", res)
+    console.log("Feedback result", res);
     setEmail("");
     setName("");
     setText("");
-  }
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -45,6 +54,7 @@ const HomeFeedback = () => {
       text,
     };
 
+    setLoading(true);
     let response = fetch(url, {
       method: "POST",
       mode: "cors",
@@ -54,7 +64,8 @@ const HomeFeedback = () => {
       body: JSON.stringify(body),
     })
       .then(onSuccess)
-      .catch((err) => console.log("Feedback error", err));
+      .catch((err) => console.log("Feedback error", err))
+      .finally(() => setLoading(false));
   };
 
   const getForm = () => {
@@ -107,6 +118,16 @@ const HomeFeedback = () => {
                 collaboration. We will reply as soon as possible
               </div>
               {getForm()}
+              {loading && (
+                <div className="waiter">
+                  <ClockLoader
+                    color={"black"}
+                    loading={loading}
+                    css={override}
+                    size={100}
+                  />
+                </div>
+              )}
             </QueueAnim>
           </div>
         </div>

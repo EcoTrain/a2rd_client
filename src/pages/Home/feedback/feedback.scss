@@ -1,4 +1,25 @@
 #feedback {
+    position: relative;
+    .waiter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.6;
+            background-color: var(--darkWhite);
+            height: 100%;
+            width: 100%;
+        }
+    }
     form {
         display: flex;
         flex-direction: column;
