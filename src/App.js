@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -10,6 +11,10 @@ import Projects from "./pages/ExtendedPages/projects";
 import "./App.scss";
 import "./Text.scss";
 import Startups from "./pages/ExtendedPages/startups";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+import "./components/Toast.scss"
 
 function App() {
   return (
@@ -34,6 +39,14 @@ function App() {
           element={<Startups />}
         />
       </Routes>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        newestOnTop
+        closeOnClick
+        draggable
+        pauseOnFocusLoss={false}
+      />
     </Layout>
   );
 }

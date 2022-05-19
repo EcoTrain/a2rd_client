@@ -1,0 +1,13 @@
+:root {
+    --toastify-text-color-light: var(--textInverse);
+    --toastify-text-color-dark: var(--textPrimary);
+
+    --toastify-color-transparent: var(--lightGrayTransparent);
+    --toastify-color-light: var(--lightGray);
+    --toastify-color-dark: var(--darkGray);
+
+    --toastify-color-info:#5fbfff;
+    --toastify-color-success: #48cc4d;
+    --toastify-color-warning: #f1c40f;
+    --toastify-color-error: #f76b5c;
+}

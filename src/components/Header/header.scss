@@ -21,8 +21,10 @@
         .headerActions {
             display: flex;
             width: 100%;
-            margin: 0 20px;
             max-width: 50vw;
+            .toggler {
+                margin: 0 20px;
+            }
             .headerMenu {
                 display: flex;
                 width: 100%;
