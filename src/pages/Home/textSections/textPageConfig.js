@@ -1,8 +1,8 @@
 export const textPageConfig = {
   analytic: {
-    title: "Our analytic",
+    title: "Our analytics",
     texts: [
-      "Our analytics, cutting edge reviews and models are in demand by companies from the energy, industrial, medical, financial, insurance, and other sectors. Our analytics help industrial companies improve their ESG-strategies and development programs based on cutting edge reviews (scientific reports, IP research, publications).",
+      "Our analytics, cutting edge reviews and models help companies from the energy, industrial, medical, financial, insurance and other sectors improve their ESG strategies and development programs based on up-to-date reviews (scientific reports, intellectual property studies, publications)",
     ],
     sectionTheme: "section-darkWhite",
   },
@@ -26,7 +26,11 @@ export const textPageConfig = {
       "The basis of the business model is the expansion of the network of partners, providing the exchange of analytical materials and data for the sustainable support of our customers (medical sector, insurance companies and banks, service, tourism, airlines).",
     ],
     direction: "right",
-    imgMax: process.env.PUBLIC_URL + "/static/images/index/sections/max/businessDealMax.jpeg",
-    imgMin: process.env.PUBLIC_URL + "/static/images/index/sections/min/businessDealMin.jpeg",
+    imgMax:
+      process.env.PUBLIC_URL +
+      "/static/images/index/sections/max/businessDealMax.jpeg",
+    imgMin:
+      process.env.PUBLIC_URL +
+      "/static/images/index/sections/min/businessDealMin.jpeg",
   },
 };
