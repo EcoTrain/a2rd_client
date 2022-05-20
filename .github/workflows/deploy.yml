@@ -11,17 +11,8 @@ jobs:
     name: Deploy to Hosting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Build website
-        run: yarn build
-
       - name: Pull on server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
@@ -31,7 +22,14 @@ jobs:
             cd ./
             ./scripts/deploy.sh
 
+      # - uses: actions/checkout@v2
+      # - uses: actions/setup-node@v3
 
+      # - name: Install dependencies
+      #   run: yarn install --frozen-lockfile
+
+      # - name: Build website
+      #   run: yarn build
 
       # - name: Install SSH Key
       #   uses: shimataro/ssh-key-action@v2
