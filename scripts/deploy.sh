@@ -1,5 +1,5 @@
 mkdir test
 git pull origin master
 
-systemstl daemon-reload
-systemctl restart a2rd_client.service
+sudo systemstl daemon-reload
+sudo systemctl restart a2rd_client.service
