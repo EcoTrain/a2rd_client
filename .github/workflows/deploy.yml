@@ -21,6 +21,6 @@ jobs:
           script: |
             cd a2rd_client
             git pull origin master
-            systemstl daemon-reload
+            systemctl daemon-reload
             systemctl restart a2rd_client.service
           #./scripts/deploy.sh
