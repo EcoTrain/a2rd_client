@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd ./
+            ls
             ./scripts/deploy.sh
 
       # - uses: actions/checkout@v2
