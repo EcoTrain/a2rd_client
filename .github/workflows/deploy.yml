@@ -20,10 +20,7 @@ jobs:
           port: 22
           script: |
             cd a2rd_client
-            git pull origin master
-            sudo -S ${{ secrets.SSH_PASSWORD }} systemstl daemon-reload  
-            sudo -S ${{ secrets.SSH_PASSWORD }} systemctl restart a2rd_client.service
-          # ./scripts/deploy.sh
+            ./scripts/deploy.sh
 
       # - uses: actions/checkout@v2
       # - uses: actions/setup-node@v3
