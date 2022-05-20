@@ -20,7 +20,4 @@ jobs:
           port: 22
           script: |
             cd a2rd_client
-            git pull origin master
-            systemctl daemon-reload
-            systemctl restart a2rd_client.service
-          #./scripts/deploy.sh
+            ./scripts/deploy.sh
