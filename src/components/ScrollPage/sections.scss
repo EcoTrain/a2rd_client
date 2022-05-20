@@ -14,6 +14,7 @@
     .sectionPage {
         // scroll-snap-align: start;
         top: 0;
+        pointer-events: none;
 
         .section {
             position: relative;
@@ -26,6 +27,7 @@
                 flex-wrap: wrap;
 
                 .section-content-text {
+                    pointer-events: auto;
                     flex-grow: 1;
                     flex-basis: 50%;
                     padding: 0em 2em;
