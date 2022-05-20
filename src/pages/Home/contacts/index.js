@@ -90,7 +90,6 @@ const HomeContacts = () => {
   return (
     <Layout className="section" id="homeContacts" ref={pageRef}>
       <Content className="section-content">
-        <div className="section-content-img"></div>
         <div className="section-content-text  section-darkWhite">
           <QueueAnim
             type={["left", "right"]}
@@ -101,6 +100,7 @@ const HomeContacts = () => {
             {ContactsIcons()}
           </QueueAnim>
         </div>
+        <div className="section-content-img"></div>
       </Content>
     </Layout>
   );
