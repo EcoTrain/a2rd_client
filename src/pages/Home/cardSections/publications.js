@@ -22,7 +22,8 @@ const HomePublications = () => {
         replay
         always={false}
         playScale={0}
-        className="fullscreen-column-block"
+        className="section-content"
+        style={{flexDirection: 'column'}}
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
           Our publications

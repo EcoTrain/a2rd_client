@@ -19,7 +19,8 @@ const HomeProjects = () => {
         <QueueAnim
           type={["left", "right"]}
           duration={1000}
-          className="fullscreen-column-block"
+          className="section-content"
+          style={{flexDirection: 'column'}}
         >
           <div
             className="font-title-h1 text-center"
