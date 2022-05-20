@@ -18,7 +18,6 @@
 .lineGridCardsViewColumn {
     flex-direction: column;
     .lineGridCardWrapper {
-        width: 100vw;
         flex-direction: column;
         &:after {
             content: "";

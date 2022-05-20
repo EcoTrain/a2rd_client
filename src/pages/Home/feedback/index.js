@@ -45,10 +45,10 @@ const HomeFeedback = () => {
     };
 
     if (!email || !name || !text) {
-      toast.error("Заполните все поля!");
+      toast.error("Please fill in all fields");
       return false;
     } else if (!validateEmail(email)) {
-      toast.error("Некорректный адрес почты!");
+      toast.error("Incorrect email format");
       return false;
     } else return true;
   };
@@ -61,12 +61,12 @@ const HomeFeedback = () => {
       setEmail("");
       setName("");
       setText("");
-      toast.success("Письмо отправлено!");
+      toast.success("Message sent");
     };
 
     const onError = (err) => {
       console.log("Feedback error", err);
-      toast.error("Письмо не отправлено!");
+      toast.error("An error occurred while sending. Please try again later");
     };
 
     const url = process.env.REACT_APP_SERVER_URL + "/send_email";
