@@ -2,12 +2,13 @@
     flex-wrap: nowrap;
     flex: 1 1;
     .lineGridCardWrapper {
-        align-items: start;
+        // align-items: start;
         &:after {
             content: "";
             height: 50%;
             width: 1px;
             background: var(--coldGray);
+            align-self: center;
         }
         &:last-child:after {
             content: none;

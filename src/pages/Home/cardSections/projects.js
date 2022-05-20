@@ -79,6 +79,7 @@ const renderCard = (info, i) => {
         onMouseEnter={onHover}
         onMouseLeave={onUnHover}
         style={{
+          minHeight: '30vh',
           background: bg,
           textShadow: titleShadow,
         }}
