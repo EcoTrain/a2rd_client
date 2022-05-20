@@ -56,7 +56,7 @@ const HomeFeedback = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const onSuccess = (res) => {
+    const onSuccess = () => {
       // console.log("Feedback result", res);
       setEmail("");
       setName("");

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
-// import { animateScroll as scroll, scroller } from "react-scroll";
 import { Menu } from "antd";
 import "antd/dist/antd.min.css";
 
