@@ -45,6 +45,15 @@ const Header = () => {
 
   const handleResize = () => {
     setNarrow(window.innerWidth < 960);
+
+    // Add section marginTop on overflow content
+    // 60 = Header height (px)
+    document.querySelectorAll(".section-content-text").forEach((el) => {
+      if (el.scrollHeight > el.clientHeight - 60) {
+        console.log("Found the worst element ever: ", el);
+        el.style.margin = "60px 0 0 0";
+      } else el.style.marginTop = 0;
+    });
   };
   useEffect(() => {
     window.addEventListener("resize", handleResize);
