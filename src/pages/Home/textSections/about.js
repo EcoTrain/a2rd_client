@@ -32,8 +32,7 @@ const AboutFounder = () => {
     <div
       key="aboutFounder"
       className="section-content text-center"
-      id="homeAbout"
-      style={{ boxShadow: window.innerWidth < 960 && "none" }}
+      id="homeAboutFounder"
     >
       <div className="section-content-block">
         <img
@@ -41,7 +40,7 @@ const AboutFounder = () => {
           src={imgAlexey}
           style={{ height: 100, width: 100, marginBottom: "1em" }}
         />
-        <div className="founder-text">
+        <div>
           <div>{t("about.signature")}</div>
           <div>{t("about.name")}</div>
           <div>{t("about.position")}</div>
@@ -56,7 +55,10 @@ const HomeAbout = () => {
   return (
     <Layout id="homeAbout" ref={pageRef}>
       <ScrollOverPack replay always={false} playScale={0}>
-        <QueueAnim type={["bottom", "top"]} className="section section-white">
+        <QueueAnim
+          type={["bottom", "top"]}
+          className="section section-white"
+        >
           {AboutDescription()}
           {AboutFounder()}
         </QueueAnim>
