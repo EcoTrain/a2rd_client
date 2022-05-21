@@ -134,8 +134,8 @@ const HomeFeedback = () => {
 
   return (
     <Layout className="section" id="homeFeedback" ref={pageRef}>
-        <div className="section-content-text section-darkWhite">
-          <div className="section-text-block">
+        <div className="section-content section-darkWhite">
+          <div className="section-content-block">
             <div className="font-title-h1 text-center">
               {t("feedback.title")}
             </div>
@@ -155,7 +155,7 @@ const HomeFeedback = () => {
             </QueueAnim>
           </div>
         </div>
-        <div className="section-content-img">
+        <div className="section-img">
           <img src={img} />
         </div>
     </Layout>

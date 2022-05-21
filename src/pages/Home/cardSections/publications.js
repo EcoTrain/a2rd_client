@@ -24,7 +24,7 @@ const HomePublications = () => {
         replay
         always={false}
         playScale={0}
-        className="section-content-text"
+        className="section-content"
         style={{ height: "100%" }}
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>

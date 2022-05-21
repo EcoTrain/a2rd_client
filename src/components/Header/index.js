@@ -48,7 +48,7 @@ const Header = () => {
 
     // Add section marginTop on overflow content
     // 60 = Header height (px)
-    document.querySelectorAll(".section-content-text").forEach((el) => {
+    document.querySelectorAll(".section-content").forEach((el) => {
       if (el.scrollHeight > el.clientHeight - 60) {
         console.log("Found the worst element ever: ", el);
         el.style.paddingTop = "60px";

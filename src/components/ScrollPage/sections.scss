@@ -22,7 +22,7 @@
             min-height: 100vh;
             position: relative;
             flex-direction: row;
-            .section-content-text {
+            .section-content {
                 pointer-events: all;
                 flex-grow: 1;
                 flex-basis: 50%;
@@ -33,12 +33,12 @@
                 max-height: 100vh;
                 overflow: scroll;
                 justify-content: flex-start;
-                & > .section-text-block {
+                & > .section-content-block {
                     margin: auto;
                     padding: 0em 2em;
                 }
 
-                .section-text-block {
+                .section-content-block {
                     max-width: 1200px;
                 }
                 li {
@@ -47,7 +47,7 @@
                     }
                 }
             }
-            .section-content-img {
+            .section-img {
                 flex-grow: 1;
                 flex-basis: 50%;
                 position: relative;
@@ -82,10 +82,10 @@
     .sectionPage {
         .section {
             flex-direction: column !important;
-            .section-content-text {
+            .section-content {
                 max-height: 80vh;
             }
-            .section-content-img {
+            .section-img {
                 order: -1;
                 min-height: 20vh;
                 max-height: 20vh;

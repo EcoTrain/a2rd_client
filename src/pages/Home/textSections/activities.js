@@ -46,8 +46,8 @@ const HomeActivities = () => {
       id="homeActivities"
       ref={pageRef}
     >
-        <div className="section-content-text">
-          <div className="section-text-block">
+        <div className="section-content">
+          <div className="section-content-block">
             <div className="font-title-h1 text-center">{t("activities.title")}</div>
             <ScrollOverPack replay always={false} playScale={0}>
               <div className="font-text-big description">
@@ -68,7 +68,7 @@ const HomeActivities = () => {
             </ScrollOverPack>
           </div>
         </div>
-        <div className="section-content-img">
+        <div className="section-img">
           <img src={img} />
         </div>
     </Layout>

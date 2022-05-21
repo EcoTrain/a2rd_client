@@ -10,8 +10,8 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const AboutDescription = () => {
   const { t } = useTranslation();
   return (
-    <div key="aboutDescription" className="section-content-text text-center">
-      <div className="section-text-block">
+    <div key="aboutDescription" className="section-content text-center">
+      <div className="section-content-block">
         <div className="font-title-h1 text-center">{t("about.title")}</div>
         <div className="font-text-large description">{t("about.text")}</div>
       </div>
@@ -23,8 +23,8 @@ const AboutFounder = () => {
   const { t } = useTranslation();
   const imgAlexey = process.env.PUBLIC_URL + "/static/images/index/alexey.webp";
   return (
-    <div key="aboutFounder" className="section-content-text text-center">
-      <div className="section-text-block">
+    <div key="aboutFounder" className="section-content text-center">
+      <div className="section-content-block">
         <img
           className="avatar"
           src={imgAlexey}

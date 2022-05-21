@@ -52,8 +52,8 @@ const Startup = ({ item }) => {
       ref={pageRef}
       style={{ position: "sticky", top: 0, background: item.bg }}
     >
-      <div className="section-content-text center-block-1200">
-        <div className="section-text-block">
+      <div className="section-content center-block-1200">
+        <div className="section-content-block">
           <div className="font-title-h1 text-center">{t(item.title)}</div>
           {t(item.text)
             .split("\n")
