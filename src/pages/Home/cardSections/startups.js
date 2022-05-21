@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import ScrollAnim from "rc-scroll-anim";
+import { useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -11,6 +12,7 @@ import "./lineGridCard.scss";
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeStartups = () => {
+  const { t } = useTranslation("startups");
   const pageRef = useRef();
   return (
     <Layout className="section section-white" id="homeStartups" ref={pageRef}>
@@ -19,10 +21,10 @@ const HomeStartups = () => {
         always={false}
         playScale={0}
         className="section-content"
-        style={{flexDirection: 'column'}}
+        style={{ flexDirection: "column" }}
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "5%" }}>
-          Our startups
+          {t("startups.title")}
         </div>
         <div className="gridCardsView lineGridCardsViewRow">
           {startupsCardsInfo.map((x, i) => renderCard(x, i))}
@@ -33,6 +35,7 @@ const HomeStartups = () => {
 };
 
 const renderCard = (info, i) => {
+  const { t } = useTranslation("startups");
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
@@ -55,20 +58,17 @@ const renderCard = (info, i) => {
       key={i}
       className="gridCardWrapper lineGridCardWrapper"
       ref={cardRef}
-      // onMouseDown={hover ? onUnHover : onHover}
       onMouseEnter={onHover}
       onMouseLeave={onUnHover}
     >
       <div className="gridCard lineGridCard">
         <div className="gridCardView">
           <div className="gridCardViewTitle font-title-h3 text-center ">
-            {info.title}
+            {t(info.title)}
           </div>
-          {hover ? (
-            <div className="description">{info.smallText}</div>
-          ) : (
-            <div className="description">{info.previewText}</div>
-          )}
+          <div className="description">
+            {hover ? t(info.smallText) : t(info.previewText)}
+          </div>
           {hover && (
             <div className="gridCardViewLinkBtns">
               <button

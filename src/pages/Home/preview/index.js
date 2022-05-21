@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import TweenOne from "rc-tween-one";
 import TextyAnim from "rc-texty";
+import { useTranslation } from "react-i18next";
 
 import { Layout } from "antd";
 
@@ -56,8 +57,7 @@ const BgVideo = () => {
 };
 
 const Banner = () => {
-  const title = "A2RD";
-  const label = "Research and Develpoment Lab";
+  const { t } = useTranslation();
 
   const getInterval = (e) => {
     switch (e.index) {
@@ -162,7 +162,7 @@ const Banner = () => {
           ],
         }}
       >
-        {title}
+        {t("preview.title")}
       </TextyAnim>
       <TweenOne
         className="bar"
@@ -180,7 +180,7 @@ const Banner = () => {
         delay={2200}
         interval={30}
       >
-        {label}
+        {t("preview.label")}
       </TextyAnim>
     </div>
   );

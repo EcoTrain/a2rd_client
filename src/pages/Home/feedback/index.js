@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import QueueAnim from "rc-queue-anim";
 import { css } from "@emotion/react";
 import ClockLoader from "react-spinners/ClockLoader";
+import { useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 import { toast } from "react-toastify";
@@ -16,6 +17,7 @@ const override = css`
 `;
 
 const HomeFeedback = () => {
+  const { t } = useTranslation("feedback");
   const imgMin =
     process.env.PUBLIC_URL +
     "/static/images/index/sections/min/feedbackMin.jpeg";
@@ -56,7 +58,7 @@ const HomeFeedback = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const onSuccess = (res) => {
+    const onSuccess = () => {
       // console.log("Feedback result", res);
       setEmail("");
       setName("");
@@ -96,7 +98,7 @@ const HomeFeedback = () => {
     return (
       <form onSubmit={handleSubmit}>
         <label htmlFor="feedbackEmail">
-          Your email:
+          {t("feedback.field.email")}:
           <input
             type="email"
             name="email"
@@ -106,7 +108,7 @@ const HomeFeedback = () => {
           />
         </label>
         <label htmlFor="feedbackName">
-          Your name:
+          {t("feedback.field.name")}:
           <input
             type="name"
             name="name"
@@ -116,7 +118,7 @@ const HomeFeedback = () => {
           />
         </label>
         <label htmlFor="feedbackText">
-          Your question:
+          {t("feedback.field.text")}:
           <textarea
             type="text"
             name="text"
@@ -135,12 +137,11 @@ const HomeFeedback = () => {
       <Content className="section-content">
         <div className="section-content-text section-darkWhite">
           <div className="section-text-block">
-            <div className="font-title-h1 text-center">Feedback</div>
+            <div className="font-title-h1 text-center">
+              {t("feedback.title")}
+            </div>
             <QueueAnim type={["left", "right"]} id="feedback">
-              <div className="description">
-                Please fill out the form to ask questions or discuss a possible
-                collaboration. We will reply as soon as possible
-              </div>
+              <div className="description">{t("feedback.label")}</div>
               {getForm()}
               {loading && (
                 <div className="waiter">

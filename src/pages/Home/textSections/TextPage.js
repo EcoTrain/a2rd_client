@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
+import { useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -18,6 +19,7 @@ const HomeTextPage = ({
   sectionTheme,
   direction,
 }) => {
+  const { t } = useTranslation();
   const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
   const pageRef = useRef();
 
@@ -39,7 +41,7 @@ const HomeTextPage = ({
       delay={i * 300}
       interval={5}
     >
-      {text}
+      {t(text)}
     </TextyAnim>
   );
 
@@ -58,7 +60,7 @@ const HomeTextPage = ({
       className={`section-content-text  ${sectionTheme}`}
     >
       <div className="section-text-block">
-        <div className="font-title-h1 text-center">{title}</div>
+        <div className="font-title-h1 text-center">{t(title)}</div>
         <ScrollOverPack replay always={false} playScale={0}>
           {texts.map((x, i) => (
             <div key={i}>{getTextAnim(x, i)}</div>

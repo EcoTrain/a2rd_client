@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import QueueAnim from "rc-queue-anim";
 import ScrollAnim from "rc-scroll-anim";
+import { useTranslation } from "react-i18next";
 
 import { CheckOutlined } from "@ant-design/icons";
 import { Layout } from "antd";
@@ -10,6 +11,7 @@ const { Content } = Layout;
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeActivities = () => {
+  const { t } = useTranslation("activities");
   const imgMin =
     process.env.PUBLIC_URL +
     "/static/images/index/sections/min/activitiesMin.jpeg";
@@ -21,13 +23,13 @@ const HomeActivities = () => {
   const pageRef = useRef();
 
   const activitiesList1 = [
-    "RAW/BIG data processing and analysis",
-    "Computational modeling",
-    "Machine Learning (AI) and Neural network",
-    "Predictive Analytics",
-    "Spatial analysis (geographic information technology and remote sensing)",
-    "Technology consulting",
-    "App development",
+    t("activities.list.processing"),
+    t("activities.list.modeling"),
+    t("activities.list.ML"),
+    t("activities.list.analytics"),
+    t("activities.list.spatial"),
+    t("activities.list.consulting"),
+    t("activities.list.development"),
   ];
 
   const handleResize = () => {
@@ -47,11 +49,10 @@ const HomeActivities = () => {
       <Content className="section-content">
         <div className="section-content-text">
           <div className="section-text-block">
-            <div className="font-title-h1 text-center">Our activities</div>
+            <div className="font-title-h1 text-center">{t("activities.title")}</div>
             <ScrollOverPack replay always={false} playScale={0}>
               <div className="font-text-big description">
-                We work in various fields using our background to solve
-                industrial, environmental challenges and various issues.
+                {t("activities.label")}
               </div>
               <ul style={{ marginTop: "1em" }}>
                 <QueueAnim type={["right"]}>

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import ScrollAnim from "rc-scroll-anim";
+import { useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -11,6 +12,7 @@ import "./lineGridCard.scss";
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomePublications = () => {
+  const { t } = useTranslation("publications");
   const pageRef = useRef();
   return (
     <Layout
@@ -23,16 +25,13 @@ const HomePublications = () => {
         always={false}
         playScale={0}
         className="section-content"
-        style={{flexDirection: 'column'}}
+        style={{ flexDirection: "column" }}
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
-          Our publications
+          {t("publications.title")}
         </div>
         <div className="text-center" style={{ margin: "0px 2em" }}>
-          At the A2 Research and Development lab, we are open to collaborating
-          with investment companies and the research community, so some of our
-          study results have already been published in scientific journals.
-          Others are submitted for peer review.
+          {t("publications.label")}
         </div>
         <div className="gridCardsView lineGridCardsViewColumn">
           {publicationsCardsInfo.map((x, i) => renderCard(x, i))}
@@ -43,6 +42,7 @@ const HomePublications = () => {
 };
 
 const renderCard = (info, i) => {
+  const { t } = useTranslation("publications");
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
@@ -70,13 +70,13 @@ const renderCard = (info, i) => {
       <div className="gridCard lineGridCard" onMouseEnter={onHover}>
         <div className="lineGridCardIcon">
           <a href={info.icon.link} target="_blank" rel="noreferrer">
-            <img src={info.icon.src} alt={info.icon.alt} />
+            <img src={info.icon.src} alt={info.icon.alt}/>
           </a>
         </div>
 
         <div className="gridCardView lineGridViewLeft">
           <div className="font-title-h3" style={{ textAlign: "left" }}>
-            {info.title}
+            {t(info.title)}
           </div>
           {hover && (
             <div className="gridCardViewLinkBtns">
@@ -87,7 +87,7 @@ const renderCard = (info, i) => {
                     className="gridCardViewLinkBtn"
                     onClick={() => (window.location.href = x.link)}
                   >
-                    {x.title}
+                    {t(x.title)}
                   </button>
                 ))}
             </div>

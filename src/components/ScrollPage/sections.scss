@@ -80,15 +80,15 @@
             .section-content {
                 flex-direction: column;
                 .section-content-text {
-                    order: 1;
                     max-height: 80vh;
                     overflow: scroll;
                     justify-content: flex-start !important;
-                    & > * {
+                    & > .section-text-block {
                         margin: auto;
                     }
                 }
                 .section-content-img {
+                    order: -1;
                     min-height: 20vh;
                     max-height: 20vh;
                     width: 100vw;
