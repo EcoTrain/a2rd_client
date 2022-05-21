@@ -15,6 +15,21 @@ const PageScroller = ({ children }) => {
     children: PropTypes.array,
   };
 
+  // Add section marginTop on overflow content
+  // 50 = Header height (px)
+  useEffect(() => {
+    const handleResize = () => {
+      document.querySelectorAll(".section-content-text").forEach((el) => {
+        if (el.scrollHeight > el.clientHeight - 50) {
+          console.log("Found the worst element ever: ", el);
+          el.style.margin = "60px 0 0 0";
+        } else el.style.marginTop = 0;
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return window.addEventListener("resize", null);
+  }, []);
+
   return (
     <div className="sectionPageScroller">
       {children.map((elem, i) => (
