@@ -3,6 +3,7 @@
 }
 :root[data-theme="light"] {
     --primary: hsl(180, 33%, 30%);
+    --primarySecond: hsl(180, 33%, 50%);
 
     --bgWhite: rgba(245, 245, 245);
     --darkWhite: rgba(230, 230, 230);
@@ -18,7 +19,8 @@
     --textInverse: rgba(220, 220, 220);
 }
 :root[data-theme="dark"] {
-    --primary: hsl(180, 33%, 70%);
+    --primary: hsl(180, 33%, 60%);
+    --primarySecond: hsl(180, 33%, 40%);
 
     --bgWhite: rgba(50, 50, 50);
     --darkWhite: rgb(60, 60, 60);
@@ -64,6 +66,6 @@ a {
     text-decoration: none;
     color: var(--primary);
     &:hover {
-        color: var(--textInverse);
+        color: var(--primarySecond);
     }
 }
