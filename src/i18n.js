@@ -7,13 +7,13 @@ import EnLocale from "./locales/en.json";
 import RuLocale from "./locales/ru.json";
 
 const DEFAULT_LANGUAGE = "en";
-let lngSelectOptions = { en: "English" };
-let Languages = [Object.keys(lngSelectOptions)];
+export let lngSelectOptions = { en: "English" };
+let Languages = Object.keys(lngSelectOptions);
 let resources = {
   en: EnLocale,
 };
 
-if (window.location.host.includes(".ru")) {
+if (!window.location.host.includes(".ru")) {
   Languages.push("ru");
   resources["ru"] = RuLocale;
   lngSelectOptions["ru"] = "Русский";
@@ -37,8 +37,8 @@ i18n
     defaultNS: "translations",
     debug: process.env.NODE_ENV == "development",
     whitelist: Languages,
-    load: "currentOnly",
     useCookie: false,
+    lngSelectOptions: lngSelectOptions,
   });
 
 export default i18n;

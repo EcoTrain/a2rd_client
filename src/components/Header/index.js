@@ -11,6 +11,25 @@ import "./header.scss";
 import { ReactComponent as LogoMin } from "../../assets/logo_min.svg";
 import { ReactComponent as LogoMax } from "../../assets/logo_max.svg";
 
+const LngSelector = () => {
+  const { t, i18n } = useTranslation();
+
+  const onSelect = (e) => {
+    console.log("lng change", e.target.value);
+    i18n.changeLanguage(e.target.value);
+  };
+
+  return (
+    <select className={"lngSelector"} onChange={onSelect} value={i18n.language}>
+      {Object.entries(i18n.options.lngSelectOptions).map((x, i) => (
+        <option key={i} value={x[0]}>
+          {x[1]}
+        </option>
+      ))}
+    </select>
+  );
+};
+
 const Header = () => {
   const { t } = useTranslation();
   const headerBottomPadding = 11;
@@ -104,6 +123,7 @@ const Header = () => {
             }}
             value={theme === themes.dark}
           />
+          {/* <LngSelector /> */}
         </div>
       </div>
     </div>
