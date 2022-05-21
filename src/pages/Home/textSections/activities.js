@@ -46,7 +46,6 @@ const HomeActivities = () => {
       id="homeActivities"
       ref={pageRef}
     >
-      <Content className="section-content">
         <div className="section-content-text">
           <div className="section-text-block">
             <div className="font-title-h1 text-center">{t("activities.title")}</div>
@@ -72,7 +71,6 @@ const HomeActivities = () => {
         <div className="section-content-img">
           <img src={img} />
         </div>
-      </Content>
     </Layout>
   );
 };

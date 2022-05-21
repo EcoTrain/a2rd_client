@@ -65,28 +65,26 @@ const Project = ({ item }) => {
       className="section section-lightGray"
       style={{ background: item.bg }}
     >
-      <Content className="section-content">
-        <div className="section-content-text">
-          <div className="section-text-block">
-            <div className="font-title-h1 text-center">{t(item.title)}</div>
-            <ScrollOverPack replay always={false} playScale={0}>
-              {t(item.text)
-                .split("\n")
-                .map((x, i) => (
-                  <div key={i}>{getTextAnim(x, i)}</div>
-                ))}
-              {t(item.note)
-                .split("\n")
-                .map((x, i) => (
-                  <div key={i}>{getTextAnim(x, i)}</div>
-                ))}
-            </ScrollOverPack>
-          </div>
+      <div className="section-content-text">
+        <div className="section-text-block">
+          <div className="font-title-h1 text-center">{t(item.title)}</div>
+          <ScrollOverPack replay always={false} playScale={0}>
+            {t(item.text)
+              .split("\n")
+              .map((x, i) => (
+                <div key={i}>{getTextAnim(x, i)}</div>
+              ))}
+            {t(item.note)
+              .split("\n")
+              .map((x, i) => (
+                <div key={i}>{getTextAnim(x, i)}</div>
+              ))}
+          </ScrollOverPack>
         </div>
-        <div className="section-content-img">
-          <img src={item.icon} />
-        </div>
-      </Content>
+      </div>
+      <div className="section-content-img">
+        <img src={item.icon} />
+      </div>
     </Layout>
   );
 };

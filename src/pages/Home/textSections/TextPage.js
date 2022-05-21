@@ -74,9 +74,7 @@ const HomeTextPage = ({
 
   return (
     <Layout className="section" ref={pageRef}>
-      <Content className={`section-content`}>
-        {direction == "left" ? sectionChilds : sectionChilds.reverse()}
-      </Content>
+      {direction == "left" ? sectionChilds : sectionChilds.reverse()}
     </Layout>
   );
 };

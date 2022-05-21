@@ -10,11 +10,10 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const AboutDescription = () => {
   const { t } = useTranslation();
   return (
-    <div key="aboutDescription" className="section-content-text">
+    <div key="aboutDescription" className="section-content-text text-center">
       <div className="section-text-block">
         <div className="font-title-h1 text-center">{t("about.title")}</div>
-        <div className="font-text-large description">{t("about.text")}
-        </div>
+        <div className="font-text-large description">{t("about.text")}</div>
       </div>
     </div>
   );
@@ -24,12 +23,7 @@ const AboutFounder = () => {
   const { t } = useTranslation();
   const imgAlexey = process.env.PUBLIC_URL + "/static/images/index/alexey.webp";
   return (
-    <div
-      key="aboutFounder"
-      id="aboutFounder"
-      className="section-content-text text-center"
-      style={{ margin: "1em 0" }}
-    >
+    <div key="aboutFounder" className="section-content-text text-center">
       <div className="section-text-block">
         <img
           className="avatar"
@@ -37,8 +31,7 @@ const AboutFounder = () => {
           style={{ height: 100, width: 100, marginBottom: "1em" }}
         />
         <div className="founder-text">
-          <div>{t("about.signature")}
-          </div>
+          <div>{t("about.signature")}</div>
           <div>{t("about.name")}</div>
           <div>{t("about.position")}</div>
         </div>
@@ -50,9 +43,9 @@ const AboutFounder = () => {
 const HomeAbout = () => {
   const pageRef = useRef();
   return (
-    <Layout className="section section-white" id="homeAbout" ref={pageRef}>
+    <Layout id="homeAbout" ref={pageRef}>
       <ScrollOverPack replay always={false} playScale={0}>
-        <QueueAnim type={["bottom", "top"]} className="section-content">
+        <QueueAnim type={["bottom", "top"]} className="section section-white">
           {AboutDescription()}
           {AboutFounder()}
         </QueueAnim>

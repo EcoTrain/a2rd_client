@@ -134,7 +134,6 @@ const HomeFeedback = () => {
 
   return (
     <Layout className="section" id="homeFeedback" ref={pageRef}>
-      <Content className="section-content">
         <div className="section-content-text section-darkWhite">
           <div className="section-text-block">
             <div className="font-title-h1 text-center">
@@ -159,7 +158,6 @@ const HomeFeedback = () => {
         <div className="section-content-img">
           <img src={img} />
         </div>
-      </Content>
     </Layout>
   );
 };

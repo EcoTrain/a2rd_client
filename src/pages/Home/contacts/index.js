@@ -91,7 +91,6 @@ const HomeContacts = () => {
   const pageRef = useRef();
   return (
     <Layout className="section" id="homeContacts" ref={pageRef}>
-      <Content className="section-content">
         <div className="section-content-text  section-darkWhite">
           <QueueAnim
             type={["left", "right"]}
@@ -103,7 +102,6 @@ const HomeContacts = () => {
           </QueueAnim>
         </div>
         <div className="section-content-img"></div>
-      </Content>
     </Layout>
   );
 };

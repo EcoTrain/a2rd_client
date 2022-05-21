@@ -52,33 +52,31 @@ const Startup = ({ item }) => {
       ref={pageRef}
       style={{ position: "sticky", top: 0, background: item.bg }}
     >
-      <Content className="section-content">
-        <div className="section-content-text center-block-1200">
-          <div className="section-text-block">
-            <div className="font-title-h1 text-center">{t(item.title)}</div>
-            {t(item.text)
-              .split("\n")
-              .map((x, i) => (
-                <div key={i} className="font-text-big description">
-                  <div>
-                    <Trans
-                      t={t}
-                      i18nKey={x}
-                      components={[
-                        <a
-                          key={`link${i}`}
-                          href={item.url || ""}
-                          target="_blank"
-                          rel="noreferrer"
-                        />,
-                      ]}
-                    />
-                  </div>
+      <div className="section-content-text center-block-1200">
+        <div className="section-text-block">
+          <div className="font-title-h1 text-center">{t(item.title)}</div>
+          {t(item.text)
+            .split("\n")
+            .map((x, i) => (
+              <div key={i} className="font-text-big description">
+                <div>
+                  <Trans
+                    t={t}
+                    i18nKey={x}
+                    components={[
+                      <a
+                        key={`link${i}`}
+                        href={item.url || ""}
+                        target="_blank"
+                        rel="noreferrer"
+                      />,
+                    ]}
+                  />
                 </div>
-              ))}
-          </div>
+              </div>
+            ))}
         </div>
-      </Content>
+      </div>
     </Layout>
   );
 };
