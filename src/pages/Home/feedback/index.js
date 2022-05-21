@@ -47,10 +47,10 @@ const HomeFeedback = () => {
     };
 
     if (!email || !name || !text) {
-      toast.error("Please fill in all fields");
+      toast.error(t("feedback.validate.fillAll"));
       return false;
     } else if (!validateEmail(email)) {
-      toast.error("Incorrect email format");
+      toast.error(t("feedback.validate.incorrectEmail"));
       return false;
     } else return true;
   };
@@ -63,12 +63,12 @@ const HomeFeedback = () => {
       setEmail("");
       setName("");
       setText("");
-      toast.success("Message sent");
+      toast.success(t("feedback.success"));
     };
 
     const onError = (err) => {
       console.log("Feedback error", err);
-      toast.error("An error occurred while sending. Please try again later");
+      toast.error(t("feedback.fail"));
     };
 
     const url = process.env.REACT_APP_SERVER_URL + "/send_email";
@@ -134,30 +134,30 @@ const HomeFeedback = () => {
 
   return (
     <Layout className="section" id="homeFeedback" ref={pageRef}>
-        <div className="section-content section-darkWhite">
-          <div className="section-content-block">
-            <div className="section-title font-title-h1 text-center">
-              {t("feedback.title")}
-            </div>
-            <QueueAnim type={["left", "right"]} id="feedback">
-              <div className="description">{t("feedback.label")}</div>
-              {getForm()}
-              {loading && (
-                <div className="waiter">
-                  <ClockLoader
-                    color={"black"}
-                    loading={loading}
-                    css={override}
-                    size={100}
-                  />
-                </div>
-              )}
-            </QueueAnim>
+      <div className="section-content section-darkWhite">
+        <div className="section-content-block">
+          <div className="section-title font-title-h1 text-center">
+            {t("feedback.title")}
           </div>
+          <QueueAnim type={["left", "right"]} id="feedback">
+            <div className="description">{t("feedback.label")}</div>
+            {getForm()}
+            {loading && (
+              <div className="waiter">
+                <ClockLoader
+                  color={"black"}
+                  loading={loading}
+                  css={override}
+                  size={100}
+                />
+              </div>
+            )}
+          </QueueAnim>
         </div>
-        <div className="section-img">
-          <img src={img} />
-        </div>
+      </div>
+      <div className="section-img">
+        <img src={img} />
+      </div>
     </Layout>
   );
 };

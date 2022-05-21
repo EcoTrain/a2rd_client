@@ -113,9 +113,17 @@
         "feedback": {
             "title": "Feedback",
             "label": "Please fill out the form to ask questions or discuss a possible collaboration. We will reply as soon as possible",
-            "field.email": "Your email",
-            "field.name": "Your name",
-            "field.text": "Your message"
+            "field": {
+                "email": "Your email",
+                "name": "Your name",
+                "text": "Your message"
+            },
+            "success": "Message sent",
+            "fail": "An error occurred while sending. Please try again later",
+            "validate": {
+                "fillAll": "Please fill in all fields",
+                "incorrectEmail": "Incorrect email format"
+            }
         }
     }
 }
