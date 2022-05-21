@@ -50,7 +50,7 @@ const Header = () => {
     // 60 = Header height (px)
     document.querySelectorAll(".section-content").forEach((el) => {
       if (el.scrollHeight > el.clientHeight - 60) {
-        console.log("Found the worst element ever: ", el);
+        // console.log("Found the worst element ever: ", el);
         el.style.paddingTop = "60px";
       } else el.style.paddingTop = 0;
     });

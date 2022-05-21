@@ -21,21 +21,21 @@ const Home = () => {
   return (
     <PageScroller>
       <HomePreview />
-      <HomeAbout title="About" />
+      <HomeAbout title="pages.about" />
 
-      <HomeActivities title="Activities" position={"sticky"} />
+      <HomeActivities title="pages.activities" position={"sticky"} />
       <HomeTextPage position={"sticky"} {...textPageConfig.analytic} />
       <HomeTextPage position={"sticky"} {...textPageConfig.solutions} />
       <HomeTextPage position={"sticky"} {...textPageConfig.medAssistant} />
 
-      <HomeProjects title="Projects" />
-      <HomeStartups title="Startups" />
+      <HomeProjects title="pages.projects" />
+      <HomeStartups title="pages.startups" />
 
-      <HomePublications title="Publications" />
+      <HomePublications title="pages.publications" />
       <HomeTextPage position={"sticky"} {...textPageConfig.businessModel} />
 
-      <HomeFeedback title="Feedback" position={"sticky"} />
-      <HomeContacts title="Contacts" />
+      <HomeFeedback title="pages.feedback" position={"sticky"} />
+      <HomeContacts title="pages.contacts" />
     </PageScroller>
   );
 };

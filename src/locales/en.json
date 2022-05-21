@@ -1,5 +1,14 @@
 {
     "translations": {
+        "pages": {
+            "about": "About",
+            "activities": "Activities",
+            "projects": "Projects",
+            "startups": "Startups",
+            "publications": "Publications",
+            "feedback": "Feedback",
+            "contacts": "Contacts"
+        },
         "header": {
             "about": "About Us",
             "projects": "Projects",
@@ -90,7 +99,7 @@
                 "previewText": "Modeling of air flows and estimation of pollutant concentrations",
                 "smallText": "Modeling of surface air flows and estimation of pollutant concentrations based on Lagrangian mathematics",
                 "text": "<0>Surface airflows modeling and pollutant concentrations estimation</0> are very complex processes requiring the development of unique mathematical models that consider regional features and many other factors. We use the best approaches to model and evaluate the negative impact of pollutants on the environment and public health by tracking them from the source to a specific point in space. \nThe core of our solution is Lagrangian mathematics; technical solutions are implemented based on Python, C++, PostgreSQL, QGIS. We are ready to implement our solutions in the information environment of your company."
-            }   
+            }
         }
     },
     "publications": {
