@@ -16,7 +16,9 @@ const AboutDescription = () => {
       className="section-content text-center"
     >
       <div className="section-content-block">
-        <div className="section-title font-title-h1 text-center">{t("about.title")}</div>
+        <div className="section-title font-title-h1 text-center">
+          {t("about.title")}
+        </div>
         <div className="font-text-large description">{t("about.text")}</div>
       </div>
     </div>
@@ -31,6 +33,7 @@ const AboutFounder = () => {
       key="aboutFounder"
       className="section-content text-center"
       id="homeAbout"
+      style={{ boxShadow: window.innerWidth < 960 && "none" }}
     >
       <div className="section-content-block">
         <img
