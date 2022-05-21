@@ -4,6 +4,7 @@ import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
 import { scroller } from "react-scroll";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -35,6 +36,7 @@ const Projects = () => {
 };
 
 const Project = ({ item }) => {
+  const { t } = useTranslation("projects");
   Project.propTypes = {
     item: {
       title: PropTypes.string,
@@ -42,6 +44,19 @@ const Project = ({ item }) => {
       note: PropTypes.string,
     },
   };
+
+  const getTextAnim = (text, i) => (
+    <TextyAnim
+      className="font-text-big description"
+      type="bottom"
+      split={splitTextByWords}
+      delay={i * 300}
+      duration={300}
+      interval={10}
+    >
+      {text}
+    </TextyAnim>
+  );
 
   return (
     <Layout
@@ -52,24 +67,18 @@ const Project = ({ item }) => {
       <Content className="section-content">
         <div className="section-content-text">
           <div className="section-text-block">
-            <div className="font-title-h1 text-center">{item.title}</div>
+            <div className="font-title-h1 text-center">{t(item.title)}</div>
             <ScrollOverPack replay always={false} playScale={0}>
-              <TextyAnim
-                className="description font-text-big"
-                type="bottom"
-                split={splitTextByWords}
-                interval={10}
-              >
-                {item.text}
-              </TextyAnim>
-              <TextyAnim
-                className="description"
-                type="bottom"
-                split={splitTextByWords}
-                interval={10}
-              >
-                {item.note}
-              </TextyAnim>
+              {t(item.text)
+                .split("\n")
+                .map((x, i) => (
+                  <div key={i}>{getTextAnim(x, i)}</div>
+                ))}
+              {t(item.note)
+                .split("\n")
+                .map((x, i) => (
+                  <div key={i}>{getTextAnim(x, i)}</div>
+                ))}
             </ScrollOverPack>
           </div>
         </div>

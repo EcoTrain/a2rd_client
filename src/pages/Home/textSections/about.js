@@ -1,22 +1,19 @@
 import React, { useRef } from "react";
 import QueueAnim from "rc-queue-anim";
 import ScrollAnim from "rc-scroll-anim";
+import { useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const AboutDescription = () => {
+  const { t } = useTranslation();
   return (
     <div key="aboutDescription" className="section-content-text">
       <div className="section-text-block">
-        <div className="font-title-h1 text-center">About Us</div>
-        <div className="font-text-large description">
-          We are motivated by more than the simple pursuit of business success.
-          We aim to make the world sustainable and better than it was before. We
-          aim to improve the lives of millions of people worldwide and make the
-          process of following/conducting therapy more comfortable for both
-          patients and doctors.
+        <div className="font-title-h1 text-center">{t("about.title")}</div>
+        <div className="font-text-large description">{t("about.text")}
         </div>
       </div>
     </div>
@@ -24,6 +21,7 @@ const AboutDescription = () => {
 };
 
 const AboutFounder = () => {
+  const { t } = useTranslation();
   const imgAlexey = process.env.PUBLIC_URL + "/static/images/index/alexey.webp";
   return (
     <div
@@ -39,12 +37,10 @@ const AboutFounder = () => {
           style={{ height: 100, width: 100, marginBottom: "1em" }}
         />
         <div className="founder-text">
-          <div>
-            With the highest consideration from the A2 Research and Development
-            lab
+          <div>{t("about.signature")}
           </div>
-          <div>Aleksey A. ROMANOV</div>
-          <div>CEO, founder</div>
+          <div>{t("about.name")}</div>
+          <div>{t("about.position")}</div>
         </div>
       </div>
     </div>

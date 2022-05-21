@@ -1,18 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
-import TextyAnim from "rc-texty";
-import ScrollAnim from "rc-scroll-anim";
+import { Link, useParams } from "react-router-dom";
 import { scroller } from "react-scroll";
 import PropTypes from "prop-types";
+import { Trans, useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
-import { splitTextByWords } from "../../fucntions/splitText";
 import PageScroller from "../../components/ScrollPage";
 import { startupsCardsInfo } from "../Home/cardSections/cardsConfig";
 
 const { Content } = Layout;
-const ScrollOverPack = ScrollAnim.OverPack;
 
 const Startups = () => {
   const params = useParams();
@@ -35,6 +32,7 @@ const Startups = () => {
 };
 
 const Startup = ({ item }) => {
+  const { t } = useTranslation("startups");
   Startup.propTypes = {
     item: () => ({
       id: PropTypes.string,
@@ -46,19 +44,6 @@ const Startup = ({ item }) => {
   };
   const pageRef = useRef();
 
-  const getTextAnim = (text, i) => (
-    <TextyAnim
-      className="font-text-big description"
-      type="bottom"
-      split={splitTextByWords}
-      delay={i * 300}
-      duration={300}
-      interval={10}
-    >
-      {text}
-    </TextyAnim>
-  );
-
   return (
     <Layout
       id={item.id}
@@ -69,20 +54,49 @@ const Startup = ({ item }) => {
       <Content className="section-content">
         <div className="section-content-text center-block-1200">
           <div className="section-text-block">
-            <div className="font-title-h1 text-center">{item.title}</div>
-            <ScrollOverPack replay always={false} playScale={0}>
-              {item.texts.map((x, i) => (
-                <div key={i}>{getTextAnim(x, i)}</div>
+            <div className="font-title-h1 text-center">{t(item.title)}</div>
+            {t(item.text)
+              .split("\n")
+              .map((x, i) => (
+                <div key={i} className="font-text-big description">
+                  <div>
+                    <Trans
+                      t={t}
+                      i18nKey={x}
+                      components={[
+                        <Link
+                          to={item.url || ""}
+                          key="link"
+                          className="font-title-h3"
+                        />,
+                      ]}
+                    />
+                  </div>
+                </div>
               ))}
-            </ScrollOverPack>
           </div>
         </div>
-        {/* <div className="section-content-img">
-          <img src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"} />
-        </div> */}
       </Content>
     </Layout>
   );
 };
+
+/*
+<div className="font-text-big description">
+              <div>
+                <Trans
+                  t={t}
+                  i18nKey={item.text}
+                  components={[
+                    <Link
+                      to={item.url || ""}
+                      key="link"
+                      className="font-title-h3"
+                    />,
+                  ]}
+                />
+              </div>
+            </div>
+*/
 
 export default Startups;

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
-// import { animateScroll as scroll, scroller } from "react-scroll";
+import { useTranslation } from "react-i18next";
 import { Menu } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -12,6 +12,7 @@ import { ReactComponent as LogoMin } from "../../assets/logo_min.svg";
 import { ReactComponent as LogoMax } from "../../assets/logo_max.svg";
 
 const Header = () => {
+  const { t } = useTranslation();
   const headerBottomPadding = 11;
 
   const headerRef = useRef();
@@ -20,9 +21,15 @@ const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const items = [
-    { url: `${process.env.REACT_APP_URL}/`, label: "About Us" },
-    { url: `${process.env.REACT_APP_URL}/projects/`, label: "Projects" },
-    { url: `${process.env.REACT_APP_URL}/startups/`, label: "Startups" },
+    { url: `${process.env.REACT_APP_URL}/`, label: t("header.about") },
+    {
+      url: `${process.env.REACT_APP_URL}/projects/`,
+      label: t("header.projects"),
+    },
+    {
+      url: `${process.env.REACT_APP_URL}/startups/`,
+      label: t("header.startups"),
+    },
   ].map((item) => ({
     key: `${item.url}`,
     label: `${item.label}`,

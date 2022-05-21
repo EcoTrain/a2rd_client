@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import QueueAnim from "rc-queue-anim";
+import { useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 import "./contacts.scss";
@@ -7,19 +8,20 @@ import "./contacts.scss";
 const { Content } = Layout;
 
 const ContactsLinks = () => {
+  const { t } = useTranslation();
   return (
     <div key="ContactsLinks" id="contactsLinks" className="text-center">
       <div className="font-text-large">
         <a href="https://t.me/a2_development" target="_blank" rel="noreferrer">
-          +33 6 19 20 31 25
+          {t("contacts.phone")}
         </a>
       </div>
       <div className="font-text-large">
-        <a href="mailto:info@a2rd.com">info@a2rd.com</a>
+        <a href="mailto:info@a2rd.com">{t("contacts.email")}</a>
       </div>
       <div className="font-text-large">
         <a href="https://t.me/a2_development" target="_blank" rel="noreferrer">
-          @a2_development
+          {t("contacts.tg")}
         </a>
       </div>
     </div>
