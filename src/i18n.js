@@ -13,7 +13,7 @@ let resources = {
   en: EnLocale,
 };
 
-if (!window.location.host.includes(".ru")) {
+if (window.location.host.includes(".ru")) {
   Languages.push("ru");
   resources["ru"] = RuLocale;
   lngSelectOptions["ru"] = "Русский";
