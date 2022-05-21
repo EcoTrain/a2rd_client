@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll/modules";
 import TweenOne from "rc-tween-one";
@@ -32,6 +33,8 @@ const Page = ({ children, index }) => {
     index: PropTypes.number,
   };
 
+  const { t } = useTranslation();
+
   const elemRef = useRef();
   const onScreen = useOnScreen({ ref: elemRef });
 
@@ -55,7 +58,7 @@ const Page = ({ children, index }) => {
   useEffect(() => {
     if (onScreen) {
       const title = children.props.title;
-      document.title = title ? `A2RD Lab: ${title}` : "A2RD Lab";
+      document.title = title ? `A2RD Lab: ${t(title)}` : "A2RD Lab";
     }
   }, [onScreen]);
 
