@@ -20,10 +20,11 @@ const Projects = () => {
 
   useEffect(() => {
     document.title = "A2RD Lab: Projects";
-    scroller.scrollTo(params.id, {
-      duration: 0,
-      smooth: "easeOutQuint",
-    });
+    params.id &&
+      scroller.scrollTo(params.id, {
+        duration: 0,
+        smooth: "easeOutQuint",
+      });
   }, []);
 
   return (

@@ -16,7 +16,7 @@ const Startups = () => {
 
   useEffect(() => {
     document.title = "A2RD Lab: Startups";
-    scroller.scrollTo(params.id, {
+    params.id && scroller.scrollTo(params.id, {
       duration: 0,
       smooth: "easeOutQuint",
     });
@@ -64,10 +64,11 @@ const Startup = ({ item }) => {
                       t={t}
                       i18nKey={x}
                       components={[
-                        <Link
-                          to={item.url || ""}
-                          key="link"
-                          className="font-title-h3"
+                        <a
+                          key={`link${i}`}
+                          href={item.url || ""}
+                          target="_blank"
+                          rel="noreferrer"
                         />,
                       ]}
                     />

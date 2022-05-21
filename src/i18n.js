@@ -20,7 +20,7 @@ i18n
     defaultNS: "translations",
     lng: DEFAULT_LANGUAGE,
     fallbackLng: DEFAULT_LANGUAGE,
-    debug: true,
+    debug: process.env.NODE_ENV == 'development',
     whitelist: Languages,
     interpolation: {
       escapeValue: false, // react already safes from xss
