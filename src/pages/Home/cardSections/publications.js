@@ -24,8 +24,8 @@ const HomePublications = () => {
         replay
         always={false}
         playScale={0}
-        // className="section-content"
-        style={{ flexDirection: "column" }}
+        className="section-content-text"
+        style={{ height: "100%" }}
       >
         <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
           {t("publications.title")}
@@ -70,7 +70,7 @@ const renderCard = (info, i) => {
       <div className="gridCard lineGridCard" onMouseEnter={onHover}>
         <div className="lineGridCardIcon">
           <a href={info.icon.link} target="_blank" rel="noreferrer">
-            <img src={info.icon.src} alt={info.icon.alt}/>
+            <img src={info.icon.src} alt={info.icon.alt} />
           </a>
         </div>
 

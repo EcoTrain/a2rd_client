@@ -21,7 +21,7 @@ const HomeProjects = () => {
         <QueueAnim
           type={["left", "right"]}
           duration={1000}
-          // className="section-content"
+          className="section-content-text"
           style={{ flexDirection: "column" }}
         >
           <div

@@ -51,8 +51,8 @@ const Header = () => {
     document.querySelectorAll(".section-content-text").forEach((el) => {
       if (el.scrollHeight > el.clientHeight - 60) {
         console.log("Found the worst element ever: ", el);
-        el.style.margin = "60px 0 0 0";
-      } else el.style.marginTop = 0;
+        el.style.paddingTop = "60px";
+      } else el.style.paddingTop = 0;
     });
   };
   useEffect(() => {

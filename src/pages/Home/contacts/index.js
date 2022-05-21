@@ -91,17 +91,17 @@ const HomeContacts = () => {
   const pageRef = useRef();
   return (
     <Layout className="section" id="homeContacts" ref={pageRef}>
-        <div className="section-content-text  section-darkWhite">
-          <QueueAnim
-            type={["left", "right"]}
-            id="contacts"
-            className="section-text-block"
-          >
-            {ContactsLinks()}
-            {ContactsIcons()}
-          </QueueAnim>
-        </div>
-        <div className="section-content-img"></div>
+      <div className="section-content-img"></div>
+      <div className="section-content-text  section-darkWhite">
+        <QueueAnim
+          type={["left", "right"]}
+          id="contacts"
+          className="section-text-block"
+        >
+          {ContactsLinks()}
+          {ContactsIcons()}
+        </QueueAnim>
+      </div>
     </Layout>
   );
 };
