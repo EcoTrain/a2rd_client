@@ -1,18 +1,13 @@
 {
     "translations": {
         "pages": {
-            "about": "About",
+            "about": "About Us",
             "activities": "Activities",
             "projects": "Projects",
             "startups": "Startups",
             "publications": "Publications",
             "feedback": "Feedback",
             "contacts": "Contacts"
-        },
-        "header": {
-            "about": "About Us",
-            "projects": "Projects",
-            "startups": "Startups"
         },
         "preview": {
             "title": "A2RD",
@@ -26,11 +21,11 @@
             "position": "CEO, founder"
         },
         "analytics": {
-            "title": "Our analytics",
+            "title": "Help for companies",
             "text": "Our analytics, cutting edge reviews and models help companies from the energy, industrial, medical, financial, insurance and other sectors improve their ESG strategies and development programs based on up-to-date reviews (scientific reports, intellectual property studies, publications)"
         },
         "solutions": {
-            "title": "Our solutions",
+            "title": "About products",
             "text": "Our solutions facilitate routine procedures and enhance security through user-friendly software assistants and a wide network of partners from various sectors."
         },
         "assistant": {
@@ -53,7 +48,7 @@
         "activities.list": {
             "processing": "RAW/BIG data processing and analysis",
             "modeling": "Computational modeling",
-            "ML": "Machine Learning (AI) and Neural network",
+            "ML": "Machine Learning (AI) and Neural networks",
             "analytics": "Predictive Analytics",
             "spatial": "Spatial analysis (geographic information technology and remote sensing)",
             "consulting": "Technology consulting",
@@ -120,7 +115,7 @@
             "label": "Please fill out the form to ask questions or discuss a possible collaboration. We will reply as soon as possible",
             "field.email": "Your email",
             "field.name": "Your name",
-            "field.text": "Your question"
+            "field.text": "Your message"
         }
     }
 }

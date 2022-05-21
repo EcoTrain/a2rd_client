@@ -81,22 +81,4 @@ const Startup = ({ item }) => {
   );
 };
 
-/*
-<div className="font-text-big description">
-              <div>
-                <Trans
-                  t={t}
-                  i18nKey={item.text}
-                  components={[
-                    <Link
-                      to={item.url || ""}
-                      key="link"
-                      className="font-title-h3"
-                    />,
-                  ]}
-                />
-              </div>
-            </div>
-*/
-
 export default Startups;

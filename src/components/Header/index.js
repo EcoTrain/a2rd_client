@@ -21,14 +21,14 @@ const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const items = [
-    { url: `${process.env.REACT_APP_URL}/`, label: t("header.about") },
+    { url: `${process.env.REACT_APP_URL}/`, label: t("pages.about") },
     {
       url: `${process.env.REACT_APP_URL}/projects/`,
-      label: t("header.projects"),
+      label: t("pages.projects"),
     },
     {
       url: `${process.env.REACT_APP_URL}/startups/`,
-      label: t("header.startups"),
+      label: t("pages.startups"),
     },
   ].map((item) => ({
     key: `${item.url}`,

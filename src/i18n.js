@@ -4,27 +4,41 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 
 import EnLocale from "./locales/en.json";
+import RuLocale from "./locales/ru.json";
 
 const DEFAULT_LANGUAGE = "en";
-const Languages = ['en', 'de'];
+let lngSelectOptions = { en: "English" };
+let Languages = [Object.keys(lngSelectOptions)];
+let resources = {
+  en: EnLocale,
+};
+
+if (window.location.host.includes(".ru")) {
+  Languages.push("ru");
+  resources["ru"] = RuLocale;
+  lngSelectOptions["ru"] = "Русский";
+}
+
+const options = {
+  order: ["querystring", "navigator", "htmlTag"],
+  lookupQuerystring: "lng",
+};
 
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(initReactI18next)
   .use(Backend)
   .use(LanguageDetector)
   .init({
-    resources: {
-      en: EnLocale,
-    },
+    resources: resources,
+    detection: options,
+    // lng: DEFAULT_LANGUAGE,
+    fallbackLng: DEFAULT_LANGUAGE,
     ns: ["translations"],
     defaultNS: "translations",
-    lng: DEFAULT_LANGUAGE,
-    fallbackLng: DEFAULT_LANGUAGE,
-    debug: process.env.NODE_ENV == 'development',
+    debug: process.env.NODE_ENV == "development",
     whitelist: Languages,
-    interpolation: {
-      escapeValue: false, // react already safes from xss
-    },
+    load: "currentOnly",
+    useCookie: false,
   });
 
 export default i18n;

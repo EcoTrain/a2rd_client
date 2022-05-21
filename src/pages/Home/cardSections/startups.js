@@ -23,7 +23,10 @@ const HomeStartups = () => {
         className="section-content"
         style={{ flexDirection: "column" }}
       >
-        <div className="section-title font-title-h1 text-center" style={{ marginTop: "2em" }}>
+        <div
+          className="section-title font-title-h1 text-center"
+          style={{ marginTop: "2em" }}
+        >
           {t("startups.title")}
         </div>
         <div className="gridCardsView lineGridCardsViewRow">
@@ -66,9 +69,11 @@ const renderCard = (info, i) => {
           <div className="gridCardViewTitle font-title-h3 text-center ">
             {t(info.title)}
           </div>
-          <div className="description">
-            {hover ? t(info.smallText) : t(info.previewText)}
-          </div>
+          {hover ? (
+            <div className="description">{t(info.smallText)}</div>
+          ) : (
+            <div className="text-center">{t(info.previewText)}</div>
+          )}
           {hover && (
             <div className="gridCardViewLinkBtns">
               <button
