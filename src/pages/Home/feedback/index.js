@@ -136,7 +136,7 @@ const HomeFeedback = () => {
     <Layout className="section" id="homeFeedback" ref={pageRef}>
         <div className="section-content section-darkWhite">
           <div className="section-content-block">
-            <div className="font-title-h1 text-center">
+            <div className="section-title font-title-h1 text-center">
               {t("feedback.title")}
             </div>
             <QueueAnim type={["left", "right"]} id="feedback">

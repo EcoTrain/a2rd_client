@@ -22,6 +22,7 @@
             min-height: 100vh;
             position: relative;
             flex-direction: row;
+            // box-shadow: inset 0px 8px 6px -6px #888;
             .section-content {
                 pointer-events: all;
                 flex-grow: 1;
@@ -29,10 +30,10 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-
                 max-height: 100vh;
                 overflow: scroll;
                 justify-content: flex-start;
+                box-shadow: inset 0px 11px 8px -10px var(--lightGray);
                 & > .section-content-block {
                     margin: auto;
                     padding: 0em 2em;
@@ -40,6 +41,9 @@
 
                 .section-content-block {
                     max-width: 1200px;
+                    .section-title {
+                        margin-bottom: 0.5rem;
+                    }
                 }
                 li {
                     .icon {

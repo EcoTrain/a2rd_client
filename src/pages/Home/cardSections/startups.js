@@ -23,7 +23,7 @@ const HomeStartups = () => {
         className="section-content"
         style={{ flexDirection: "column" }}
       >
-        <div className="font-title-h1 text-center" style={{ marginTop: "5%" }}>
+        <div className="section-title font-title-h1 text-center" style={{ marginTop: "2em" }}>
           {t("startups.title")}
         </div>
         <div className="gridCardsView lineGridCardsViewRow">

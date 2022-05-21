@@ -65,9 +65,11 @@ const Project = ({ item }) => {
       className="section section-lightGray"
       style={{ background: item.bg }}
     >
-      <div className="section-content">
+      <div className="section-content" style={{ paddingTop: 60 }}>
         <div className="section-content-block">
-          <div className="font-title-h1 text-center">{t(item.title)}</div>
+          <div className="section-title font-title-h1 text-center">
+            {t(item.title)}
+          </div>
           <ScrollOverPack replay always={false} playScale={0}>
             {t(item.text)
               .split("\n")

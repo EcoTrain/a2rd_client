@@ -60,7 +60,7 @@ const HomeTextPage = ({
       className={`section-content  ${sectionTheme}`}
     >
       <div className="section-content-block">
-        <div className="font-title-h1 text-center">{t(title)}</div>
+        <div className="section-title font-title-h1 text-center">{t(title)}</div>
         <ScrollOverPack replay always={false} playScale={0}>
           {texts.map((x, i) => (
             <div key={i}>{getTextAnim(x, i)}</div>

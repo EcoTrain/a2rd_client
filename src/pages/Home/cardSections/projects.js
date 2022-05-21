@@ -25,8 +25,8 @@ const HomeProjects = () => {
           style={{ flexDirection: "column" }}
         >
           <div
-            className="font-title-h1 text-center"
-            style={{ marginTop: "3em" }}
+            className="section-title font-title-h1 text-center"
+            style={{ marginTop: "1em" }}
           >
             {t("projects.title")}
           </div>

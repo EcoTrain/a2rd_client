@@ -48,7 +48,7 @@ const HomeActivities = () => {
     >
         <div className="section-content">
           <div className="section-content-block">
-            <div className="font-title-h1 text-center">{t("activities.title")}</div>
+            <div className="section-title font-title-h1 text-center">{t("activities.title")}</div>
             <ScrollOverPack replay always={false} playScale={0}>
               <div className="font-text-big description">
                 {t("activities.label")}

@@ -27,7 +27,7 @@ const HomePublications = () => {
         className="section-content"
         style={{ height: "100%" }}
       >
-        <div className="font-title-h1 text-center" style={{ marginTop: "3em" }}>
+        <div className="section-title font-title-h1 text-center" style={{ marginTop: "1em" }}>
           {t("publications.title")}
         </div>
         <div className="text-center" style={{ margin: "0px 2em" }}>
