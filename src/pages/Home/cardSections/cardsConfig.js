@@ -48,7 +48,6 @@ export const startupsCardsInfo = [
     previewText: "startups.item.wm.previewText",
     smallText: "startups.item.wm.smallText",
     text: "startups.item.wm.text",
-
     bg: "var(--darkWhite)",
     id: "startup_wm",
     links: [
@@ -61,6 +60,7 @@ export const startupsCardsInfo = [
         link: "https://wellness.a2rd.com/",
       },
     ],
+    url: "https://wellness.a2rd.com",
   },
   {
     title: "startups.item.framework.title",
@@ -78,6 +78,7 @@ export const startupsCardsInfo = [
 
     bg: "var(--darkWhite)",
     id: "startup_atmos",
+    url: "http://80.65.20.243:61726",
   },
 ];
 

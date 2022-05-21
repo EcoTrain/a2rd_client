@@ -16,10 +16,11 @@ const Startups = () => {
 
   useEffect(() => {
     document.title = "A2RD Lab: Startups";
-    params.id && scroller.scrollTo(params.id, {
-      duration: 0,
-      smooth: "easeOutQuint",
-    });
+    params.id &&
+      scroller.scrollTo(params.id, {
+        duration: 0,
+        smooth: "easeOutQuint",
+      });
   }, []);
 
   return (
@@ -44,6 +45,7 @@ const Startup = ({ item }) => {
   };
   const pageRef = useRef();
 
+  console.log(item);
   return (
     <Layout
       id={item.id}
