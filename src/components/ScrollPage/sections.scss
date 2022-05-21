@@ -30,8 +30,15 @@
                     padding: 0em 2em;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
                     align-items: center;
+
+                    max-height: 100vh;
+                    // padding-top: 60px;
+                    overflow: scroll;
+                    justify-content: flex-start;
+                    & > .section-text-block {
+                        margin: auto;
+                    }
 
                     .section-text-block {
                         max-width: 800px;
@@ -81,11 +88,6 @@
                 flex-direction: column;
                 .section-content-text {
                     max-height: 80vh;
-                    overflow: scroll;
-                    justify-content: flex-start !important;
-                    & > .section-text-block {
-                        margin: auto;
-                    }
                 }
                 .section-content-img {
                     order: -1;
