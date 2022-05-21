@@ -45,7 +45,6 @@ const Startup = ({ item }) => {
   };
   const pageRef = useRef();
 
-  console.log(item);
   return (
     <Layout
       id={item.id}
