@@ -52,13 +52,12 @@
 }
 
 .ant-menu {
-    transition: none;
+    // transition: none;
     li {
         top: 0 !important;
     }
     .ant-menu-item-active,
     .ant-menu-submenu-active {
-        background: var(--coldGrayTransparent) !important;
         &::after {
             border-bottom: 4px solid var(--gray) !important;
         }
