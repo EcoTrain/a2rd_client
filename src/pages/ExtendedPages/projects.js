@@ -62,7 +62,7 @@ const Project = ({ item }) => {
   return (
     <Layout
       id={item.id}
-      className="section section-lightGray"
+      className="section splitSection section-lightGray"
       style={{ background: item.bg }}
     >
       <div className="section-content" style={{ paddingTop: 60 }}>

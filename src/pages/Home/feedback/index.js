@@ -133,7 +133,7 @@ const HomeFeedback = () => {
   };
 
   return (
-    <Layout className="section" id="homeFeedback" ref={pageRef}>
+    <Layout className="section splitSection" id="homeFeedback" ref={pageRef}>
       <div className="section-content section-darkWhite">
         <div className="section-content-block">
           <div className="section-title font-title-h1 text-center">

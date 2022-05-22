@@ -7,12 +7,18 @@
         z-index: ($i);
     }
 }
+
+// .snapScroller {
+//     height: 100vh;
+//     scroll-snap-type: y mandatory;
+//     overflow-y: scroll;
+//     .snapPage {
+//         scroll-snap-align: start;
+//     }
+// }
+
 .sectionPageScroller {
-    // height: 100vh;
-    // scroll-snap-type: y mandatory;
-    // overflow-y: scroll;
     .sectionPage {
-        // scroll-snap-align: start;
         top: 0;
         pointer-events: none;
 
@@ -24,13 +30,9 @@
             flex-direction: row;
             .section-content {
                 pointer-events: all;
-                flex-grow: 1;
-                flex-basis: 50%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                max-height: 100vh;
-                overflow: scroll;
                 justify-content: flex-start;
                 box-shadow: inset 0px 11px 8px -10px var(--lightGray);
                 & > .section-content-block {
@@ -49,6 +51,15 @@
                         margin: 0 10px;
                     }
                 }
+            }
+        }
+        .splitSection {
+            height: 100vh;
+            .section-content {
+                flex-grow: 1;
+                flex-basis: 50%;
+                max-height: 100vh;
+                overflow: scroll;
             }
             .section-img {
                 flex-grow: 1;
@@ -82,18 +93,13 @@
 }
 
 @media (max-width: 960px) {
-    .sectionPage {
-        .section {
-            flex-direction: column !important;
-            .section-content {
-                max-height: 80vh;
-            }
-            .section-img {
-                order: -1;
-                min-height: 20vh;
-                max-height: 20vh;
-                width: 100vw;
-            }
+    .splitSection {
+        flex-direction: column !important;
+        .section-img {
+            order: -1;
+            min-height: 20vh;
+            max-height: 20vh;
+            width: 100vw;
         }
     }
 }

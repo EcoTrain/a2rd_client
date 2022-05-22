@@ -48,13 +48,15 @@ const Startup = ({ item }) => {
   return (
     <Layout
       id={item.id}
-      className="section section-lightGray"
+      className="section splitSection section-lightGray"
       ref={pageRef}
       style={{ position: "sticky", top: 0, background: item.bg }}
     >
       <div className="section-content" style={{ paddingTop: 60 }}>
         <div className="section-content-block">
-          <div className="section-title font-title-h1 text-center">{t(item.title)}</div>
+          <div className="section-title font-title-h1 text-center">
+            {t(item.title)}
+          </div>
           {t(item.text)
             .split("\n")
             .map((x, i) => (

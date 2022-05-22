@@ -74,12 +74,11 @@ const renderCard = (info, i) => {
   return (
     <div key={i} className="gridCardWrapper">
       <div
-        className="gridCard"
+        className="gridCard gridCardBig"
         ref={cardRef}
         onMouseEnter={onHover}
         onMouseLeave={onUnHover}
         style={{
-          minHeight: "30vh",
           background: bg,
           textShadow: titleShadow,
         }}

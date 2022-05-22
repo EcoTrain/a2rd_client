@@ -46,10 +46,7 @@ const HomeTextPage = ({
   );
 
   const getImage = () => (
-    <div
-      key={`${(title || "").toLowerCase()}_image`}
-      className="section-img"
-    >
+    <div key={`${(title || "").toLowerCase()}_image`} className="section-img">
       {img && <img src={img} />}
     </div>
   );
@@ -60,7 +57,9 @@ const HomeTextPage = ({
       className={`section-content  ${sectionTheme}`}
     >
       <div className="section-content-block">
-        <div className="section-title font-title-h1 text-center">{t(title)}</div>
+        <div className="section-title font-title-h1 text-center">
+          {t(title)}
+        </div>
         <ScrollOverPack replay always={false} playScale={0}>
           {texts.map((x, i) => (
             <div key={i}>{getTextAnim(x, i)}</div>
@@ -73,7 +72,7 @@ const HomeTextPage = ({
   const sectionChilds = [getContent(), getImage()];
 
   return (
-    <Layout className="section" ref={pageRef}>
+    <Layout className="section splitSection" ref={pageRef}>
       {direction == "left" ? sectionChilds : sectionChilds.reverse()}
     </Layout>
   );

@@ -90,7 +90,7 @@ const ContactsIcons = () => {
 const HomeContacts = () => {
   const pageRef = useRef();
   return (
-    <Layout className="section" id="homeContacts" ref={pageRef}>
+    <Layout className="section splitSection" id="homeContacts" ref={pageRef}>
       <div className="section-img"></div>
       <div className="section-content  section-darkWhite">
         <QueueAnim

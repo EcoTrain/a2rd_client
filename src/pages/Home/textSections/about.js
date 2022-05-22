@@ -57,7 +57,7 @@ const HomeAbout = () => {
       <ScrollOverPack replay always={false} playScale={0}>
         <QueueAnim
           type={["bottom", "top"]}
-          className="section section-white"
+          className="section splitSection section-white"
         >
           {AboutDescription()}
           {AboutFounder()}

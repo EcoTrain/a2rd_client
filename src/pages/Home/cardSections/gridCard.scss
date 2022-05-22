@@ -8,7 +8,6 @@
         flex-basis: 50%;
         display: flex;
         .gridCard {
-            // min-height: 30vh;
             width: 100%;
             display: flex;
             flex-direction: row;
@@ -45,6 +44,9 @@
                 }
             }
         }
+        .gridCardBig {
+            min-height: 30vh;
+        }
     }
 }
 
@@ -55,11 +57,14 @@
         .gridCardWrapper {
             width: 100%;
             .gridCard {
-                margin: 0.5em;
                 min-height: 100px;
+                margin: 0.5em;
                 .gridCardView {
                     width: 100%;
                 }
+            }
+            .gridCardBig {
+                min-height: 15vh;
             }
         }
     }

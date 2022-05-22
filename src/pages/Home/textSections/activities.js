@@ -42,7 +42,7 @@ const HomeActivities = () => {
 
   return (
     <Layout
-      className="section section-darkWhite"
+      className="section splitSection section-darkWhite"
       id="homeActivities"
       ref={pageRef}
     >
