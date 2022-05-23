@@ -8,8 +8,7 @@ const getTheme = () => {
 
   const userMedia = window.matchMedia("(prefers-color-scheme: light)");
   if (userMedia.matches) return themes.light;
-
-  return themes.dark;
+  else return themes.dark;
 };
 
 const ThemeProvider = ({ children }) => {
