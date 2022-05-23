@@ -6,10 +6,14 @@ const getTheme = () => {
   const theme = `${window?.localStorage?.getItem("theme")}`;
   if (Object.values(themes).includes(theme)) return theme;
 
-  const userMedia = window.matchMedia("(prefers-color-scheme: light)");
-  if (userMedia.matches) return themes.light;
-
-  return themes.dark;
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  if (prefersDarkScheme.matches) {
+    document.body.classList.add("dark-theme");
+    return themes.dark;
+  } else {
+    document.body.classList.remove("dark-theme");
+    return themes.light;
+  }
 };
 
 const ThemeProvider = ({ children }) => {
