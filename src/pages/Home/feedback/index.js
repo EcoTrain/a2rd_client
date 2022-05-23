@@ -127,7 +127,7 @@ const HomeFeedback = () => {
             onChange={(e) => setText(e.target.value)}
           />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value={t('feedback.submit')} />
       </form>
     );
   };
