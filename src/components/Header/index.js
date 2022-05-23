@@ -40,13 +40,13 @@ const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const items = [
-    { url: `${process.env.REACT_APP_URL}/`, label: t("pages.about") },
+    { url: `/`, label: t("pages.about") },
     {
-      url: `${process.env.REACT_APP_URL}/projects/`,
+      url: `/projects/`,
       label: t("pages.projects"),
     },
     {
-      url: `${process.env.REACT_APP_URL}/startups/`,
+      url: `/startups/`,
       label: t("pages.startups"),
     },
   ].map((item) => ({
@@ -100,7 +100,7 @@ const Header = () => {
     >
       <div className="header">
         <a
-          href={`${process.env.REACT_APP_URL}/`}
+          href={`/`}
           className="headerLogo"
           target={"_self"}
         >

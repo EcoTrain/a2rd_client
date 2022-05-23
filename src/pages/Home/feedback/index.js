@@ -71,7 +71,7 @@ const HomeFeedback = () => {
       toast.error(t("feedback.fail"));
     };
 
-    const url = process.env.REACT_APP_SERVER_URL + "/send_email";
+    const url =  + "/api/send_email";
     const body = {
       email,
       name,

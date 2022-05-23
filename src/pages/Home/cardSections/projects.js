@@ -99,7 +99,7 @@ const renderCard = (info, i) => {
             <button
               className="gridCardViewLinkBtn"
               onClick={() =>
-                (window.location.href = `${process.env.REACT_APP_URL}/projects/${info.id}`)
+                (window.location.href = `/projects/${info.id}`)
               }
             >
               {t("projects.moreBtn")}

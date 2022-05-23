@@ -10,11 +10,13 @@ import App from "./App";
 
 import ThemeProvider from "./contexts/Theme/ThemeProvider";
 
-if (process.env.NODE_ENV === 'production') {
-  console.log = () => {}
-  console.error = () => {}
-  console.debug = () => {}
+if (process.env.NODE_ENV === "production") {
+  console.log = () => {};
+  console.error = () => {};
+  console.debug = () => {};
 }
+
+console.log(process.env.PUBLIC_URL);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -21,21 +21,21 @@ function App() {
     <Layout>
       <Header />
       <Routes>
-        <Route path={`${process.env.REACT_APP_URL}/`} element={<Home />} />
+        <Route path={`/`} element={<Home />} />
         <Route
-          path={`${process.env.REACT_APP_URL}/projects/`}
+          path={`/projects/`}
           element={<Projects />}
         />
         <Route
-          path={`${process.env.REACT_APP_URL}/projects/:id`}
+          path={`/projects/:id`}
           element={<Projects />}
         />
         <Route
-          path={`${process.env.REACT_APP_URL}/startups/`}
+          path={`/startups/`}
           element={<Startups />}
         />
         <Route
-          path={`${process.env.REACT_APP_URL}/startups/:id`}
+          path={`/startups/:id`}
           element={<Startups />}
         />
       </Routes>

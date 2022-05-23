@@ -79,7 +79,7 @@ const renderCard = (info, i) => {
               <button
                 className="gridCardViewLinkBtn"
                 onClick={() =>
-                  (window.location.href = `${process.env.REACT_APP_URL}/startups/${info.id}`)
+                  (window.location.href = `/startups/${info.id}`)
                 }
               >
                 Read more
