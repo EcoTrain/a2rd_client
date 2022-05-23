@@ -11,12 +11,13 @@
                 margin: 0;
             }
         }
+        #homeAboutDescription {
+            justify-content: flex-end;
+        }
         #homeAboutFounder {
             box-shadow: none;
             justify-content: flex-start;
-        }
-        #homeAboutDescription {
-            justify-content: flex-end;
+            padding-top: 1em;
         }
     }
 }
