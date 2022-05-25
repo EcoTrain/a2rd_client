@@ -74,7 +74,7 @@ const renderCard = (info, i) => {
   return (
     <div key={i} className="gridCardWrapper">
       <div
-        className="gridCard gridCardBig"
+        className="gridCard gridCardBig "
         ref={cardRef}
         onMouseEnter={onHover}
         onMouseLeave={onUnHover}
@@ -84,7 +84,7 @@ const renderCard = (info, i) => {
         }}
       >
         {!hover ? (
-          <div className="gridCardPreview">
+          <div className="gridCardView gridCardBlur">
             <div
               className="font-title-h1 text-center"
               style={{ color: info.color }}
@@ -98,9 +98,7 @@ const renderCard = (info, i) => {
             <div className="description">{t(info.text)}</div>
             <button
               className="gridCardViewLinkBtn"
-              onClick={() =>
-                (window.location.href = `/projects/${info.id}`)
-              }
+              onClick={() => (window.location.href = `/projects/${info.id}`)}
             >
               {t("projects.moreBtn")}
             </button>
