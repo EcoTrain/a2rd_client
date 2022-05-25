@@ -20,9 +20,9 @@ export const textPageConfig = {
     direction: "right",
     imgMax:
       process.env.PUBLIC_URL +
-      "/static/images/index/sections/max/businessDealMax.jpeg",
+      "/static/images/index/sections/max/businessDeal.jpeg",
     imgMin:
       process.env.PUBLIC_URL +
-      "/static/images/index/sections/min/businessDealMin.jpeg",
+      "/static/images/index/sections/min/businessDeal.jpeg",
   },
 };

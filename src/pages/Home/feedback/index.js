@@ -20,10 +20,10 @@ const HomeFeedback = () => {
   const { t } = useTranslation("feedback");
   const imgMin =
     process.env.PUBLIC_URL +
-    "/static/images/index/sections/min/feedbackMin.jpeg";
+    "/static/images/index/sections/min/feedback.jpeg";
   const imgMax =
     process.env.PUBLIC_URL +
-    "/static/images/index/sections/max/feedbackMax.jpeg";
+    "/static/images/index/sections/max/feedback.jpeg";
   const pageRef = useRef();
 
   const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);

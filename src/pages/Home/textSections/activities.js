@@ -14,10 +14,10 @@ const HomeActivities = () => {
   const { t } = useTranslation("activities");
   const imgMin =
     process.env.PUBLIC_URL +
-    "/static/images/index/sections/min/activitiesMin.jpeg";
+    "/static/images/index/sections/min/activities.jpeg";
   const imgMax =
     process.env.PUBLIC_URL +
-    "/static/images/index/sections/max/activitiesMax.jpeg";
+    "/static/images/index/sections/max/activities.jpeg";
   const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
 
   const pageRef = useRef();
