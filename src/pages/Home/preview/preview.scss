@@ -49,9 +49,9 @@
             position: relative;
             text-align: center;
             font-variant: diagonal-fractions;
-            text-shadow: 0px 0px 0.2em var(--coldBlack);
+            text-shadow: 0px 0px 0.25em var(--coldBlack);
             * {
-                color: var(--white);
+                color: white;
             }
             .bannerContent-shape {
                 position: absolute;
@@ -78,7 +78,7 @@
             .bar {
                 width: 0;
                 height: 2px;
-                background: var(--white);
+                background: white;
             }
         }
     }
