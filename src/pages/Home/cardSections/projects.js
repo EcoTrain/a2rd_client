@@ -56,11 +56,11 @@ const renderCard = (info, i) => {
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
-  const titleShadow = info.color == "white" && "0px 0px 0.2em black";
+  const titleShadow = "0px 0px 0.3em black";
   const bg = `url(${info.icon})  no-repeat center center / cover`;
 
   const onHover = () => {
-    cardRef.current.style.background = info.bg;
+    cardRef.current.style.background = "var(--darkWhite)";
     cardRef.current.style.textShadow = "";
     setHover(true);
   };
@@ -87,7 +87,7 @@ const renderCard = (info, i) => {
           <div className="gridCardView gridCardBlur">
             <div
               className="font-title-h1 text-center"
-              style={{ color: info.color }}
+              style={{ color: "white" }}
             >
               {t(info.title)}
             </div>

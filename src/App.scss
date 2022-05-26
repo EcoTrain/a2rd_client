@@ -1,17 +1,17 @@
 :root {
-    --white: white;
 }
 :root[data-theme="light"] {
     --primary: hsl(180, 33%, 30%);
     --primarySecond: hsl(180, 33%, 50%);
 
+    --white: white;
     --bgWhite: rgba(245, 245, 245);
     --darkWhite: rgba(230, 230, 230);
     --lightGray: rgba(220, 220, 220);
     --lightGrayTransparent: rgba(220, 220, 220, 0.9);
-    --lightGrayTransparentInverse: rgba(220, 220, 220, 0.4);
     --coldGray: rgba(190, 190, 190);
     --gray: rgba(160, 160, 160);
+    --grayTransparent: rgba(160, 160, 160, 0.6);
     --darkGray: rgb(130, 130, 130);
     --coldBlack: rgb(40, 40, 40);
     --black: black;
@@ -23,14 +23,14 @@
     --primary: hsl(180, 33%, 60%);
     --primarySecond: hsl(180, 33%, 40%);
 
+    --white: black;
     --bgWhite: rgba(50, 50, 50);
     --darkWhite: rgb(60, 60, 60);
     --lightGray: rgb(80, 80, 80);
     --lightGrayTransparent: rgba(80, 80, 80, 0.9);
-    --lightGrayTransparentInverse: rgba(80, 80, 80, 0.4);
     --coldGray: rgba(100, 100, 100);
     --gray: rgba(120, 120, 120);
-    --grayTransparent: rgba(120, 120, 120, 0.8);
+    --grayTransparent: rgba(120, 120, 120, 0.6);
     --darkGray: rgba(140, 140, 140);
     --coldBlack: rgba(160, 160, 160);
     --black: white;
