@@ -78,7 +78,6 @@ export const publicationsCardsInfo = [
   {
     title: "publications.item.forest",
     year: "2022",
-    bg: "var(--lightGray)",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=23916",
       alt: "SCImago Journal & Country Rank",
@@ -98,7 +97,6 @@ export const publicationsCardsInfo = [
   {
     title: "publications.item.gral",
     year: "2020",
-    bg: "var(--lightGray)",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=15838",
       alt: "SCImago Journal & Country Rank",

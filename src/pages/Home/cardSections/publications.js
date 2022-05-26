@@ -51,7 +51,7 @@ const renderCard = (info, i) => {
 
   const onHover = () => {
     if (cardRef.current) {
-      cardRef.current.style.background = info.bg;
+      cardRef.current.style.background = "var(--lightGray)";
     }
     setHover(true);
   };

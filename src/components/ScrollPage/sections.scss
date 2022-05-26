@@ -34,7 +34,8 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                box-shadow: inset 0px 11px 8px -10px var(--lightGray);
+                // box-shadow: inset 0px 11px 8px -10px var(--coldGray);
+                box-shadow: inset 0px 8px 15px -10px var(--coldGray);
                 & > .section-content-block {
                     margin: auto;
                     padding: 0em 2em;
