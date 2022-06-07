@@ -6,7 +6,7 @@ export const projectsCardsInfo = [
     note: "projects.card.airflow.note",
     icon:
       process.env.PUBLIC_URL +
-      "/static/images/index/projects/airflow_emissions.jpg",
+      "/static/images/index/projects/preview/airflow_emissions.jpg",
   },
   {
     id: "project_transport",
@@ -15,14 +15,14 @@ export const projectsCardsInfo = [
     note: "projects.card.transport.note",
     icon:
       process.env.PUBLIC_URL +
-      "/static/images/index/projects/transport_system.jpeg",
+      "/static/images/index/projects/preview/transport_system.jpeg",
   },
   {
     id: "project_trends",
     title: "projects.card.trends.title",
     text: "projects.card.trends.text",
     note: "projects.card.trends.note",
-    icon: process.env.PUBLIC_URL + "/static/images/index/projects/trends.jpg",
+    icon: process.env.PUBLIC_URL + "/static/images/index/projects/preview/trends.jpg",
   },
   {
     id: "project_locomotives",
@@ -30,7 +30,7 @@ export const projectsCardsInfo = [
     text: "projects.card.locomotives.text",
     note: "projects.card.locomotives.note",
     icon:
-      process.env.PUBLIC_URL + "/static/images/index/projects/locomotives.jpeg",
+      process.env.PUBLIC_URL + "/static/images/index/projects/preview/locomotives.jpeg",
   },
 ];
 

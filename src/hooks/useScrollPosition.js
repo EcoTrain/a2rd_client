@@ -1,4 +1,5 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
+import { animateScroll as scroll } from "react-scroll";
 
 const isBrowser = typeof window !== `undefined`;
 
@@ -42,15 +43,38 @@ export function useScrollPosition({ effect, deps, element, useWindow, wait }) {
   }, deps);
 }
 
-export function useElementPosition({ effect, deps, element}) {
+// Not working. Needs to be improved 
+export function useSmoothScroll() {
+  const [lastScrollTime, setLastScrollTime] = useState(new Date());
+  const [scrollPos, setScrollPos] = useState();
+
   const handleScroll = () => {
-    // console.log({ element });
-    element && effect(element.getBoundingClientRect());
+    const newScrollTime = new Date();
+    if (newScrollTime - lastScrollTime > 100) smoothScroll();
+  };
+
+  const smoothScroll = () => {
+    const newScrollTime = new Date();
+    const scrollDistance = 50;
+    var st = window.scrollY;
+
+    var newPos = st;
+    if (st > scrollPos) {
+      newPos = st + scrollDistance;
+    } else {
+      newPos = st - scrollDistance;
+    }
+    scroll.scrollTo(newPos, {
+      duration: 300,
+      smooth: "easeOutQuint",
+      // ignoreCancelEvents: true,
+    });
+    setLastScrollTime(newScrollTime);
+    setScrollPos(st);
   };
 
   useLayoutEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, deps);
+  });
 }

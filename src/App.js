@@ -14,30 +14,18 @@ import Startups from "./pages/ExtendedPages/startups";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import "./components/Toast.scss"
+import "./components/Toast.scss";
 
 function App() {
   return (
     <Layout>
       <Header />
       <Routes>
-        <Route path={`/`} element={<Home />} />
-        <Route
-          path={`/projects/`}
-          element={<Projects />}
-        />
-        <Route
-          path={`/projects/:id`}
-          element={<Projects />}
-        />
-        <Route
-          path={`/startups/`}
-          element={<Startups />}
-        />
-        <Route
-          path={`/startups/:id`}
-          element={<Startups />}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/projects/" element={<Projects />} />
+        <Route path="/projects/:id" element={<Projects />} />
+        <Route path="/startups/" element={<Startups />} />
+        <Route path="/startups/:id" element={<Startups />} />
       </Routes>
       <ToastContainer
         position="bottom-right"
