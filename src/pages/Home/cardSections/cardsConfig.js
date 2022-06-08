@@ -15,7 +15,7 @@ export const projectsCardsInfo = [
     note: "projects.card.transport.note",
     icon:
       process.env.PUBLIC_URL +
-      "/static/images/index/projects/preview/transport_system.jpeg",
+      "/static/images/index/projects/preview/transport_system.jpg",
   },
   {
     id: "project_trends",
@@ -30,7 +30,7 @@ export const projectsCardsInfo = [
     text: "projects.card.locomotives.text",
     note: "projects.card.locomotives.note",
     icon:
-      process.env.PUBLIC_URL + "/static/images/index/projects/preview/locomotives.jpeg",
+      process.env.PUBLIC_URL + "/static/images/index/projects/preview/locomotives.jpg",
   },
 ];
 
