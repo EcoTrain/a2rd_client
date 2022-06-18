@@ -14,7 +14,7 @@ const HomeActivities = () => {
   const { t } = useTranslation("activities");
   const imgMin =
     process.env.PUBLIC_URL +
-    "/static/images/index/sections/min/activities.jpeg";
+    "/static/images/index/sections/min/activities.jpg";
   const imgMax =
     process.env.PUBLIC_URL +
     "/static/images/index/sections/max/activities.jpeg";
