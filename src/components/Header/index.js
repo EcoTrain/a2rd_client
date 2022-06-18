@@ -45,7 +45,7 @@ const Header = () => {
       key: `/`,
       label: t("pages.about"),
       children: [
-        { key: "/homeAbout", label: t("pages.main"), popupOffset: [-10,-10] },
+        { key: "/homeAbout", label: t("pages.main") },
         { key: "/homeProjects", label: t("pages.projects") },
         { key: "/homeStartups", label: t("pages.startups") },
         { key: "/homePublications", label: t("pages.publications") },
