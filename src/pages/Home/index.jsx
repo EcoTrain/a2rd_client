@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 import "antd/dist/antd.min.css";
 import HomePreview from "./preview";
@@ -11,13 +13,23 @@ import HomeTextPage from "./textSections/TextPage";
 import { textPageConfig } from "./textSections/textPageConfig";
 
 import HomeActivities from "./textSections/activities";
-import HomeFeedback from "./feedback";
 import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";
 import HomePublications from "./cardSections/publications";
+import HomeFeedback from "./feedback";
 import HomeContacts from "./contacts";
 
 const Home = () => {
+  const params = useParams();
+
+  useEffect(() => {
+    params.id &&
+      scroller.scrollTo(params.id, {
+        duration: 0,
+        smooth: "easeOutQuint",
+      });
+  }, []);
+
   return (
     <PageScroller>
       <HomePreview />

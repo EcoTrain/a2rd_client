@@ -32,7 +32,7 @@ const LngSelector = () => {
 
 const Header = () => {
   const { t } = useTranslation();
-  const headerBottomPadding = 11;
+  const headerBottomPadding = 10;
 
   const headerRef = useRef();
   const [hide, setHide] = useState(false);
@@ -40,19 +40,19 @@ const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const items = [
-    { url: `/`, label: t("pages.about") },
     {
-      url: `/projects/`,
-      label: t("pages.projects"),
+      key: `/`,
+      label: t("pages.about"),
+      children: [
+        { key: "/homeProjects", label: t("pages.projects") },
+        { key: "/homeStartups", label: t("pages.startups") },
+        { key: "/homePublications", label: t("pages.publications") },
+        { key: "/homeContacts", label: t("pages.contacts") },
+      ],
     },
-    {
-      url: `/startups/`,
-      label: t("pages.startups"),
-    },
-  ].map((item) => ({
-    key: `${item.url}`,
-    label: `${item.label}`,
-  }));
+    { key: `/projects/`, label: t("pages.projects") },
+    { key: `/startups/`, label: t("pages.startups") },
+  ];
 
   useScrollPosition({
     effect: ({ prevPos, currPos }) => {
@@ -99,11 +99,7 @@ const Header = () => {
       }}
     >
       <div className="header">
-        <a
-          href={`/`}
-          className="headerLogo"
-          target={"_self"}
-        >
+        <a href={`/`} className="headerLogo" target={"_self"}>
           {isNarrow ? <LogoMin /> : <LogoMax />}
         </a>
         <div className="headerActions">
@@ -112,7 +108,7 @@ const Header = () => {
             mode="horizontal"
             defaultSelectedKeys={["2"]}
             items={items}
-            onSelect={(elem) => {
+            onClick={(elem) => {
               window.location.href = elem.key;
             }}
           />
