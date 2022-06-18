@@ -1,6 +1,7 @@
 {
     "translations": {
         "pages": {
+            "main": "Main",
             "about": "About Us",
             "activities": "Activities",
             "projects": "Projects",

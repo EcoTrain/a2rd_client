@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { scroller } from "react-scroll";
 import { Menu } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -44,6 +45,7 @@ const Header = () => {
       key: `/`,
       label: t("pages.about"),
       children: [
+        { key: "/homeAbout", label: t("pages.main"), popupOffset: [-10,-10] },
         { key: "/homeProjects", label: t("pages.projects") },
         { key: "/homeStartups", label: t("pages.startups") },
         { key: "/homePublications", label: t("pages.publications") },
@@ -109,7 +111,19 @@ const Header = () => {
             defaultSelectedKeys={["2"]}
             items={items}
             onClick={(elem) => {
-              window.location.href = elem.key;
+              // console.log({ elem });
+              const oldPaths = window.location.pathname.split("/");
+              const oldURL = oldPaths.slice(0, -1).join("/");
+
+              const newPaths = elem.key.split("/");
+              const newURL = newPaths.slice(0, -1).join("/");
+
+              if (oldURL == newURL) {
+                scroller.scrollTo(newPaths.slice(-1)[0], {
+                  duration: 1000,
+                  smooth: "easeInQuint",
+                });
+              } else window.location.href = elem.key;
             }}
           />
           <Toggle
