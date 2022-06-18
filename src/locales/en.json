@@ -102,11 +102,11 @@
         "publications.label": "We are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
         "publications.item": {
             "forest": "Catastrophic Pm2.5 emissions from Siberian Forest Fires: Impacting Factors Analysis",
-            "forest.link.article": "Article",
-            "forest.link.score": "Score",
-            "gral": "Graz Lagrangian Model (GRAL) for Pollutants Tracking and Estimating Sources Partial Contributions to Atmospheric Pollution in Highly Urbanized Areas",
-            "gral.link.article": "Article",
-            "gral.link.score": "Score"
+            "gral": "Graz Lagrangian Model (GRAL) for Pollutants Tracking and Estimating Sources Partial Contributions to Atmospheric Pollution in Highly Urbanized Areas"
+        },
+        "publications.links": {
+            "score": "Score",
+            "article": "Article"
         }
     },
     "feedback": {

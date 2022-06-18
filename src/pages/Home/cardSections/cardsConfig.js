@@ -22,7 +22,9 @@ export const projectsCardsInfo = [
     title: "projects.card.trends.title",
     text: "projects.card.trends.text",
     note: "projects.card.trends.note",
-    icon: process.env.PUBLIC_URL + "/static/images/index/projects/preview/trends.jpg",
+    icon:
+      process.env.PUBLIC_URL +
+      "/static/images/index/projects/preview/trends.jpg",
   },
   {
     id: "project_locomotives",
@@ -30,7 +32,8 @@ export const projectsCardsInfo = [
     text: "projects.card.locomotives.text",
     note: "projects.card.locomotives.note",
     icon:
-      process.env.PUBLIC_URL + "/static/images/index/projects/preview/locomotives.jpg",
+      process.env.PUBLIC_URL +
+      "/static/images/index/projects/preview/locomotives.jpg",
   },
 ];
 
@@ -77,7 +80,6 @@ export const startupsCardsInfo = [
 export const publicationsCardsInfo = [
   {
     title: "publications.item.forest",
-    year: "2022",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=23916",
       alt: "SCImago Journal & Country Rank",
@@ -85,18 +87,17 @@ export const publicationsCardsInfo = [
     },
     links: [
       {
-        title: "publications.item.forest.link.article",
+        title: "publications.links.article",
         link: "https://authors.elsevier.com/a/1f0oOzLNSc7c7",
       },
       {
-        title: "publications.item.forest.link.score",
+        title: "publications.links.score",
         link: "https://www.scimagojr.com/journalsearch.php?q=23916&tip=sid&exact=no",
       },
     ],
   },
   {
     title: "publications.item.gral",
-    year: "2020",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=15838",
       alt: "SCImago Journal & Country Rank",
@@ -104,12 +105,21 @@ export const publicationsCardsInfo = [
     },
     links: [
       {
-        title: "publications.item.gral.link.article",
+        title: "publications.links.article",
         link: "https://doi.org/10.3390/atmos11121375",
       },
       {
-        title: "publications.item.gral.link.score",
+        title: "publications.links.score",
         link: "https://www.scimagojr.com/journalsearch.php?q=15838&tip=sid&exact=no",
+      },
+    ],
+  },
+  {
+    title: "publications.item.gral",
+    links: [
+      {
+        title: "publications.links.article",
+        link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4085199",
       },
     ],
   },

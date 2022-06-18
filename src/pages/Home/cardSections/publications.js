@@ -72,9 +72,20 @@ const renderCard = (info, i) => {
     >
       <div className="gridCard lineGridCard" onMouseEnter={onHover}>
         <div className="lineGridCardIcon">
-          <a href={info.icon.link} target="_blank" rel="noreferrer">
-            <img src={info.icon.src} alt={info.icon.alt} />
-          </a>
+          {info.icon ? (
+            <a href={info.icon.link} target="_blank" rel="noreferrer">
+              <img src={info.icon.src} alt={info.icon.alt} />
+            </a>
+          ) : (
+            <PreprintPlugSvg
+              alt={"The article is in the process of being published"}
+              style={{
+                height: "50%",
+                width: "50%",
+                fill: "var(--coldGray)",
+              }}
+            />
+          )}
         </div>
 
         <div className="gridCardView lineGridViewLeft">
@@ -100,5 +111,19 @@ const renderCard = (info, i) => {
     </div>
   );
 };
+
+const PreprintPlugSvg = (props) => (
+  <svg
+    viewBox="0 0 32.857 32.857"
+    style={{
+      enableBackground: "new 0 0 32.857 32.857",
+    }}
+    {...props}
+  >
+    <title>{props.alt}</title>
+    <path d="M16.428 32.857C7.369 32.857 0 25.489 0 16.432 0 7.371 7.369 0 16.428 0c9.06 0 16.43 7.371 16.43 16.432-.001 9.057-7.371 16.425-16.43 16.425zm0-31.857C7.921 1 1 7.923 1 16.432c0 8.506 6.921 15.426 15.428 15.426 8.508 0 15.43-6.92 15.43-15.426C31.857 7.923 24.936 1 16.428 1z" />
+    <path d="M11.65 22.701a.5.5 0 0 1-.384-.819l4.662-5.63V6.844a.5.5 0 0 1 1 0v9.588a.503.503 0 0 1-.115.319l-4.777 5.77a.5.5 0 0 1-.386.18z" />
+  </svg>
+);
 
 export default HomePublications;
