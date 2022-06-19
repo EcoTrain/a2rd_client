@@ -92,13 +92,18 @@ const renderCard = (info, i) => {
           <div className="font-title-h3" style={{ textAlign: "left" }}>
             {t(info.title)}
           </div>
+          {hover && info.journal && (
+            <div>
+              {t("publications.journal")}: {info.journal}
+            </div>
+          )}
           {hover && (
-            <div className="gridCardViewLinkBtns">
+            <div className="linkBtnListWrapper">
               {info.links &&
                 info.links.map((x, i) => (
                   <button
                     key={i}
-                    className="gridCardViewLinkBtn"
+                    className="linkBtn"
                     onClick={() => window.open(x.link, "_blank")}
                   >
                     {t(x.title)}

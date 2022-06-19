@@ -55,7 +55,6 @@ export const startupsCardsInfo = [
         link: "https://wellness.a2rd.com/",
       },
     ],
-    url: "https://wellness.a2rd.com",
   },
   {
     title: "startups.item.framework.title",
@@ -70,16 +69,21 @@ export const startupsCardsInfo = [
     previewText: "startups.item.airflows.previewText",
     smallText: "startups.item.airflows.smallText",
     text: "startups.item.airflows.text",
-
     bg: "var(--darkWhite)",
     id: "startup_atmos",
-    url: "http://80.65.20.243:61726",
+    links: [
+      {
+        title: "Website",
+        link: "http://80.65.20.243:61726",
+      },
+    ],
   },
 ];
 
 export const publicationsCardsInfo = [
   {
     title: "publications.item.forest",
+    journal: "Environmental Pollution",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=23916",
       alt: "SCImago Journal & Country Rank",
@@ -98,6 +102,7 @@ export const publicationsCardsInfo = [
   },
   {
     title: "publications.item.gral",
+    journal: "Atmosphere",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=15838",
       alt: "SCImago Journal & Country Rank",
@@ -115,7 +120,7 @@ export const publicationsCardsInfo = [
     ],
   },
   {
-    title: "publications.item.gral",
+    title: "publications.item.electricity_transition",
     links: [
       {
         title: "publications.links.article",

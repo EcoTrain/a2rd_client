@@ -75,9 +75,9 @@ const renderCard = (info, i) => {
             <div className="text-center">{t(info.previewText)}</div>
           )}
           {hover && (
-            <div className="gridCardViewLinkBtns">
+            <div className="linkBtnListWrapper">
               <button
-                className="gridCardViewLinkBtn"
+                className="linkBtn"
                 onClick={() =>
                   (window.location.href = `/startups/${info.id}`)
                 }
@@ -88,8 +88,8 @@ const renderCard = (info, i) => {
                 info.links.map((x, i) => (
                   <button
                     key={i}
-                    className="gridCardViewLinkBtn"
-                    onClick={() => (window.location.href = x.link)}
+                    className="linkBtn"
+                    onClick={() => window.open(x.link, "_blank")}
                   >
                     {x.title}
                   </button>

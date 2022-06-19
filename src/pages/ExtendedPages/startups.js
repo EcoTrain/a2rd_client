@@ -9,7 +9,7 @@ import "antd/dist/antd.min.css";
 import PageScroller from "../../components/ScrollPage";
 import { startupsCardsInfo } from "../Home/cardSections/cardsConfig";
 
-const { Content } = Layout;
+import "../../App.scss";
 
 const Startups = () => {
   const params = useParams();
@@ -77,6 +77,18 @@ const Startup = ({ item }) => {
                 </div>
               </div>
             ))}
+          <div className="linkBtnListWrapper">
+            {item.links &&
+              item.links.map((x, i) => (
+                <button
+                  key={i}
+                  className="linkBtn"
+                  onClick={() => window.open(x.link, "_blank")}
+                >
+                  {x.title}
+                </button>
+              ))}
+          </div>
         </div>
       </div>
     </Layout>

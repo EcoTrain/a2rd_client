@@ -72,3 +72,21 @@ a {
         color: var(--primarySecond);
     }
 }
+
+.linkBtnListWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .linkBtn {
+        background: transparent;
+        border: 1px solid;
+        border-radius: 20px;
+        padding: 0 10px;
+        margin: 0.5em 0.2em 0 0.2em;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

@@ -97,7 +97,7 @@ const renderCard = (info, i) => {
             <div className="font-title-h3 text-center">{t(info.title)}</div>
             <div className="description">{t(info.text)}</div>
             <button
-              className="gridCardViewLinkBtn"
+              className="linkBtn"
               onClick={() => (window.location.href = `/projects/${info.id}`)}
             >
               {t("projects.moreBtn")}
