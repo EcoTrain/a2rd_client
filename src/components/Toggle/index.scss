@@ -1,11 +1,15 @@
+$sliderWidth: 55px;
+$sliderHeight: 26px;
+$padding: 3px;
+
 .toggler {
   position: relative;
   display: flex;
   align-self: center;
   justify-content: flex-end;
   .switch {
-    width: 60px;
-    height: 30px;
+    width: $sliderWidth;
+    height: $sliderHeight;
     position: relative;
   }
   input {
@@ -20,19 +24,19 @@
     z-index: 1;
     overflow: hidden;
     background-color: var(--coldGray);
-    border-radius: 30px;
+    border-radius: $sliderHeight / 2;
     cursor: pointer;
     transition: all 1.4s;
     &:before,
     &:after {
       content: "";
       position: absolute;
-      bottom: 5px;
-      left: 5px;
-      width: 20px;
-      height: 20px;
+      bottom: $padding;
+      left: $padding;
+      width: $sliderHeight - $padding * 2;
+      height: $sliderHeight - $padding * 2;
       background-color: var(--gray);
-      border-radius: 10px;
+      border-radius: $sliderHeight / 2;
     }
     &:before {
       transition: 0.4s;
@@ -42,32 +46,32 @@
     }
     .icon {
       position: absolute;
-      top: 5px;
-      height: 20px;
-      width: 20px;
+      top: $padding;
+      height: $sliderHeight - $padding * 2;
+      width: $sliderHeight - $padding * 2;
       fill: var(--textPrimary);
     }
     .light-icon {
-      right: 5px;
+      right: $padding;
     }
     .dark-icon {
-      left: 5px;
+      left: $padding;
     }
   }
   .wave {
     position: absolute;
     top: 0;
     left: 0;
-    width: 60px;
-    height: 30px;
-    border-radius: 40px;
+    width: $sliderWidth;
+    height: $sliderHeight;
+    border-radius: $sliderHeight / 2;
     transition: all 1.4s;
   }
   input:checked + .slider {
     background-color: transparent;
     &:before,
     &:after {
-      transform: translateX(30px);
+      transform: translateX($sliderWidth - $sliderHeight);
     }
   }
   input:checked ~ .wave {
