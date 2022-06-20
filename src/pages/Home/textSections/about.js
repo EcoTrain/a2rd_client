@@ -24,7 +24,7 @@ const AboutFounder = ({ t }) => {
     <div
       key="homeAboutFounder"
       id="homeAboutFounder"
-      style={{ marginTop: "1em" }}
+      style={{ margin: "1em 0" }}
     >
       <img
         className="avatar"

@@ -6,13 +6,5 @@
 #homeAbout {
     .section {
         flex-direction: column;
-        #homeAboutDescription {
-            justify-content: flex-end;
-        }
-        #homeAboutFounder {
-            box-shadow: none;
-            justify-content: flex-start;
-            padding-top: 1em;
-        }
     }
 }
