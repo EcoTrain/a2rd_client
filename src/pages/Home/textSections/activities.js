@@ -60,7 +60,7 @@ const HomeActivities = () => {
                       <div className="icon">
                         <CheckOutlined />
                       </div>
-                      <div className="font-text-big">{text}</div>
+                      <div >{text}</div>
                     </li>
                   ))}
                 </QueueAnim>

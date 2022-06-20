@@ -174,7 +174,6 @@ const Banner = () => {
         }}
       />
       <TextyAnim
-        // className="font-text-big"
         type="bottom"
         split={splitTextByWords}
         delay={2200}

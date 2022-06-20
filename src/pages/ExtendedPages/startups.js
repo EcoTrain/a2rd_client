@@ -52,7 +52,7 @@ const Startup = ({ item }) => {
       ref={pageRef}
       style={{ position: "sticky", top: 0, background: item.bg }}
     >
-      <div className="section-content" style={{ paddingTop: 60 }}>
+      <div className="section-content">
         <div className="section-content-block">
           <div className="section-title font-title-h1 text-center">
             {t(item.title)}

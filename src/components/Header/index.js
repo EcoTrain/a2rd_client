@@ -33,12 +33,18 @@ const LngSelector = () => {
 
 const Header = () => {
   const { t } = useTranslation();
-  const headerBottomPadding = 10;
+  const isMobile = window.innerWidth < 960;
+  const hideDelay = 2000;
 
+  const headerWrapperRef = useRef();
   const headerRef = useRef();
-  const [hide, setHide] = useState(false);
-  const [isNarrow, setNarrow] = useState(window.innerWidth < 960);
+
+  const [visible, setVisible] = useState(true);
+  const [hideTimer, setVisibleTimer] = useState();
+  const [isNarrow, setNarrow] = useState(isMobile);
   const { theme, setTheme } = useContext(ThemeContext);
+
+  const headerHeight = headerRef.current ? headerRef.current.clientHeight : 0;
 
   const items = [
     {
@@ -56,51 +62,55 @@ const Header = () => {
     { key: `/startups/`, label: t("pages.startups") },
   ];
 
+  const setTimer = () => {
+    // clear any existing timer
+    hideTimer && clearTimeout(hideTimer);
+
+    // visible after `delay` milliseconds
+    const _timer = setTimeout(() => {
+      setVisible(false);
+      setVisibleTimer(null);
+    }, hideDelay);
+    setVisibleTimer(_timer);
+  };
+
   useScrollPosition({
     effect: ({ prevPos, currPos }) => {
-      const isHide = currPos.y < prevPos.y;
-      if (isHide !== hide) setHide(isHide);
+      const isScrollUp = currPos.y > prevPos.y; // pos < 0
+      if (isScrollUp) setTimer();
+      if (isScrollUp !== visible) setVisible(isScrollUp);
     },
-    deps: [hide],
+    deps: [visible],
   });
 
-  const handleResize = () => {
-    setNarrow(window.innerWidth < 960);
-
-    // Add section marginTop on overflow content
-    // 60 = Header height (px)
-    document.querySelectorAll(".section-content").forEach((el) => {
-      if (el.scrollHeight > el.clientHeight - 70) {
-        // console.log("Found the worst element ever: ", el);
-        el.style.paddingTop = "50px";
-      } else el.style.paddingTop = 0;
-    });
-  };
   useEffect(() => {
+    setTimer();
+
+    const handleResize = () => {
+      setNarrow(window.innerWidth < 960);
+    };
     window.addEventListener("resize", handleResize);
     return window.addEventListener("resize", null);
   }, []);
 
   return (
     <div
-      ref={headerRef}
+      ref={headerWrapperRef}
       className="headerWraper"
       style={{
-        paddingBottom: headerBottomPadding,
-        transform: hide
-          ? `translateY(calc(-100% + ${headerBottomPadding}px))`
-          : "translateY(0%)",
+        transform: visible
+          ? "translateY(0%)"
+          : `translateY(${-headerHeight}px)`,
         transition: "transform 400ms ease-out",
       }}
       onMouseEnter={() => {
-        if (hide) headerRef.current.style.transform = "translateY(0%)";
+        headerWrapperRef.current.style.transform = `translateY(0%))`;
+        setVisible(true);
+        clearTimeout(hideTimer);
       }}
-      onMouseLeave={() => {
-        if (hide)
-          headerRef.current.style.transform = `translateY(calc(-100% + ${headerBottomPadding}px))`;
-      }}
+      onMouseLeave={() => setTimer()}
     >
-      <div className="header">
+      <div ref={headerRef} className="header">
         <a href={`/`} className="headerLogo" target={"_self"}>
           {isNarrow ? <LogoMin /> : <LogoMax />}
         </a>
@@ -112,6 +122,7 @@ const Header = () => {
             items={items}
             onClick={(elem) => {
               // console.log({ elem });
+
               const oldPaths = window.location.pathname.split("/");
               const oldURL = oldPaths.slice(0, -1).join("/");
 
@@ -136,6 +147,12 @@ const Header = () => {
           {/* <LngSelector /> */}
         </div>
       </div>
+      <div
+        className="headerActivateArea"
+        style={{
+          height: 20,
+        }}
+      ></div>
     </div>
   );
 };

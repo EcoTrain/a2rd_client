@@ -6,11 +6,6 @@
 #homeAbout {
     .section {
         flex-direction: column;
-        .section-content {
-            & > * {
-                margin: 0;
-            }
-        }
         #homeAboutDescription {
             justify-content: flex-end;
         }

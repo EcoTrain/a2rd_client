@@ -65,7 +65,7 @@ const Project = ({ item }) => {
       className="section splitSection section-lightGray"
       style={{ background: item.bg }}
     >
-      <div className="section-content" style={{ paddingTop: 60 }}>
+      <div className="section-content">
         <div className="section-content-block">
           <div className="section-title font-title-h1 text-center">
             {t(item.title)}
@@ -74,12 +74,12 @@ const Project = ({ item }) => {
             {t(item.text)
               .split("\n")
               .map((x, i) => (
-                <div key={i}>{getTextAnim(x, i)}</div>
+                <div key={'proj_text'+i}>{getTextAnim(x, i)}</div>
               ))}
             {t(item.note)
               .split("\n")
               .map((x, i) => (
-                <div key={i}>{getTextAnim(x, i)}</div>
+                <div key={'proj_note'+i}>{getTextAnim(x, i)}</div>
               ))}
           </ScrollOverPack>
         </div>
