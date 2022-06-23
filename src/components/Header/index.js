@@ -34,15 +34,15 @@ const LngSelector = () => {
 const Header = () => {
   const { t } = useTranslation();
   const isMobile = window.innerWidth < 960;
-  const hideDelay = 2000;
+  const hideDelay = 3000;
 
   const headerWrapperRef = useRef();
   const headerRef = useRef();
 
   const [visible, setVisible] = useState(true);
-  const [hideTimer, setVisibleTimer] = useState();
   const [isNarrow, setNarrow] = useState(isMobile);
   const { theme, setTheme } = useContext(ThemeContext);
+  const visibilityTimer = useRef();
 
   const headerHeight = headerRef.current ? headerRef.current.clientHeight : 0;
 
@@ -63,22 +63,27 @@ const Header = () => {
   ];
 
   const setTimer = () => {
-    // clear any existing timer
-    hideTimer && clearTimeout(hideTimer);
+    if (visibilityTimer.current) stopTimer();
 
-    // visible after `delay` milliseconds
     const _timer = setTimeout(() => {
       setVisible(false);
-      setVisibleTimer(null);
     }, hideDelay);
-    setVisibleTimer(_timer);
+    visibilityTimer.current = _timer;
+  };
+  const stopTimer = () => {
+    clearTimeout(visibilityTimer.current);
   };
 
   useScrollPosition({
     effect: ({ prevPos, currPos }) => {
-      const isScrollUp = currPos.y > prevPos.y; // pos < 0
-      if (isScrollUp) setTimer();
-      if (isScrollUp !== visible) setVisible(isScrollUp);
+      const isScrollUp = currPos.y > prevPos.y;
+      if (isScrollUp) {
+        setVisible(true);
+        setTimer();
+      } else {
+        setVisible(false);
+        stopTimer();
+      }
     },
     deps: [visible],
   });
@@ -106,7 +111,7 @@ const Header = () => {
       onMouseEnter={() => {
         headerWrapperRef.current.style.transform = `translateY(0%))`;
         setVisible(true);
-        clearTimeout(hideTimer);
+        stopTimer();
       }}
       onMouseLeave={() => setTimer()}
     >
@@ -147,12 +152,7 @@ const Header = () => {
           {/* <LngSelector /> */}
         </div>
       </div>
-      <div
-        className="headerActivateArea"
-        style={{
-          height: 20,
-        }}
-      ></div>
+      <div className="headerActivateArea"></div>
     </div>
   );
 };
