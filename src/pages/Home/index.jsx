@@ -44,7 +44,7 @@ const Home = () => {
       <HomeStartups title="pages.startups" />
 
       <HomePublications title="pages.publications" />
-      <HomeTextPage position={"sticky"} {...textPageConfig.businessModel} />
+      <HomeTextPage {...textPageConfig.businessModel} />
 
       <HomeFeedback title="pages.feedback" position={"sticky"} />
       <HomeContacts title="pages.contacts" />
