@@ -92,7 +92,7 @@ export const publicationsCardsInfo = [
     links: [
       {
         title: "publications.links.article",
-        link: "https://authors.elsevier.com/a/1f0oOzLNSc7c7",
+        link: "https://doi.org/10.1016/j.envpol.2022.119324",
       },
       {
         title: "publications.links.score",
@@ -124,7 +124,7 @@ export const publicationsCardsInfo = [
     links: [
       {
         title: "publications.links.article",
-        link: "https://doi.org/10.1016/j.envpol.2022.119324",
+        link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4085199",
       },
     ],
   },
