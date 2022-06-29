@@ -124,7 +124,7 @@ export const publicationsCardsInfo = [
     links: [
       {
         title: "publications.links.article",
-        link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4085199",
+        link: "https://doi.org/10.1016/j.envpol.2022.119324",
       },
     ],
   },
