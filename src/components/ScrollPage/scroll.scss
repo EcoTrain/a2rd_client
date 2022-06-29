@@ -1,6 +1,7 @@
 .nextPageBtn {
     position: absolute;
     bottom: 10px;
+    pointer-events: auto;
     .nextPageBtnContent {
         height: 30px;
         width: 30px;
