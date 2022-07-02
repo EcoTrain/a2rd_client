@@ -1,9 +1,0 @@
-{
-    "version": "1.1",
-    "api_version": 1,
-    "layout": {
-        "logo": "https://a2rd.com/static/images/tableau.png",
-        "color": "#e0e0e0",
-        "show_title": false
-    }
-}
