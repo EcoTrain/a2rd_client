@@ -113,7 +113,7 @@ const Header = () => {
         setVisible(true);
         stopTimer();
       }}
-      // onMouseLeave={() => setTimer()}
+      onMouseLeave={() => setTimer()}
     >
       <div ref={headerRef} className="header">
         <div className="headerLogo">
