@@ -113,12 +113,14 @@ const Header = () => {
         setVisible(true);
         stopTimer();
       }}
-      onMouseLeave={() => setTimer()}
+      // onMouseLeave={() => setTimer()}
     >
       <div ref={headerRef} className="header">
-        <a href={`/`} className="headerLogo" target={"_self"}>
-          {isNarrow ? <LogoMin /> : <LogoMax />}
-        </a>
+        <div className="headerLogo">
+          <a href={`/`} target={"_self"}>
+            {isNarrow ? <LogoMin /> : <LogoMax />}
+          </a>
+        </div>
         <div className="headerActions">
           <Menu
             className="headerMenu"
