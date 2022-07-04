@@ -146,22 +146,23 @@
     },
     "modeling": {
         "navigation": {
-            "about": "About multiagent modeling",
+            "about": "Multiagent modeling",
             "projects": "Projects"
         },
         "multiagent": {
             "about": {
-                "title": "About multiagent modeling",
+                "title": "Multiagent modeling",
                 "texts": [
-                    "We use multi-agent modeling in the problems of urban mobility and traffic analysis to increase the reliability of modeling and bring the simulated situation closer to the real one.",
-                    "This ensures the relevance and reliability of our analytics."
+                    "We use multi-agent modeling to analyze urban mobility and road traffic. This allows us to simulate and analyze the movement of vehicles and pedestrians within an entire city.",
+                    "The results of these simulations are used in other solutions, from the analysis of infrastructure projects to the assessment of the effects of pollutant emissions."
                 ]
             },
             "analysis": {
                 "title": "Multicriteria analysis",
                 "texts": [
-                    "We take into account many parameters of urban infrastructure and vehicles to conduct reliable simulations and analysis from the results.",
-                    "The distribution of agents and their movements are close to the real movements of road and pedestrian traffic participants."
+                    "We take into account many parameters of urban infrastructure and vehicles to increase the reliability of modeling and bring the simulated situation closer to the real one.",
+                    "The distribution of agents and their movements are close to the real movements of road and pedestrian traffic participants.",
+                    "This ensures the relevance and reliability of our analytics."
                 ]
             },
             "payload": {
