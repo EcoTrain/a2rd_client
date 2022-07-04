@@ -12,6 +12,8 @@ import "./App.scss";
 import "./Text.scss";
 import Startups from "./pages/ExtendedPages/startups";
 
+import ModelingMultiagent from "./pages/Modeling/Multiagent";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./components/Toast.scss";
@@ -27,6 +29,7 @@ function App() {
         <Route path="/projects/:id" element={<Projects />} />
         <Route path="/startups/" element={<Startups />} />
         <Route path="/startups/:id" element={<Startups />} />
+        <Route path="/modeling/multiagent" element={<ModelingMultiagent />} />
       </Routes>
       <ToastContainer
         position="bottom-right"

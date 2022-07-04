@@ -11,7 +11,7 @@ import useOnScreen from "../../hooks/useOnScreen";
 import "./sections.scss";
 import "./scroll.scss";
 
-const PageScroller = ({ children }) => {
+const PageScroller = ({ children, t }) => {
   PageScroller.propTypes = {
     children: PropTypes.array,
   };
@@ -19,7 +19,7 @@ const PageScroller = ({ children }) => {
   return (
     <div className="sectionPageScroller">
       {children.map((elem, i) => (
-        <Page key={i} index={i}>
+        <Page key={i} index={i} t={t}>
           {elem}
         </Page>
       ))}
@@ -27,13 +27,11 @@ const PageScroller = ({ children }) => {
   );
 };
 
-const Page = ({ children, index }) => {
+const Page = ({ children, index, t }) => {
   Page.propTypes = {
     children: PropTypes.element,
     index: PropTypes.number,
   };
-
-  const { t } = useTranslation();
 
   const elemRef = useRef();
   const onScreen = useOnScreen({ ref: elemRef });

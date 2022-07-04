@@ -49,17 +49,27 @@ const Header = () => {
   const items = [
     {
       key: `/`,
-      label: t("pages.about"),
+      label: t("navHeader.about"),
       children: [
-        { key: "/homeAbout", label: t("pages.main") },
-        { key: "/homeProjects", label: t("pages.projects") },
-        { key: "/homeStartups", label: t("pages.startups") },
-        { key: "/homePublications", label: t("pages.publications") },
-        { key: "/homeContacts", label: t("pages.contacts") },
+        { key: "/homeAbout", label: t("navHeader.main") },
+        { key: "/homeProjects", label: t("navHeader.projects") },
+        { key: "/homeStartups", label: t("navHeader.startups") },
+        { key: "/homePublications", label: t("navHeader.publications") },
+        { key: "/homeContacts", label: t("navHeader.contacts") },
       ],
     },
-    { key: `/projects/`, label: t("pages.projects") },
-    { key: `/startups/`, label: t("pages.startups") },
+    { key: `/projects/`, label: t("navHeader.projects") },
+    { key: `/startups/`, label: t("navHeader.startups") },
+    {
+      key: `/modeling/`,
+      label: t("navHeader.modeling.main"),
+      children: [
+        {
+          key: "/modeling/multiagent/",
+          label: t("navHeader.modeling.multiagent"),
+        },
+      ],
+    },
   ];
 
   const setTimer = () => {
@@ -128,8 +138,7 @@ const Header = () => {
             defaultSelectedKeys={["2"]}
             items={items}
             onClick={(elem) => {
-              // console.log({ elem });
-
+              console.log({ elem });
               const oldPaths = window.location.pathname.split("/");
               const oldURL = oldPaths.slice(0, -1).join("/");
 

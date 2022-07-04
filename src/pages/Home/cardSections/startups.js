@@ -44,7 +44,7 @@ const renderCard = (info, i) => {
 
   const onHover = () => {
     if (cardRef.current) {
-      cardRef.current.style.background = info.bg;
+      cardRef.current.style.background = "var(--darkWhite)";
     }
     setHover(true);
   };
@@ -78,9 +78,7 @@ const renderCard = (info, i) => {
             <div className="linkBtnListWrapper">
               <button
                 className="linkBtn"
-                onClick={() =>
-                  (window.location.href = `/startups/${info.id}`)
-                }
+                onClick={() => (window.location.href = `/startups/${info.id}`)}
               >
                 Read more
               </button>

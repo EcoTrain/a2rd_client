@@ -57,7 +57,7 @@ const BgVideo = () => {
 };
 
 const Banner = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["home"]);
 
   const getInterval = (e) => {
     switch (e.index) {

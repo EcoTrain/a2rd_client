@@ -1,6 +1,20 @@
 {
-    "translations": {
-        "pages": {
+    "shared": {
+        "navHeader": {
+            "main": "Main",
+            "about": "About Us",
+            "projects": "Projects",
+            "startups": "Startups",
+            "publications": "Publications",
+            "contacts": "Contacts",
+            "modeling": {
+                "main": "Modeling",
+                "multiagent": "Multiagent"
+            }
+        }
+    },
+    "home": {
+        "navigation": {
             "main": "Main",
             "about": "About Us",
             "activities": "Activities",
@@ -20,6 +34,19 @@
             "signature": "With the highest consideration from the A2 Research and Development lab",
             "name": "Aleksey A. ROMANOV",
             "position": "CEO, founder"
+        },
+        "activities": {
+            "title": "Our activities",
+            "text": "We work in various fields using our background to solve industrial, environmental challenges and various issues.",
+            "list": [
+                "RAW/BIG data processing and analysis",
+                "Computational modeling",
+                "Machine Learning (AI) and Neural networks",
+                "Predictive Analytics",
+                "Spatial analysis (geographic information technology and remote sensing)",
+                "Technology consulting",
+                "App development"
+            ]
         },
         "analytics": {
             "title": "Help companies",
@@ -41,19 +68,6 @@
             "phone": "+33 6 19 20 31 25",
             "email": "info@a2rd.com",
             "tg": "@a2_development"
-        }
-    },
-    "activities": {
-        "activities.title": "Our activities",
-        "activities.label": "We work in various fields using our background to solve industrial, environmental challenges and various issues.",
-        "activities.list": {
-            "processing": "RAW/BIG data processing and analysis",
-            "modeling": "Computational modeling",
-            "ML": "Machine Learning (AI) and Neural networks",
-            "analytics": "Predictive Analytics",
-            "spatial": "Spatial analysis (geographic information technology and remote sensing)",
-            "consulting": "Technology consulting",
-            "development": "App development"
         }
     },
     "projects": {
@@ -128,6 +142,35 @@
                 "incorrectEmail": "Incorrect email format"
             },
             "submit": "Submit"
+        }
+    },
+    "modeling": {
+        "navigation": {
+            "about": "About multiagent modeling",
+            "projects": "Projects"
+        },
+        "multiagent": {
+            "about": {
+                "title": "About multiagent modeling",
+                "texts": [
+                    "We use multi-agent modeling in the problems of urban mobility and traffic analysis to increase the reliability of modeling and bring the simulated situation closer to the real one. This ensures the relevance and reliability of our analytics.",
+                    "We take into account many parameters of urban infrastructure and vehicles to conduct reliable simulations and analysis from the results. The distribution of agents and their movements are close to the real movements of road and pedestrian traffic participants.",
+                    "We reuse the results of multi-agent simulations in larger projects due to the extensive data set of these results. So, for example, taking into account the additional parameter of the volume of vehicle emissions allows us to analyze environmental situations and the spread of pollutants using Lagrangian mathematics and mathematical packages GRAM/GRAL."
+                ]
+            },
+            "targets": {
+                "title": "Capabilities",
+                "text": "Multi-agent modeling ensures the reliability of the simulation through features such as:",
+                "list": [
+                    "Distribution of agents based on multicriteria analysis of the parameters of buildings and areas",
+                    "Accounting for 'points of interest' in the urban environment such as shopping malls and other public buildings",
+                    "Accounting for behavior scenarios and parameters of each agent",
+                    "Accounting for the interaction of agents with each other and with infrastructure objects"
+                ]
+            },
+            "projects": {
+                "text": "Projects in which we applied multi-agent modeling"
+            }
         }
     }
 }

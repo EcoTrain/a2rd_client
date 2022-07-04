@@ -13,7 +13,7 @@ import { splitTextByWords } from "../../../fucntions/splitText";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
-const HomeProjects = () => {
+const HomeProjects = ({ filter, text }) => {
   const { t } = useTranslation("projects");
   return (
     <Layout className="section section-lightGray" id="homeProjects">
@@ -37,13 +37,15 @@ const HomeProjects = () => {
             className="text-center"
             style={{ margin: "0 2em" }}
           >
-            {t("projects.label")}
+            {text || t("projects.label")}
           </TextyAnim>
           <div
             className="gridCardsView"
             style={{ marginTop: "1em", marginBottom: "1em" }}
           >
-            {projectsCardsInfo.map((x, i) => renderCard(x, i))}
+            {projectsCardsInfo.map(
+              (x, i) => (!filter || (filter && x[filter])) && renderCard(x, i)
+            )}
           </div>
         </QueueAnim>
       </ScrollOverPack>
@@ -57,7 +59,7 @@ const renderCard = (info, i) => {
   const [hover, setHover] = useState(false);
 
   const titleShadow = "0px 0px 0.3em black";
-  const bg = `url(${info.icon})  no-repeat center center / cover`;
+  const bg = `url(${info.image})  no-repeat center center / cover`;
 
   const onHover = () => {
     cardRef.current.style.background = "var(--darkWhite)";

@@ -12,6 +12,7 @@ import { startupsCardsInfo } from "../Home/cardSections/cardsConfig";
 import "../../App.scss";
 
 const Startups = () => {
+  const { t } = useTranslation(["startups"]);
   const params = useParams();
 
   useEffect(() => {
@@ -24,16 +25,15 @@ const Startups = () => {
   }, []);
 
   return (
-    <PageScroller>
+    <PageScroller t={t}>
       {startupsCardsInfo.map((x, i) => (
-        <Startup key={i} item={x} position={"sticky"} />
+        <Startup key={i} item={x} position={"sticky"} t={t} />
       ))}
     </PageScroller>
   );
 };
 
-const Startup = ({ item }) => {
-  const { t } = useTranslation("startups");
+const Startup = ({ item, t }) => {
   Startup.propTypes = {
     item: () => ({
       id: PropTypes.string,
@@ -68,7 +68,7 @@ const Startup = ({ item }) => {
                     components={[
                       <a
                         key={`link${i}`}
-                        href={item.url || ""}
+                        href={(item.links && item.links[0].link) || ""}
                         target="_blank"
                         rel="noreferrer"
                       />,
@@ -77,9 +77,9 @@ const Startup = ({ item }) => {
                 </div>
               </div>
             ))}
-          <div className="linkBtnListWrapper">
-            {item.links &&
-              item.links.map((x, i) => (
+          {item.links && (
+            <div className="linkBtnListWrapper">
+              {item.links.map((x, i) => (
                 <button
                   key={i}
                   className="linkBtn"
@@ -88,7 +88,8 @@ const Startup = ({ item }) => {
                   {x.title}
                 </button>
               ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </Layout>

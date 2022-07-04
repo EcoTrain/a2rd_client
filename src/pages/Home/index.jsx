@@ -9,18 +9,19 @@ import PageScroller from "../../components/ScrollPage";
 
 import "./home.scss";
 
-import HomeTextPage from "./textSections/TextPage";
+import TextPage from "../../components/TextPage";
 import { textPageConfig } from "./textSections/textPageConfig";
 
-import HomeActivities from "./textSections/activities";
 import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";
 import HomePublications from "./cardSections/publications";
 import HomeFeedback from "./feedback";
 import HomeContacts from "./contacts";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const params = useParams();
+  const { t } = useTranslation(["home"]);
 
   useEffect(() => {
     params.id &&
@@ -31,23 +32,27 @@ const Home = () => {
   }, []);
 
   return (
-    <PageScroller>
+    <PageScroller t={t}>
       <HomePreview />
-      <HomeAbout title="pages.about" />
+      <HomeAbout title="navigation.about" />
 
-      <HomeActivities title="pages.activities" position={"sticky"} />
-      <HomeTextPage position={"sticky"} {...textPageConfig.analytic} />
-      <HomeTextPage position={"sticky"} {...textPageConfig.solutions} />
-      <HomeTextPage position={"sticky"} {...textPageConfig.medAssistant} />
+      <TextPage position={"sticky"} {...textPageConfig.home.activities} t={t} />
+      <TextPage position={"sticky"} {...textPageConfig.home.analytic} t={t} />
+      <TextPage position={"sticky"} {...textPageConfig.home.solutions} t={t} />
+      <TextPage
+        position={"sticky"}
+        {...textPageConfig.home.medAssistant}
+        t={t}
+      />
 
-      <HomeProjects title="pages.projects" />
-      <HomeStartups title="pages.startups" />
+      <HomeProjects title="navigation.projects" />
+      <HomeStartups title="navigation.startups" />
 
-      <HomePublications title="pages.publications" />
-      <HomeTextPage {...textPageConfig.businessModel} />
+      <HomePublications title="navigation.publications" />
+      <TextPage {...textPageConfig.home.businessModel} t={t} />
 
-      <HomeFeedback title="pages.feedback" position={"sticky"} />
-      <HomeContacts title="pages.contacts" />
+      <HomeFeedback title="navigation.feedback" position={"sticky"} />
+      <HomeContacts title="navigation.contacts" />
     </PageScroller>
   );
 };

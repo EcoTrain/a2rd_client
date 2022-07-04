@@ -71,6 +71,13 @@ h4,
     }
 }
 
+.font-text-small {
+    font-size: calcFluidFontSize(0.95, 0.98, 480, 1280, em);
+    & > * {
+        font-size: calcFluidFontSize(0.95, 0.98, 480, 1280, em);
+    }
+}
+
 .text-center {
     text-align: center;
 }

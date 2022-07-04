@@ -8,7 +8,7 @@ import "./contacts.scss";
 const { Content } = Layout;
 
 const ContactsLinks = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["home"]);
   return (
     <div key="ContactsLinks" id="contactsLinks" className="text-center">
       <div className="font-text-large">

@@ -4,25 +4,27 @@ export const projectsCardsInfo = [
     title: "projects.card.airflow.title",
     text: "projects.card.airflow.text",
     note: "projects.card.airflow.note",
-    icon:
+    image:
       process.env.PUBLIC_URL +
       "/static/images/index/projects/preview/airflow_emissions.jpg",
+    multiagent: true,
   },
   {
     id: "project_transport",
     title: "projects.card.transport.title",
     text: "projects.card.transport.text",
     note: "projects.card.transport.note",
-    icon:
+    image:
       process.env.PUBLIC_URL +
       "/static/images/index/projects/preview/transport_system.jpg",
+    multiagent: true,
   },
   {
     id: "project_trends",
     title: "projects.card.trends.title",
     text: "projects.card.trends.text",
     note: "projects.card.trends.note",
-    icon:
+    image:
       process.env.PUBLIC_URL +
       "/static/images/index/projects/preview/trends.jpg",
   },
@@ -31,9 +33,10 @@ export const projectsCardsInfo = [
     title: "projects.card.locomotives.title",
     text: "projects.card.locomotives.text",
     note: "projects.card.locomotives.note",
-    icon:
+    image:
       process.env.PUBLIC_URL +
       "/static/images/index/projects/preview/locomotives.jpg",
+    multiagent: true,
   },
 ];
 
@@ -48,7 +51,7 @@ export const startupsCardsInfo = [
     links: [
       {
         title: "User Manual",
-        link: "https://ecotrain.github.io/wellness_doc/",
+        link: "https://ecotrain.github.io/WM_doc/",
       },
       {
         title: "Website",

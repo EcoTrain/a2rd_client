@@ -42,7 +42,7 @@ const AboutFounder = ({ t }) => {
 
 const HomeAbout = () => {
   const pageRef = useRef();
-  const { t } = useTranslation();
+  const { t } = useTranslation(["home"]);
   return (
     <Layout
       id="homeAbout"
