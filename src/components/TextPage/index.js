@@ -7,7 +7,7 @@ import { CheckOutlined } from "@ant-design/icons";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
 
-import { splitTextByWords } from "../fucntions/splitText";
+import { splitTextByWords } from "../../fucntions/splitText";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 

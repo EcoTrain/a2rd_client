@@ -10,7 +10,7 @@ import PageScroller from "../../components/ScrollPage";
 import "./home.scss";
 
 import TextPage from "../../components/TextPage";
-import { textPageConfig } from "./textSections/textPageConfig";
+import { textPageConfig } from "../../components/TextPage/textPageConfig";
 
 import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";

@@ -6,7 +6,7 @@ import "antd/dist/antd.min.css";
 import PageScroller from "../../../components/ScrollPage";
 
 import TextPage from "../../../components/TextPage";
-import { textPageConfig } from "../../Home/textSections/textPageConfig";
+import { textPageConfig } from "../../../components/TextPage/textPageConfig";
 
 import MultiagentAbout from "./about";
 import HomeProjects from "../../Home/cardSections/projects";
@@ -26,9 +26,27 @@ const ModelingMultiagent = () => {
 
   return (
     <PageScroller t={t}>
-      <TextPage {...textPageConfig.modeling.multiagent.about} t={t} />
+      <TextPage
+        {...textPageConfig.modeling.multiagent.about}
+        position={"sticky"}
+        t={t}
+      />
+      <TextPage
+        {...textPageConfig.modeling.multiagent.analysis}
+        position={"sticky"}
+        t={t}
+      />
+      <TextPage
+        {...textPageConfig.modeling.multiagent.payload}
+        position={"sticky"}
+        t={t}
+      />
       <TextPage {...textPageConfig.modeling.multiagent.targets} t={t} />
-      <HomeProjects title="navigation.projects" filter={"multiagent"} text={t("multiagent.projects.text")}/>
+      <HomeProjects
+        title="navigation.projects"
+        filter={"multiagent"}
+        text={t("multiagent.projects.text")}
+      />
     </PageScroller>
   );
 };

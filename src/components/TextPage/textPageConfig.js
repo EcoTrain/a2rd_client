@@ -48,13 +48,7 @@ export const textPageConfig = {
       about: {
         title: "multiagent.about.title",
         text: "multiagent.about.texts",
-        fullScreenText: true,
         sectionTheme: "section-white",
-      },
-      targets: {
-        title: "multiagent.targets.title",
-        text: "multiagent.targets.text",
-        list: "multiagent.targets.list",
         image: {
           max:
             process.env.PUBLIC_URL +
@@ -63,6 +57,21 @@ export const textPageConfig = {
             process.env.PUBLIC_URL +
             "/static/images/index/sections/min/activities.jpg",
         },
+      },
+      analysis: {
+        title: "multiagent.analysis.title",
+        text: "multiagent.analysis.texts",
+        sectionTheme: "section-white",
+      },
+      payload: {
+        title: "multiagent.payload.title",
+        text: "multiagent.payload.texts",
+        sectionTheme: "section-white",
+      },
+      targets: {
+        title: "multiagent.targets.title",
+        text: "multiagent.targets.text",
+        list: "multiagent.targets.list",
       },
     },
   },
