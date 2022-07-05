@@ -12,7 +12,7 @@ import "./lineGridCard.scss";
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeStartups = () => {
-  const { t } = useTranslation(["startups", "shared"]);
+  const { t } = useTranslation("startups");
   const pageRef = useRef();
   return (
     <Layout className="section section-white" id="homeStartups" ref={pageRef}>
@@ -80,7 +80,7 @@ const renderCard = (info, i) => {
                 className="linkBtn"
                 onClick={() => (window.location.href = `/startups/${info.id}`)}
               >
-                {t("links.readMore", { ns: "shared" })}
+                Read more
               </button>
               {info.links &&
                 info.links.map((x, i) => (
@@ -89,7 +89,7 @@ const renderCard = (info, i) => {
                     className="linkBtn"
                     onClick={() => window.open(x.link, "_blank")}
                   >
-                    {t(x.title, { ns: "shared" })}
+                    {t(x.title)}
                   </button>
                 ))}
             </div>

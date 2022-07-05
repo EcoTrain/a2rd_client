@@ -51,11 +51,11 @@ export const startupsCardsInfo = [
     id: "startup_wm",
     links: [
       {
-        title: "links.manual",
+        title: "User Manual",
         link: "https://ecotrain.github.io/WM_doc/",
       },
       {
-        title: "links.website",
+        title: "Website",
         link: "https://wellness.a2rd.com/",
       },
     ],
@@ -77,7 +77,7 @@ export const startupsCardsInfo = [
     id: "startup_atmos",
     links: [
       {
-        title: "links.website",
+        title: "Website",
         link: "http://80.65.20.243:61726",
       },
     ],
