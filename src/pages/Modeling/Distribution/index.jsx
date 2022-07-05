@@ -11,7 +11,7 @@ import { textPageConfig } from "../../../components/TextPage/textPageConfig";
 import HomeProjects from "../../Home/cardSections/projects";
 import { useTranslation } from "react-i18next";
 
-const ModelingMultiagent = () => {
+const ModelingDistribution = () => {
   const params = useParams();
   const { t } = useTranslation(["modeling"]);
 
@@ -26,32 +26,27 @@ const ModelingMultiagent = () => {
   return (
     <PageScroller t={t}>
       <TextPage
-        {...textPageConfig.modeling.multiagent.about}
+        {...textPageConfig.modeling.distribution.about}
         position={"sticky"}
         t={t}
       />
       <TextPage
-        {...textPageConfig.modeling.multiagent.capabilities}
+        {...textPageConfig.modeling.distribution.capabilities}
         position={"sticky"}
         t={t}
       />
       <TextPage
-        {...textPageConfig.modeling.multiagent.analysis}
-        position={"sticky"}
-        t={t}
-      />
-      <TextPage
-        {...textPageConfig.modeling.multiagent.payload}
+        {...textPageConfig.modeling.distribution.tools}
         position={"sticky"}
         t={t}
       />
       <HomeProjects
         title="navigation.projects"
-        filter={"multiagent"}
-        text={t("multiagent.projects.text")}
+        filter={"distribution"}
+        text={t("distribution.projects.text")}
       />
     </PageScroller>
   );
 };
 
-export default ModelingMultiagent;
+export default ModelingDistribution;

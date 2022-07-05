@@ -48,7 +48,6 @@ export const textPageConfig = {
       about: {
         title: "multiagent.about.title",
         text: "multiagent.about.texts",
-        sectionTheme: "section-white",
         image: {
           max:
             process.env.PUBLIC_URL +
@@ -61,17 +60,38 @@ export const textPageConfig = {
       analysis: {
         title: "multiagent.analysis.title",
         text: "multiagent.analysis.texts",
-        sectionTheme: "section-white",
       },
       payload: {
         title: "multiagent.payload.title",
         text: "multiagent.payload.texts",
-        sectionTheme: "section-white",
       },
       capabilities: {
         title: "multiagent.capabilities.title",
         text: "multiagent.capabilities.text",
         list: "multiagent.capabilities.list",
+      },
+    },
+    distribution: {
+      about: {
+        title: "distribution.about.title",
+        text: "distribution.about.texts",
+        image: {
+          max:
+            process.env.PUBLIC_URL +
+            "/static/images/index/sections/max/activities.jpeg",
+          min:
+            process.env.PUBLIC_URL +
+            "/static/images/index/sections/min/activities.jpg",
+        },
+      },
+      tools: {
+        title: "distribution.tools.title",
+        text: "distribution.tools.texts",
+      },
+      capabilities: {
+        title: "distribution.capabilities.title",
+        text: "distribution.capabilities.text",
+        list: "distribution.capabilities.list",
       },
     },
   },

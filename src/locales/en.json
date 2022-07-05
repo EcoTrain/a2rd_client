@@ -9,8 +9,14 @@
             "contacts": "Contacts",
             "modeling": {
                 "main": "Modeling",
-                "multiagent": "Multiagent"
+                "multiagent": "Multi-agent",
+                "distribution": "Particle distribution"
             }
+        },
+        "links": {
+            "readMore": "Read more",
+            "website": "Website",
+            "manual": "User manual"
         }
     },
     "home": {
@@ -76,7 +82,7 @@
         "projects.moreBtn": "Read more",
         "projects.card": {
             "airflow.title": "Airflow and tracking pollutant emissions modelling",
-            "airflow.text": "Computational modelling for pollutant tracking in complex urban terrains, evaluating the contributions of sources. Our models precisely count the influence of meteorological factors and landscape; we work with 40 by 40 km domains and have a positive experience with modelling up to 3 km above the ground",
+            "airflow.text": "Computational modelling for pollutant tracking in complex urban terrains, evaluating the contributions of sources. Our models precisely count the influence of meteorological factors and landscape; we work with 40 by 40 km areas and have a positive experience with modelling up to 3 km above the ground",
             "airflow.note": "(air quality)",
             "transport.title": "Transport systems modelling",
             "transport.text": "Railway complexes and autonomous transport simulation modelling for the quarries and port infrastructure. Through computational modelling, we provide an audit and selection of optimal solutions for the modernization of the road infrastructure of quarries in order to reduce negative environmental and economic costs.",
@@ -167,7 +173,7 @@
             },
             "payload": {
                 "title": "Payload of Results",
-                "texts": "We reuse the results of multi-agent simulations in larger projects due to the extensive data set of these results. So, for example, taking into account the additional parameter of the volume of vehicle emissions allows us to analyze environmental situations and the spread of pollutants using Lagrangian mathematics and mathematical packages GRAM/GRAL."
+                "texts": "We reuse the results of multi-agent simulations in our other projects due to the extensive data set of these results. So, for example, taking into account the additional parameter of the volume of vehicle emissions allows us to analyze environmental situations and the spread of pollutants using Lagrangian mathematics and mathematical packages GRAM/GRAL."
             },
             "capabilities": {
                 "title": "Capabilities",
@@ -181,6 +187,35 @@
             },
             "projects": {
                 "text": "Projects in which we applied multi-agent modeling"
+            }
+        },
+        "distribution": {
+            "about": {
+                "title": "Particle Distribution Modeling",
+                "texts": [
+                    "We apply particle propagation modeling in environmental projects to take into account the modeling and prediction of the distribution of pollutants in the surface layers of the atmosphere."
+                ]
+            },
+            "tools": {
+                "title": "What do we use",
+                "texts": [
+                    "To model the propagation of particles, we use Lagrangian mathematics and mathematical packages GRAM/GRAL.",
+                    "These solutions allow us to take into account and predict the movement of each particle of a particular substance in the simulation area."
+                ]
+            },
+            "capabilities": {
+                "title": "Capabilities",
+                "text": "Particle propagation simulation allows us to:",
+                "list": [
+                    "Simulate the spread of pollutants in the atmosphere",
+                    "Conduct retrospective forecasts to validate mathematical models",
+                    "Predict particle propagation in the future",
+                    "Assess the impact and contribution of each emission source",
+                    "Assess the influence and contribution of enterprises and source groups"
+                ]
+            },
+            "projects": {
+                "text": "Projects where we applied particle distribution"
             }
         }
     }

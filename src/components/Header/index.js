@@ -68,6 +68,10 @@ const Header = () => {
           key: "/modeling/multiagent/",
           label: t("navHeader.modeling.multiagent"),
         },
+        {
+          key: "/modeling/distribution/",
+          label: t("navHeader.modeling.distribution"),
+        },
       ],
     },
   ];
