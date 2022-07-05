@@ -19,6 +19,7 @@ export const projectsCardsInfo = [
       process.env.PUBLIC_URL +
       "/static/images/index/projects/preview/transport_system.jpg",
     multiagent: true,
+    distribution: true,
   },
   {
     id: "project_trends",
