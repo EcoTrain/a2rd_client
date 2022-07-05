@@ -80,7 +80,7 @@ const renderCard = (info, i) => {
                 className="linkBtn"
                 onClick={() => (window.location.href = `/startups/${info.id}`)}
               >
-                Read more
+                {t("links.readMore")}
               </button>
               {info.links &&
                 info.links.map((x, i) => (

@@ -12,7 +12,7 @@ import { startupsCardsInfo } from "../Home/cardSections/cardsConfig";
 import "../../App.scss";
 
 const Startups = () => {
-  const { t } = useTranslation(["startups"]);
+  const { t } = useTranslation("startups");
   const params = useParams();
 
   useEffect(() => {
@@ -85,7 +85,7 @@ const Startup = ({ item, t }) => {
                   className="linkBtn"
                   onClick={() => window.open(x.link, "_blank")}
                 >
-                  {x.title}
+                  {t(x.title)}
                 </button>
               ))}
             </div>

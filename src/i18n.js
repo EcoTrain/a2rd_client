@@ -35,6 +35,7 @@ i18n
     fallbackLng: DEFAULT_LANGUAGE,
     ns: ["shared"],
     defaultNS: "shared",
+    fallbackNS: "shared",
     debug: process.env.NODE_ENV == "development",
     whitelist: Languages,
     useCookie: false,
