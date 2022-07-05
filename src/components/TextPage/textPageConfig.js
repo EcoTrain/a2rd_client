@@ -68,10 +68,10 @@ export const textPageConfig = {
         text: "multiagent.payload.texts",
         sectionTheme: "section-white",
       },
-      targets: {
-        title: "multiagent.targets.title",
-        text: "multiagent.targets.text",
-        list: "multiagent.targets.list",
+      capabilities: {
+        title: "multiagent.capabilities.title",
+        text: "multiagent.capabilities.text",
+        list: "multiagent.capabilities.list",
       },
     },
   },

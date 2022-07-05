@@ -169,7 +169,7 @@
                 "title": "Payload of Results",
                 "texts": "We reuse the results of multi-agent simulations in larger projects due to the extensive data set of these results. So, for example, taking into account the additional parameter of the volume of vehicle emissions allows us to analyze environmental situations and the spread of pollutants using Lagrangian mathematics and mathematical packages GRAM/GRAL."
             },
-            "targets": {
+            "capabilities": {
                 "title": "Capabilities",
                 "text": "Multi-agent modeling ensures the reliability of the simulation through features such as:",
                 "list": [

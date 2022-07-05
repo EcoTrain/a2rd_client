@@ -32,6 +32,11 @@ const ModelingMultiagent = () => {
         t={t}
       />
       <TextPage
+        {...textPageConfig.modeling.multiagent.capabilities}
+        position={"sticky"}
+        t={t}
+      />
+      <TextPage
         {...textPageConfig.modeling.multiagent.analysis}
         position={"sticky"}
         t={t}
@@ -41,7 +46,6 @@ const ModelingMultiagent = () => {
         position={"sticky"}
         t={t}
       />
-      <TextPage {...textPageConfig.modeling.multiagent.targets} t={t} />
       <HomeProjects
         title="navigation.projects"
         filter={"multiagent"}
