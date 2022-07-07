@@ -78,7 +78,7 @@ const renderCard = (info, i) => {
             <div className="linkBtnListWrapper">
               <button
                 className="linkBtn"
-                onClick={() => (window.location.href = `/startups/${info.id}`)}
+                onClick={() => window.open(`/startups/${info.id}`, "_blank")}
               >
                 {t("links.readMore")}
               </button>

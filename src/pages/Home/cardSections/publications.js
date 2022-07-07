@@ -40,7 +40,11 @@ const HomePublications = () => {
           {publicationsCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
         <div style={{ margin: "2em 1em 3em 1em" }}>
-          <a href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate">
+          <a
+            href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             {t("google_scholar")}
           </a>
         </div>

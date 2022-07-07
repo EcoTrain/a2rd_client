@@ -100,7 +100,7 @@ const renderCard = (info, i) => {
             <div className="description">{t(info.text)}</div>
             <button
               className="linkBtn"
-              onClick={() => (window.location.href = `/projects/${info.id}`)}
+              onClick={() => window.open(`/projects/${info.id}`, "_blank")}
             >
               {t("moreBtn")}
             </button>
