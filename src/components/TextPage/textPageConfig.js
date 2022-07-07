@@ -51,10 +51,10 @@ export const textPageConfig = {
         image: {
           max:
             process.env.PUBLIC_URL +
-            "/static/images/index/sections/max/activities.jpeg",
+            "/static/images/index/sections/max/traffic.jpg",
           min:
             process.env.PUBLIC_URL +
-            "/static/images/index/sections/min/activities.jpg",
+            "/static/images/index/sections/min/traffic.jpg",
         },
       },
       analysis: {
