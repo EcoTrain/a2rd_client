@@ -31,13 +31,18 @@ const HomePublications = () => {
           className="section-title font-title-h1 text-center"
           style={{ marginTop: "1em" }}
         >
-          {t("publications.title")}
+          {t("title")}
         </div>
         <div className="text-center" style={{ margin: "0px 2em" }}>
-          {t("publications.label")}
+          {t("label")}
         </div>
         <div className="gridCardsView lineGridCardsViewColumn">
           {publicationsCardsInfo.map((x, i) => renderCard(x, i))}
+        </div>
+        <div style={{ margin: "2em 1em 3em 1em" }}>
+          <a href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate">
+            {t("google_scholar")}
+          </a>
         </div>
       </ScrollOverPack>
     </Layout>
@@ -94,7 +99,7 @@ const renderCard = (info, i) => {
           </div>
           {hover && info.journal && (
             <div>
-              {t("publications.journal")}: {info.journal}
+              {t("journal")}: {info.journal}
             </div>
           )}
           {hover && (

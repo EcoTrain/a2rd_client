@@ -27,7 +27,7 @@ const HomeStartups = () => {
           className="section-title font-title-h1 text-center"
           style={{ marginTop: "2em" }}
         >
-          {t("startups.title")}
+          {t("title")}
         </div>
         <div className="gridCardsView lineGridCardsViewRow">
           {startupsCardsInfo.map((x, i) => renderCard(x, i))}

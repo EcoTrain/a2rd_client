@@ -28,7 +28,7 @@ const HomeProjects = ({ filter, text }) => {
             className="section-title font-title-h1 text-center"
             style={{ marginTop: "1em" }}
           >
-            {t("projects.title")}
+            {t("title")}
           </div>
           <TextyAnim
             type="mask-top"
@@ -37,7 +37,7 @@ const HomeProjects = ({ filter, text }) => {
             className="text-center"
             style={{ margin: "0 2em" }}
           >
-            {text || t("projects.label")}
+            {text || t("label")}
           </TextyAnim>
           <div
             className="gridCardsView"
@@ -102,7 +102,7 @@ const renderCard = (info, i) => {
               className="linkBtn"
               onClick={() => (window.location.href = `/projects/${info.id}`)}
             >
-              {t("projects.moreBtn")}
+              {t("moreBtn")}
             </button>
           </div>
         )}

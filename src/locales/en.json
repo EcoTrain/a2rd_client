@@ -77,27 +77,35 @@
         }
     },
     "projects": {
-        "projects.title": "Our projects",
-        "projects.label": "We provide analytics, cutting-edge reviews, and models to optimize the operating companies processes concerning industry specifics, focusing on the best available and future-oriented solutions considering ESG and SDG trends.",
-        "projects.moreBtn": "Read more",
-        "projects.card": {
-            "airflow.title": "Airflow and tracking pollutant emissions modelling",
-            "airflow.text": "Computational modelling for pollutant tracking in complex urban terrains, evaluating the contributions of sources. Our models precisely count the influence of meteorological factors and landscape; we work with 40 by 40 km areas and have a positive experience with modelling up to 3 km above the ground",
-            "airflow.note": "(air quality)",
-            "transport.title": "Transport systems modelling",
-            "transport.text": "Railway complexes and autonomous transport simulation modelling for the quarries and port infrastructure. Through computational modelling, we provide an audit and selection of optimal solutions for the modernization of the road infrastructure of quarries in order to reduce negative environmental and economic costs.",
-            "transport.note": "",
-            "trends.title": "Trends analysis",
-            "trends.text": "Review of modern trends and promising projects focused on global sustainable development challenges. We prepare analytics based on preliminary and thematic processing of satellite data, industrial databases, corporate reports, scientific publications, and targeted computational modelling for consumers.",
-            "trends.note": "",
-            "locomotives.title": "Energy transition modelling",
-            "locomotives.text": "Comparative modelling of the transfer of open-pit mine diesel locomotives to all-electric traction based on lithium batteries.",
-            "locomotives.note": "(zero on-site emissions; especially relevant for the markets of Asia and Oceania)"
+        "title": "Our projects",
+        "label": "We provide analytics, cutting-edge reviews, and models to optimize the operating companies processes concerning industry specifics, focusing on the best available and future-oriented solutions considering ESG and SDG trends.",
+        "moreBtn": "Read more",
+        "card": {
+            "airflow": {
+                "title": "Airflow and tracking pollutant emissions modelling",
+                "text": "Computational modelling for pollutant tracking in complex urban terrains, evaluating the contributions of sources. Our models precisely count the influence of meteorological factors and landscape; we work with 40 by 40 km areas and have a positive experience with modelling up to 3 km above the ground",
+                "note": "(air quality)"
+            },
+            "transport": {
+                "title": "Transport systems modelling",
+                "text": "Railway complexes and autonomous transport simulation modelling for the quarries and port infrastructure. Through computational modelling, we provide an audit and selection of optimal solutions for the modernization of the road infrastructure of quarries in order to reduce negative environmental and economic costs.",
+                "note": ""
+            },
+            "trends": {
+                "title": "Trends analysis",
+                "text": "Review of modern trends and promising projects focused on global sustainable development challenges. We prepare analytics based on preliminary and thematic processing of satellite data, industrial databases, corporate reports, scientific publications, and targeted computational modelling for consumers.",
+                "note": ""
+            },
+            "locomotives": {
+                "title": "Energy transition modelling",
+                "text": "Comparative modelling of the transfer of open-pit mine diesel locomotives to all-electric traction based on lithium batteries.",
+                "note": "(zero on-site emissions; especially relevant for the markets of Asia and Oceania)"
+            }
         }
     },
     "startups": {
-        "startups.title": "Our startups",
-        "startups.item": {
+        "title": "Our startups",
+        "item": {
             "wm": {
                 "title": "Wellness Monitor",
                 "previewText": "Intelligent assistant to support the quality of life",
@@ -119,18 +127,19 @@
         }
     },
     "publications": {
-        "publications.title": "Our publications",
-        "publications.label": "We are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
-        "publications.item": {
+        "title": "Our publications",
+        "label": "We are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
+        "item": {
             "forest": "Catastrophic Pm2.5 emissions from Siberian Forest Fires: Impacting Factors Analysis",
             "gral": "Graz Lagrangian Model (GRAL) for Pollutants Tracking and Estimating Sources Partial Contributions to Atmospheric Pollution in Highly Urbanized Areas",
             "electricity_transition": "Environmental Efficiency of the Fossil Fuels to Electricity Transition in Eastern Siberia Cities"
         },
-        "publications.journal": "Journal",
-        "publications.links": {
+        "journal": "Journal",
+        "links": {
             "score": "Score",
             "article": "Article"
-        }
+        },
+        "google_scholar": "Read more at Google Scholar"
     },
     "feedback": {
         "feedback": {
