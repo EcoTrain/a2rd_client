@@ -4,7 +4,7 @@ import { scroller } from "react-scroll";
 import { Menu } from "antd";
 import "antd/dist/antd.min.css";
 
-import { ThemeContext, themes } from "../../contexts/Theme/ThemeContext";
+import { ThemeContext, themes } from "../../contexts/ThemeContext";
 import Toggle from "../Toggle";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 import "./header.scss";

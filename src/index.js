@@ -8,7 +8,7 @@ import i18n from "./i18n";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 
-import ThemeProvider from "./contexts/Theme/ThemeProvider";
+import ThemeProvider from "./contexts/ThemeContext";
 
 if (process.env.NODE_ENV === "production") {
   console.log = () => {};

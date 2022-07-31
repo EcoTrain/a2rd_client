@@ -1,6 +1,12 @@
-import React from "react";
+import React, { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { ThemeContext, themes } from "./ThemeContext";
+
+export const themes = {
+  dark: "dark",
+  light: "light",
+};
+
+export const ThemeContext = createContext({});
 
 const getTheme = () => {
   const theme = `${window?.localStorage?.getItem("theme")}`;
@@ -16,9 +22,9 @@ const ThemeProvider = ({ children }) => {
     children: PropTypes.element,
   };
 
-  const [theme, setTheme] = React.useState(getTheme);
+  const [theme, setTheme] = useState(getTheme);
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
