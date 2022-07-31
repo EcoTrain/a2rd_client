@@ -143,13 +143,13 @@ export const publicationsCardsInfo = [
       },
     ],
   },
-  {
-    title: "item.electricity_transition",
-    links: [
-      {
-        title: "links.article",
-        link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4085199",
-      },
-    ],
-  },
+  // {
+  //   title: "item.electricity_transition",
+  //   links: [
+  //     {
+  //       title: "links.article",
+  //       link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4085199",
+  //     },
+  //   ],
+  // },
 ];
