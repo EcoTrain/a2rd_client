@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import QueueAnim from "rc-queue-anim";
 import ScrollAnim from "rc-scroll-anim";
+import { scroller } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import { Layout } from "antd";
 import "antd/dist/antd.min.css";
@@ -19,12 +20,18 @@ const AboutDescription = ({ t }) => {
 };
 
 const AboutFounder = ({ t }) => {
-  const imgAlexey = process.env.PUBLIC_URL + "/static/images/index/alexey.webp";
+  const imgAlexey =
+    process.env.PUBLIC_URL + "/static/images/index/aleksey.webp";
   return (
     <div
       key="homeAboutFounder"
       id="homeAboutFounder"
       style={{ margin: "1em 0" }}
+      onClick={() => {
+        scroller.scrollTo("contacts", {
+          duration: 0,
+        });
+      }}
     >
       <img
         className="avatar"
