@@ -8,8 +8,8 @@ import "antd/dist/antd.min.css";
 import { toast } from "react-toastify";
 
 import "./feedback.scss";
+import FormField from "./FormField";
 
-const { Content } = Layout;
 const override = css`
   display: block;
   margin: 0 auto;
@@ -19,11 +19,9 @@ const override = css`
 const HomeFeedback = () => {
   const { t } = useTranslation("feedback");
   const imgMin =
-    process.env.PUBLIC_URL +
-    "/static/images/index/sections/min/feedback.jpeg";
+    process.env.PUBLIC_URL + "/static/images/index/sections/min/feedback.jpeg";
   const imgMax =
-    process.env.PUBLIC_URL +
-    "/static/images/index/sections/max/feedback.jpeg";
+    process.env.PUBLIC_URL + "/static/images/index/sections/max/feedback.jpeg";
   const pageRef = useRef();
 
   const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
@@ -71,7 +69,7 @@ const HomeFeedback = () => {
       toast.error(t("feedback.fail"));
     };
 
-    const url =  + "/api/send_email";
+    const url = +"/api/send_email";
     const body = {
       email,
       name,
@@ -97,37 +95,28 @@ const HomeFeedback = () => {
   const getForm = () => {
     return (
       <form onSubmit={handleSubmit}>
-        <label htmlFor="feedbackEmail">
-          {t("feedback.field.email")}:
-          <input
-            type="email"
-            name="email"
-            id="feedbackEmail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label htmlFor="feedbackName">
-          {t("feedback.field.name")}:
-          <input
-            type="name"
-            name="name"
-            id="feedbackName"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <label htmlFor="feedbackText">
-          {t("feedback.field.text")}:
-          <textarea
-            type="text"
-            name="text"
-            id="feedbackText"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          />
-        </label>
-        <input type="submit" value={t('feedback.submit')} />
+        <FormField
+          tag={"input"}
+          title={t("feedback.field.email")}
+          type={"email"}
+          value={email}
+          onChange={setEmail}
+        />
+        <FormField
+          tag={"input"}
+          title={t("feedback.field.name")}
+          type={"name"}
+          value={name}
+          onChange={setName}
+        />
+        <FormField
+          tag={"textarea"}
+          title={t("feedback.field.text")}
+          type={"text"}
+          value={text}
+          onChange={setText}
+        />
+        <input type="submit" value={t("feedback.submit")} />
       </form>
     );
   };

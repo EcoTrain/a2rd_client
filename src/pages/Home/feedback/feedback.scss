@@ -24,33 +24,11 @@
         display: flex;
         flex-direction: column;
         margin-top: 1em;
-        label {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            input {
-                height: 1.5rem;
-                border-radius: 0.3em;
-                padding: 0.2em 0.5em;
-                border: none;
-                outline: none;
-                background: var(--bgWhite);
-            }
-            textarea {
-                border-radius: 0.3em;
-                border: none;
-                outline: none;
-                min-height: 2em;
-                max-height: 4em;
-                resize: none;
-                padding: 0.2em 0.5em;
-                background: var(--bgWhite);
-            }
-        }
+
         input[type="submit"] {
             margin-top: 1em;
-            background: var(--gray);
-            color: var(--white);
+            background: var(--lightGray);
+            color: var(--textPrimary);
             outline: none;
             border: none;
             border-radius: 0.3em;
