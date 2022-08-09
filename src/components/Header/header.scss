@@ -76,12 +76,12 @@
 .ant-menu-submenu-popup {
     position: fixed;
     top: 40px !important;
+    .ant-menu,
     .ant-menu-sub {
         background-color: var(--lightGray);
-        * > {
-            background-color: var(--lightGray);
+        .ant-menu-item-active:focus {
+            background-color: var(--darkWhite);
         }
-        .ant-menu-item-active:focus,
         .ant-menu-item-selected,
         .ant-menu-submenu-selected,
         .ant-menu-submenu-active {
