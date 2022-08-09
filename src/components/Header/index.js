@@ -151,8 +151,8 @@ const Header = () => {
 
               if (oldURL == newURL) {
                 scroller.scrollTo(newPaths.slice(-1)[0], {
-                  duration: 1000,
-                  smooth: "easeInQuint",
+                  duration: 2000,
+                  smooth: "easeOutQuint",
                 });
               } else window.location.href = elem.key;
             }}

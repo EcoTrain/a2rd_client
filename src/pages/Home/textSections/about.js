@@ -26,10 +26,11 @@ const AboutFounder = ({ t }) => {
     <div
       key="homeAboutFounder"
       id="homeAboutFounder"
-      style={{ margin: "1em 0" }}
+      style={{ margin: "1em 0", cursor: "pointer" }}
       onClick={() => {
         scroller.scrollTo("contacts", {
-          duration: 0,
+          duration: 4000,
+          smooth: "easeOutQuint",
         });
       }}
     >
