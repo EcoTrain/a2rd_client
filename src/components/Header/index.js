@@ -139,10 +139,9 @@ const Header = () => {
           <Menu
             className="headerMenu"
             mode="horizontal"
-            defaultSelectedKeys={["2"]}
             items={items}
             onClick={(elem) => {
-              console.log({ elem });
+              // console.log({ elem });
               const oldPaths = window.location.pathname.split("/");
               const oldURL = oldPaths.slice(0, -1).join("/");
 

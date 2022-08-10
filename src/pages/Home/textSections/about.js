@@ -29,8 +29,7 @@ const AboutFounder = ({ t }) => {
       style={{ margin: "1em 0", cursor: "pointer" }}
       onClick={() => {
         scroller.scrollTo("contacts", {
-          duration: 4000,
-          smooth: "easeOutQuint",
+          duration: 0,
         });
       }}
     >
