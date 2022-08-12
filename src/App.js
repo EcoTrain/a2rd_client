@@ -39,8 +39,8 @@ function App() {
       }, 300);
     };
     if (isAndroid) {
-      // screen.orientation.addEventListener("change", setViewboxHeight);
-      screen.orientation.onchange = setViewboxHeight();
+      screen.orientation.addEventListener("change", setViewboxHeight);
+      // screen.orientation.onchange = setViewboxHeight();
     }
   }, []);
 
