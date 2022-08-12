@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "antd";
@@ -31,7 +31,10 @@ function App() {
         <Route path="/startups/" element={<Startups />} />
         <Route path="/startups/:id" element={<Startups />} />
         <Route path="/modeling/multiagent" element={<ModelingMultiagent />} />
-        <Route path="/modeling/distribution" element={<ModelingDistribution />} />
+        <Route
+          path="/modeling/distribution"
+          element={<ModelingDistribution />}
+        />
       </Routes>
       <ToastContainer
         position="bottom-right"

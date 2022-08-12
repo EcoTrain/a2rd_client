@@ -51,7 +51,7 @@ const Home = () => {
       <HomePublications title="navigation.publications" />
       <TextPage {...textPageConfig.home.businessModel} t={t} />
 
-      <HomeFeedback title="navigation.feedback" position={"sticky"} />
+      <HomeFeedback title="navigation.feedback" />
       <HomeContacts title="navigation.contacts" />
     </PageScroller>
   );
