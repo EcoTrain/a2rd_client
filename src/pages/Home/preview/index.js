@@ -1,17 +1,17 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, {useEffect, useState, useRef} from "react";
 import TweenOne from "rc-tween-one";
 import TextyAnim from "rc-texty";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
-import { Layout } from "antd";
+import {Layout} from "antd";
 
 import "antd/dist/antd.min.css";
 
 import "./preview.scss";
-import { splitTextByWords } from "../../../fucntions/splitText";
-import { renderNextPageBtn } from "../../../components/ScrollPage";
+import {splitTextByWords} from "../../../fucntions/splitText";
+import {renderNextPageBtn} from "../../../components/ScrollPage";
 
-const { Content } = Layout;
+const {Content} = Layout;
 
 const BgVideo = () => {
   const [opacity, setOpacity] = useState(1);
@@ -22,7 +22,7 @@ const BgVideo = () => {
       const position = window.pageYOffset;
       setOpacity(1 - position / window.screen.height);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {passive: true});
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -36,7 +36,7 @@ const BgVideo = () => {
       muted
       poster={process.env.PUBLIC_URL + "/static/images/city_logo.webp"}
       id="bgVideo"
-      style={{ opacity: opacity }}
+      style={{opacity: opacity}}
     >
       <source
         src={process.env.PUBLIC_URL + "/static/videos/main_video.webm"}
@@ -46,18 +46,14 @@ const BgVideo = () => {
         src={process.env.PUBLIC_URL + "/static/videos/main_video.mp4"}
         type="video/mp4"
       />
-      {/* <source
-        src="../../../static/videos/main_video.ogv"
-        type="video/ogg"
-        codecs="theora, vorbis"
-      /> */}
+      <source src="../../../static/videos/main_video.ogv" type="video/ogg" />
       {"browser_not_support_video_tag"}
     </video>
   );
 };
 
 const Banner = () => {
-  const { t } = useTranslation(["home"]);
+  const {t} = useTranslation(["home"]);
 
   const getInterval = (e) => {
     switch (e.index) {
@@ -82,7 +78,7 @@ const Banner = () => {
       y: "-100%",
     };
     if (e.index >= 2 && e.index <= 6) {
-      return { ...t, y: "-30%", duration: 150 };
+      return {...t, y: "-30%", duration: 150};
     }
     return t;
   };
@@ -119,7 +115,7 @@ const Banner = () => {
               ease: "easeInOutQuint",
               duration: 600,
             },
-            { x: "150%", ease: "easeInOutQuart", duration: 450, delay: -150 },
+            {x: "150%", ease: "easeInOutQuart", duration: 450, delay: -150},
           ]}
         />
       </div>
@@ -138,8 +134,8 @@ const Banner = () => {
         component={TweenOne}
         componentProps={{
           animation: [
-            { x: 130, type: "set" },
-            { x: 100, delay: 500, duration: 450 },
+            {x: 130, type: "set"},
+            {x: 100, delay: 500, duration: 450},
             {
               x: 0,
               duration: 300,
@@ -193,7 +189,7 @@ const HomePreview = () => {
     return (
       <TweenOne
         className="bannerBg"
-        style={{ opacity: 0 }}
+        style={{opacity: 0}}
         animation={{
           type: "from",
           opacity: 0,
@@ -225,7 +221,7 @@ const HomePreview = () => {
       {video}
       <Content className="previewOverlay">
         {renderBanner()}
-        {renderNextPageBtn({ id: "homeAbout" })}
+        {renderNextPageBtn({id: "homeAbout"})}
       </Content>
     </Layout>
   );
