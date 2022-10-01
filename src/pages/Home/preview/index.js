@@ -46,11 +46,11 @@ const BgVideo = () => {
         src={process.env.PUBLIC_URL + "/static/videos/main_video.mp4"}
         type="video/mp4"
       />
-      <source
+      {/* <source
         src="../../../static/videos/main_video.ogv"
         type="video/ogg"
         codecs="theora, vorbis"
-      />
+      /> */}
       {"browser_not_support_video_tag"}
     </video>
   );
