@@ -68,7 +68,7 @@
         },
         "businessModel": {
             "title": "Business model",
-            "text": "The basis of the business model is the expansion of the network of partners, providing the exchange of analytical materials and data for the sustainable support of our customers (medical sector, insurance companies and banks, service, tourism, airlines).\n\tAt the A2 Research and Development lab, we are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.\n\tPlease contact us if you're interested in being a part of the network the x-Health&Wellness or our other projects."
+            "text": "The basis of the business model is the expansion of the network of partners, providing the exchange of analytical materials and data for the sustainable support of our customers (medical sector, insurance companies and banks, service, tourism, airlines).\n\tPlease contact us if you're interested in being a part of the network the x-Health&Wellness or our other projects."
         },
         "contacts": {
             "phone": "+33 6 19 20 31 25",
@@ -128,7 +128,7 @@
     },
     "publications": {
         "title": "Our publications",
-        "label": "We are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
+        "label": "At the A2 Research and Development lab, we are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
         "item": {
             "forest": "Catastrophic Pm2.5 emissions from Siberian Forest Fires: Impacting Factors Analysis",
             "gral": "Graz Lagrangian Model (GRAL) for Pollutants Tracking and Estimating Sources Partial Contributions to Atmospheric Pollution in Highly Urbanized Areas",
