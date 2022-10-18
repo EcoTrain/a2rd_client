@@ -54,7 +54,7 @@ const HomeAbout = () => {
     <Layout
       id="homeAbout"
       ref={pageRef}
-      className="section splitSection section-white"
+      className="section section-white"
     >
       <ScrollOverPack
         replay

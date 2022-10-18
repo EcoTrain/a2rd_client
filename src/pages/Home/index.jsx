@@ -18,6 +18,7 @@ import HomePublications from "./cardSections/publications";
 import HomeFeedback from "./feedback";
 import HomeContacts from "./contacts";
 import { useTranslation } from "react-i18next";
+import HomeHealthyLifestyle from "./textSections/healthyLifestyle";
 
 const Home = () => {
   const params = useParams();
@@ -37,7 +38,6 @@ const Home = () => {
       <HomeAbout title="navigation.about" />
 
       <TextPage position={"sticky"} {...textPageConfig.home.activities} t={t} />
-      <TextPage position={"sticky"} {...textPageConfig.home.analytic} t={t} />
       <TextPage position={"sticky"} {...textPageConfig.home.solutions} t={t} />
       <TextPage
         position={"sticky"}
@@ -49,6 +49,7 @@ const Home = () => {
       <HomeStartups title="navigation.startups" />
 
       <HomePublications title="navigation.publications" />
+      <HomeHealthyLifestyle title="navigation.about" />
       <TextPage {...textPageConfig.home.businessModel} t={t} />
 
       <HomeFeedback title="navigation.feedback" />

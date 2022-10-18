@@ -54,21 +54,21 @@
                 "Разработка приложений"
             ]
         },
-        "analytics": {
-            "title": "Помощь компаниям",
-            "text": "Наша аналитика, передовые обзоры и модели помогают компаниям из энергетического, промышленного, медицинского, финансового, страхового и других секторов совершенствовать свои ESG-стратегии и программы развития на основе актуальных обзоров (научных отчетов, исследований интеллектуальной собственности, публикаций)."
-        },
         "solutions": {
-            "title": "О продуктах",
-            "text": "Наши решения облегчают рутинные процедуры и повышают безопасность благодаря удобным программным помощникам и широкой сети партнеров из различных секторов."
+            "title": "Наши решения",
+            "text": "Наша аналитика, передовые обзоры и модели помогают компаниям из энергетического, промышленного, медицинского, финансового, страхового и других секторов совершенствовать свои ESG-стратегии и программы развития на основе актуальных обзоров (научных отчетов, исследований интеллектуальной собственности, публикаций).\n\tНаши решения облегчают рутинные процедуры и повышают безопасность благодаря удобным программным помощникам и широкой сети партнеров из различных секторов."
         },
         "assistant": {
             "title": "Медицинские помощники",
             "text": "Мы также предлагаем удобные интерфейсы персональных медицинских помощников для тех, кто живет без необходимости в терапевтической поддержке, но хочет повысить уровень защиты для себя и своих близких за счет персонализированного профиля."
         },
+        "healthyLifestyle": {
+            "title": "Healthy Lifestyle",
+            "text": "We aim to improve the lives of millions of people worldwide and make the process of following/conducting therapy more comfortable for both patients and doctors by developing modern big-data processing and IT (systems, App and IoT development).\n\tA healthy lifestyle for many categories of people is a vital necessity for successful rehabilitation after surgery. According to world statistics, about 150 thousand kidney transplants, about 40 thousand liver transplants, and less than 4 thousand heart transplants per year. Often lifelong multicomponent therapy and special protocols are needed to maintain the vitality of these people. Our solutions facilitate routine procedures and enhance security through user-friendly software assistants and a wide network of partners from various sectors.\n\tWe also offer user-friendly interfaces of personal medical assistants for those who live without the need for therapeutic support but want to increase the level of protection for themselves and their loved ones through a personalized profile."
+        },
         "businessModel": {
             "title": "Бизнес модель",
-            "text": "В основе бизнес-модели лежит расширение сети партнеров, обеспечивающее обмен аналитическими материалами и данными для устойчивой поддержки наших клиентов (медицинский сектор, страховые компании и банки, сервис, туризм, авиакомпании)."
+            "text": "В основе бизнес-модели лежит расширение сети партнеров, обеспечивающее обмен аналитическими материалами и данными для устойчивой поддержки наших клиентов (медицинский сектор, страховые компании и банки, сервис, туризм, авиакомпании).\n\tПожалуйста, свяжитесь с нами, если вы заинтересованы в том, чтобы стать частью сети x-Health&Wellness или других наших проектов."
         },
         "contacts": {
             "phone": "+7 902 910 0099",

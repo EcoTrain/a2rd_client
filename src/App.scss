@@ -50,7 +50,8 @@ body {
 }
 
 body {
-    overflow: overlay;
+    overflow-x: hidden;
+    overflow-y: overlay;
     ::-webkit-scrollbar {
         display: none;
     }

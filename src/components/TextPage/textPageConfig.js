@@ -14,11 +14,6 @@ export const textPageConfig = {
       list: "activities.list",
       sectionTheme: "section-darkWhite",
     },
-    analytic: {
-      title: "analytics.title",
-      text: "analytics.text",
-      sectionTheme: "section-darkWhite",
-    },
     solutions: {
       title: "solutions.title",
       text: "solutions.text",
