@@ -83,7 +83,7 @@ h4,
 }
 
 .text {
-    white-space: break-spaces;
+    white-space: pre-wrap;
     text-indent: 1.5em;
     tab-size: 1.5em;
 }
@@ -91,7 +91,7 @@ h4,
 .description {
     display: block;
     text-align: justify;
-    white-space: break-spaces !important;
+    white-space: pre-wrap;
     text-indent: 1.5em;
     tab-size: 1.5em;
 }
