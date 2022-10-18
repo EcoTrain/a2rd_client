@@ -36,14 +36,14 @@
         },
         "about": {
             "title": "About Us",
-            "text": "We are motivated by more than the simple pursuit of business success. We aim to make the world sustainable and better than it was before, improve the lives of millions of people worldwide.\n\tThe main commercial projects are start-up initiatives wellness monitor and airflow modelling, which are related impact investments aimed at developing a sustainable society.\n\tAt the A2 Research and Development lab, we are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
+            "text": "At the A2 Research and Development lab we are motivated by more than the simple pursuit of business success. Our aim is to make the world sustainable and better than it was before, improve the lives of millions of people worldwide.\n\tThe main commercial projects are start-up initiatives wellness monitor and airflow modelling, which are related impact investments aimed at developing a sustainable society.",
             "signature": "Thank you for visiting our website.\n\tWith the highest consideration from the A2 Research and Development lab",
             "name": "Aleksey A. ROMANOV",
             "position": "CEO, founder"
         },
         "activities": {
             "title": "Our activities",
-            "text": "We work in various fields using our background to solve industrial, environmental challenges and various issues.",
+            "text": "We work in various fields using our background to solve industrial, environmental challenges and a variety of issues.",
             "list": [
                 "RAW/BIG data processing and analysis",
                 "Computational modeling",
@@ -68,7 +68,7 @@
         },
         "businessModel": {
             "title": "Business model",
-            "text": "The basis of the business model is the expansion of the network of partners, providing the exchange of analytical materials and data for the sustainable support of our customers (medical sector, insurance companies and banks, service, tourism, airlines).\n\tPlease contact us if you're interested in being a part of the network the x-Health&Wellness or our other projects."
+            "text": "The basis of the business model is the expansion of the network of partners, providing the exchange of analytical materials and data for the sustainable support of our customers (medical sector, insurance companies and banks, service, tourism, airlines).\n\tAt the A2 Research and Development lab, we are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.\n\tPlease contact us if you're interested in being a part of the network the x-Health&Wellness or our other projects."
         },
         "contacts": {
             "phone": "+33 6 19 20 31 25",
