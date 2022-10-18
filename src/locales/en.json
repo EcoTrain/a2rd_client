@@ -36,8 +36,8 @@
         },
         "about": {
             "title": "About Us",
-            "text": "We are motivated by more than the simple pursuit of business success. We aim to make the world sustainable and better than it was before. We aim to improve the lives of millions of people worldwide.",
-            "signature": "With the highest consideration from the A2 Research and Development lab",
+            "text": "We are motivated by more than the simple pursuit of business success. We aim to make the world sustainable and better than it was before. We aim to improve the lives of millions of people worldwide.\n\tAt the A2 Research and Development lab , we are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
+            "signature": "Thank you for visiting our website.\n\tWith the highest consideration from the A2 Research and Development lab",
             "name": "Aleksey A. ROMANOV",
             "position": "CEO, founder"
         },
@@ -56,7 +56,7 @@
         },
         "analytics": {
             "title": "Help companies",
-            "text": "Our analytics, cutting edge reviews and models help companies from the energy, industrial, medical, financial, insurance and other sectors improve their ESG strategies and development programs based on up-to-date reviews (scientific reports, intellectual property studies, publications)"
+            "text": "Our analytics, cutting edge reviews and models help companies from the energy, industrial, medical, financial, insurance and other sectors improve their ESG strategies and development programs based on up-to-date reviews (scientific reports, IP research, publications)"
         },
         "solutions": {
             "title": "About products",

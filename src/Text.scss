@@ -82,11 +82,18 @@ h4,
     text-align: center;
 }
 
+.text {
+    white-space: break-spaces;
+    text-indent: 1.5em;
+    tab-size: 1.5em;
+}
+
 .description {
     display: block;
     text-align: justify;
-    white-space: normal !important;
+    white-space: break-spaces !important;
     text-indent: 1.5em;
+    tab-size: 1.5em;
 }
 
 @media only screen and (max-width: 960px) and (max-height: 560px) and (orientation: landscape) {
