@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { scroller } from "react-scroll";
+import React, {useEffect} from "react";
+import {useParams} from "react-router-dom";
+import {scroller} from "react-scroll";
+import {useTranslation} from "react-i18next";
 
 import "antd/dist/antd.min.css";
 import HomePreview from "./preview";
@@ -10,19 +11,17 @@ import PageScroller from "../../components/ScrollPage";
 import "./home.scss";
 
 import TextPage from "../../components/TextPage";
-import { textPageConfig } from "../../components/TextPage/textPageConfig";
+import {textPageConfig} from "../../components/TextPage/textPageConfig";
 
 import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";
 import HomePublications from "./cardSections/publications";
 import HomeFeedback from "./feedback";
 import HomeContacts from "./contacts";
-import { useTranslation } from "react-i18next";
-import HomeHealthyLifestyle from "./textSections/healthyLifestyle";
 
 const Home = () => {
   const params = useParams();
-  const { t } = useTranslation(["home"]);
+  const {t} = useTranslation(["home"]);
 
   useEffect(() => {
     params.id &&
@@ -49,7 +48,7 @@ const Home = () => {
       <HomeStartups title="navigation.startups" />
 
       <HomePublications title="navigation.publications" />
-      <HomeHealthyLifestyle title="navigation.about" />
+      <TextPage {...textPageConfig.home.healthyLifestyle} t={t} />
       <TextPage {...textPageConfig.home.businessModel} t={t} />
 
       <HomeFeedback title="navigation.feedback" />

@@ -1,13 +1,13 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, {useRef, useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
 import QueueAnim from "rc-queue-anim";
-import { CheckOutlined } from "@ant-design/icons";
-import { Layout } from "antd";
+import {CheckOutlined} from "@ant-design/icons";
+import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
-import { splitTextByWords } from "../../fucntions/splitText";
+import {splitTextByWords} from "../../fucntions/splitText";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
@@ -20,26 +20,26 @@ const TextPage = ({
   image,
   sectionTheme,
   direction,
-  fullScreenText,
   t,
 }) => {
-  const _texts = t(text, { returnObjects: true }) || [];
+  const _texts = t(text, {returnObjects: true}) || [];
   const textItems = Array.isArray(_texts) ? _texts : [_texts];
-
-  const listItems = t(list, { returnObjects: true });
+  const listItems = t(list, {returnObjects: true});
+  const hasImageArea = ["object", "string"].includes(typeof image);
 
   const pageRef = useRef();
 
   const getImageSrc = () => {
-    return !image || typeof image == "string"
+    return typeof image == "string"
       ? image
+      : !image || (hasImageArea && !Object.keys(image).length)
+      ? null
       : window.innerWidth < 960
       ? image.min
       : image.max;
   };
 
   const [img, setImg] = useState(getImageSrc());
-  console.log({ title, image, img });
 
   const handleResize = () => {
     setImg(getImageSrc());
@@ -63,7 +63,7 @@ const TextPage = ({
   );
 
   const getImage = () =>
-    !fullScreenText && (
+    hasImageArea && (
       <div key={`${(title || "").toLowerCase()}_image`} className="section-img">
         {img && <img src={img} />}
       </div>
@@ -84,10 +84,10 @@ const TextPage = ({
           ))}
           <div className="font-text-small">{getTextAnim(t(note))}</div>
           {listItems && (
-            <ul style={{ marginTop: "1em" }}>
+            <ul style={{marginTop: "1em"}}>
               <QueueAnim type={["right"]}>
                 {listItems.map((text, i) => (
-                  <li key={i} style={{ display: "flex" }}>
+                  <li key={i} style={{display: "flex"}}>
                     <div className="icon">
                       <CheckOutlined />
                     </div>
@@ -105,7 +105,11 @@ const TextPage = ({
   const sectionChilds = [getContent(), getImage()];
 
   return (
-    <Layout className="section splitSection" ref={pageRef} id={id}>
+    <Layout
+      className={["section", hasImageArea && "splitSection"].join(" ")}
+      ref={pageRef}
+      id={id}
+    >
       {direction == "left" ? sectionChilds : sectionChilds.reverse()}
     </Layout>
   );

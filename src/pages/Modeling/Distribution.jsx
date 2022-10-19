@@ -1,19 +1,18 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { scroller } from "react-scroll";
+import React, {useEffect} from "react";
+import {useParams} from "react-router-dom";
+import {scroller} from "react-scroll";
+import {useTranslation} from "react-i18next";
 
-import "antd/dist/antd.min.css";
-import PageScroller from "../../../components/ScrollPage";
+import PageScroller from "../../components/ScrollPage";
 
-import TextPage from "../../../components/TextPage";
-import { textPageConfig } from "../../../components/TextPage/textPageConfig";
+import TextPage from "../../components/TextPage";
+import {textPageConfig} from "../../components/TextPage/textPageConfig";
 
-import HomeProjects from "../../Home/cardSections/projects";
-import { useTranslation } from "react-i18next";
+import HomeProjects from "../Home/cardSections/projects";
 
 const ModelingDistribution = () => {
   const params = useParams();
-  const { t } = useTranslation(["modeling"]);
+  const {t} = useTranslation(["modeling"]);
 
   useEffect(() => {
     params.id &&
