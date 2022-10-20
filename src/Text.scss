@@ -16,9 +16,9 @@ body {
 
 .font-title-large {
     font-weight: bold;
-    font-size: calcFluidFontSize(2.2, 2.6, 480, 1280, em);
+    font-size: calcFluidFontSize(2.2, 2.65, 480, 1280, em);
     & > * {
-        font-size: calcFluidFontSize(2.2, 2.6, 480, 1280, em);
+        font-size: calcFluidFontSize(2.2, 2.65, 480, 1280, em);
     }
 }
 
@@ -34,9 +34,9 @@ h1,
 h2,
 .font-title-h2 {
     font-weight: bold;
-    font-size: calcFluidFontSize(1.4, 1.65, 480, 1280, em);
+    font-size: calcFluidFontSize(1.5, 1.8, 480, 1280, em);
     & > * {
-        font-size: calcFluidFontSize(1.4, 1.65, 480, 1280, em);
+        font-size: calcFluidFontSize(1.5, 1.8, 480, 1280, em);
     }
 }
 
@@ -58,9 +58,9 @@ h4,
 }
 
 .font-text-large {
-    font-size: calcFluidFontSize(1.4, 1.65, 480, 1280, em);
+    font-size: calcFluidFontSize(1.5, 1.8, 480, 1280, em);
     & > * {
-        font-size: calcFluidFontSize(1.4, 1.65, 480, 1280, em);
+        font-size: calcFluidFontSize(1.5, 1.8, 480, 1280, em);
     }
 }
 

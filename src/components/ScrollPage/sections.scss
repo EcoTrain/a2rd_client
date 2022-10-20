@@ -53,7 +53,7 @@
             .section-content {
                 flex-grow: 1;
                 flex-basis: 50%;
-                // max-height: 100vh;
+                max-height: 100vh;
                 overflow: scroll;
             }
             .section-img {
@@ -88,13 +88,17 @@
 }
 
 @media (max-width: 960px) {
-    .splitSection {
-        flex-direction: column !important;
-        .section-img {
-            order: -1;
-            min-height: 20vh;
-            max-height: 20vh;
-            width: 100vw;
+    .sectionPageScroller {
+        .sectionPage {
+            .splitSection {
+                flex-direction: column !important;
+                .section-img {
+                    order: -1;
+                    min-height: 20vh;
+                    max-height: 20vh;
+                    width: 100vw;
+                }
+            }
         }
     }
 }
