@@ -27,19 +27,16 @@ const HomePublications = () => {
         className="section-content"
         style={{height: "100%"}}
       >
-        <div
-          className="section-title font-title-h1 text-center"
-          style={{marginTop: "1em"}}
-        >
+        <div className="section-title font-title-h1 text-center">
           {t("publications.title")}
         </div>
-        <div className="text-center" style={{margin: "0px 2em"}}>
+        <div className="description" style={{margin: "0px 1em"}}>
           {t("publications.label")}
         </div>
         <div className="gridCardsView lineGridCardsViewColumn">
           {publicationsCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
-        <div style={{margin: "2em 1em 3em 1em"}}>
+        <div style={{margin: "2em 1em"}}>
           <a
             href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
             target="_blank"
@@ -83,7 +80,11 @@ const renderCard = (info, i) => {
         <div className="lineGridCardIcon">
           {info.icon ? (
             <a href={info.icon.link} target="_blank" rel="noreferrer">
-              <img className="linkIcon" src={info.icon.src} alt={info.icon.alt} />
+              <img
+                className="linkIcon"
+                src={info.icon.src}
+                alt={info.icon.alt}
+              />
             </a>
           ) : (
             <PreprintPlugSvg
@@ -97,10 +98,11 @@ const renderCard = (info, i) => {
           )}
         </div>
 
-        <div className="gridCardView lineGridViewLeft">
-          <div className="font-title-h3" style={{textAlign: "left"}}>
-            {t(info.title)}
-          </div>
+        <div
+          className="gridCardView lineGridViewLeft"
+          style={{textAlign: "left"}}
+        >
+          <div className="font-title-h3">{t(info.title)}</div>
           {hover && info.journal && (
             <div>
               {t("journal")}: {info.journal}

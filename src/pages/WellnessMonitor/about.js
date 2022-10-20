@@ -5,10 +5,25 @@ import {startupsCardsInfo} from "../Home/cardSections/cardsConfig";
 import {Startup} from "../ExtendedPages/startups";
 
 const WellnessAbout = () => {
-  const {t} = useTranslation(["startups"]);
+  const {t} = useTranslation(["wellness"]);
 
-  let config = startupsCardsInfo[0];
-  config.title = "about"; // i18n startups.about key
+  const config = {
+    title: "about.title",
+    shortText: "about.shortText",
+    text: "about.text",
+    bg: "var(--darkWhite)",
+    id: "startup_wm",
+    links: [
+      {
+        title: "links.manual",
+        link: "https://ecotrain.github.io/WM_doc/",
+      },
+      {
+        title: "links.website",
+        link: "https://wellness.a2rd.com/",
+      },
+    ],
+  };
 
   return (
     // TODO: change config format: list -> dict

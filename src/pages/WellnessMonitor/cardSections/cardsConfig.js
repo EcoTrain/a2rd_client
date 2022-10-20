@@ -33,11 +33,6 @@ export const stackCardsInfo = [
 
 export const developersCardsInfo = [
   {
-    title: "team.nastya.name",
-    previewText: "team.nastya.state",
-    logo: process.env.PUBLIC_URL + "/static/images/wellness/team/nastya.jpg",
-  },
-  {
     title: "team.elijah.name",
     previewText: "team.elijah.state",
     logo: process.env.PUBLIC_URL + "/static/images/wellness/team/elijah.jpg",
@@ -56,6 +51,11 @@ export const developersCardsInfo = [
     title: "team.alexander.name",
     previewText: "team.alexander.state",
     logo: process.env.PUBLIC_URL + "/static/images/wellness/team/alexander.jpg",
+  },
+  {
+    title: "team.nastya.name",
+    previewText: "team.nastya.state",
+    logo: process.env.PUBLIC_URL + "/static/images/wellness/team/nastya.jpg",
   },
   {
     title: "team.aleksey.name",

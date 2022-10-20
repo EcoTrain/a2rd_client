@@ -22,27 +22,20 @@ const HomeProjects = ({filter, text}) => {
           type={["left", "right"]}
           duration={1000}
           className="section-content"
-          style={{flexDirection: "column"}}
         >
-          <div
-            className="section-title font-title-h1 text-center"
-            style={{marginTop: "1em"}}
-          >
+          <div className="section-title font-title-h1 text-center">
             {t("title")}
           </div>
           <TextyAnim
             type="mask-top"
             split={splitTextByWords}
             interval={10}
-            className="text-center"
-            style={{margin: "0 2em"}}
+            className="description"
+            style={{margin: "0 1em"}}
           >
             {text || t("label")}
           </TextyAnim>
-          <div
-            className="gridCardsView"
-            style={{marginTop: "1em", marginBottom: "1em"}}
-          >
+          <div className="gridCardsView">
             {projectsCardsInfo.map(
               (x, i) => (!filter || (filter && x[filter])) && renderCard(x, i)
             )}

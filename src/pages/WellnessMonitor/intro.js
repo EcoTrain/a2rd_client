@@ -13,7 +13,7 @@ const AboutDescription = ({t}) => {
       <div className="section-title font-title-large text-center">
         {t("about.title")}
       </div>
-      <div className="font-text-large text">{t("about.text")}</div>
+      <div className="font-text-large text">{t("about.shortText")}</div>
     </div>
   );
 };

@@ -237,29 +237,30 @@
         },
         "about": {
             "title": "Wellness Monitor",
-            "text": "Intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs. "
+            "shortText": "Intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs. ",
+            "text": "<0>Wellness Monitor</0> is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users. \nWellness Monitor is a part of the x-Health&Wellness framework – an interface for interaction with the medical sector (hospitals), insurance companies, airlines, and travel services. Our goal is to develop and maintain Wellness Monitor as a convenient intelligent assistant that provides a safe, fast, and reliable service of equal opportunities for all categories of users."
         },
         "stack": {
             "title": "Software stack",
             "node": {
                 "title": "NodeJS",
-                "text": "NodeJS + Express allows you to quickly process a large number of requests and cover a large audience of users"
+                "text": "NodeJS + Express allows you to quickly process requests from a large number of users"
             },
             "react": {
                 "title": "React Native",
-                "text": "Our interface is written in React Native, which allows us to provide a cross-platform product and support for Web, iOS, Android"
+                "text": "Allows us to provide cross-platform product and support for Web, iOS, Android"
             },
             "mongo": {
                 "title": "MongoDB",
-                "text": "Used to register and record transactions, which provides control over user actions and tracking the occurrence of system failures."
+                "text": "Used to register and record transactions, which provides control over what is happening in the system"
             },
             "postgresql": {
                 "title": "PostgreSQL",
-                "text": "Used to store user data and directories. Relationality allows you to minimize the number of requests to the server."
+                "text": "Used to store user data and general template directories"
             },
             "firebase": {
                 "title": "Firebase",
-                "text": "Push notifications about important events. Dynamic update of data on devices."
+                "text": "Push notifications about important events and dynamic update of data on devices"
             }
         },
         "functional": {
