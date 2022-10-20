@@ -38,7 +38,7 @@ const renderCard = (info, i, t) => {
     <div
       key={i}
       className="gridCardWrapper"
-      style={{flexBasis: "33%", minWidth: 200, minHeight: 200}}
+      style={{flexBasis: "33%", minWidth: 150, minHeight: 150}}
     >
       <div
         className="gridCard"

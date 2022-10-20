@@ -1,7 +1,5 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import "antd/dist/antd.min.css";
-import {startupsCardsInfo} from "../Home/cardSections/cardsConfig";
 import {Startup} from "../ExtendedPages/startups";
 
 const WellnessAbout = () => {
