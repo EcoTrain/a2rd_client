@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import { isAndroid } from "react-device-detect";
+import React, {useEffect} from "react";
+import {Routes, Route} from "react-router-dom";
+import {isAndroid} from "react-device-detect";
 
-import { Layout } from "antd";
+import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
 import Home from "./pages/Home";
@@ -16,9 +16,10 @@ import Startups from "./pages/ExtendedPages/startups";
 import ModelingMultiagent from "./pages/Modeling/Multiagent";
 import ModelingDistribution from "./pages/Modeling/Distribution";
 
-import { ToastContainer } from "react-toastify";
+import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./components/Toast.scss";
+import WellnessMonitor from "./pages/WellnessMonitor";
 
 function App() {
   useEffect(() => {
@@ -59,6 +60,8 @@ function App() {
           path="/modeling/distribution"
           element={<ModelingDistribution />}
         />
+        <Route path="/wellness/" element={<WellnessMonitor />} />
+        <Route path="/wellness/:id" element={<WellnessMonitor />} />
       </Routes>
       <ToastContainer
         position="bottom-right"

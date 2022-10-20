@@ -1,18 +1,18 @@
-import React, { useEffect, useRef } from "react";
-import { Link, useParams } from "react-router-dom";
-import { scroller } from "react-scroll";
+import React, {useEffect, useRef} from "react";
+import {Link, useParams} from "react-router-dom";
+import {scroller} from "react-scroll";
 import PropTypes from "prop-types";
-import { Trans, useTranslation } from "react-i18next";
-import { Layout } from "antd";
+import {Trans, useTranslation} from "react-i18next";
+import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
 import PageScroller from "../../components/ScrollPage";
-import { startupsCardsInfo } from "../Home/cardSections/cardsConfig";
+import {startupsCardsInfo} from "../Home/cardSections/cardsConfig";
 
 import "../../App.scss";
 
 const Startups = () => {
-  const { t } = useTranslation("startups");
+  const {t} = useTranslation("startups");
   const params = useParams();
 
   useEffect(() => {
@@ -27,18 +27,18 @@ const Startups = () => {
   return (
     <PageScroller t={t}>
       {startupsCardsInfo.map((x, i) => (
-        <Startup key={i} item={x} position={"sticky"} t={t} />
+        <Startup key={i} item={x} t={t} />
       ))}
     </PageScroller>
   );
 };
 
-const Startup = ({ item, t }) => {
+export const Startup = ({item, t}) => {
   Startup.propTypes = {
     item: () => ({
       id: PropTypes.string,
       title: PropTypes.string,
-      smallText: PropTypes.string,
+      shortText: PropTypes.string,
       text: PropTypes.string,
       bg: PropTypes.string,
     }),
@@ -48,9 +48,9 @@ const Startup = ({ item, t }) => {
   return (
     <Layout
       id={item.id}
-      className="section splitSection section-lightGray"
+      className="section section-lightGray"
       ref={pageRef}
-      style={{ position: "sticky", top: 0, background: item.bg }}
+      style={{top: 0, background: item.bg}}
     >
       <div className="section-content">
         <div className="section-content-block">

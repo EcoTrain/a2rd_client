@@ -2,6 +2,7 @@ export const projectsCardsInfo = [
   {
     id: "project_airflow",
     title: "card.airflow.title",
+    preview: "card.airflow.preview",
     text: "card.airflow.text",
     note: "card.airflow.note",
     image:
@@ -13,6 +14,7 @@ export const projectsCardsInfo = [
   {
     id: "project_transport",
     title: "card.transport.title",
+    preview: "card.transport.preview",
     text: "card.transport.text",
     note: "card.transport.note",
     image:
@@ -24,6 +26,7 @@ export const projectsCardsInfo = [
   {
     id: "project_trends",
     title: "card.trends.title",
+    preview: "card.trends.preview",
     text: "card.trends.text",
     note: "card.trends.note",
     image:
@@ -33,6 +36,7 @@ export const projectsCardsInfo = [
   {
     id: "project_locomotives",
     title: "card.locomotives.title",
+    preview: "card.locomotives.preview",
     text: "card.locomotives.text",
     note: "card.locomotives.note",
     image:
@@ -46,7 +50,7 @@ export const startupsCardsInfo = [
   {
     title: "item.wm.title",
     previewText: "item.wm.previewText",
-    smallText: "item.wm.smallText",
+    shortText: "item.wm.shortText",
     text: "item.wm.text",
     bg: "var(--darkWhite)",
     id: "startup_wm",
@@ -64,7 +68,7 @@ export const startupsCardsInfo = [
   {
     title: "item.framework.title",
     previewText: "item.framework.previewText",
-    smallText: "item.framework.smallText",
+    shortText: "item.framework.shortText",
     text: "item.framework.text",
     bg: "var(--lightGray)",
     id: "startup_xwm",
@@ -72,7 +76,7 @@ export const startupsCardsInfo = [
   {
     title: "item.airflows.title",
     previewText: "item.airflows.previewText",
-    smallText: "item.airflows.smallText",
+    shortText: "item.airflows.shortText",
     text: "item.airflows.text",
     bg: "var(--darkWhite)",
     id: "startup_atmos",
@@ -87,7 +91,7 @@ export const startupsCardsInfo = [
 
 export const publicationsCardsInfo = [
   {
-    title: "item.carbon_emission_russian_forest",
+    title: "publications.item.carbon_emission_russian_forest",
     journal: "Science of The Total Environment",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=25349",
@@ -96,17 +100,17 @@ export const publicationsCardsInfo = [
     },
     links: [
       {
-        title: "links.article",
+        title: "publications.links.article",
         link: "https://doi.org/10.1016/j.scitotenv.2022.157322",
       },
       {
-        title: "links.score",
+        title: "publications.links.score",
         link: "https://www.scimagojr.com/journalsearch.php?q=25349&tip=sid&exact=no",
       },
     ],
   },
   {
-    title: "item.forest",
+    title: "publications.item.forest",
     journal: "Environmental Pollution",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=23916",
@@ -115,17 +119,17 @@ export const publicationsCardsInfo = [
     },
     links: [
       {
-        title: "links.article",
+        title: "publications.links.article",
         link: "https://doi.org/10.1016/j.envpol.2022.119324",
       },
       {
-        title: "links.score",
+        title: "publications.links.score",
         link: "https://www.scimagojr.com/journalsearch.php?q=23916&tip=sid&exact=no",
       },
     ],
   },
   {
-    title: "item.gral",
+    title: "publications.item.gral",
     journal: "Atmosphere",
     icon: {
       src: "https://www.scimagojr.com/journal_img.php?id=15838",
@@ -134,11 +138,11 @@ export const publicationsCardsInfo = [
     },
     links: [
       {
-        title: "links.article",
+        title: "publications.links.article",
         link: "https://doi.org/10.3390/atmos11121375",
       },
       {
-        title: "links.score",
+        title: "publications.links.score",
         link: "https://www.scimagojr.com/journalsearch.php?q=15838&tip=sid&exact=no",
       },
     ],

@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
-import { I18nextProvider } from "react-i18next";
+import {I18nextProvider} from "react-i18next";
 import i18n from "./i18n";
 
 import reportWebVitals from "./reportWebVitals";
@@ -15,8 +15,6 @@ if (process.env.NODE_ENV === "production") {
   console.error = () => {};
   console.debug = () => {};
 }
-
-console.log(process.env.PUBLIC_URL);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

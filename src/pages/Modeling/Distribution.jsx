@@ -40,7 +40,6 @@ const ModelingDistribution = () => {
         t={t}
       />
       <HomeProjects
-        title="navigation.projects"
         filter={"distribution"}
         text={t("distribution.projects.text")}
       />

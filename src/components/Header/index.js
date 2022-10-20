@@ -74,6 +74,20 @@ const Header = () => {
         },
       ],
     },
+    // {
+    //   key: `/wellness/`,
+    //   label: t("navHeader.wellness"),
+    //   // children: [
+    //   //   {
+    //   //     key: "/wellness/wellnessAbout/",
+    //   //     label: t("navHeader.modeling.multiagent"),
+    //   //   },
+    //   //   {
+    //   //     key: "/modeling/distribution/",
+    //   //     label: t("navHeader.modeling.distribution"),
+    //   //   },
+    //   // ],
+    // },
   ];
 
   const setTimer = () => {

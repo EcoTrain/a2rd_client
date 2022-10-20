@@ -38,11 +38,6 @@ const Home = () => {
 
       <TextPage position={"sticky"} {...textPageConfig.home.activities} t={t} />
       <TextPage position={"sticky"} {...textPageConfig.home.solutions} t={t} />
-      <TextPage
-        position={"sticky"}
-        {...textPageConfig.home.medAssistant}
-        t={t}
-      />
 
       <HomeProjects title="navigation.projects" />
       <HomeStartups title="navigation.startups" />

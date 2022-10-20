@@ -49,9 +49,12 @@
     }
 }
 
+.fixRowDirection {
+    flex-direction: row !important;
+}
+
 @media screen and (max-width: 960px) {
     .gridCardsView {
-        position: relative;
         flex-direction: column;
         .gridCardWrapper {
             width: 100%;

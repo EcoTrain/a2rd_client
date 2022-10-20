@@ -1,18 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, {useRef, useState} from "react";
 import ScrollAnim from "rc-scroll-anim";
-import { useTranslation } from "react-i18next";
-import { Layout } from "antd";
+import {useTranslation} from "react-i18next";
+import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
-import { publicationsCardsInfo } from "./cardsConfig";
+import {publicationsCardsInfo} from "./cardsConfig";
 
-import "./gridCard.scss";
-import "./lineGridCard.scss";
+import "../../../components/CardPage/gridCard.scss";
+import "../../../components/CardPage/lineGridCard.scss";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomePublications = () => {
-  const { t } = useTranslation("publications");
+  const {t} = useTranslation("home");
   const pageRef = useRef();
   return (
     <Layout
@@ -25,27 +25,27 @@ const HomePublications = () => {
         always={false}
         playScale={0}
         className="section-content"
-        style={{ height: "100%" }}
+        style={{height: "100%"}}
       >
         <div
           className="section-title font-title-h1 text-center"
-          style={{ marginTop: "1em" }}
+          style={{marginTop: "1em"}}
         >
-          {t("title")}
+          {t("publications.title")}
         </div>
-        <div className="text-center" style={{ margin: "0px 2em" }}>
-          {t("label")}
+        <div className="text-center" style={{margin: "0px 2em"}}>
+          {t("publications.label")}
         </div>
         <div className="gridCardsView lineGridCardsViewColumn">
           {publicationsCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
-        <div style={{ margin: "2em 1em 3em 1em" }}>
+        <div style={{margin: "2em 1em 3em 1em"}}>
           <a
             href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
             target="_blank"
             rel="noreferrer noopener"
           >
-            {t("google_scholar")}
+            {t("publications.google_scholar")}
           </a>
         </div>
       </ScrollOverPack>
@@ -54,7 +54,7 @@ const HomePublications = () => {
 };
 
 const renderCard = (info, i) => {
-  const { t } = useTranslation("publications");
+  const {t} = useTranslation("home");
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
@@ -83,7 +83,7 @@ const renderCard = (info, i) => {
         <div className="lineGridCardIcon">
           {info.icon ? (
             <a href={info.icon.link} target="_blank" rel="noreferrer">
-              <img src={info.icon.src} alt={info.icon.alt} />
+              <img className="linkIcon" src={info.icon.src} alt={info.icon.alt} />
             </a>
           ) : (
             <PreprintPlugSvg
@@ -98,7 +98,7 @@ const renderCard = (info, i) => {
         </div>
 
         <div className="gridCardView lineGridViewLeft">
-          <div className="font-title-h3" style={{ textAlign: "left" }}>
+          <div className="font-title-h3" style={{textAlign: "left"}}>
             {t(info.title)}
           </div>
           {hover && info.journal && (

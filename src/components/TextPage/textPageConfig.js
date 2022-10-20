@@ -35,12 +35,6 @@ export const textPageConfig = {
       sectionTheme: "section-darkWhite",
       image: {},
     },
-    medAssistant: {
-      title: "assistant.title",
-      text: "assistant.text",
-      sectionTheme: "section-darkWhite",
-      image: {},
-    },
     healthyLifestyle: {
       title: "healthyLifestyle.title",
       text: "healthyLifestyle.text",

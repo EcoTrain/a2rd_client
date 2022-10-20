@@ -1,18 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, {useRef, useState} from "react";
 import ScrollAnim from "rc-scroll-anim";
-import { useTranslation } from "react-i18next";
-import { Layout } from "antd";
+import {useTranslation} from "react-i18next";
+import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
-import { startupsCardsInfo } from "./cardsConfig";
+import {startupsCardsInfo} from "./cardsConfig";
 
-import "./gridCard.scss";
-import "./lineGridCard.scss";
+import "../../../components/CardPage/gridCard.scss";
+import "../../../components/CardPage/lineGridCard.scss";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeStartups = () => {
-  const { t } = useTranslation("startups");
+  const {t} = useTranslation("startups");
   const pageRef = useRef();
   return (
     <Layout className="section section-white" id="homeStartups" ref={pageRef}>
@@ -21,12 +21,8 @@ const HomeStartups = () => {
         always={false}
         playScale={0}
         className="section-content"
-        style={{ flexDirection: "column" }}
       >
-        <div
-          className="section-title font-title-h1 text-center"
-          style={{ marginTop: "2em" }}
-        >
+        <div className="section-title font-title-h1 text-center">
           {t("title")}
         </div>
         <div className="gridCardsView lineGridCardsViewRow">
@@ -38,7 +34,7 @@ const HomeStartups = () => {
 };
 
 const renderCard = (info, i) => {
-  const { t } = useTranslation("startups");
+  const {t} = useTranslation("startups");
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
@@ -70,7 +66,7 @@ const renderCard = (info, i) => {
             {t(info.title)}
           </div>
           {hover ? (
-            <div className="description">{t(info.smallText)}</div>
+            <div className="description">{t(info.shortText)}</div>
           ) : (
             <div className="text-center">{t(info.previewText)}</div>
           )}
