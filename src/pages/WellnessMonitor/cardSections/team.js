@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
-import {developersCardsInfo} from "./cardsConfig";
+import {developersCardsInfo} from "./config/team";
 
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";

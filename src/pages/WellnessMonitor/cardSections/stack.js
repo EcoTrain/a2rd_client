@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
-import {stackCardsInfo} from "./cardsConfig";
+import {stackCardsInfo} from "./config/stack";
 
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
@@ -57,6 +57,8 @@ const renderCard = (info, i, t) => {
     </div>
   );
 
+  const Icon = info.logo;
+
   return (
     <div
       key={i}
@@ -70,7 +72,15 @@ const renderCard = (info, i, t) => {
         <div className="gridCardView">
           {!hover ? (
             <>
-              <img src={info.logo} style={{width: "100%", maxWidth: 100}} />{" "}
+              <Icon
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  maxWidth: 100,
+                  fill: "var(--textPrimary)",
+                  // stroke: "var(--textPrimary)",
+                }}
+              />
               {getTitle()}
             </>
           ) : (

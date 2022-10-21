@@ -1,10 +1,10 @@
-import React, {useRef, useState} from "react";
+import React from "react";
 import ScrollAnim from "rc-scroll-anim";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
-import {functionalCardsInfo} from "./cardsConfig";
+import {functionalCardsInfo} from "./config/functional";
 
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
@@ -28,9 +28,6 @@ const WellnessFunctional = () => {
         >
           {t("functional.title")}
         </div>
-        {/* <div className="text-center" style={{margin: "0px 2em"}}>
-          {t("functional.text")}
-        </div> */}
         <div className="gridCardsView lineGridCardsViewColumn">
           {functionalCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
@@ -51,11 +48,22 @@ const WellnessFunctional = () => {
 const renderCard = (info, i) => {
   const {t} = useTranslation("wellness");
 
+  const Icon = info.image;
+  console.log(info.image);
+
   return (
     <div key={i} className="gridCardWrapper lineGridCardWrapper">
       <div className="gridCard lineGridCard">
         <div className="lineGridCardIcon">
-          <img src={info.image} style={{width: "100%", maxWidth: 100}} />
+          <Icon
+            style={{
+              height: "100%",
+              width: "100%",
+              maxWidth: 100,
+              fill: "var(--textPrimary)",
+              stroke: "var(--textPrimary)",
+            }}
+          />
         </div>
 
         <div className="gridCardView lineGridViewLeft">
