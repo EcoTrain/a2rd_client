@@ -25,7 +25,10 @@ const WellnessTeam = () => {
         <div className="section-title font-title-h1 text-center">
           {t("team.title")}
         </div>
-        <div className="gridCardsView fixRowDirection">
+        <div
+          className="gridCardsView fixRowDirection"
+          style={{padding: "0 2em"}}
+        >
           {developersCardsInfo.map((x, i) => renderCard(x, i, t))}
         </div>
       </ScrollOverPack>

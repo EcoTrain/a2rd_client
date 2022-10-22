@@ -17,7 +17,10 @@ const WellnessStack = () => {
         <div className="section-title font-title-h1 text-center">
           {t("stack.title")}
         </div>
-        <div className="gridCardsView fixRowDirection">
+        <div
+          className="gridCardsView fixRowDirection"
+          style={{padding: "0 2em"}}
+        >
           {stackCardsInfo.map((x, i) => renderCard(x, i, t))}
         </div>
       </div>
@@ -66,8 +69,8 @@ const renderCard = (info, i, t) => {
             <>
               <Icon
                 style={{
-                  maxWidth: 100,
-                  maxHeight: 100,
+                  maxWidth: 150,
+                  maxHeight: 150,
                 }}
               />
               {getTitle()}
