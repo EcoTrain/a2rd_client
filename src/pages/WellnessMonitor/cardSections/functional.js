@@ -8,6 +8,7 @@ import {functionalCardsInfo} from "./config/functional";
 
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
+import QueueAnim from "rc-queue-anim";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
@@ -18,7 +19,7 @@ const WellnessFunctional = () => {
       <ScrollOverPack
         replay
         always={false}
-        playScale={0}
+        playScale={0.3}
         className="section-content"
         style={{height: "100%"}}
       >
@@ -29,7 +30,9 @@ const WellnessFunctional = () => {
           {t("functional.title")}
         </div>
         <div className="gridCardsView lineGridCardsViewColumn">
-          {functionalCardsInfo.map((x, i) => renderCard(x, i))}
+          <QueueAnim type={"bottom"} interval={200} duration={1500}>
+            {functionalCardsInfo.map((x, i) => renderCard(x, i))}
+          </QueueAnim>
         </div>
         <div style={{margin: "2em 1em 3em 1em"}}>
           <a

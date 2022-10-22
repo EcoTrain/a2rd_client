@@ -1,12 +1,11 @@
 import React, {useRef} from "react";
-import ScrollAnim from "rc-scroll-anim";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 import {renderNextPageBtn} from "../../components/ScrollPage";
+import {splitTextByWords} from "../../fucntions/splitText";
 import "./index.scss";
-
-const ScrollOverPack = ScrollAnim.OverPack;
+import TextyAnim from "rc-texty";
 
 const AboutDescription = ({t}) => {
   return (
@@ -19,7 +18,16 @@ const AboutDescription = ({t}) => {
       >
         {t("about.title")}
       </div>
-      <div className="font-text-large text">{t("about.shortText")}</div>
+
+      <TextyAnim
+        type="mask-top"
+        split={splitTextByWords}
+        interval={10}
+        className="font-text-large text"
+        style={{margin: "0 1em"}}
+      >
+        {t("about.shortText")}
+      </TextyAnim>
     </div>
   );
 };
@@ -31,12 +39,7 @@ const WellnessIntro = () => {
 
   return (
     <Layout id="wellnessIntro" ref={pageRef} className="section">
-      <ScrollOverPack
-        replay
-        always={false}
-        playScale={0}
-        className="section-content text-center"
-      >
+      <div className="section-content text-center">
         <div
           id="wellnessIntroBg"
           style={{
@@ -45,7 +48,7 @@ const WellnessIntro = () => {
         />
         <div className="section-content-block">{AboutDescription({t})}</div>
         {renderNextPageBtn({id: "wellnessAbout"})}
-      </ScrollOverPack>
+      </div>
     </Layout>
   );
 };

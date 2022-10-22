@@ -51,22 +51,13 @@ const HomeAbout = () => {
   const pageRef = useRef();
   const {t} = useTranslation(["home"]);
   return (
-    <Layout
-      id="homeAbout"
-      ref={pageRef}
-      className="section section-white"
-    >
-      <ScrollOverPack
-        replay
-        always={false}
-        playScale={0}
-        className="section-content text-center"
-      >
+    <Layout id="homeAbout" ref={pageRef} className="section section-white">
+      <div className="section-content text-center">
         <div className="section-content-block">
           {AboutDescription({t})}
-          <QueueAnim type={["bottom", "top"]}>{AboutFounder({t})}</QueueAnim>
+          {AboutFounder({t})}
         </div>
-      </ScrollOverPack>
+      </div>
     </Layout>
   );
 };
