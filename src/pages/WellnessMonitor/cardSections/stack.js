@@ -74,11 +74,8 @@ const renderCard = (info, i, t) => {
             <>
               <Icon
                 style={{
-                  height: "100%",
-                  width: "100%",
                   maxWidth: 100,
-                  fill: "var(--textPrimary)",
-                  // stroke: "var(--textPrimary)",
+                  maxHeight: 100,
                 }}
               />
               {getTitle()}

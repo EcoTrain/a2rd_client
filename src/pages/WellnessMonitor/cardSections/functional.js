@@ -49,7 +49,6 @@ const renderCard = (info, i) => {
   const {t} = useTranslation("wellness");
 
   const Icon = info.image;
-  console.log(info.image);
 
   return (
     <div key={i} className="gridCardWrapper lineGridCardWrapper">
@@ -57,11 +56,8 @@ const renderCard = (info, i) => {
         <div className="lineGridCardIcon">
           <Icon
             style={{
-              height: "100%",
-              width: "100%",
               maxWidth: 100,
-              fill: "var(--textPrimary)",
-              stroke: "var(--textPrimary)",
+              maxHeight: 100,
             }}
           />
         </div>

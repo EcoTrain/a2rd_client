@@ -126,7 +126,7 @@ const Banner = () => {
     <div className="bannerContent">
       {getShape()}
       <TextyAnim
-        className="font-title-large"
+        className="font-title-preview"
         type="mask-top"
         delay={400}
         enter={getEnter}
