@@ -43,13 +43,11 @@ export const Startup = ({item, t}) => {
       bg: PropTypes.string,
     }),
   };
-  const pageRef = useRef();
 
   return (
     <Layout
       id={item.id}
       className="section section-lightGray"
-      ref={pageRef}
       style={{top: 0, background: item.bg}}
     >
       <div className="section-content">

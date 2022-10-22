@@ -33,12 +33,11 @@ const AboutDescription = ({t}) => {
 };
 
 const WellnessIntro = () => {
-  const pageRef = useRef();
   const {t} = useTranslation(["wellness"]);
   const bg = process.env.PUBLIC_URL + "/static/images/wellness/diaries.png";
 
   return (
-    <Layout id="wellnessIntro" ref={pageRef} className="section">
+    <Layout id="wellnessIntro" className="section">
       <div className="section-content text-center">
         <div
           id="wellnessIntroBg"

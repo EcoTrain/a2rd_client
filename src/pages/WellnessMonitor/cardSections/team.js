@@ -13,9 +13,8 @@ const ScrollOverPack = ScrollAnim.OverPack;
 
 const WellnessTeam = () => {
   const {t} = useTranslation("wellness");
-  const pageRef = useRef();
   return (
-    <Layout className="section section-white" id="wellnessTeam" ref={pageRef}>
+    <Layout className="section section-white" id="wellnessTeam">
       <ScrollOverPack
         replay
         always={false}

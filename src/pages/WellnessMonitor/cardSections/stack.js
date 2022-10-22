@@ -10,9 +10,8 @@ import "../../../components/CardPage/lineGridCard.scss";
 
 const WellnessStack = () => {
   const {t} = useTranslation("wellness");
-  const pageRef = useRef();
   return (
-    <Layout className="section section-white" id="wellnessStack" ref={pageRef}>
+    <Layout className="section section-white" id="wellnessStack">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("stack.title")}

@@ -183,7 +183,6 @@ const Banner = () => {
 
 const HomePreview = () => {
   const video = BgVideo();
-  const pageRef = useRef();
 
   const renderBannerBg = () => {
     return (
@@ -217,7 +216,7 @@ const HomePreview = () => {
   };
 
   return (
-    <Layout ref={pageRef} id={"homePreview"}>
+    <Layout id={"homePreview"}>
       {video}
       <Content className="previewOverlay">
         {renderBanner()}

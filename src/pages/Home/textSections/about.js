@@ -48,10 +48,9 @@ const AboutFounder = ({t}) => {
 };
 
 const HomeAbout = () => {
-  const pageRef = useRef();
   const {t} = useTranslation(["home"]);
   return (
-    <Layout id="homeAbout" ref={pageRef} className="section section-white">
+    <Layout id="homeAbout" className="section section-white">
       <div className="section-content text-center">
         <div className="section-content-block">
           {AboutDescription({t})}

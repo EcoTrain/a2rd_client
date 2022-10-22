@@ -13,13 +13,8 @@ const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomePublications = () => {
   const {t} = useTranslation("home");
-  const pageRef = useRef();
   return (
-    <Layout
-      className="section section-darkWhite"
-      id="homePublications"
-      ref={pageRef}
-    >
+    <Layout className="section section-darkWhite" id="homePublications">
       <ScrollOverPack
         replay
         always={false}

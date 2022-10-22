@@ -22,7 +22,6 @@ const HomeFeedback = () => {
     process.env.PUBLIC_URL + "/static/images/index/sections/min/feedback.jpeg";
   const imgMax =
     process.env.PUBLIC_URL + "/static/images/index/sections/max/feedback.jpeg";
-  const pageRef = useRef();
 
   const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
   const [email, setEmail] = useState("");
@@ -122,7 +121,7 @@ const HomeFeedback = () => {
   };
 
   return (
-    <Layout className="section splitSection" id="homeFeedback" ref={pageRef}>
+    <Layout className="section splitSection" id="homeFeedback">
       <div className="section-content section-darkWhite">
         <div className="section-content-block">
           <div className="section-title font-title-h1 text-center">

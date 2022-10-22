@@ -27,8 +27,6 @@ const TextPage = ({
   const listItems = t(list, {returnObjects: true});
   const hasImageArea = ["object", "string"].includes(typeof image);
 
-  const pageRef = useRef();
-
   const getImageSrc = () => {
     return typeof image == "string"
       ? image
@@ -107,7 +105,6 @@ const TextPage = ({
   return (
     <Layout
       className={["section", hasImageArea && "splitSection"].join(" ")}
-      ref={pageRef}
       id={id}
     >
       {direction == "left" ? sectionChilds : sectionChilds.reverse()}
