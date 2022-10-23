@@ -55,26 +55,22 @@ export const Startup = ({item, t}) => {
           <div className="section-title font-title-h1 text-center">
             {t(item.title)}
           </div>
-          {t(item.text)
-            .split("\n")
-            .map((x, i) => (
-              <div key={i} className="font-text-big description">
-                <div>
-                  <Trans
-                    t={t}
-                    i18nKey={x}
-                    components={[
-                      <a
-                        key={`link${i}`}
-                        href={(item.links && item.links[0].link) || ""}
-                        target="_blank"
-                        rel="noreferrer"
-                      />,
-                    ]}
-                  />
-                </div>
-              </div>
-            ))}
+          <div className="font-text-big description">
+            <div>
+              <Trans
+                t={t}
+                i18nKey={t(item.text)}
+                components={[
+                  <a
+                    key={`linkWM`}
+                    href={(item.links && item.links[0].link) || ""}
+                    target="_blank"
+                    rel="noreferrer"
+                  />,
+                ]}
+              />
+            </div>
+          </div>
           {item.links && (
             <div className="linkBtnListWrapper">
               {item.links.map((x, i) => (

@@ -1,12 +1,8 @@
-import React, {useRef} from "react";
-import QueueAnim from "rc-queue-anim";
-import ScrollAnim from "rc-scroll-anim";
+import React from "react";
 import {scroller} from "react-scroll";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
-
-const ScrollOverPack = ScrollAnim.OverPack;
 
 const AboutDescription = ({t}) => {
   return (

@@ -45,7 +45,6 @@ const ModelingMultiagent = () => {
         t={t}
       />
       <HomeProjects
-        title="navigation.projects"
         filter={"multiagent"}
         text={t("multiagent.projects.text")}
       />

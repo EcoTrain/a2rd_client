@@ -54,6 +54,7 @@ const Header = () => {
         { key: "/homeAbout", label: t("navHeader.main") },
         { key: "/homeProjects", label: t("navHeader.projects") },
         { key: "/homeStartups", label: t("navHeader.startups") },
+        { key: "/homeStack", label: t("navHeader.stack") },
         { key: "/homePublications", label: t("navHeader.publications") },
         { key: "/homeContacts", label: t("navHeader.contacts") },
       ],

@@ -1,4 +1,13 @@
 :root {
+    --yellowGrayTransparent: rgba(160, 160, 160, 0.1);
+    --brownGrayTransparent: rgba(160, 145, 115, 0.1);
+    --orangeGrayTransparent: rgba(165, 145, 125, 0.1);
+    --redGrayTransparent: rgba(140, 110, 110, 0.1);
+    --greenGrayTransparent: rgba(135, 155, 105, 0.1);
+    --blueGrayTransparent: rgba(120, 130, 160, 0.1);
+    --turquoiseGrayTransparent: rgba(120, 180, 180, 0.1);
+    --violetGrayTransparent: rgba(125, 105, 150, 0.1);
+    --purpleGrayTransparent: rgba(135, 95, 150, 0.1);
 }
 :root[data-theme="light"] {
     --primary: hsl(180, 33%, 30%);

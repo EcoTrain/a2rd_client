@@ -31,7 +31,7 @@ const HomeProjects = ({filter, text}) => {
             split={splitTextByWords}
             interval={10}
             className="description"
-            style={{margin: "0 1em"}}
+            style={{margin: "0 1em", maxWidth: 900}}
           >
             {text || t("label")}
           </TextyAnim>

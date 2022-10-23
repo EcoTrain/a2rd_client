@@ -5,10 +5,10 @@ import {useTranslation} from "react-i18next";
 
 import PageScroller from "../../components/ScrollPage";
 import WellnessIntro from "./intro";
-import WellnessStack from "./cardSections/stack";
 import WellnessTeam from "./cardSections/team";
 import WellnessAbout from "./about";
 import WellnessFunctional from "./cardSections/functional";
+import WellnessStack from "./stack";
 
 const WellnessMonitor = () => {
   const params = useParams();
@@ -26,8 +26,8 @@ const WellnessMonitor = () => {
     <PageScroller t={t}>
       <WellnessIntro />
       <WellnessAbout />
-      <WellnessStack />
       <WellnessFunctional />
+      <WellnessStack />
       <WellnessTeam />
     </PageScroller>
   );

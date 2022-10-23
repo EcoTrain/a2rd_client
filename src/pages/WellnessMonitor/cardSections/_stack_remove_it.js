@@ -68,8 +68,8 @@ const renderCard = (info, i, t) => {
             <>
               <Icon
                 style={{
-                  maxWidth: 150,
-                  maxHeight: 150,
+                  maxWidth: 100,
+                  maxHeight: 100,
                 }}
               />
               {getTitle()}

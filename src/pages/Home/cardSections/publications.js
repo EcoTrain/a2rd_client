@@ -25,7 +25,7 @@ const HomePublications = () => {
         <div className="section-title font-title-h1 text-center">
           {t("publications.title")}
         </div>
-        <div className="description" style={{margin: "0px 1em"}}>
+        <div className="description" style={{margin: "0px 1em", maxWidth: 900}}>
           {t("publications.label")}
         </div>
         <div className="gridCardsView lineGridCardsViewColumn">

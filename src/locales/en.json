@@ -5,6 +5,7 @@
             "about": "About Us",
             "projects": "Projects",
             "startups": "Startups",
+            "stack": "Technologies",
             "publications": "Publications",
             "contacts": "Contacts",
             "modeling": {
@@ -18,6 +19,9 @@
             "readMore": "Read more",
             "website": "Website",
             "manual": "User manual"
+        },
+        "navigation": {
+            "stack": "Technologies & Tools"
         }
     },
     "home": {
@@ -96,19 +100,19 @@
         "card": {
             "airflow": {
                 "title": "Airflow and tracking pollutant emissions modelling",
-                "preview": "Computational modelling for pollutant tracking in complex urban terrains, evaluating the contributions of sources. Our models precisely count the influence of meteorological factors and landscape; we work with 40 by 40 km areas and have a positive experience with modelling up to 3 km above the ground",
+                "preview": "Computational modelling for pollutant tracking in complex urban terrains, evaluating the contributions of sources",
                 "text": "Computational modelling for pollutant tracking in complex urban terrains, evaluating the contributions of sources. Our models precisely count the influence of meteorological factors and landscape; we work with 40 by 40 km areas and have a positive experience with modelling up to 3 km above the ground",
                 "note": "(air quality)"
             },
             "transport": {
                 "title": "Transport systems modelling",
-                "preview": "Railway complexes and autonomous transport simulation modelling for the quarries and port infrastructure. Through computational modelling, we provide an audit and selection of optimal solutions for the modernization of the road infrastructure of quarries in order to reduce negative environmental and economic costs.",
+                "preview": "Railway complexes and autonomous transport simulation modelling for the quarries and port infrastructure",
                 "text": "Railway complexes and autonomous transport simulation modelling for the quarries and port infrastructure. Through computational modelling, we provide an audit and selection of optimal solutions for the modernization of the road infrastructure of quarries in order to reduce negative environmental and economic costs.",
                 "note": ""
             },
             "trends": {
                 "title": "Trends analysis",
-                "preview": "Review of modern trends and promising projects focused on global sustainable development challenges. We prepare analytics based on preliminary and thematic processing of satellite data, industrial databases, corporate reports, scientific publications, and targeted computational modelling for consumers.",
+                "preview": "Review of modern trends and promising projects focused on global sustainable development challenges",
                 "text": "Review of modern trends and promising projects focused on global sustainable development challenges. We prepare analytics based on preliminary and thematic processing of satellite data, industrial databases, corporate reports, scientific publications, and targeted computational modelling for consumers.",
                 "note": ""
             },
@@ -127,20 +131,20 @@
             "wm": {
                 "title": "Wellness Monitor",
                 "previewText": "Intelligent assistant to support the quality of life",
-                "shortText": "Intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs. ",
-                "text": "<0>Wellness Monitor</0> – intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs. \nThe assistant is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users. \nWellness Monitor is a part of the x-Health&Wellness framework – an interface for interaction with the medical sector (hospitals), insurance companies, airlines, and travel services. Our goal is to develop and maintain Wellness Monitor as a convenient intelligent assistant that provides a safe, fast, and reliable service of equal opportunities for all categories of users."
+                "shortText": "Intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs",
+                "text": "<0>Wellness Monitor</0> – intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs.\n\tThe assistant is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users.\n\tWellness Monitor is a part of the x-Health&Wellness framework – an interface for interaction with the medical sector (hospitals), insurance companies, airlines, and travel services. Our goal is to develop and maintain Wellness Monitor as a convenient intelligent assistant that provides a safe, fast, and reliable service of equal opportunities for all categories of users."
             },
             "framework": {
                 "title": "x-Health&Wellness framework",
                 "previewText": "An ecosystem that brings together various services",
                 "shortText": "An ecosystem that brings together various services to make the life of users as productive as possible, freeing up time from worries for constant monitoring of health indicators and medical services",
-                "text": "The x-Health&Wellness framework is a specially developed ecosystem that combines various services (medicine, insurance, banks, tourism, air travel, restaurants) to make the users’ life most productive, freeing up time from worries for constant monitoring of health parameters and medical therapy. \nThe x-Health&Wellness framework provides constant communication with the supervising doctor and the medical centre, allows you to safely travel to new countries, be confident in medical control and personalized support from medical services, restaurant services, and many others. User data is securely stored in the registry in encrypted form and is only accessible through authorized access to personalize therapy or diet and in the event of a sudden emergency."
+                "text": "The x-Health&Wellness framework is a specially developed ecosystem that combines various services (medicine, insurance, banks, tourism, air travel, restaurants) to make the users’ life most productive, freeing up time from worries for constant monitoring of health parameters and medical therapy.\n\tThe x-Health&Wellness framework provides constant communication with the supervising doctor and the medical centre, allows you to safely travel to new countries, be confident in medical control and personalized support from medical services, restaurant services, and many others. User data is securely stored in the registry in encrypted form and is only accessible through authorized access to personalize therapy or diet and in the event of a sudden emergency."
             },
             "airflows": {
                 "title": "Urban airflows modeling",
                 "previewText": "Modeling of air flows and estimation of pollutant concentrations",
                 "shortText": "Modeling of surface air flows and estimation of pollutant concentrations based on Lagrangian mathematics",
-                "text": "<0>Surface airflows modeling and pollutant concentrations estimation</0> are very complex processes requiring the development of unique mathematical models that consider regional features and many other factors. We use the best approaches to model and evaluate the negative impact of pollutants on the environment and public health by tracking them from the source to a specific point in space. \nThe core of our solution is Lagrangian mathematics; technical solutions are implemented based on Python, C++, PostgreSQL, QGIS. We are ready to implement our solutions in the information environment of your company."
+                "text": "<0>Surface airflows modeling and pollutant concentrations estimation</0> are very complex processes requiring the development of unique mathematical models that consider regional features and many other factors. We use the best approaches to model and evaluate the negative impact of pollutants on the environment and public health by tracking them from the source to a specific point in space.\n\tThe core of our solution is Lagrangian mathematics; technical solutions are implemented based on Python, C++, PostgreSQL, QGIS. We are ready to implement our solutions in the information environment of your company."
             }
         }
     },
@@ -209,10 +213,9 @@
                 ]
             },
             "tools": {
-                "title": "What do we use",
+                "title": "Our solutions",
                 "texts": [
-                    "To model the propagation of particles, we use Lagrangian mathematics and mathematical packages GRAM/GRAL.",
-                    "These solutions allow us to take into account and predict the movement of each particle of a particular substance in the simulation area."
+                    "Our solutions allow us to take into account and predict the movement of each particle of a particular substance in the simulation area."
                 ]
             },
             "capabilities": {
@@ -238,37 +241,14 @@
         "about": {
             "title": "Wellness Monitor",
             "shortText": "Intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs. ",
-            "text": "<0>Wellness Monitor</0> is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users. \nWellness Monitor is a part of the x-Health&Wellness framework – an interface for interaction with the medical sector (hospitals), insurance companies, airlines, and travel services. Our goal is to develop and maintain Wellness Monitor as a convenient intelligent assistant that provides a safe, fast, and reliable service of equal opportunities for all categories of users."
-        },
-        "stack": {
-            "title": "Software stack",
-            "node": {
-                "title": "NodeJS",
-                "text": "NodeJS + Express allows you to quickly process requests from a large number of users"
-            },
-            "react": {
-                "title": "React Native",
-                "text": "Allows us to provide cross-platform product and support for Web, iOS, Android"
-            },
-            "mongo": {
-                "title": "MongoDB",
-                "text": "Used to register and record transactions, which provides control over what is happening in the system"
-            },
-            "postgresql": {
-                "title": "PostgreSQL",
-                "text": "Used to store user data and general template directories"
-            },
-            "firebase": {
-                "title": "Firebase",
-                "text": "Push notifications about important events and dynamic update of data on devices"
-            }
+            "text": "<0>Wellness Monitor</0> is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users.\n\tWellness Monitor is a part of the x-Health&Wellness framework – an interface for interaction with the medical sector (hospitals), insurance companies, airlines, and travel services. Our goal is to develop and maintain Wellness Monitor as a convenient intelligent assistant that provides a safe, fast, and reliable service of equal opportunities for all categories of users."
         },
         "functional": {
             "title": "Functional",
             "user_guide": "Read more on user guide",
             "diary": {
                 "title": "Health diaries",
-                "text": "Health diaries allow you to monitor health indicators and display the dynamics of their changes. Create diary widgets, manage your personal dashboard, stay up to date with all changes in your health status."
+                "text": "Allow you to monitor health indicators and display the dynamics of their changes. Create diary widgets, manage your personal dashboard, stay up to date with all changes in your health status."
             },
             "scheduler": {
                 "title": "Event Scheduler",
