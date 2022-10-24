@@ -50,11 +50,11 @@ const TextPage = ({
 
   const getTextAnim = (text, i) => (
     <TextyAnim
-      className="font-text-big description"
+      className="description"
       type="bottom"
       split={splitTextByWords}
       delay={i * 300}
-      interval={5}
+      interval={2}
     >
       {t(text)}
     </TextyAnim>
@@ -78,7 +78,7 @@ const TextPage = ({
         </div>
         <ScrollOverPack replay always={false} playScale={0}>
           {textItems.map((x, i) => (
-            <div key={i}>{getTextAnim(x, i)}</div>
+            <div key={i} className="font-text-big">{getTextAnim(x, i)}</div>
           ))}
           <div className="font-text-small">{getTextAnim(t(note))}</div>
           {listItems && (
