@@ -19,6 +19,7 @@ import HomePublications from "./cardSections/publications";
 import HomeFeedback from "./feedback";
 import HomeContacts from "./contacts";
 import HomeStack from "./stack";
+import HomeCustomers from "./customers";
 
 const Home = () => {
   const params = useParams();
@@ -43,6 +44,7 @@ const Home = () => {
       <HomeProjects title="navigation.projects" />
       <HomeStartups title="navigation.startups" />
       <HomeStack title="navigation.stack" />
+      <HomeCustomers />
 
       <HomePublications title="navigation.publications" />
       <TextPage {...textPageConfig.home.healthyLifestyle} t={t} />

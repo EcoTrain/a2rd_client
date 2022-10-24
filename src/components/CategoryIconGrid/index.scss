@@ -14,7 +14,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 0.5em;
-        
     }
     .categoryGridContent {
         display: grid;
@@ -24,6 +23,7 @@
         // grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
         .categoryGridItem {
             width: 100%;
+            position: relative;
             // height: 90px;
             aspect-ratio: 1/1;
             display: flex;
@@ -50,6 +50,18 @@
                 text-align: center;
                 overflow: hidden;
             }
+            // TODO: HexGrid
+            // https://codepen.io/gc-nomade/pen/XWdWbd
+            // &::before {
+            //     content: "";
+            //     position:absolute;
+            //     top: 0;
+            //     bottom: 0;
+            //     left: 0;
+            //     right: 0;
+            //     background: currentColor;
+            //     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            // }
         }
     }
 }
