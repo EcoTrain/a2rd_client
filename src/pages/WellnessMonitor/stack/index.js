@@ -2,7 +2,7 @@ import React from "react";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
-import StackIconGrid from "../../../components/StackIconGrid";
+import CategoryIconGrid from "../../../components/CategoryIconGrid";
 import {gridConfig} from "./gridConfig";
 
 const WellnessStack = () => {
@@ -18,7 +18,7 @@ const WellnessStack = () => {
           className="gridCardsView fixRowDirection"
           style={{padding: "0 2em"}}
         >
-          <StackIconGrid config={gridConfig} />
+          <CategoryIconGrid config={gridConfig} />
         </div>
       </div>
     </Layout>

@@ -1,12 +1,12 @@
-import React, {useContext, useRef, useState} from "react";
+import React, {useContext, useState} from "react";
 import {Checkbox} from "antd";
-import "./index.scss";
 import {ThemeContext} from "../../contexts/ThemeContext";
+import "./index.scss";
 
-const StackIconGrid = ({config}) => {
+const CategoryIconGrid = ({config}) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   return (
-    <div style={{flex: 1, width: "100%"}} className="filterGrid">
+    <div style={{flex: 1, width: "100%"}} className="categoryGrid">
       <CategoryFilter
         config={config}
         setSelectedCategories={setSelectedCategories}
@@ -36,11 +36,11 @@ const CategoryFilter = ({config, setSelectedCategories}) => {
 };
 
 const GridItems = ({config, selectedCategories}) => {
+  const {theme} = useContext(ThemeContext);
   const categories = Object.keys(config);
+  const isActiveFilter = !!selectedCategories.length;
 
   const renderCategoryItems = (cat) => {
-    const {theme} = useContext(ThemeContext);
-    const isActiveFilter = !!selectedCategories.length;
     const isSelected = selectedCategories.includes(cat);
     return config[cat].items.map((catItem, i) => {
       const Icon =
@@ -51,7 +51,7 @@ const GridItems = ({config, selectedCategories}) => {
       return (
         <div
           key={i}
-          className="filterGridItem"
+          className="categoryGridItem"
           style={{
             background: color,
             opacity: isActiveFilter && !isSelected ? 0.2 : 1,
@@ -65,10 +65,10 @@ const GridItems = ({config, selectedCategories}) => {
   };
 
   return (
-    <div className="filterGridContent">
+    <div className="categoryGridContent">
       {categories.map((cat) => renderCategoryItems(cat))}
     </div>
   );
 };
 
-export default StackIconGrid;
+export default CategoryIconGrid;
