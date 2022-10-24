@@ -97,6 +97,10 @@ export const gridConfig = {
     color: "var(--orangeGrayTransparent)",
     items: [
       {
+        name: "Android",
+        icon: assets.stack.android,
+      },
+      {
         name: "Kotlin",
         icon: assets.stack.kotlin,
       },
@@ -105,21 +109,17 @@ export const gridConfig = {
         icon: assets.stack.java,
       },
       {
+        name: "iOS",
+        icon: assets.stack.apple_dark,
+        icon_light: assets.stack.apple_light,
+      },
+      {
         name: "Swift",
         icon: assets.stack.swift,
       },
       {
-        name: "Android",
-        icon: assets.stack.android,
-      },
-      {
         name: "ObjectiveC",
         icon: assets.stack.objc,
-      },
-      {
-        name: "iOS",
-        icon: assets.stack.apple_dark,
-        icon_light: assets.stack.apple_light,
       },
     ],
   },
@@ -220,6 +220,10 @@ export const gridConfig = {
       {
         name: "NodeJS",
         icon: assets.stack.node,
+      },
+      {
+        name: "C#",
+        icon: assets.stack.csharp,
       },
       {
         name: "PHP",

@@ -26,6 +26,7 @@ import {ReactComponent as CloudFormationIcon} from "./stack/cloudformation.svg";
 import {ReactComponent as CloudflareIcon} from "./stack/cloudflare.svg";
 import {ReactComponent as ClickhouseIcon} from "./stack/clickhouse.svg";
 import {ReactComponent as CucumberIcon} from "./stack/cucumber.svg";
+import {ReactComponent as CsharpIcon} from "./stack/csharp.svg";
 import {ReactComponent as DockerIcon} from "./stack/docker.svg";
 import {ReactComponent as ElasticIcon} from "./stack/elastic.svg";
 import {ReactComponent as FigmaIcon} from "./stack/figma.svg";
@@ -128,6 +129,7 @@ export const assets = {
     cloudflare: CloudflareIcon,
     clickhouse: ClickhouseIcon,
     cucumber: CucumberIcon,
+    csharp: CsharpIcon,
     docker: DockerIcon,
     elastic: ElasticIcon,
     figma: FigmaIcon,
