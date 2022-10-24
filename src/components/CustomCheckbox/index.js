@@ -1,13 +1,14 @@
 import React from "react";
 import "./index.scss";
 
-const CustomCheckbox = ({key, label, isChecked, onClick, style}) => {
+const CustomCheckbox = ({label, isChecked, onClick, style}) => {
   return (
-    <label key={key} className="customCheckbox font-text-small">
+    <label className="customCheckbox font-text-small">
       <input
         type="checkbox"
         checked={isChecked}
         onClick={onClick}
+        onChange={() => {}}
         style={style}
       />
       {label}

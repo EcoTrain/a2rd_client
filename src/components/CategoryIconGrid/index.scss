@@ -44,8 +44,7 @@
                 white-space: nowrap;
                 color: var(--textPrimary);
                 margin-top: 0.5em;
-                width: 100%;
-                max-width: 60px;
+                width: 80%;
                 text-overflow: ellipsis;
                 text-align: center;
                 overflow: hidden;
@@ -75,21 +74,6 @@
                     height: 20px;
                     width: 20px;
                 }
-                & > span {
-                    max-width: 65px;
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .categoryGrid {
-        .categoryGridContent {
-            .categoryGridItem {
-                & > span {
-                    max-width: 45px;
-                }
             }
         }
     }
@@ -99,11 +83,6 @@
     .categoryGrid {
         .categoryGridContent {
             grid-template-columns: repeat(6, 1fr);
-            .categoryGridItem {
-                & > span {
-                    max-width: 50px;
-                }
-            }
         }
     }
 }
