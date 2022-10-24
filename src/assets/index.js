@@ -34,6 +34,7 @@ import {ReactComponent as GcpIcon} from "./stack/gcp.svg";
 import {ReactComponent as GitlabIcon} from "./stack/gitlab.svg";
 import {ReactComponent as GuardrailsIcon} from "./stack/guardrails.svg";
 import {ReactComponent as GrassGisIcon} from "./stack/grass_gis.svg";
+import {ReactComponent as GeoPandasIcon} from "./stack/geopandas.svg";
 import {ReactComponent as InvisionIcon} from "./stack/invision.svg";
 import {ReactComponent as InfluxIcon} from "./stack/influx.svg";
 import {ReactComponent as JasmineIcon} from "./stack/jasmine.svg";
@@ -84,6 +85,11 @@ import {ReactComponent as TsIcon} from "./stack/typescript.svg";
 import {ReactComponent as WebIcon} from "./stack/web.svg";
 import {ReactComponent as WebpackIcon} from "./stack/webpack.svg";
 
+// Customers
+import {ReactComponent as EurochemLogo} from "./customers/eurochem.svg";
+import {ReactComponent as SuekLogo} from "./customers/suek.svg";
+import {ReactComponent as SgkLogo} from "./customers/sgk.svg";
+
 export const assets = {
   wellness: {
     stack: {
@@ -128,6 +134,7 @@ export const assets = {
     gitlab: GitlabIcon,
     guardrails: GuardrailsIcon,
     grass_gis: GrassGisIcon,
+    geopandas: GeoPandasIcon,
     invision: InvisionIcon,
     influx: InfluxIcon,
     jasmine: JasmineIcon,
@@ -177,5 +184,10 @@ export const assets = {
     ts: TsIcon,
     web: WebIcon,
     webpack: WebpackIcon,
+  },
+  customers: {
+    suek: SuekLogo,
+    sgk: SgkLogo,
+    eurochem: EurochemLogo,
   },
 };
