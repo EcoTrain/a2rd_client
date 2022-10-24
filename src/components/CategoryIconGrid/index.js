@@ -1,41 +1,56 @@
 import React, {useContext, useState} from "react";
-import {Checkbox} from "antd";
 import {ThemeContext} from "../../contexts/ThemeContext";
 import "./index.scss";
+import CustomCheckbox from "../CustomCheckbox";
 
 const CategoryIconGrid = ({config}) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const onClickByCategory = (cat) => {
+    let _cats = [...selectedCategories];
+    if (selectedCategories.includes(cat)) {
+      _cats.splice(_cats.indexOf(cat), 1);
+    } else {
+      _cats.push(cat);
+    }
+    setSelectedCategories(_cats);
+  };
+
   return (
     <div style={{flex: 1, width: "100%"}} className="categoryGrid">
       <CategoryFilter
         config={config}
-        setSelectedCategories={setSelectedCategories}
+        selectedCategories={selectedCategories}
+        onClickByCategory={onClickByCategory}
       />
-      <GridItems config={config} selectedCategories={selectedCategories} />
+      <GridItems
+        config={config}
+        selectedCategories={selectedCategories}
+        onClickByCategory={onClickByCategory}
+      />
     </div>
   );
 };
 
-const CategoryFilter = ({config, setSelectedCategories}) => {
+const CategoryFilter = ({config, selectedCategories, onClickByCategory}) => {
   const categories = Object.keys(config);
-  const options = categories.map((x) => ({label: x, value: x}));
-
-  const onChange = (checkedValues) => {
-    setSelectedCategories(checkedValues);
-  };
 
   return (
-    <div style={{marginBottom: "1em"}}>
-      <Checkbox.Group
-        options={options}
-        defaultValue={["Apple"]}
-        onChange={onChange}
-      />
+    <div style={{marginBottom: "1em"}} className="categoryGridFilter">
+      {categories.map((x, i) => (
+        <CustomCheckbox
+          key={i}
+          label={x}
+          isChecked={selectedCategories.includes(x)}
+          onClick={(e) => onClickByCategory(x)}
+          style={{background: config[x].color}}
+        />
+      ))}
     </div>
   );
 };
 
-const GridItems = ({config, selectedCategories}) => {
+const GridItems = ({config, selectedCategories, onClickByCategory}) => {
   const {theme} = useContext(ThemeContext);
   const categories = Object.keys(config);
   const isActiveFilter = !!selectedCategories.length;
@@ -51,6 +66,7 @@ const GridItems = ({config, selectedCategories}) => {
       return (
         <div
           key={i}
+          onClick={() => onClickByCategory(cat)}
           className="categoryGridItem"
           style={{
             background: color,

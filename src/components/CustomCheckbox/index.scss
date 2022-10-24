@@ -1,0 +1,39 @@
+.customCheckbox {
+    display: grid;
+    grid-template-columns: 1em auto;
+    align-items: center;
+    column-gap: 0.3em;
+
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: var(--lightGray);
+        color: currentColor;
+        width: 1em;
+        height: 1em;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+
+        display: grid;
+        place-content: center;
+        &::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            opacity: 0;
+            transition: 120ms transform ease-in-out;
+
+            background-color: var(--darkGray);
+
+            // Creating the "Checkmark" Shape
+            transform-origin: bottom left;
+            clip-path: circle(30%);
+            // clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+        &:checked {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+}

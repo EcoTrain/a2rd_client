@@ -9,6 +9,13 @@
 
 .categoryGrid {
     max-width: 1200px;
+    .categoryGridFilter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 0.5em;
+        
+    }
     .categoryGridContent {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
