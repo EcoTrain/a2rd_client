@@ -5,20 +5,16 @@ export const gridConfig = {
     color: "var(--redGrayTransparent)",
     items: [
       {
+        name: "Docker",
+        icon: assets.stack.docker,
+      },
+      {
         name: "Ansible",
         icon: assets.stack.ansible,
       },
       {
-        name: "CloudFormation",
-        icon: assets.stack.cloudformation,
-      },
-      {
         name: "Jenkins",
         icon: assets.stack.jenkins,
-      },
-      {
-        name: "Bamboo",
-        icon: assets.stack.bamboo,
       },
       {
         name: "GitlabCI",
@@ -43,8 +39,8 @@ export const gridConfig = {
         icon_light: assets.stack.sentry_light,
       },
       {
-        name: "CloudWatch",
-        icon: assets.stack.cloudwatch,
+        name: "Grafana",
+        icon: assets.stack.grafana,
       },
       {
         name: "Prometheus",
@@ -53,6 +49,18 @@ export const gridConfig = {
       {
         name: "Nginx",
         icon: assets.stack.nginx,
+      },
+      {
+        name: "Bamboo",
+        icon: assets.stack.bamboo,
+      },
+      {
+        name: "CloudFormation",
+        icon: assets.stack.cloudformation,
+      },
+      {
+        name: "CloudWatch",
+        icon: assets.stack.cloudwatch,
       },
     ],
   },
@@ -152,8 +160,8 @@ export const gridConfig = {
         icon: assets.stack.rlang,
       },
       {
-        name: "Jypiter Notebook",
-        icon: assets.stack.python,
+        name: "Jupyter Notebook",
+        icon: assets.stack.jupyter,
       },
       {
         name: "Airflow",
@@ -239,10 +247,6 @@ export const gridConfig = {
         icon: assets.stack.react,
       },
       {
-        name: "React Native",
-        icon: assets.stack.react,
-      },
-      {
         name: "TypeScript",
         icon: assets.stack.ts,
       },
@@ -253,6 +257,10 @@ export const gridConfig = {
       {
         name: "Matomo",
         icon: assets.stack.matomo,
+      },
+      {
+        name: "React Native",
+        icon: assets.stack.react,
       },
       {
         name: "Webpack",
@@ -303,10 +311,6 @@ export const gridConfig = {
       {
         name: "Slack",
         icon: assets.stack.slack,
-      },
-      {
-        name: "Service Desk",
-        icon: assets.stack.servicedesk,
       },
       {
         name: "Notion",

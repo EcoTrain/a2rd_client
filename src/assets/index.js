@@ -26,6 +26,7 @@ import {ReactComponent as CloudFormationIcon} from "./stack/cloudformation.svg";
 import {ReactComponent as CloudflareIcon} from "./stack/cloudflare.svg";
 import {ReactComponent as ClickhouseIcon} from "./stack/clickhouse.svg";
 import {ReactComponent as CucumberIcon} from "./stack/cucumber.svg";
+import {ReactComponent as DockerIcon} from "./stack/docker.svg";
 import {ReactComponent as ElasticIcon} from "./stack/elastic.svg";
 import {ReactComponent as FigmaIcon} from "./stack/figma.svg";
 import {ReactComponent as FirebaseIcon} from "./stack/firebase.svg";
@@ -34,6 +35,7 @@ import {ReactComponent as GcpIcon} from "./stack/gcp.svg";
 import {ReactComponent as GitlabIcon} from "./stack/gitlab.svg";
 import {ReactComponent as GuardrailsIcon} from "./stack/guardrails.svg";
 import {ReactComponent as GrassGisIcon} from "./stack/grass_gis.svg";
+import {ReactComponent as GrafanaIcon} from "./stack/grafana.svg";
 import {ReactComponent as GeoPandasIcon} from "./stack/geopandas.svg";
 import {ReactComponent as InvisionIcon} from "./stack/invision.svg";
 import {ReactComponent as InfluxIcon} from "./stack/influx.svg";
@@ -43,6 +45,7 @@ import {ReactComponent as JestIcon} from "./stack/jest.svg";
 import {ReactComponent as JenkinsIcon} from "./stack/jenkins.svg";
 import {ReactComponent as JiraIcon} from "./stack/jira.svg";
 import {ReactComponent as JsIcon} from "./stack/js.svg";
+import {ReactComponent as JupyterIcon} from "./stack/jupyter.svg";
 import {ReactComponent as KafkaIcon} from "./stack/kafka.svg";
 import {ReactComponent as KotlinIcon} from "./stack/kotlin.svg";
 import {ReactComponent as LuigiIcon} from "./stack/luigi.svg";
@@ -74,7 +77,6 @@ import {ReactComponent as SassIcon} from "./stack/sass.svg";
 import {ReactComponent as SeleniumIcon} from "./stack/selenium.svg";
 import {ReactComponent as SentryLightIcon} from "./stack/sentry_light.svg";
 import {ReactComponent as SentryDarkIcon} from "./stack/sentry_dark.svg";
-import {ReactComponent as ServiceDeskIcon} from "./stack/service-desk.svg";
 import {ReactComponent as SketchIcon} from "./stack/sketch.svg";
 import {ReactComponent as SlackIcon} from "./stack/slack.svg";
 import {ReactComponent as SwiftIcon} from "./stack/swift.svg";
@@ -126,6 +128,7 @@ export const assets = {
     cloudflare: CloudflareIcon,
     clickhouse: ClickhouseIcon,
     cucumber: CucumberIcon,
+    docker: DockerIcon,
     elastic: ElasticIcon,
     figma: FigmaIcon,
     firebase: FirebaseIcon,
@@ -134,6 +137,7 @@ export const assets = {
     gitlab: GitlabIcon,
     guardrails: GuardrailsIcon,
     grass_gis: GrassGisIcon,
+    grafana: GrafanaIcon,
     geopandas: GeoPandasIcon,
     invision: InvisionIcon,
     influx: InfluxIcon,
@@ -143,6 +147,7 @@ export const assets = {
     jenkins: JenkinsIcon,
     jira: JiraIcon,
     js: JsIcon,
+    jupyter:  JupyterIcon,
     kafka: KafkaIcon,
     kotlin: KotlinIcon,
     luigi: LuigiIcon,
@@ -174,7 +179,6 @@ export const assets = {
     selenium: SeleniumIcon,
     sentry_light: SentryLightIcon,
     sentry_dark: SentryDarkIcon,
-    servicedesk: ServiceDeskIcon,
     sketch: SketchIcon,
     slack: SlackIcon,
     swift: SwiftIcon,

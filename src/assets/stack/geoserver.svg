@@ -15,7 +15,7 @@
 				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
 			</filter>
 		</defs>
-		<mask maskUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283" id="SVGID_4_">
+		<mask maskUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283" id="GeoServer_SVGID_4_">
 			<g filter="url(#Adobe_OpacityMaskFilter)">
 				<rect x="32.071" y="32.618" width="128.185" height="128.179"/>
 				<g enable-background="new    ">
@@ -45,32 +45,32 @@
 				</g>
 			</g>
 		</mask>
-		<g mask="url(#SVGID_4_)">
+		<g mask="url(#GeoServer_SVGID_4_)">
 			<g>
 				<defs>
-					<rect id="SVGID_5_" x="32.075" y="32.622" width="128.178" height="128.176"/>
+					<rect id="GeoServer_SVGID_5_" x="32.075" y="32.622" width="128.178" height="128.176"/>
 				</defs>
-				<clipPath id="SVGID_6_">
-					<use xlink:href="#SVGID_5_"  overflow="visible"/>
+				<clipPath id="GeoServer_SVGID_6_">
+					<use xlink:href="#GeoServer_SVGID_5_"  overflow="visible"/>
 				</clipPath>
-				<g clip-path="url(#SVGID_6_)">
+				<g clip-path="url(#GeoServer_SVGID_6_)">
 					<defs>
-						<path id="SVGID_7_" d="M96.157,32.621c-6.656-0.003-13.34,2.536-18.4,7.597L39.67,78.303
+						<path id="GeoServer_SVGID_7_" d="M96.157,32.621c-6.656-0.003-13.34,2.536-18.4,7.597L39.67,78.303
 							c-4.984,4.983-7.527,11.542-7.595,18.098v0.569c0.068,6.564,2.597,13.144,7.597,18.141l38.084,38.087
 							c5.06,5.063,11.746,7.603,18.402,7.6h0.007c6.653,0,13.341-2.535,18.405-7.6l38.084-38.087
 							c5.068-5.065,7.599-11.756,7.598-18.412c0.001-6.651-2.533-13.335-7.592-18.395l-38.09-38.087
 							c-5.062-5.066-11.749-7.597-18.401-7.597H96.157z"/>
 					</defs>
-					<clipPath id="SVGID_8_">
-						<use xlink:href="#SVGID_7_"  overflow="visible"/>
+					<clipPath id="GeoServer_SVGID_8_">
+						<use xlink:href="#GeoServer_SVGID_7_"  overflow="visible"/>
 					</clipPath>
 					
-						<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="-1.2285" y1="578.752" x2="0.4859" y2="578.752" gradientTransform="matrix(43.2909 -44.829 -44.829 -43.2909 26057.1094 25134.7637)">
+						<linearGradient id="GeoServer_SVGID_9_" gradientUnits="userSpaceOnUse" x1="-1.2285" y1="578.752" x2="0.4859" y2="578.752" gradientTransform="matrix(43.2909 -44.829 -44.829 -43.2909 26057.1094 25134.7637)">
 						<stop  offset="0" style="stop-color:#8CC63F"/>
 						<stop  offset="0.6137" style="stop-color:#C9E39F"/>
 						<stop  offset="1" style="stop-color:#F1F6DE"/>
 					</linearGradient>
-					<polygon clip-path="url(#SVGID_8_)" fill="url(#SVGID_9_)" points="-31.977,98.946 93.928,-31.433 224.306,94.472 
+					<polygon clip-path="url(#GeoServer_SVGID_8_)" fill="url(#GeoServer_SVGID_9_)" points="-31.977,98.946 93.928,-31.433 224.306,94.472 
 						98.401,224.851 					"/>
 				</g>
 			</g>
@@ -78,19 +78,19 @@
 		<g opacity="0.25">
 			<g>
 				<defs>
-					<rect id="SVGID_10_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+					<rect id="GeoServer_SVGID_10_" x="32.082" y="32.622" width="128.177" height="128.176"/>
 				</defs>
-				<clipPath id="SVGID_11_">
-					<use xlink:href="#SVGID_10_"  overflow="visible"/>
+				<clipPath id="GeoServer_SVGID_11_">
+					<use xlink:href="#GeoServer_SVGID_10_"  overflow="visible"/>
 				</clipPath>
-				<g clip-path="url(#SVGID_11_)">
+				<g clip-path="url(#GeoServer_SVGID_11_)">
 					<defs>
-						<rect id="SVGID_12_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+						<rect id="GeoServer_SVGID_12_" x="32.082" y="32.622" width="128.177" height="128.176"/>
 					</defs>
-					<clipPath id="SVGID_13_">
-						<use xlink:href="#SVGID_12_"  overflow="visible"/>
+					<clipPath id="GeoServer_SVGID_13_">
+						<use xlink:href="#GeoServer_SVGID_12_"  overflow="visible"/>
 					</clipPath>
-					<path clip-path="url(#SVGID_13_)" fill="#0092C8" d="M96.166,160.795c-6.657,0.004-13.344-2.536-18.401-7.595l-38.084-38.087
+					<path clip-path="url(#GeoServer_SVGID_13_)" fill="#0092C8" d="M96.166,160.795c-6.657,0.004-13.344-2.536-18.401-7.595l-38.084-38.087
 						c-5.075-5.07-7.602-11.767-7.599-18.429c-0.003-6.651,2.538-13.328,7.595-18.378L77.765,40.22
 						c5.057-5.062,11.744-7.6,18.399-7.598c6.654-0.003,13.349,2.531,18.416,7.598l38.085,38.086
 						c5.06,5.058,7.6,11.743,7.594,18.396c0.005,6.654-2.533,13.347-7.594,18.411L114.58,153.2
@@ -105,19 +105,19 @@
 		<g opacity="0.15">
 			<g>
 				<defs>
-					<rect id="SVGID_14_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+					<rect id="GeoServer_SVGID_14_" x="32.082" y="32.621" width="124.887" height="87.036"/>
 				</defs>
-				<clipPath id="SVGID_15_">
-					<use xlink:href="#SVGID_14_"  overflow="visible"/>
+				<clipPath id="GeoServer_SVGID_15_">
+					<use xlink:href="#GeoServer_SVGID_14_"  overflow="visible"/>
 				</clipPath>
-				<g clip-path="url(#SVGID_15_)">
+				<g clip-path="url(#GeoServer_SVGID_15_)">
 					<defs>
-						<rect id="SVGID_16_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+						<rect id="GeoServer_SVGID_16_" x="32.082" y="32.621" width="124.887" height="87.036"/>
 					</defs>
-					<clipPath id="SVGID_17_">
-						<use xlink:href="#SVGID_16_"  overflow="visible"/>
+					<clipPath id="GeoServer_SVGID_17_">
+						<use xlink:href="#GeoServer_SVGID_16_"  overflow="visible"/>
 					</clipPath>
-					<path clip-path="url(#SVGID_17_)" fill="#FFFFFF" d="M156.97,84.014c-1.14-2.049-2.57-3.976-4.304-5.71L114.58,40.22
+					<path clip-path="url(#GeoServer_SVGID_17_)" fill="#FFFFFF" d="M156.97,84.014c-1.14-2.049-2.57-3.976-4.304-5.71L114.58,40.22
 						c-5.069-5.069-11.759-7.599-18.417-7.597c-6.652-0.001-13.339,2.534-18.397,7.597L39.677,78.304
 						c-5.057,5.055-7.597,11.73-7.595,18.381c-0.002,6.657,2.526,13.358,7.598,18.428l4.54,4.544
 						C52.275,107.132,91.137,54.294,156.97,84.014"/>
