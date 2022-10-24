@@ -185,6 +185,10 @@ export const gridConfig = {
         icon: assets.stack.grass_gis,
       },
       {
+        name: "GeoPandas",
+        icon: assets.stack.geopandas,
+      },
+      {
         name: "Leaflet",
         icon: assets.stack.leaflet,
       },
