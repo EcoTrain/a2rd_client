@@ -54,17 +54,20 @@ export const startupsCardsInfo = [
     text: "item.wm.text",
     bg: "var(--bgWhite)",
     id: "startup_wm",
-    businessCardURL: "https://a2rd.com/wellness/",
-    links: [
-      {
+    links: {
+      businessCard: {
+        title: "links.businessCard",
+        link: "https://a2rd.com/wellness/",
+      },
+      manual: {
         title: "links.manual",
         link: "https://ecotrain.github.io/WM_doc/",
       },
-      {
+      website: {
         title: "links.website",
         link: "https://wellness.a2rd.com/",
       },
-    ],
+    },
   },
   {
     title: "item.framework.title",
@@ -81,12 +84,12 @@ export const startupsCardsInfo = [
     text: "item.airflows.text",
     bg: "var(--bgWhite)",
     id: "startup_atmos",
-    links: [
-      {
+    links: {
+      website: {
         title: "links.website",
         link: "http://80.65.20.243:61726",
       },
-    ],
+    },
   },
 ];
 
@@ -99,16 +102,16 @@ export const publicationsCardsInfo = [
       alt: "SCImago Journal & Country Rank",
       link: "https://www.scimagojr.com/journalsearch.php?q=25349&tip=sid&exact=no",
     },
-    links: [
-      {
+    links: {
+      article: {
         title: "publications.links.article",
         link: "https://doi.org/10.1016/j.scitotenv.2022.157322",
       },
-      {
+      score: {
         title: "publications.links.score",
         link: "https://www.scimagojr.com/journalsearch.php?q=25349&tip=sid&exact=no",
       },
-    ],
+    },
   },
   {
     title: "publications.item.forest",
@@ -118,16 +121,16 @@ export const publicationsCardsInfo = [
       alt: "SCImago Journal & Country Rank",
       link: "https://www.scimagojr.com/journalsearch.php?q=23916&tip=sid&exact=no",
     },
-    links: [
-      {
+    links: {
+      article: {
         title: "publications.links.article",
         link: "https://doi.org/10.1016/j.envpol.2022.119324",
       },
-      {
+      score: {
         title: "publications.links.score",
         link: "https://www.scimagojr.com/journalsearch.php?q=23916&tip=sid&exact=no",
       },
-    ],
+    },
   },
   {
     title: "publications.item.gral",
@@ -137,16 +140,16 @@ export const publicationsCardsInfo = [
       alt: "SCImago Journal & Country Rank",
       link: "https://www.scimagojr.com/journalsearch.php?q=15838&tip=sid&exact=no",
     },
-    links: [
-      {
+    links: {
+      article: {
         title: "publications.links.article",
         link: "https://doi.org/10.3390/atmos11121375",
       },
-      {
+      score: {
         title: "publications.links.score",
         link: "https://www.scimagojr.com/journalsearch.php?q=15838&tip=sid&exact=no",
       },
-    ],
+    },
   },
   // {
   //   title: "item.electricity_transition",

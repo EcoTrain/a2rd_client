@@ -63,23 +63,16 @@ const renderCard = (info, i) => {
           )}
           {hover && (
             <div className="linkBtnListWrapper">
-              {!info.businessCardURL ? (
+              {(!info.links || !info.links.businessCard) && (
                 <button
                   className="linkBtn"
                   onClick={() => window.open(`/startups/${info.id}`, "_blank")}
                 >
                   {t("links.readMore")}
                 </button>
-              ) : (
-                <button
-                  className="linkBtn"
-                  onClick={() => window.open(info.businessCardURL, "_blank")}
-                >
-                  {t("links.businessCard")}
-                </button>
               )}
               {info.links &&
-                info.links.map((x, i) => (
+                Object.values(info.links).map((x, i) => (
                   <button
                     key={i}
                     className="linkBtn"

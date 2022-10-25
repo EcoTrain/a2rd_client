@@ -63,7 +63,12 @@ export const Startup = ({item, t}) => {
                 components={[
                   <a
                     key={`linkWM`}
-                    href={(item.links && item.links[0].link) || ""}
+                    href={
+                      (item.links &&
+                        item.links.website &&
+                        item.links.website.link) ||
+                      ""
+                    }
                     target="_blank"
                     rel="noreferrer"
                   />,
@@ -73,7 +78,7 @@ export const Startup = ({item, t}) => {
           </div>
           {item.links && (
             <div className="linkBtnListWrapper">
-              {item.links.map((x, i) => (
+              {Object.values(item.links).map((x, i) => (
                 <button
                   key={i}
                   className="linkBtn"

@@ -106,7 +106,7 @@ const renderCard = (info, i) => {
           {hover && (
             <div className="linkBtnListWrapper">
               {info.links &&
-                info.links.map((x, i) => (
+                Object.values(info.links).map((x, i) => (
                   <button
                     key={i}
                     className="linkBtn"
