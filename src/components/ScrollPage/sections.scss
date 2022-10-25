@@ -30,8 +30,8 @@
                 justify-content: center;
                 box-shadow: inset 0px 15px 15px -17px var(--coldGray);
                 & > .section-content-block {
-                    margin: auto;
                     padding: 0em 2em;
+                    margin: auto;
                 }
 
                 .section-content-block {
@@ -90,6 +90,14 @@
 @media (max-width: 960px) {
     .sectionPageScroller {
         .sectionPage {
+            .section {
+                .section-content {
+                    & > .section-content-block {
+                        margin: unset;
+                        height: 100%;
+                    }
+                }
+            }
             .splitSection {
                 flex-direction: column !important;
                 .section-img {

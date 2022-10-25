@@ -21,7 +21,7 @@
             "manual": "User manual"
         },
         "navigation": {
-            "stack": "Technologies & Tools"
+            "stack": "Technology stack"
         }
     },
     "home": {
@@ -176,7 +176,7 @@
                 "title": "Multiagent modeling",
                 "texts": [
                     "We use multi-agent modeling to analyze urban mobility and road traffic. This allows us to simulate and analyze the movement of vehicles and pedestrians within an entire city.",
-                    "The results of these simulations are used in other solutions, from the analysis of infrastructure projects to the assessment of the effects of pollutant emissions."
+                    "The results of these simulations are used in our other solutions, from the analysis of infrastructure projects to the assessment of the effects of pollutant emissions."
                 ]
             },
             "analysis": {

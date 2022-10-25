@@ -64,6 +64,7 @@ const HomeContacts = () => {
           type={["left", "right"]}
           id="contacts"
           className="section-content-block"
+          style={{display: "contents"}}
         >
           {ContactsLinks()}
           {ContactsIcons()}

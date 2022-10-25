@@ -1,9 +1,9 @@
 import React, {useContext, useState} from "react";
-import {ThemeContext} from "../../contexts/ThemeContext";
+import {ThemeContext} from "../../../contexts/ThemeContext";
+import CustomCheckbox from "../../CustomCheckbox";
 import "./index.scss";
-import CustomCheckbox from "../CustomCheckbox";
 
-const CategoryIconGrid = ({config}) => {
+const CategoryIconSquareGrid = ({config}) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const onClickByCategory = (cat) => {
@@ -17,7 +17,7 @@ const CategoryIconGrid = ({config}) => {
   };
 
   return (
-    <div style={{flex: 1, width: "100%"}} className="categoryGrid">
+    <div style={{flex: 1, width: "100%"}} className="categoryHexGrid">
       <CategoryFilter
         config={config}
         selectedCategories={selectedCategories}
@@ -36,7 +36,7 @@ const CategoryFilter = ({config, selectedCategories, onClickByCategory}) => {
   const categories = Object.keys(config);
 
   return (
-    <div style={{marginBottom: "1em"}} className="categoryGridFilter">
+    <div style={{marginBottom: "1em"}} className="categoryHexGridFilter">
       {categories.map((x, i) => (
         <CustomCheckbox
           key={i}
@@ -66,25 +66,27 @@ const GridItems = ({config, selectedCategories, onClickByCategory}) => {
       return (
         <div
           key={i}
+          className="categoryHexGridHex"
           onClick={() => onClickByCategory(cat)}
-          className="categoryGridItem"
           style={{
-            background: color,
+            color: color,
             opacity: isActiveFilter && !isSelected ? 0.2 : 1,
           }}
         >
-          <Icon />
-          <span>{catItem.name}</span>
+          <div className="categoryHexGridItem">
+            <Icon />
+            <span>{catItem.name}</span>
+          </div>
         </div>
       );
     });
   };
 
   return (
-    <div className="categoryGridContent">
+    <div className="categoryHexGridContent">
       {categories.map((cat) => renderCategoryItems(cat))}
     </div>
   );
 };
 
-export default CategoryIconGrid;
+export default CategoryIconSquareGrid;

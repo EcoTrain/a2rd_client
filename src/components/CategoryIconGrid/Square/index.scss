@@ -7,21 +7,21 @@
     @return calc(#{$k} * 100vw + #{$b});
 }
 
-.categoryGrid {
+.categorySquareGrid {
     max-width: 1200px;
-    .categoryGridFilter {
+    .categorySquareGridFilter {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 0.5em;
     }
-    .categoryGridContent {
+    .categorySquareGridContent {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-gap: 1px;
         // grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
         // grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-        .categoryGridItem {
+        .categorySquareGridItem {
             width: 100%;
             position: relative;
             // height: 90px;
@@ -49,27 +49,15 @@
                 text-align: center;
                 overflow: hidden;
             }
-            // TODO: HexGrid
-            // https://codepen.io/gc-nomade/pen/XWdWbd
-            // &::before {
-            //     content: "";
-            //     position:absolute;
-            //     top: 0;
-            //     bottom: 0;
-            //     left: 0;
-            //     right: 0;
-            //     background: currentColor;
-            //     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-            // }
         }
     }
 }
 
 @media (max-width: 976px) {
-    .categoryGrid {
-        .categoryGridContent {
+    .categorySquareGrid {
+        .categorySquareGridContent {
             grid-template-columns: repeat(9, 1fr);
-            .categoryGridItem {
+            .categorySquareGridItem {
                 & > svg {
                     height: 20px;
                     width: 20px;
@@ -80,8 +68,8 @@
 }
 
 @media (max-width: 480px) {
-    .categoryGrid {
-        .categoryGridContent {
+    .categorySquareGrid {
+        .categorySquareGridContent {
             grid-template-columns: repeat(6, 1fr);
         }
     }
