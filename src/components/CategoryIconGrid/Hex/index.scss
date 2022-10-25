@@ -1,14 +1,11 @@
-@function calcFluidSize($f-min, $f-max, $v-min, $v-max, $units: px) {
-    $k: ($f-max - $f-min) / ($v-max - $v-min);
-    $b: $f-min - $k * $v-min;
-
-    $b: $b + $units;
-
-    @return calc(#{$k} * 100vw + #{$b});
-}
+@import "../../../Functions.scss";
 
 $hex-width: calcFluidSize(80, 100, 976, 1280);
 $hex-between: $hex-width / 10;
+
+$hex-height: calc($hex-width / 1.73 /* sqrt(3) */); // 70%
+$hex-margin: calc($hex-width / 2); //  50%
+$hex-border: calc($hex-margin / 1.73 /* sqrt(3) */); // 28.867%
 
 $color-hex-default: var(--darkWhite);
 
@@ -75,6 +72,7 @@ $color-hex-default: var(--darkWhite);
     .categoryHexGridContent {
         display: grid;
         grid-gap: 0.2em;
+        padding-bottom: $hex-border;
         justify-content: center;
 
         @include initRow(10);
