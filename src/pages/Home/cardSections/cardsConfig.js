@@ -54,6 +54,7 @@ export const startupsCardsInfo = [
     text: "item.wm.text",
     bg: "var(--darkWhite)",
     id: "startup_wm",
+    businessCardURL: "https://a2rd.com/wellness/",
     links: [
       {
         title: "links.manual",

@@ -10,7 +10,6 @@ const WellnessAbout = () => {
     shortText: "about.shortText",
     text: "about.text",
     bg: "var(--darkWhite)",
-    id: "startup_wm",
     links: [
       {
         title: "links.manual",
