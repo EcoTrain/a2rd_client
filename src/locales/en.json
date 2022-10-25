@@ -251,13 +251,17 @@
                 "title": "Health diaries",
                 "text": "Allow you to monitor health indicators and display the dynamics of their changes. Create diary widgets, manage your personal dashboard, stay up to date with all changes in your health status."
             },
+            "medicine": {
+                "title": "Medication Tracker",
+                "text": "Your mobile pill box. Add medications, customize your personal plan and keep track of medications on time."
+            },
             "scheduler": {
                 "title": "Event Scheduler",
                 "text": "Create reminders in the scheduler. Stay up to date with upcoming events and challenges. Follow your daily routine without keeping everything in your head."
             },
             "chat": {
                 "title": "Communication",
-                "text": "You can communicate with other users via chat or send them a quarcode to view some of your data. You will be notified about all important events by a push notification and an instant update of information on the device."
+                "text": "Communicate with other users via chat or send them a QR code to view some of your data. You will be notified about all important events by a push notification and an instant update of information on the device."
             },
             "offline": {
                 "title": "Offline access",

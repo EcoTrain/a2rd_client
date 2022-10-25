@@ -7,6 +7,11 @@ export const functionalCardsInfo = [
     image: assets.wellness.functional.diary,
   },
   {
+    title: "functional.medicine.title",
+    text: "functional.medicine.text",
+    image: assets.wellness.functional.medicine,
+  },
+  {
     title: "functional.scheduler.title",
     text: "functional.scheduler.text",
     image: assets.wellness.functional.scheduler,
