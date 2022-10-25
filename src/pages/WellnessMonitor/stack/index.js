@@ -9,7 +9,7 @@ const WellnessStack = () => {
   const {t} = useTranslation("shared");
 
   return (
-    <Layout className="section section-white" id="wellnessStack">
+    <Layout className="section section-darkWhite" id="wellnessStack">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("navigation.stack")}

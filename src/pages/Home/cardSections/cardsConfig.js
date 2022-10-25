@@ -52,7 +52,7 @@ export const startupsCardsInfo = [
     previewText: "item.wm.previewText",
     shortText: "item.wm.shortText",
     text: "item.wm.text",
-    bg: "var(--darkWhite)",
+    bg: "var(--bgWhite)",
     id: "startup_wm",
     links: [
       {
@@ -70,7 +70,7 @@ export const startupsCardsInfo = [
     previewText: "item.framework.previewText",
     shortText: "item.framework.shortText",
     text: "item.framework.text",
-    bg: "var(--lightGray)",
+    bg: "var(--darkWhite)",
     id: "startup_xwm",
   },
   {
@@ -78,7 +78,7 @@ export const startupsCardsInfo = [
     previewText: "item.airflows.previewText",
     shortText: "item.airflows.shortText",
     text: "item.airflows.text",
-    bg: "var(--darkWhite)",
+    bg: "var(--bgWhite)",
     id: "startup_atmos",
     links: [
       {

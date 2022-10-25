@@ -38,7 +38,7 @@ export const textPageConfig = {
     healthyLifestyle: {
       title: "healthyLifestyle.title",
       text: "healthyLifestyle.text",
-      sectionTheme: "section-white",
+      sectionTheme: "section-darkWhite",
     },
     businessModel: {
       title: "businessModel.title",

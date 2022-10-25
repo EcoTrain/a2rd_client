@@ -43,10 +43,10 @@ const Home = () => {
 
       <HomeProjects title="navigation.projects" />
       <HomeStartups title="navigation.startups" />
+      <HomePublications title="navigation.publications" />
       <HomeStack title="navigation.stack" />
       {/* <HomeCustomers /> */}
 
-      <HomePublications title="navigation.publications" />
       <TextPage {...textPageConfig.home.healthyLifestyle} t={t} />
       <TextPage {...textPageConfig.home.businessModel} t={t} />
 
