@@ -82,6 +82,7 @@ import {ReactComponent as SentryDarkIcon} from "./stack/sentry_dark.svg";
 import {ReactComponent as SketchIcon} from "./stack/sketch.svg";
 import {ReactComponent as SlackIcon} from "./stack/slack.svg";
 import {ReactComponent as SwiftIcon} from "./stack/swift.svg";
+import {ReactComponent as SyncIcon} from "./wellness/functional/sync.svg";
 import {ReactComponent as TeacherlyIcon} from "./stack/teacherly.svg";
 import {ReactComponent as TravisIcon} from "./stack/travis-ci.svg";
 import {ReactComponent as TrelloIcon} from "./stack/trello.svg";
@@ -108,6 +109,7 @@ export const assets = {
       medicine: MedicineIcon,
       scheduler: SchedulerIcon,
       chat: ChatIcon,
+      sync: SyncIcon, 
       offline: OfflineIcon,
     },
   },

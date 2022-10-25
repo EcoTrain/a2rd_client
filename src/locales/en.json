@@ -245,7 +245,7 @@
             "text": "<0>Wellness Monitor</0> is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users.\n\tWellness Monitor is a part of the x-Health&Wellness framework – an interface for interaction with the medical sector (hospitals), insurance companies, airlines, and travel services. Our goal is to develop and maintain Wellness Monitor as a convenient intelligent assistant that provides a safe, fast, and reliable service of equal opportunities for all categories of users."
         },
         "functional": {
-            "title": "Functional",
+            "title": "Main functionality",
             "user_guide": "Read more on user guide",
             "diary": {
                 "title": "Health diaries",
@@ -263,9 +263,13 @@
                 "title": "Communication",
                 "text": "Communicate with other users via chat or send them a QR code to view some of your data. You will be notified about all important events by a push notification and an instant update of information on the device."
             },
+            "sync": {
+                "title": "Data synchronization",
+                "text": "Use the app on any device. All your data is synced and updated in real time."
+            },
             "offline": {
                 "title": "Offline access",
-                "text": "In the absence of Internet access, all your data will be stored on your device and added to the submission queue. When Internet access appears, the data is synchronized with the server and your devices."
+                "text": "Use the application even without access to the Internet, without worrying about the safety of data. When Internet access appears, the data is synchronized with the server and your other devices."
             }
         },
         "team": {

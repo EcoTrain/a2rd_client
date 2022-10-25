@@ -22,6 +22,11 @@ export const functionalCardsInfo = [
     image: assets.wellness.functional.chat,
   },
   {
+    title: "functional.sync.title",
+    text: "functional.sync.text",
+    image: assets.wellness.functional.sync,
+  },
+  {
     title: "functional.offline.title",
     text: "functional.offline.text",
     image: assets.wellness.functional.offline,
