@@ -1,5 +1,4 @@
 import React, {useRef, useState} from "react";
-import ScrollAnim from "rc-scroll-anim";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
@@ -9,25 +8,18 @@ import {startupsCardsInfo} from "./cardsConfig";
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
 
-const ScrollOverPack = ScrollAnim.OverPack;
-
 const HomeStartups = () => {
   const {t} = useTranslation("startups");
   return (
     <Layout className="section section-white" id="homeStartups">
-      <ScrollOverPack
-        replay
-        always={false}
-        playScale={0}
-        className="section-content"
-      >
+      <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("title")}
         </div>
         <div className="gridCardsView lineGridCardsViewRow">
           {startupsCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
-      </ScrollOverPack>
+      </div>
     </Layout>
   );
 };
@@ -71,12 +63,21 @@ const renderCard = (info, i) => {
           )}
           {hover && (
             <div className="linkBtnListWrapper">
-              <button
-                className="linkBtn"
-                onClick={() => window.open(`/startups/${info.id}`, "_blank")}
-              >
-                {t("links.readMore")}
-              </button>
+              {!info.businessCardURL ? (
+                <button
+                  className="linkBtn"
+                  onClick={() => window.open(`/startups/${info.id}`, "_blank")}
+                >
+                  {t("links.readMore")}
+                </button>
+              ) : (
+                <button
+                  className="linkBtn"
+                  onClick={() => window.open(info.businessCardURL, "_blank")}
+                >
+                  {t("links.businessCard")}
+                </button>
+              )}
               {info.links &&
                 info.links.map((x, i) => (
                   <button

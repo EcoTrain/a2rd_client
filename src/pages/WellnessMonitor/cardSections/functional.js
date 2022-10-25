@@ -1,5 +1,6 @@
 import React from "react";
 import ScrollAnim from "rc-scroll-anim";
+import QueueAnim from "rc-queue-anim";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
@@ -8,7 +9,6 @@ import {functionalCardsInfo} from "./config/functional";
 
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
-import QueueAnim from "rc-queue-anim";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
