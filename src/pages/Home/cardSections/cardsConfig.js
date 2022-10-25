@@ -57,7 +57,7 @@ export const startupsCardsInfo = [
     links: {
       businessCard: {
         title: "links.businessCard",
-        link: "https://a2rd.com/wellness/",
+        link: "/wellness",
       },
       manual: {
         title: "links.manual",

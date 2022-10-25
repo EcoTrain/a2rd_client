@@ -19,7 +19,7 @@ import HomePublications from "./cardSections/publications";
 import HomeFeedback from "./feedback";
 import HomeContacts from "./contacts";
 import HomeStack from "./stack";
-import HomeCustomers from "./customers";
+// import HomeCustomers from "./customers";
 
 const Home = () => {
   const params = useParams();
