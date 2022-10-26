@@ -45,7 +45,7 @@ const WellnessIntro = () => {
             backgroundImage: "url(" + bg + ")",
           }}
         />
-        <div className="section-content-block">{AboutDescription({t})}</div>
+        <div className="section-content-block section-justify-center">{AboutDescription({t})}</div>
         {renderNextPageBtn({id: "wellnessAbout"})}
       </div>
     </Layout>

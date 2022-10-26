@@ -92,6 +92,9 @@
         .sectionPage {
             .section {
                 .section-content {
+                    & > .section-justify-center {
+                        height: unset !important;
+                    }
                     & > .section-content-block {
                         margin: unset;
                         height: 100%;

@@ -6,7 +6,7 @@ import "antd/dist/antd.min.css";
 
 const AboutDescription = ({t}) => {
   return (
-    <div key="homeAboutDescription" id="homeAboutDescription">
+    <div key="homeAboutDescription">
       <div className="section-title font-title-h1 text-center">
         {t("about.title")}
       </div>
@@ -21,13 +21,8 @@ const AboutFounder = ({t}) => {
   return (
     <div
       key="homeAboutFounder"
-      id="homeAboutFounder"
       style={{margin: "1em 0", cursor: "pointer"}}
-      onClick={() => {
-        scroller.scrollTo("contacts", {
-          duration: 0,
-        });
-      }}
+      onClick={() => scroller.scrollTo("contacts", {duration: 0})}
     >
       <img
         className="avatar"
