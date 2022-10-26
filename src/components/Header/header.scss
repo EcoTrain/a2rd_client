@@ -81,13 +81,20 @@
     .ant-menu,
     .ant-menu-sub {
         background-color: var(--lightGray);
-        .ant-menu-item-active:focus {
-            background-color: var(--darkWhite);
+        .ant-menu-submenu {
+            .ant-menu-submenu-title {
+                .ant-menu-submenu-arrow {
+                    color: var(--textPrimary);
+                }
+            }
         }
         .ant-menu-item-selected,
         .ant-menu-submenu-selected,
         .ant-menu-submenu-active {
             background-color: var(--coldGray);
+            &:focus {
+                background-color: var(--darkWhite);
+            }
         }
     }
 }
