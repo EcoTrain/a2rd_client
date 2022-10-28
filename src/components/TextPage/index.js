@@ -22,19 +22,25 @@ const TextPage = ({
   direction,
   t,
 }) => {
+  // TODO: Избавиться от массива. Добавить в css перенос абзацев по \n
   const _texts = t(text, {returnObjects: true}) || [];
   const textItems = Array.isArray(_texts) ? _texts : [_texts];
   const listItems = t(list, {returnObjects: true});
   const hasImageArea = ["object", "string"].includes(typeof image);
 
   const getImageSrc = () => {
-    return typeof image == "string"
-      ? image
-      : !image || (hasImageArea && !Object.keys(image).length)
-      ? null
-      : window.innerWidth < 960
-      ? image.min
-      : image.max;
+    const hasNotImage = !image || (hasImageArea && !Object.keys(image).length);
+    let _img = {
+      src: null,
+      alt: "",
+      title: "",
+    };
+    if (!hasNotImage) {
+      _img.src = window.innerWidth < 960 && image.min ? image.min : image.src;
+      _img.alt = t(image.alt) || "";
+      _img.title = t(image.title) || "";
+    }
+    return _img;
   };
 
   const [img, setImg] = useState(getImageSrc());
@@ -63,7 +69,7 @@ const TextPage = ({
   const getImage = () =>
     hasImageArea && (
       <div key={`${(title || "").toLowerCase()}_image`} className="section-img">
-        {img && <img src={img} />}
+        {img.src && <img src={img.src} alt={img.alt} title={img.title} />}
       </div>
     );
 
@@ -78,7 +84,9 @@ const TextPage = ({
         </div>
         <ScrollOverPack replay always={false} playScale={0}>
           {textItems.map((x, i) => (
-            <div key={i} className="font-text-big">{getTextAnim(x, i)}</div>
+            <div key={i} className="font-text-big">
+              {getTextAnim(x, i)}
+            </div>
           ))}
           <div className="font-text-small">{getTextAnim(t(note))}</div>
           {listItems && (

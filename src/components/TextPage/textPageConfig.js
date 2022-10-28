@@ -6,7 +6,7 @@
   // If image NOT exist = FullScreen text section
   // If image exist = split section & safe img area
   image: {
-    max: str filepath,
+    src: str filepath,
     min: str filepath
   },
 }
@@ -19,7 +19,9 @@ export const textPageConfig = {
       title: "activities.title",
       text: "activities.text",
       image: {
-        max:
+        alt: "activities.text",
+        title: "activities.title",
+        src:
           process.env.PUBLIC_URL +
           "/static/images/index/sections/max/activities.jpeg",
         min:
@@ -45,7 +47,9 @@ export const textPageConfig = {
       text: "businessModel.text",
       direction: "right",
       image: {
-        max:
+        alt: "businessModel.text",
+        title: "businessModel.title",
+        src:
           process.env.PUBLIC_URL +
           "/static/images/index/sections/max/businessDeal.jpeg",
         min:
@@ -60,7 +64,9 @@ export const textPageConfig = {
         title: "multiagent.about.title",
         text: "multiagent.about.texts",
         image: {
-          max:
+          alt: "multiagent.about.text",
+          title: "multiagent.about.title",
+          src:
             process.env.PUBLIC_URL +
             "/static/images/index/sections/max/traffic.jpg",
           min:
@@ -90,7 +96,9 @@ export const textPageConfig = {
         title: "distribution.about.title",
         text: "distribution.about.texts",
         image: {
-          max:
+          alt: "distribution.about.text",
+          title: "distribution.about.title",
+          src:
             process.env.PUBLIC_URL +
             "/static/images/index/sections/max/atmosMax.png",
           min:

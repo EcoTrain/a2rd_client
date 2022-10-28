@@ -19,15 +19,17 @@ const AboutFounder = ({t}) => {
   const imgAlexey =
     process.env.PUBLIC_URL + "/static/images/index/aleksey.webp";
   return (
-    <div
-      key="homeAboutFounder"
-      style={{margin: "1em 0", cursor: "pointer"}}
-      onClick={() => scroller.scrollTo("contacts", {duration: 0})}
-    >
+    <div key="homeAboutFounder" style={{margin: "1em 0"}}>
       <img
         className="avatar"
         src={imgAlexey}
-        style={{height: 100, width: 100, marginBottom: "1em"}}
+        style={{
+          height: 100,
+          width: 100,
+          marginBottom: "1em",
+          cursor: "pointer",
+        }}
+        onClick={() => scroller.scrollTo("homeContacts", {duration: 0})}
       />
       <div>
         <div className="text">{t("about.signature")}</div>

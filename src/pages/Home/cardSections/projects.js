@@ -52,7 +52,7 @@ const renderCard = (info, i) => {
   const [hover, setHover] = useState(false);
 
   const titleShadow = "0px 0px 0.3em black";
-  const bg = `url(${info.image})  no-repeat center center / cover`;
+  const bg = `url(${info.image.src})  no-repeat center center / cover`;
 
   const onHover = () => {
     cardRef.current.style.background = "var(--darkWhite)";

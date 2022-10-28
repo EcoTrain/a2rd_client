@@ -5,9 +5,13 @@ export const projectsCardsInfo = [
     preview: "card.airflow.preview",
     text: "card.airflow.text",
     note: "card.airflow.note",
-    image:
-      process.env.PUBLIC_URL +
-      "/static/images/index/projects/preview/airflow_emissions.jpg",
+    image: {
+      alt: "card.airflow.text",
+      title: "card.airflow.title",
+      src:
+        process.env.PUBLIC_URL +
+        "/static/images/index/projects/preview/airflow_emissions.jpg",
+    },
     multiagent: true,
     distribution: true,
   },
@@ -17,9 +21,13 @@ export const projectsCardsInfo = [
     preview: "card.transport.preview",
     text: "card.transport.text",
     note: "card.transport.note",
-    image:
-      process.env.PUBLIC_URL +
-      "/static/images/index/projects/preview/transport_system.jpg",
+    image: {
+      alt: "card.transport.text",
+      title: "card.transport.title",
+      src:
+        process.env.PUBLIC_URL +
+        "/static/images/index/projects/preview/transport_system.jpg",
+    },
     multiagent: true,
     distribution: true,
   },
@@ -29,9 +37,13 @@ export const projectsCardsInfo = [
     preview: "card.trends.preview",
     text: "card.trends.text",
     note: "card.trends.note",
-    image:
-      process.env.PUBLIC_URL +
-      "/static/images/index/projects/preview/trends.jpg",
+    image: {
+      alt: "card.transport.text",
+      title: "card.transport.title",
+      src:
+        process.env.PUBLIC_URL +
+        "/static/images/index/projects/preview/trends.jpg",
+    },
   },
   {
     id: "project_locomotives",
@@ -39,9 +51,13 @@ export const projectsCardsInfo = [
     preview: "card.locomotives.preview",
     text: "card.locomotives.text",
     note: "card.locomotives.note",
-    image:
-      process.env.PUBLIC_URL +
-      "/static/images/index/projects/preview/locomotives.jpg",
+    image: {
+      alt: "card.locomotives.text",
+      title: "card.locomotives.title",
+      src:
+        process.env.PUBLIC_URL +
+        "/static/images/index/projects/preview/locomotives.jpg",
+    },
     multiagent: true,
   },
 ];

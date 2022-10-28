@@ -51,7 +51,7 @@ const WellnessFunctional = () => {
 const renderCard = (info, i) => {
   const {t} = useTranslation("wellness");
 
-  const Icon = info.image;
+  const Icon = info.svg;
 
   return (
     <div key={i} className="gridCardWrapper lineGridCardWrapper">

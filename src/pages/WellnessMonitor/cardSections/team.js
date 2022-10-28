@@ -50,7 +50,7 @@ const renderCard = (info, i, t) => {
       >
         <div className="gridCardView">
           <img
-            src={info.logo}
+            src={info.image}
             style={{width: "100%", maxWidth: 150, borderRadius: "50%"}}
           />
           <div
