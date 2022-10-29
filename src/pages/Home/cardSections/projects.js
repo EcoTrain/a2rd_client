@@ -17,15 +17,11 @@ const HomeProjects = ({filter, text}) => {
   const {t} = useTranslation("projects");
   return (
     <Layout className="section section-lightGray" id="homeProjects">
-      <ScrollOverPack replay always={false} playScale={0}>
-        <QueueAnim
-          type={["left", "right"]}
-          duration={1000}
-          className="section-content"
-        >
-          <div className="section-title font-title-h1 text-center">
-            {t("title")}
-          </div>
+      <div className="section-content">
+        <div className="section-title font-title-h1 text-center">
+          {t("title")}
+        </div>
+        <ScrollOverPack replay always={false} playScale={0}>
           <TextyAnim
             type="mask-top"
             split={splitTextByWords}
@@ -35,13 +31,13 @@ const HomeProjects = ({filter, text}) => {
           >
             {text || t("label")}
           </TextyAnim>
-          <div className="gridCardsView">
-            {projectsCardsInfo.map(
-              (x, i) => (!filter || (filter && x[filter])) && renderCard(x, i)
-            )}
-          </div>
-        </QueueAnim>
-      </ScrollOverPack>
+        </ScrollOverPack>
+        <div className="gridCardsView">
+          {projectsCardsInfo.map(
+            (x, i) => (!filter || (filter && x[filter])) && renderCard(x, i)
+          )}
+        </div>
+      </div>
     </Layout>
   );
 };
@@ -58,7 +54,7 @@ const renderCard = (info, i) => {
     if (cardRef.current) {
       // cardRef.current.style.transition = "all 0.2s ease-in-out";
     }
-  }, [cardRef]);
+  }, [cardRef.current]);
 
   const onHover = () => {
     cardRef.current.style.background = "var(--darkWhite)";

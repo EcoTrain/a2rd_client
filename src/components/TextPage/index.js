@@ -8,6 +8,7 @@ import {Layout} from "antd";
 import "antd/dist/antd.min.css";
 
 import {splitTextByWords} from "../../fucntions/splitText";
+import TweenOne from "rc-tween-one";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
@@ -79,31 +80,57 @@ const TextPage = ({
       className={`section-content  ${sectionTheme}`}
     >
       <div className="section-content-block">
-        <div className="section-title font-title-h1 text-center">
-          {t(title)}
-        </div>
         <ScrollOverPack replay always={false} playScale={0}>
-          {textItems.map((x, i) => (
-            <div key={i} className="font-text-big">
+          <TweenOne
+            className="section-title font-title-h1 text-center"
+            animation={{opacity: 1}}
+            style={{opacity: 0.001}}
+          >
+            {t(title)}
+          </TweenOne>
+        </ScrollOverPack>
+        {textItems.map((x, i) => (
+          <ScrollOverPack key={i} replay always={false} playScale={0}>
+            <TweenOne
+              className="font-text-big"
+              animation={{opacity: 1}}
+              style={{opacity: 0.001}}
+            >
               {getTextAnim(x, i)}
-            </div>
-          ))}
-          <div className="font-text-small">{getTextAnim(t(note))}</div>
-          {listItems && (
-            <ul style={{marginTop: "1em"}}>
-              <QueueAnim type={["right"]}>
-                {listItems.map((text, i) => (
+            </TweenOne>
+          </ScrollOverPack>
+        ))}
+
+        <ScrollOverPack replay always={false} playScale={0}>
+          <TweenOne
+            className="font-text-small"
+            animation={{opacity: 1}}
+            style={{opacity: 0.001}}
+          >
+            {getTextAnim(t(note))}
+          </TweenOne>
+        </ScrollOverPack>
+
+        {listItems && (
+          <ul style={{marginTop: "1em"}}>
+            {listItems.map((text, i) => (
+              <ScrollOverPack key={i} replay always={false} playScale={0}>
+                <TweenOne
+                  className="font-text-big"
+                  animation={{opacity: 1}}
+                  style={{opacity: 0.001}}
+                >
                   <li key={i} style={{display: "flex"}}>
                     <div className="icon">
                       <CheckOutlined />
                     </div>
                     <div>{text}</div>
                   </li>
-                ))}
-              </QueueAnim>
-            </ul>
-          )}
-        </ScrollOverPack>
+                </TweenOne>
+              </ScrollOverPack>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

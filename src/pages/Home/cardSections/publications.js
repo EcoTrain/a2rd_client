@@ -54,19 +54,15 @@ const renderCard = (info, i) => {
     if (cardRef.current) {
       cardRef.current.style.transition = "background 0.2s ease-in-out";
     }
-  }, [cardRef]);
+  }, [cardRef.current]);
 
   const onHover = () => {
-    if (cardRef.current) {
-      cardRef.current.style.background = "var(--lightGray)";
-    }
+    cardRef.current.style.background = "var(--lightGray)";
     setHover(true);
   };
 
   const onUnHover = () => {
-    if (cardRef.current) {
-      cardRef.current.style.background = null;
-    }
+    cardRef.current.style.background = null;
     setHover(false);
   };
 
