@@ -15,9 +15,10 @@ const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomeProjects = ({filter, text}) => {
   const {t} = useTranslation("projects");
+  // TODO: section-content height: "100%" WHAT?? its necessarily? where is the regularity?
   return (
     <Layout className="section section-lightGray" id="homeProjects">
-      <div className="section-content">
+      <div className="section-content" style={{height: "100%"}}>
         <div className="section-title font-title-h1 text-center">
           {t("title")}
         </div>
