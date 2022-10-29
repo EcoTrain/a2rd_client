@@ -100,10 +100,10 @@ export const textPageConfig = {
           title: "distribution.about.title",
           src:
             process.env.PUBLIC_URL +
-            "/static/images/index/sections/max/atmosMax.png",
+            "/static/images/index/sections/max/atmos.png",
           min:
             process.env.PUBLIC_URL +
-            "/static/images/index/sections/min/atmosMin.png",
+            "/static/images/index/sections/min/atmos.png",
         },
       },
       tools: {
