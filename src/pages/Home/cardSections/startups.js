@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
@@ -28,6 +28,12 @@ const renderCard = (info, i) => {
   const {t} = useTranslation("startups");
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      cardRef.current.style.transition = "all 0.2s ease-in-out";
+    }
+  }, [cardRef]);
 
   const onHover = () => {
     if (cardRef.current) {

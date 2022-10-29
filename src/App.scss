@@ -95,6 +95,7 @@ a {
     font-weight: bold;
     text-decoration: none;
     color: var(--primary);
+    transition: all .2s ease-in-out;
     &:hover {
         color: var(--primarySecond);
     }
@@ -114,7 +115,11 @@ a {
     padding: 0 10px;
     margin: 0.5em 0.2em 0 0.2em;
     cursor: pointer;
+    transition: all .2s ease-in-out;
     &:hover {
         transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(0.99);
     }
 }

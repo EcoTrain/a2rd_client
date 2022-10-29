@@ -33,6 +33,13 @@
             border: none;
             border-radius: 0.3em;
             cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                background: var(--coldGray);
+            }
+            &:active {
+                transform: scale(0.99);
+            }
         }
     }
 }

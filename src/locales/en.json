@@ -48,7 +48,7 @@
             "position": "CEO, founder"
         },
         "activities": {
-            "title": "Our activities",
+            "title": "Activities",
             "text": "We work in various fields using our background to solve industrial, environmental challenges and a variety of issues.",
             "list": [
                 "RAW/BIG data processing and analysis",
@@ -61,11 +61,11 @@
             ]
         },
         "solutions": {
-            "title": "Our solutions",
+            "title": "Solutions",
             "text": "Our analytics, cutting edge reviews and models help companies from the energy, industrial, medical, financial, insurance and other sectors improve their ESG strategies and development programs based on up-to-date reviews (scientific reports, IP research, publications).\n\tOur solutions facilitate routine procedures and enhance security through user-friendly software assistants and a wide network of partners from various sectors."
         },
         "publications": {
-            "title": "Our publications",
+            "title": "Publications",
             "label": "At the A2 Research and Development lab, we are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
             "item": {
                 "forest": "Catastrophic Pm2.5 emissions from Siberian Forest Fires: Impacting Factors Analysis",
@@ -95,7 +95,7 @@
         }
     },
     "projects": {
-        "title": "Our projects",
+        "title": " Projects",
         "label": "We provide analytics, cutting-edge reviews, and models to optimize the operating companies processes concerning industry specifics, focusing on the best available and future-oriented solutions considering ESG and SDG trends.",
         "moreBtn": "Read more",
         "card": {
@@ -126,7 +126,7 @@
         }
     },
     "startups": {
-        "title": "Our startups",
+        "title": "Startups",
         "about": "About the project",
         "item": {
             "wm": {
@@ -214,7 +214,7 @@
                 ]
             },
             "tools": {
-                "title": "Our solutions",
+                "title": "Solutions",
                 "texts": [
                     "Our solutions allow us to take into account and predict the movement of each particle of a particular substance in the simulation area."
                 ]

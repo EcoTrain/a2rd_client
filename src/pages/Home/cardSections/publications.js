@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import ScrollAnim from "rc-scroll-anim";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
@@ -8,6 +8,7 @@ import {publicationsCardsInfo} from "./cardsConfig";
 
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
+import TweenOne from "rc-tween-one";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
@@ -15,13 +16,7 @@ const HomePublications = () => {
   const {t} = useTranslation("home");
   return (
     <Layout className="section section-darkWhite" id="homePublications">
-      <ScrollOverPack
-        replay
-        always={false}
-        playScale={0}
-        className="section-content"
-        style={{height: "100%"}}
-      >
+      <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("publications.title")}
         </div>
@@ -29,18 +24,23 @@ const HomePublications = () => {
           {t("publications.label")}
         </div>
         <div className="gridCardsView lineGridCardsViewColumn">
-          {publicationsCardsInfo.map((x, i) => renderCard(x, i))}
+          {publicationsCardsInfo.map((x, i) => (
+            <ScrollOverPack key={i} replay always={false} playScale={0.2}>
+              <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
+                {renderCard(x, i)}
+              </TweenOne>
+            </ScrollOverPack>
+          ))}
         </div>
-        <div style={{margin: "2em 1em"}}>
-          <a
-            href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            {t("publications.google_scholar")}
-          </a>
-        </div>
-      </ScrollOverPack>
+        <a
+          href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
+          target="_blank"
+          rel="noreferrer noopener"
+          style={{margin: "2em 1em"}}
+        >
+          {t("publications.google_scholar")}
+        </a>
+      </div>
     </Layout>
   );
 };
@@ -49,6 +49,12 @@ const renderCard = (info, i) => {
   const {t} = useTranslation("home");
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      cardRef.current.style.transition = "background 0.2s ease-in-out";
+    }
+  }, [cardRef]);
 
   const onHover = () => {
     if (cardRef.current) {

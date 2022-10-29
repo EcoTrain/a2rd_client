@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import QueueAnim from "rc-queue-anim";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
@@ -53,6 +53,12 @@ const renderCard = (info, i) => {
 
   const titleShadow = "0px 0px 0.3em black";
   const bg = `url(${info.image.src})  no-repeat center center / cover`;
+
+  useEffect(() => {
+    if (cardRef.current) {
+      // cardRef.current.style.transition = "all 0.2s ease-in-out";
+    }
+  }, [cardRef]);
 
   const onHover = () => {
     cardRef.current.style.background = "var(--darkWhite)";
