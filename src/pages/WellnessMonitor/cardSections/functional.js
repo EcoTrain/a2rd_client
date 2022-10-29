@@ -1,6 +1,6 @@
 import React from "react";
 import ScrollAnim from "rc-scroll-anim";
-import QueueAnim from "rc-queue-anim";
+import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
@@ -16,34 +16,28 @@ const WellnessFunctional = () => {
   const {t} = useTranslation("wellness");
   return (
     <Layout className="section section-white" id="wellnessFunctional">
-      <ScrollOverPack
-        replay
-        always={false}
-        playScale={0.3}
-        className="section-content"
-        style={{height: "100%"}}
-      >
-        <div
-          className="section-title font-title-h1 text-center"
-          style={{marginTop: "1em"}}
-        >
+      <div className="section-content">
+        <div className="section-title font-title-h1 text-center">
           {t("functional.title")}
         </div>
         <div className="gridCardsView lineGridCardsViewColumn">
-          <QueueAnim type={"bottom"} interval={200} duration={1500}>
-            {functionalCardsInfo.map((x, i) => renderCard(x, i))}
-          </QueueAnim>
+          {functionalCardsInfo.map((x, i) => (
+            <ScrollOverPack key={i} replay always={false} playScale={0.2}>
+              <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
+                {renderCard(x, i)}
+              </TweenOne>
+            </ScrollOverPack>
+          ))}
         </div>
-        <div style={{margin: "2em 1em 3em 1em"}}>
-          <a
-            href="https://ecotrain.github.io/WM_doc"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            {t("functional.user_guide")}
-          </a>
-        </div>
-      </ScrollOverPack>
+        <a
+          href="https://ecotrain.github.io/WM_doc"
+          target="_blank"
+          rel="noreferrer noopener"
+          style={{margin: "2em 1em 3em 1em"}}
+        >
+          {t("functional.user_guide")}
+        </a>
+      </div>
     </Layout>
   );
 };

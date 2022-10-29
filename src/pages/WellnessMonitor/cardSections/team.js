@@ -1,5 +1,4 @@
 import React, {useRef, useState} from "react";
-import ScrollAnim from "rc-scroll-anim";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
@@ -9,18 +8,11 @@ import {developersCardsInfo} from "./config/team";
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
 
-const ScrollOverPack = ScrollAnim.OverPack;
-
 const WellnessTeam = () => {
   const {t} = useTranslation("wellness");
   return (
     <Layout className="section section-white" id="wellnessTeam">
-      <ScrollOverPack
-        replay
-        always={false}
-        playScale={0}
-        className="section-content"
-      >
+      <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("team.title")}
         </div>
@@ -30,7 +22,7 @@ const WellnessTeam = () => {
         >
           {developersCardsInfo.map((x, i) => renderCard(x, i, t))}
         </div>
-      </ScrollOverPack>
+      </div>
     </Layout>
   );
 };
