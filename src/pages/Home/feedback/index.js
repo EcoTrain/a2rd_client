@@ -18,12 +18,13 @@ const override = css`
 
 const HomeFeedback = () => {
   const {t} = useTranslation("feedback");
+  const isMobile = window.innerWidth < 960;
   const imgMin =
-    process.env.PUBLIC_URL + "/static/images/index/sections/min/feedback.jpeg";
+    process.env.PUBLIC_URL + "/static/images/index/sections/min/feedback.webp";
   const imgMax =
-    process.env.PUBLIC_URL + "/static/images/index/sections/max/feedback.jpeg";
+    process.env.PUBLIC_URL + "/static/images/index/sections/max/feedback.webp";
 
-  const [img, setImg] = useState(window.innerWidth < 960 ? imgMin : imgMax);
+  const [img, setImg] = useState(isMobile ? imgMin : imgMax);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [text, setText] = useState("");
@@ -31,7 +32,7 @@ const HomeFeedback = () => {
   let [loading, setLoading] = useState(false);
 
   const handleResize = () => {
-    setImg(window.innerWidth < 960 ? imgMin : imgMax);
+    setImg(isMobile ? imgMin : imgMax);
   };
   useEffect(() => {
     window.addEventListener("resize", handleResize);

@@ -1,8 +1,7 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
-import QueueAnim from "rc-queue-anim";
 import {CheckOutlined} from "@ant-design/icons";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
@@ -28,8 +27,9 @@ const TextPage = ({
   const textItems = Array.isArray(_texts) ? _texts : [_texts];
   const listItems = t(list, {returnObjects: true});
   const hasImageArea = ["object", "string"].includes(typeof image);
+  const [img, setImg] = useState(getImageSrc());
 
-  const getImageSrc = () => {
+  function getImageSrc() {
     const hasNotImage = !image || (hasImageArea && !Object.keys(image).length);
     let _img = {
       src: null,
@@ -37,20 +37,18 @@ const TextPage = ({
       title: "",
     };
     if (!hasNotImage) {
-      _img.src = window.innerWidth < 960 && image.min ? image.min : image.src;
+      const isMobile = window.innerWidth < 960;
+      _img.src = isMobile && image.min ? image.min : image.src;
       _img.alt = t(image.alt) || "";
       _img.title = t(image.title) || "";
     }
     return _img;
-  };
-
-  const [img, setImg] = useState(getImageSrc());
-
-  const handleResize = () => {
-    setImg(getImageSrc());
-  };
+  }
 
   useEffect(() => {
+    const handleResize = () => {
+      setImg(getImageSrc());
+    };
     window.addEventListener("resize", handleResize);
     return window.addEventListener("resize", null);
   }, []);
@@ -60,7 +58,7 @@ const TextPage = ({
       className="description"
       type="bottom"
       split={splitTextByWords}
-      delay={i * 300}
+      delay={i * 200}
       interval={2}
     >
       {t(text)}

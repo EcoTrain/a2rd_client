@@ -10,7 +10,10 @@ export const projectsCardsInfo = [
       title: "card.airflow.title",
       src:
         process.env.PUBLIC_URL +
-        "/static/images/index/projects/preview/airflow_emissions.jpg",
+        "/static/images/index/projects/max/airflow-emissions.webp",
+      min:
+        process.env.PUBLIC_URL +
+        "/static/images/index/projects/min/airflow-emissions.webp",
     },
     multiagent: true,
     distribution: true,
@@ -26,7 +29,10 @@ export const projectsCardsInfo = [
       title: "card.transport.title",
       src:
         process.env.PUBLIC_URL +
-        "/static/images/index/projects/preview/transport_system.jpg",
+        "/static/images/index/projects/max/transport-system.webp",
+      min:
+        process.env.PUBLIC_URL +
+        "/static/images/index/projects/min/transport-system.webp",
     },
     multiagent: true,
     distribution: true,
@@ -42,7 +48,10 @@ export const projectsCardsInfo = [
       title: "card.transport.title",
       src:
         process.env.PUBLIC_URL +
-        "/static/images/index/projects/preview/trends.jpg",
+        "/static/images/index/projects/max/trends.webp",
+      min:
+        process.env.PUBLIC_URL +
+        "/static/images/index/projects/min/trends.webp",
     },
   },
   {
@@ -56,7 +65,10 @@ export const projectsCardsInfo = [
       title: "card.locomotives.title",
       src:
         process.env.PUBLIC_URL +
-        "/static/images/index/projects/preview/locomotives.jpg",
+        "/static/images/index/projects/max/locomotives.webp",
+      min:
+        process.env.PUBLIC_URL +
+        "/static/images/index/projects/min/locomotives.webp",
     },
     multiagent: true,
   },

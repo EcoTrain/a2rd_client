@@ -34,7 +34,7 @@ const AboutDescription = ({t}) => {
 
 const WellnessIntro = () => {
   const {t} = useTranslation(["wellness"]);
-  const bg = process.env.PUBLIC_URL + "/static/images/wellness/diaries.png";
+  const bg = process.env.PUBLIC_URL + "/static/images/wellness/diaries.webp";
 
   return (
     <Layout id="wellnessIntro" className="section">

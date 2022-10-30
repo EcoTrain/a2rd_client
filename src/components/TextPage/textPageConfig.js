@@ -23,10 +23,10 @@ export const textPageConfig = {
         title: "activities.title",
         src:
           process.env.PUBLIC_URL +
-          "/static/images/index/sections/max/activities.jpeg",
+          "/static/images/index/sections/max/activities.webp",
         min:
           process.env.PUBLIC_URL +
-          "/static/images/index/sections/min/activities.jpg",
+          "/static/images/index/sections/min/activities.webp",
       },
       list: "activities.list",
       sectionTheme: "section-darkWhite",
@@ -51,10 +51,10 @@ export const textPageConfig = {
         title: "businessModel.title",
         src:
           process.env.PUBLIC_URL +
-          "/static/images/index/sections/max/businessDeal.jpeg",
+          "/static/images/index/sections/max/businessDeal.webp",
         min:
           process.env.PUBLIC_URL +
-          "/static/images/index/sections/min/businessDeal.jpeg",
+          "/static/images/index/sections/min/businessDeal.webp",
       },
     },
   },
@@ -68,10 +68,10 @@ export const textPageConfig = {
           title: "multiagent.about.title",
           src:
             process.env.PUBLIC_URL +
-            "/static/images/index/sections/max/traffic.jpg",
+            "/static/images/index/sections/max/traffic.webp",
           min:
             process.env.PUBLIC_URL +
-            "/static/images/index/sections/min/traffic.jpg",
+            "/static/images/index/sections/min/traffic.webp",
         },
       },
       analysis: {
@@ -100,10 +100,10 @@ export const textPageConfig = {
           title: "distribution.about.title",
           src:
             process.env.PUBLIC_URL +
-            "/static/images/index/sections/max/atmos.png",
+            "/static/images/index/sections/max/atmos.webp",
           min:
             process.env.PUBLIC_URL +
-            "/static/images/index/sections/min/atmos.png",
+            "/static/images/index/sections/min/atmos.webp",
         },
       },
       tools: {

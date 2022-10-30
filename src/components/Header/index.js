@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState, useContext} from "react";
 import {useTranslation} from "react-i18next";
-import {scroller} from "react-scroll";
 import {Menu} from "antd";
 import "antd/dist/antd.min.css";
 
@@ -33,14 +32,13 @@ const LngSelector = () => {
 
 const Header = () => {
   const {t} = useTranslation();
-  const isMobile = window.innerWidth < 960;
   const hideDelay = 3000;
 
   const headerWrapperRef = useRef();
   const headerRef = useRef();
 
   const [visible, setVisible] = useState(true);
-  const [isNarrow, setNarrow] = useState(isMobile);
+  const [isNarrow, setNarrow] = useState(window.innerWidth < 960);
   const {theme, setTheme} = useContext(ThemeContext);
   const visibilityTimer = useRef();
 

@@ -48,8 +48,11 @@ const renderCard = (info, i) => {
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
+  const isMobile = window.innerWidth < 960;
   const titleShadow = "0px 0px 0.3em black";
-  const bg = `url(${info.image.src})  no-repeat center center / cover`;
+  const bg = `url(${
+    isMobile ? info.image.min : info.image.src
+  })  no-repeat center center / cover`;
 
   useEffect(() => {
     if (cardRef.current) {

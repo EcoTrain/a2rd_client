@@ -72,7 +72,7 @@ const BgVideo = () => {
       playsInline
       muted
       poster={process.env.PUBLIC_URL + "/static/images/city_logo.webp"}
-      id="bgVideo"
+      id="previewBg"
       style={{opacity: opacity}}
     >
       <source
