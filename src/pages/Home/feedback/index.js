@@ -1,11 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, {useRef, useState, useEffect} from "react";
 import QueueAnim from "rc-queue-anim";
-import { css } from "@emotion/react";
+import {css} from "@emotion/react";
 import ClockLoader from "react-spinners/ClockLoader";
-import { useTranslation } from "react-i18next";
-import { Layout } from "antd";
+import {useTranslation} from "react-i18next";
+import {Layout} from "antd";
 import "antd/dist/antd.min.css";
-import { toast } from "react-toastify";
+import {toast} from "react-toastify";
 
 import "./feedback.scss";
 import FormField from "./FormField";
@@ -17,7 +17,7 @@ const override = css`
 `;
 
 const HomeFeedback = () => {
-  const { t } = useTranslation("feedback");
+  const {t} = useTranslation("feedback");
   const imgMin =
     process.env.PUBLIC_URL + "/static/images/index/sections/min/feedback.jpeg";
   const imgMax =
@@ -144,7 +144,7 @@ const HomeFeedback = () => {
         </div>
       </div>
       <div className="section-img">
-        <img src={img} />
+        <img src={img} alt={t("feedback.label")} title={t("feedback.title")} />
       </div>
     </Layout>
   );

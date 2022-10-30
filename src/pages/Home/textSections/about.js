@@ -23,6 +23,7 @@ const AboutFounder = ({t}) => {
       <img
         className="avatar"
         src={imgAlexey}
+        alt={t("about.name") + " " + t("about.position")}
         style={{
           height: 100,
           width: 100,

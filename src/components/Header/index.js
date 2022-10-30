@@ -132,7 +132,7 @@ const Header = () => {
     >
       <div ref={headerRef} className="header">
         <div className="headerLogo">
-          <a href={`/`} target={"_self"}>
+          <a href={`/`} target={"_self"} aria-label={t("navHeader.about")}>
             {isNarrow ? <LogoMin /> : <LogoMax />}
           </a>
         </div>

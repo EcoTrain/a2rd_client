@@ -71,6 +71,7 @@ export const Startup = ({item, t}) => {
                     }
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={t(item.text)}
                   />,
                 ]}
               />

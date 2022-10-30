@@ -14,15 +14,32 @@ const ContactsLinks = () => {
   return (
     <div key="ContactsLinks" id="contactsLinks" className="text-center">
       <div className="font-text-large">
-        <a href="https://t.me/a2_development" target="_blank" rel="noreferrer">
+        <a
+          href="https://t.me/a2_development"
+          target="_blank"
+          rel="noreferrer "
+          aria-label={"telegram"}
+        >
           {t("contacts.phone")}
         </a>
       </div>
       <div className="font-text-large">
-        <a href="mailto:info@a2rd.com">{t("contacts.email")}</a>
+        <a
+          href="mailto:info@a2rd.com"
+          target="_blank"
+          rel="noreferrer"
+          aria-label={t("mail")}
+        >
+          {t("contacts.email")}
+        </a>
       </div>
       <div className="font-text-large">
-        <a href="https://t.me/a2_development" target="_blank" rel="noreferrer">
+        <a
+          href="https://t.me/a2_development"
+          target="_blank"
+          rel="noreferrer"
+          aria-label={"telegram"}
+        >
           {t("contacts.tg")}
         </a>
       </div>
@@ -38,17 +55,28 @@ const ContactsIcons = () => {
           href="https://www.facebook.com/aleksey.romanov.7"
           target="_blank"
           rel="noreferrer"
+          aria-label={"facebook"}
         >
           <FbIcon />
         </a>
       </div>
       <div className="contactIcon">
-        <a href="https://t.me/a2_development" target="_blank" rel="noreferrer">
+        <a
+          href="https://t.me/a2_development"
+          target="_blank"
+          rel="noreferrer"
+          aria-label={"telegram"}
+        >
           <TgIcon />
         </a>
       </div>
       <div className="contactIcon">
-        <a href="https://twitter.com/A2RD_lab" target="_blank" rel="noreferrer">
+        <a
+          href="https://twitter.com/A2RD_lab"
+          target="_blank"
+          rel="noreferrer"
+          aria-label={"twitter"}
+        >
           <TwIcon />
         </a>
       </div>

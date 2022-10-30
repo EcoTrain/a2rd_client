@@ -34,6 +34,7 @@ const WellnessFunctional = () => {
           target="_blank"
           rel="noreferrer noopener"
           style={{margin: "2em 1em 3em 1em"}}
+          aria-label={t("functional.user_guide")}
         >
           {t("functional.user_guide")}
         </a>

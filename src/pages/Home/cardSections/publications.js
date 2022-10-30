@@ -37,6 +37,7 @@ const HomePublications = () => {
           target="_blank"
           rel="noreferrer noopener"
           style={{margin: "2em 1em"}}
+          aria-label={t("publications.google_scholar")}
         >
           {t("publications.google_scholar")}
         </a>
@@ -76,7 +77,12 @@ const renderCard = (info, i) => {
       <div className="gridCard lineGridCard" onMouseEnter={onHover}>
         <div className="lineGridCardIcon">
           {info.icon ? (
-            <a href={info.icon.link} target="_blank" rel="noreferrer">
+            <a
+              href={info.icon.link}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={info.icon.alt}
+            >
               <img
                 className="linkIcon"
                 src={info.icon.src}
