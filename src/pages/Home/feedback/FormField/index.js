@@ -1,9 +1,9 @@
 import React, { createElement } from "react";
-import _ from "lodash";
+import uniqueId from "lodash/uniqueId";
 import "./formField.scss";
 
 const FormField = ({ tag, title, type, value, onChange }) => {
-  const id = _.uniqueId("formInput_");
+  const id = uniqueId("formInput_");
   const InputElement = createElement(tag, {
     id,
     className: "formInput",

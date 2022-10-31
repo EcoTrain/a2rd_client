@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
-import {isAndroid} from "react-device-detect";
 import loadable from "@loadable/component";
 import {ToastContainer} from "react-toastify";
 
@@ -18,6 +17,7 @@ const ModelingDistribution = loadable(() =>
   import("./pages/Modeling/Distribution")
 );
 
+import "antd/dist/antd.min.css";
 import "./components/Toast.scss";
 import "./App.scss";
 import "./Text.scss";
@@ -32,20 +32,22 @@ function App() {
     // TODO: Попробовать без viewScale на Android
     const setViewboxHeight = () => {
       setTimeout(function () {
-        let viewheight = window.innerHeight;
-        let viewport = document.querySelector("meta[name=viewport]");
-        const viewScale =
-          "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0";
-        viewport.setAttribute(
+        let viewHeight = screen.height * 0.9;
+        let viewPort = document.querySelector("meta[name=viewport]");
+        viewPort.setAttribute(
           "content",
-          `height=${viewheight}px, ${viewScale}`
+          `height=${viewHeight}px, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5`
         );
       }, 300);
     };
-    if (isAndroid) {
-      screen.orientation.addEventListener("change", setViewboxHeight);
-      // screen.orientation.onchange = setViewboxHeight();
-    }
+    import("react-device-detect").then(({isAndroid}) => {
+      console.log({isAndroid});
+      if (isAndroid) {
+        setViewboxHeight();
+        // screen.orientation.addEventListener("resize", setViewboxHeight);
+        // screen.orientation.onchange = setViewboxHeight();
+      }
+    });
   }, []);
 
   // Lazy load video (async)

@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState, useContext} from "react";
 import {useTranslation} from "react-i18next";
 import {Menu} from "antd";
-import "antd/dist/antd.min.css";
 
 import {ThemeContext, themes} from "../../contexts/ThemeContext";
 import Toggle from "../Toggle";
