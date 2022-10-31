@@ -3,8 +3,6 @@ import TweenOne from "rc-tween-one";
 import TextyAnim from "rc-texty";
 import {useTranslation} from "react-i18next";
 
-
-
 import "./preview.scss";
 import {splitTextByWords} from "../../../fucntions/splitText";
 import {renderNextPageBtn} from "../../../components/ScrollPage";
@@ -24,41 +22,6 @@ const BgVideo = () => {
     };
   }, []);
 
-  // Lazy load video (async)
-  useEffect(() => {
-    document.addEventListener("DOMContentLoaded", function () {
-      var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
-
-      if ("IntersectionObserver" in window) {
-        var lazyVideoObserver = new IntersectionObserver(function (
-          entries,
-          observer
-        ) {
-          entries.forEach(function (video) {
-            if (video.isIntersecting) {
-              for (var source in video.target.children) {
-                var videoSource = video.target.children[source];
-                if (
-                  typeof videoSource.tagName === "string" &&
-                  videoSource.tagName === "SOURCE"
-                ) {
-                  videoSource.src = videoSource.dataset.src;
-                }
-              }
-
-              video.target.load();
-              video.target.classList.remove("lazy");
-              lazyVideoObserver.unobserve(video.target);
-            }
-          });
-        });
-
-        lazyVideos.forEach(function (lazyVideo) {
-          lazyVideoObserver.observe(lazyVideo);
-        });
-      }
-    });
-  }, []);
 
   // TODO: rm video for mobiles (slow load)
   return (
@@ -73,14 +36,17 @@ const BgVideo = () => {
       style={{opacity: opacity}}
     >
       <source
-        src={process.env.PUBLIC_URL + "/static/videos/main_video.webm"}
+        data-src={process.env.PUBLIC_URL + "/static/videos/main_video.webm"}
         type="video/webm"
       />
       <source
-        src={process.env.PUBLIC_URL + "/static/videos/main_video.mp4"}
+        data-src={process.env.PUBLIC_URL + "/static/videos/main_video.mp4"}
         type="video/mp4"
       />
-      <source src="../../../static/videos/main_video.ogv" type="video/ogg" />
+      <source
+        data-src={process.env.PUBLIC_URL + "/static/videos/main_video.ogv"}
+        type="video/ogg"
+      />
       {"browser_not_support_video_tag"}
     </video>
   );

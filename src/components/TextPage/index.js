@@ -68,7 +68,7 @@ const TextPage = ({
   const getImage = () =>
     hasImageArea && (
       <div key={`${(title || "").toLowerCase()}_image`} className="section-img">
-        {img.src && <img src={img.src} alt={img.alt} title={img.title} />}
+        {img.src && <img className="lazy" src={img.src} alt={img.alt} title={img.title} />}
       </div>
     );
 

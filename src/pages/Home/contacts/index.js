@@ -2,7 +2,6 @@ import React from "react";
 import QueueAnim from "rc-queue-anim";
 import {useTranslation} from "react-i18next";
 
-
 import "./contacts.scss";
 
 import {ReactComponent as TgIcon} from "./icons/tg.svg";
@@ -90,15 +89,14 @@ const HomeContacts = () => {
   return (
     <section className="section splitSection" id="homeContacts">
       <div className="section-content  section-lightGray">
-        <QueueAnim
-          type={["left", "right"]}
+        <div
           id="contacts"
           className="section-content-block"
           style={{display: "contents"}}
         >
           {ContactsLinks()}
           {ContactsIcons()}
-        </QueueAnim>
+        </div>
       </div>
     </section>
   );

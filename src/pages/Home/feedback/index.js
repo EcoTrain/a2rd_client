@@ -145,7 +145,7 @@ const HomeFeedback = () => {
         </div>
       </div>
       <div className="section-img">
-        <img src={img} alt={t("feedback.label")} title={t("feedback.title")} />
+        <img className="lazy" src={img} alt={t("feedback.label")} title={t("feedback.title")} />
       </div>
     </section>
   );

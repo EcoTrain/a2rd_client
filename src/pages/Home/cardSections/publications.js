@@ -3,8 +3,6 @@ import ScrollAnim from "rc-scroll-anim";
 import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
 
-
-
 import {publicationsCardsInfo} from "./cardsConfig";
 
 import "../../../components/CardPage/gridCard.scss";
@@ -84,7 +82,7 @@ const renderCard = (info, i) => {
               aria-label={info.icon.alt}
             >
               <img
-                className="linkIcon"
+                className="lazy linkIcon"
                 src={info.icon.src}
                 alt={info.icon.alt}
               />

@@ -1,5 +1,7 @@
 {
   "name": "A2RD Lab",
+  "theme_color": "rgba(215, 215, 215)",
+  "background_color": "rgba(215, 215, 215)",
   "icons": [
       {
           "src": "images/favicons/android-icon-36x36.png",

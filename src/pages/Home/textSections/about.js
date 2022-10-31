@@ -2,8 +2,6 @@ import React from "react";
 import {scroller} from "react-scroll";
 import {useTranslation} from "react-i18next";
 
-
-
 const AboutDescription = ({t}) => {
   return (
     <div key="homeAboutDescription">
@@ -21,7 +19,7 @@ const AboutFounder = ({t}) => {
   return (
     <div key="homeAboutFounder" style={{margin: "1em 0"}}>
       <img
-        className="avatar"
+        className="lazy avatar"
         src={imgAlexey}
         alt={t("about.name") + " " + t("about.position")}
         style={{
