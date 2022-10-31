@@ -64,6 +64,7 @@ const BgVideo = () => {
     });
   }, []);
 
+  // TODO: rm video for mobiles (slow load)
   return (
     <video
       className="lazy"

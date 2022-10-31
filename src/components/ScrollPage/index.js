@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll/modules";
 import TweenOne from "rc-tween-one";
 import { DownOutlined } from "@ant-design/icons";
 
-import "antd/dist/antd.min.css";
 import useOnScreen from "../../hooks/useOnScreen";
 
 import "./sections.scss";
