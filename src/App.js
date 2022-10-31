@@ -1,25 +1,28 @@
 import React, {useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
 import {isAndroid} from "react-device-detect";
-
+import loadable from '@loadable/component'
+import {ToastContainer} from "react-toastify";
 import {Layout} from "antd";
+
+import "react-toastify/dist/ReactToastify.min.css";
 import "antd/dist/antd.min.css";
 
-import Home from "./pages/Home";
-import Header from "./components/Header";
-import Projects from "./pages/ExtendedPages/projects";
+const Home = loadable(() => import("./pages/Home"));
+const Header = loadable(() => import("./components/Header"));
+const Projects = loadable(() => import("./pages/ExtendedPages/projects"));
+const Startups = loadable(() => import("./pages/ExtendedPages/startups"));
+const WellnessMonitor = loadable(() => import("./pages/WellnessMonitor"));
+const ModelingMultiagent = loadable(() =>
+  import("./pages/Modeling/Multiagent")
+);
+const ModelingDistribution = loadable(() =>
+  import("./pages/Modeling/Distribution")
+);
 
+import "./components/Toast.scss";
 import "./App.scss";
 import "./Text.scss";
-import Startups from "./pages/ExtendedPages/startups";
-
-import ModelingMultiagent from "./pages/Modeling/Multiagent";
-import ModelingDistribution from "./pages/Modeling/Distribution";
-
-import {ToastContainer} from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
-import "./components/Toast.scss";
-import WellnessMonitor from "./pages/WellnessMonitor";
 
 function App() {
   useEffect(() => {
