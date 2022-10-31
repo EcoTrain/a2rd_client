@@ -1,5 +1,5 @@
-import React, {useEffect, useRef} from "react";
-import {Link, useParams} from "react-router-dom";
+import React, {useEffect} from "react";
+import {useParams} from "react-router-dom";
 import {scroller} from "react-scroll";
 import PropTypes from "prop-types";
 import {Trans, useTranslation} from "react-i18next";

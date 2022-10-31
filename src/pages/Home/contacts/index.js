@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 import QueueAnim from "rc-queue-anim";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
@@ -8,6 +8,8 @@ import "./contacts.scss";
 import {ReactComponent as TgIcon} from "./icons/tg.svg";
 import {ReactComponent as FbIcon} from "./icons/fb.svg";
 import {ReactComponent as TwIcon} from "./icons/twitter.svg";
+
+// TODO: Markup title of links (tip on hover)
 
 const ContactsLinks = () => {
   const {t} = useTranslation(["home"]);
@@ -28,7 +30,7 @@ const ContactsLinks = () => {
           href="mailto:info@a2rd.com"
           target="_blank"
           rel="noreferrer"
-          aria-label={t("mail")}
+          aria-label={t("email")}
         >
           {t("contacts.email")}
         </a>

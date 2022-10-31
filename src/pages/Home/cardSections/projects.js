@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from "react";
-import QueueAnim from "rc-queue-anim";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
 import {useTranslation} from "react-i18next";

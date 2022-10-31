@@ -3,7 +3,6 @@ import {useParams} from "react-router-dom";
 import {scroller} from "react-scroll";
 import {useTranslation} from "react-i18next";
 
-import "antd/dist/antd.min.css";
 import HomePreview from "./preview";
 import HomeAbout from "./textSections/about";
 import PageScroller from "../../components/ScrollPage";

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { scroller } from "react-scroll";
 import { useTranslation } from "react-i18next";
-import "antd/dist/antd.min.css";
 
 import PageScroller from "../../components/ScrollPage";
 import { projectsCardsInfo } from "../Home/cardSections/cardsConfig";

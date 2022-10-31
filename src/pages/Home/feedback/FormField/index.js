@@ -1,6 +1,5 @@
 import React, { createElement } from "react";
 import _ from "lodash";
-import "antd/dist/antd.min.css";
 import "./formField.scss";
 
 const FormField = ({ tag, title, type, value, onChange }) => {

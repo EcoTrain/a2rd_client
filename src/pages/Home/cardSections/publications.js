@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 import ScrollAnim from "rc-scroll-anim";
+import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
 import {Layout} from "antd";
 import "antd/dist/antd.min.css";
@@ -8,7 +9,6 @@ import {publicationsCardsInfo} from "./cardsConfig";
 
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
-import TweenOne from "rc-tween-one";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
