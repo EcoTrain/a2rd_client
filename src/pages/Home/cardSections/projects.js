@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from "react";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 
 import {projectsCardsInfo} from "./cardsConfig";
 
@@ -16,7 +16,7 @@ const HomeProjects = ({filter, text}) => {
   const {t} = useTranslation("projects");
   // TODO: section-content height: "100%" WHAT?? its necessarily? where is the regularity?
   return (
-    <Layout className="section section-lightGray" id="homeProjects">
+    <section className="section section-lightGray" id="homeProjects">
       <div className="section-content" style={{height: "100%"}}>
         <div className="section-title font-title-h1 text-center">
           {t("title")}
@@ -38,7 +38,7 @@ const HomeProjects = ({filter, text}) => {
           )}
         </div>
       </div>
-    </Layout>
+    </section>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 
 import {developersCardsInfo} from "./config/team";
 
@@ -11,7 +11,7 @@ import "../../../components/CardPage/lineGridCard.scss";
 const WellnessTeam = () => {
   const {t} = useTranslation("wellness");
   return (
-    <Layout className="section section-white" id="wellnessTeam">
+    <section className="section section-white" id="wellnessTeam">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("team.title")}
@@ -23,7 +23,7 @@ const WellnessTeam = () => {
           {developersCardsInfo.map((x, i) => renderCard(x, i, t))}
         </div>
       </div>
-    </Layout>
+    </section>
   );
 };
 

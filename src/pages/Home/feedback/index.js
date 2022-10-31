@@ -3,8 +3,8 @@ import QueueAnim from "rc-queue-anim";
 import {css} from "@emotion/react";
 import ClockLoader from "react-spinners/ClockLoader";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 import {toast} from "react-toastify";
 
 import "./feedback.scss";
@@ -122,7 +122,7 @@ const HomeFeedback = () => {
   };
 
   return (
-    <Layout className="section splitSection" id="homeFeedback">
+    <section className="section splitSection" id="homeFeedback">
       <div className="section-content section-darkWhite">
         <div className="section-content-block">
           <div className="section-title font-title-h1 text-center">
@@ -147,7 +147,7 @@ const HomeFeedback = () => {
       <div className="section-img">
         <img src={img} alt={t("feedback.label")} title={t("feedback.title")} />
       </div>
-    </Layout>
+    </section>
   );
 };
 

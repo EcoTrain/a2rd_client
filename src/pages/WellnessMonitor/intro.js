@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 import {renderNextPageBtn} from "../../components/ScrollPage";
 import {splitTextByWords} from "../../fucntions/splitText";
 import "./index.scss";
@@ -37,7 +37,7 @@ const WellnessIntro = () => {
   const bg = process.env.PUBLIC_URL + "/static/images/wellness/diaries.webp";
 
   return (
-    <Layout id="wellnessIntro" className="section">
+    <section id="wellnessIntro" className="section">
       <div className="section-content text-center">
         <div
           id="wellnessIntroBg"
@@ -48,7 +48,7 @@ const WellnessIntro = () => {
         <div className="section-content-block">{AboutDescription({t})}</div>
         {renderNextPageBtn({id: "wellnessAbout"})}
       </div>
-    </Layout>
+    </section>
   );
 };
 

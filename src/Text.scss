@@ -1,10 +1,11 @@
-@import './Functions.scss';
+@import "./Functions.scss";
 
-body {
-    font-family: "Roboto", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: calcFluidSize(16, 20, 480, 1280);
+:root {
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: calcFluidSize(16, 20, 480, 1280);
+        line-height: 1.5715;
+    }
 }
 
 .font-title-preview {

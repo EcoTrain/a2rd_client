@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from "react";
 import ScrollAnim from "rc-scroll-anim";
 import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 
 import {publicationsCardsInfo} from "./cardsConfig";
 
@@ -15,7 +15,7 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const HomePublications = () => {
   const {t} = useTranslation("home");
   return (
-    <Layout className="section section-darkWhite" id="homePublications">
+    <section className="section section-darkWhite" id="homePublications">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("publications.title")}
@@ -42,7 +42,7 @@ const HomePublications = () => {
           {t("publications.google_scholar")}
         </a>
       </div>
-    </Layout>
+    </section>
   );
 };
 
@@ -80,7 +80,7 @@ const renderCard = (info, i) => {
             <a
               href={info.icon.link}
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
               aria-label={info.icon.alt}
             >
               <img

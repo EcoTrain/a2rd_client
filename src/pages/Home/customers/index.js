@@ -1,7 +1,7 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 import LogoGrid from "../../../components/LogoGrid";
 import {assets} from "../../../assets";
 
@@ -10,7 +10,7 @@ const HomeCustomers = () => {
   const imageSourceList = Object.values(assets.customers);
 
   return (
-    <Layout className="section section-white" id="homeStack">
+    <section className="section section-white" id="homeStack">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("navigation.stack")}
@@ -22,7 +22,7 @@ const HomeCustomers = () => {
           <LogoGrid imageSourceList={imageSourceList} />
         </div>
       </div>
-    </Layout>
+    </section>
   );
 };
 

@@ -2,8 +2,8 @@ import React from "react";
 import ScrollAnim from "rc-scroll-anim";
 import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 
 import {functionalCardsInfo} from "./config/functional";
 
@@ -15,7 +15,7 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const WellnessFunctional = () => {
   const {t} = useTranslation("wellness");
   return (
-    <Layout className="section section-white" id="wellnessFunctional">
+    <section className="section section-white" id="wellnessFunctional">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("functional.title")}
@@ -39,7 +39,7 @@ const WellnessFunctional = () => {
           {t("functional.user_guide")}
         </a>
       </div>
-    </Layout>
+    </section>
   );
 };
 

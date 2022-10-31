@@ -1,8 +1,8 @@
 import React from "react";
 import {scroller} from "react-scroll";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 
 const AboutDescription = ({t}) => {
   return (
@@ -44,14 +44,14 @@ const AboutFounder = ({t}) => {
 const HomeAbout = () => {
   const {t} = useTranslation(["home"]);
   return (
-    <Layout id="homeAbout" className="section section-white">
+    <section id="homeAbout" className="section section-white">
       <div className="section-content text-center">
         <div className="section-content-block">
           {AboutDescription({t})}
           {AboutFounder({t})}
         </div>
       </div>
-    </Layout>
+    </section>
   );
 };
 

@@ -1,8 +1,8 @@
 import React from "react";
 import QueueAnim from "rc-queue-anim";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 import "./contacts.scss";
 
 import {ReactComponent as TgIcon} from "./icons/tg.svg";
@@ -29,7 +29,7 @@ const ContactsLinks = () => {
         <a
           href="mailto:info@a2rd.com"
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           aria-label={t("email")}
         >
           {t("contacts.email")}
@@ -39,7 +39,7 @@ const ContactsLinks = () => {
         <a
           href="https://t.me/a2_development"
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           aria-label={"telegram"}
         >
           {t("contacts.tg")}
@@ -56,7 +56,7 @@ const ContactsIcons = () => {
         <a
           href="https://www.facebook.com/aleksey.romanov.7"
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           aria-label={"facebook"}
         >
           <FbIcon />
@@ -66,7 +66,7 @@ const ContactsIcons = () => {
         <a
           href="https://t.me/a2_development"
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           aria-label={"telegram"}
         >
           <TgIcon />
@@ -76,7 +76,7 @@ const ContactsIcons = () => {
         <a
           href="https://twitter.com/A2RD_lab"
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           aria-label={"twitter"}
         >
           <TwIcon />
@@ -88,7 +88,7 @@ const ContactsIcons = () => {
 
 const HomeContacts = () => {
   return (
-    <Layout className="section splitSection" id="homeContacts">
+    <section className="section splitSection" id="homeContacts">
       <div className="section-content  section-lightGray">
         <QueueAnim
           type={["left", "right"]}
@@ -100,7 +100,7 @@ const HomeContacts = () => {
           {ContactsIcons()}
         </QueueAnim>
       </div>
-    </Layout>
+    </section>
   );
 };
 

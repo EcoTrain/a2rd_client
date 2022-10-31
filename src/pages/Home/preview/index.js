@@ -3,15 +3,11 @@ import TweenOne from "rc-tween-one";
 import TextyAnim from "rc-texty";
 import {useTranslation} from "react-i18next";
 
-import {Layout} from "antd";
 
-import "antd/dist/antd.min.css";
 
 import "./preview.scss";
 import {splitTextByWords} from "../../../fucntions/splitText";
 import {renderNextPageBtn} from "../../../components/ScrollPage";
-
-const {Content} = Layout;
 
 const BgVideo = () => {
   const [opacity, setOpacity] = useState(1);
@@ -254,13 +250,13 @@ const HomePreview = () => {
   };
 
   return (
-    <Layout id={"homePreview"}>
+    <section id={"homePreview"}>
       {video}
-      <Content className="previewOverlay">
+      <div className="previewOverlay">
         {renderBanner()}
         {renderNextPageBtn({id: "homeAbout"})}
-      </Content>
-    </Layout>
+      </div>
+    </section>
   );
 };
 

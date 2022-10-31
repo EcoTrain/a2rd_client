@@ -1,7 +1,7 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 import CategoryIconHexGrid from "../../../components/CategoryIconGrid/Hex";
 import {gridConfig} from "./gridConfig";
 
@@ -9,7 +9,7 @@ const HomeStack = () => {
   const {t} = useTranslation("shared");
 
   return (
-    <Layout className="section section-white" id="homeStack">
+    <section className="section section-white" id="homeStack">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("navigation.stack")}
@@ -21,7 +21,7 @@ const HomeStack = () => {
           <CategoryIconHexGrid config={gridConfig} />
         </div>
       </div>
-    </Layout>
+    </section>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 
 import {startupsCardsInfo} from "./cardsConfig";
 
@@ -11,7 +11,7 @@ import "../../../components/CardPage/lineGridCard.scss";
 const HomeStartups = () => {
   const {t} = useTranslation("startups");
   return (
-    <Layout className="section section-white" id="homeStartups">
+    <section className="section section-white" id="homeStartups">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("title")}
@@ -20,7 +20,7 @@ const HomeStartups = () => {
           {startupsCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
       </div>
-    </Layout>
+    </section>
   );
 };
 

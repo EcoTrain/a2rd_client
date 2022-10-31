@@ -3,8 +3,8 @@ import {useParams} from "react-router-dom";
 import {scroller} from "react-scroll";
 import PropTypes from "prop-types";
 import {Trans, useTranslation} from "react-i18next";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 
 import PageScroller from "../../components/ScrollPage";
 import {startupsCardsInfo} from "../Home/cardSections/cardsConfig";
@@ -45,7 +45,7 @@ export const Startup = ({item, t}) => {
   };
 
   return (
-    <Layout
+    <section
       id={item.id}
       className="section section-lightGray"
       style={{top: 0, background: item.bg}}
@@ -70,7 +70,7 @@ export const Startup = ({item, t}) => {
                       ""
                     }
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
                     aria-label={t(item.text)}
                   />,
                 ]}
@@ -92,7 +92,7 @@ export const Startup = ({item, t}) => {
           )}
         </div>
       </div>
-    </Layout>
+    </section>
   );
 };
 

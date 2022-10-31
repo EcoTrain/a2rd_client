@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
 import {CheckOutlined} from "@ant-design/icons";
-import {Layout} from "antd";
-import "antd/dist/antd.min.css";
+
+
 
 import {splitTextByWords} from "../../fucntions/splitText";
 import TweenOne from "rc-tween-one";
@@ -136,12 +136,12 @@ const TextPage = ({
   const sectionChilds = [getContent(), getImage()];
 
   return (
-    <Layout
+    <section
       className={["section", hasImageArea && "splitSection"].join(" ")}
       id={id}
     >
       {direction == "left" ? sectionChilds : sectionChilds.reverse()}
-    </Layout>
+    </section>
   );
 };
 

@@ -1,12 +1,10 @@
 import React, {useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
 import {isAndroid} from "react-device-detect";
-import loadable from '@loadable/component'
+import loadable from "@loadable/component";
 import {ToastContainer} from "react-toastify";
-import {Layout} from "antd";
 
 import "react-toastify/dist/ReactToastify.min.css";
-import "antd/dist/antd.min.css";
 
 const Home = loadable(() => import("./pages/Home"));
 const Header = loadable(() => import("./components/Header"));
@@ -49,7 +47,7 @@ function App() {
   }, []);
 
   return (
-    <Layout>
+    <section>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -74,7 +72,7 @@ function App() {
         draggable
         pauseOnFocusLoss={false}
       />
-    </Layout>
+    </section>
   );
 }
 
