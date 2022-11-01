@@ -22,11 +22,9 @@ const BgVideo = () => {
     };
   }, []);
 
-
   // TODO: rm video for mobiles (slow load)
   return (
     <video
-      className="lazy"
       loop
       autoPlay
       playsInline
@@ -36,15 +34,15 @@ const BgVideo = () => {
       style={{opacity: opacity}}
     >
       <source
-        data-src={process.env.PUBLIC_URL + "/static/videos/main_video.webm"}
+        src={process.env.PUBLIC_URL + "/static/videos/main_video.webm"}
         type="video/webm"
       />
       <source
-        data-src={process.env.PUBLIC_URL + "/static/videos/main_video.mp4"}
+        src={process.env.PUBLIC_URL + "/static/videos/main_video.mp4"}
         type="video/mp4"
       />
       <source
-        data-src={process.env.PUBLIC_URL + "/static/videos/main_video.ogv"}
+        src={process.env.PUBLIC_URL + "/static/videos/main_video.ogv"}
         type="video/ogg"
       />
       {"browser_not_support_video_tag"}

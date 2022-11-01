@@ -5,23 +5,43 @@ import {ToastContainer} from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
-const Home = loadable(() => import("./pages/Home"));
-const Header = loadable(() => import("./components/Header"));
-const Projects = loadable(() => import("./pages/ExtendedPages/projects"));
-const Startups = loadable(() => import("./pages/ExtendedPages/startups"));
-const WellnessMonitor = loadable(() => import("./pages/WellnessMonitor"));
-const ModelingMultiagent = loadable(() =>
-  import("./pages/Modeling/Multiagent")
+const Home = loadable(() => import("./pages/Home"), {
+  fallback: <Waiter />,
+});
+const Header = loadable(() => import("./components/Header"), {
+  fallback: <Waiter />,
+});
+const Projects = loadable(() => import("./pages/ExtendedPages/projects"), {
+  fallback: <Waiter />,
+});
+const Startups = loadable(() => import("./pages/ExtendedPages/startups"), {
+  fallback: <Waiter />,
+});
+const WellnessMonitor = loadable(() => import("./pages/WellnessMonitor"), {
+  fallback: <Waiter />,
+});
+const ModelingMultiagent = loadable(
+  () => import("./pages/Modeling/Multiagent"),
+  {
+    fallback: <Waiter />,
+  }
 );
-const ModelingDistribution = loadable(() =>
-  import("./pages/Modeling/Distribution")
+const ModelingDistribution = loadable(
+  () => import("./pages/Modeling/Distribution"),
+  {
+    fallback: <Waiter />,
+  }
 );
 
+// TODO: Remove 150kb / 800kb
 import "antd/dist/antd.min.css";
+
 import "./components/Toast.scss";
 import "./App.scss";
 import "./Text.scss";
+import Waiter from "./components/Waiter";
 
+// TODO: Waiter anim. Suspence main on init
 function App() {
   // Change viewport
   useEffect(() => {
@@ -46,42 +66,6 @@ function App() {
         setViewboxHeight();
         // screen.orientation.addEventListener("resize", setViewboxHeight);
         // screen.orientation.onchange = setViewboxHeight();
-      }
-    });
-  }, []);
-
-  // Lazy load video (async)
-  useEffect(() => {
-    document.addEventListener("DOMContentLoaded", function () {
-      var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
-
-      if ("IntersectionObserver" in window) {
-        var lazyVideoObserver = new IntersectionObserver(function (
-          entries,
-          observer
-        ) {
-          entries.forEach(function (video) {
-            if (video.isIntersecting) {
-              for (var source in video.target.children) {
-                var videoSource = video.target.children[source];
-                if (
-                  typeof videoSource.tagName === "string" &&
-                  videoSource.tagName === "SOURCE"
-                ) {
-                  videoSource.src = videoSource.dataset.src;
-                }
-              }
-
-              video.target.load();
-              video.target.classList.remove("lazy");
-              lazyVideoObserver.unobserve(video.target);
-            }
-          });
-        });
-
-        lazyVideos.forEach(function (lazyVideo) {
-          lazyVideoObserver.observe(lazyVideo);
-        });
       }
     });
   }, []);
