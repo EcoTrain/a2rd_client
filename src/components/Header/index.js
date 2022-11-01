@@ -9,6 +9,8 @@ import "./header.scss";
 
 import {ReactComponent as LogoMin} from "../../assets/logo_min.svg";
 import {ReactComponent as LogoMax} from "../../assets/logo_max.svg";
+import Navbar from "./NavMenu";
+import NavMenu from "./NavMenu";
 
 const LngSelector = () => {
   const {t, i18n} = useTranslation();
@@ -75,12 +77,11 @@ const Header = () => {
   ];
 
   const setTimer = () => {
-    if (visibilityTimer.current) stopTimer();
-
-    const _timer = setTimeout(() => {
-      setVisible(false);
-    }, hideDelay);
-    visibilityTimer.current = _timer;
+    // if (visibilityTimer.current) stopTimer();
+    // const _timer = setTimeout(() => {
+    //   setVisible(false);
+    // }, hideDelay);
+    // visibilityTimer.current = _timer;
   };
   const stopTimer = () => {
     clearTimeout(visibilityTimer.current);
@@ -134,7 +135,8 @@ const Header = () => {
           </a>
         </div>
         <div className="headerActions">
-          <Menu
+          <NavMenu />
+          {/* <Menu
             className="headerMenu"
             mode="horizontal"
             items={items}
@@ -158,7 +160,7 @@ const Header = () => {
               //   });
               // } else window.location.href = elem.key;
             }}
-          />
+          /> */}
           <Toggle
             onChange={() => {
               if (theme === themes.light) setTheme(themes.dark);

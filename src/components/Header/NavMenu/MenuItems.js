@@ -1,0 +1,89 @@
+import React, {useState, useEffect, useRef} from "react";
+import Dropdown from "./Dropdown";
+
+import {Link} from "react-router-dom";
+
+const MenuItems = ({items, depthLevel}) => {
+  const [dropdown, setDropdown] = useState(false);
+  const ref = useRef();
+
+  useEffect(() => {
+    const handler = (event) => {
+      if (dropdown && ref.current && !ref.current.contains(event.target)) {
+        setDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler);
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
+  }, [dropdown]);
+
+  const onMouseEnter = () => {
+    window.innerWidth > 960 && setDropdown(true);
+  };
+
+  const onMouseLeave = () => {
+    window.innerWidth > 960 && setDropdown(false);
+  };
+
+  const closeDropdown = () => {
+    dropdown && setDropdown(false);
+  };
+
+  const getSubmenu = () => {
+    const subItem = items.url
+      ? [
+          window.innerWidth < 960 && depthLevel === 0 ? (
+            items.title
+          ) : (
+            <Link to={items.url}>{items.title}</Link>
+          ),
+
+          depthLevel > 0 && window.innerWidth < 960 ? null : depthLevel > 0 &&
+            window.innerWidth > 960 ? (
+            <span>&raquo;</span>
+          ) : (
+            <span className="arrow" />
+          ),
+        ]
+      : [
+          items.title,
+          depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />,
+        ];
+    return (
+      <>
+        <button
+          type="button"
+          aria-haspopup="menu"
+          aria-expanded={dropdown ? "true" : "false"}
+          onClick={() => setDropdown((prev) => !prev)}
+        >
+          {subItem}
+        </button>
+        <Dropdown
+          depthLevel={depthLevel}
+          submenus={items.submenu}
+          dropdown={dropdown}
+        />
+      </>
+    );
+  };
+
+  return (
+    <li
+      className="menu-items"
+      ref={ref}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={closeDropdown}
+    >
+      {items.submenu ? getSubmenu() : <Link to={items.url}>{items.title}</Link>}
+    </li>
+  );
+};
+
+export default MenuItems;

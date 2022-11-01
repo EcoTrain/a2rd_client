@@ -33,9 +33,6 @@ const ModelingDistribution = loadable(
   }
 );
 
-// TODO: Remove 150kb / 800kb
-import "antd/dist/antd.min.css";
-
 import "./components/Toast.scss";
 import "./App.scss";
 import "./Text.scss";

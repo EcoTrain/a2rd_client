@@ -22,18 +22,9 @@
         .headerActions {
             display: flex;
             flex: 1;
-            overflow: auto;
+            justify-content: flex-end;
             .toggler {
                 margin: 0 15px;
-            }
-            .headerMenu {
-                display: flex;
-                width: 100%;
-                background-color: initial;
-                justify-content: right;
-                align-items: center;
-                flex-flow: row;
-                border: none;
             }
         }
         .lngSelector {
@@ -52,47 +43,5 @@
     }
     .headerActivateArea {
         height: 20px;
-    }
-}
-
-.ant-menu-horizontal {
-    line-height: 38px;
-    .ant-menu-submenu-horizontal {
-        padding: 0 1em !important;
-    }
-}
-.ant-menu {
-    .ant-menu-item-active,
-    .ant-menu-item-selected,
-    .ant-menu-submenu-active,
-    .ant-menu-submenu-selected,
-    .ant-menu-submenu-open {
-        margin-bottom: 4px;
-        &::after {
-            border-bottom: 4px solid var(--gray) !important;
-        }
-    }
-}
-.ant-menu-submenu-popup {
-    position: fixed;
-    top: 40px !important;
-    .ant-menu,
-    .ant-menu-sub {
-        background-color: var(--lightGray);
-        .ant-menu-submenu {
-            .ant-menu-submenu-title {
-                .ant-menu-submenu-arrow {
-                    color: var(--textPrimary);
-                }
-            }
-        }
-        .ant-menu-item-selected,
-        .ant-menu-submenu-selected,
-        .ant-menu-submenu-active {
-            background-color: var(--coldGray);
-            &:focus {
-                background-color: var(--darkWhite);
-            }
-        }
     }
 }
