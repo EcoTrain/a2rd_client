@@ -1,8 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import Dropdown from "./Dropdown";
 
-import {Link} from "react-router-dom";
-
 const MenuItems = ({items, depthLevel}) => {
   const [dropdown, setDropdown] = useState(false);
   const ref = useRef();
@@ -34,26 +32,16 @@ const MenuItems = ({items, depthLevel}) => {
     dropdown && setDropdown(false);
   };
 
+  const getLink = () => (
+    <a href={items.url} target="_blank" rel="noreferrer noopener">
+      {items.title}
+    </a>
+  );
+  
   const getSubmenu = () => {
-    const subItem = items.url
-      ? [
-          window.innerWidth < 960 && depthLevel === 0 ? (
-            items.title
-          ) : (
-            <Link to={items.url}>{items.title}</Link>
-          ),
+    const subItem = items.url ? getLink() : items.title;
+    let arrowItem = depthLevel > 0 && <span>&raquo;</span>;
 
-          depthLevel > 0 && window.innerWidth < 960 ? null : depthLevel > 0 &&
-            window.innerWidth > 960 ? (
-            <span>&raquo;</span>
-          ) : (
-            <span className="arrow" />
-          ),
-        ]
-      : [
-          items.title,
-          depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />,
-        ];
     return (
       <>
         <button
@@ -63,6 +51,7 @@ const MenuItems = ({items, depthLevel}) => {
           onClick={() => setDropdown((prev) => !prev)}
         >
           {subItem}
+          {arrowItem}
         </button>
         <Dropdown
           depthLevel={depthLevel}
@@ -81,7 +70,7 @@ const MenuItems = ({items, depthLevel}) => {
       onMouseLeave={onMouseLeave}
       onClick={closeDropdown}
     >
-      {items.submenu ? getSubmenu() : <Link to={items.url}>{items.title}</Link>}
+      {items.submenu ? getSubmenu() : getLink()}
     </li>
   );
 };

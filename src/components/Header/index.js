@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState, useContext} from "react";
 import {useTranslation} from "react-i18next";
-import {Menu} from "antd";
 
 import {ThemeContext, themes} from "../../contexts/ThemeContext";
 import Toggle from "../Toggle";
@@ -9,7 +8,6 @@ import "./header.scss";
 
 import {ReactComponent as LogoMin} from "../../assets/logo_min.svg";
 import {ReactComponent as LogoMax} from "../../assets/logo_max.svg";
-import Navbar from "./NavMenu";
 import NavMenu from "./NavMenu";
 
 const LngSelector = () => {
@@ -136,31 +134,6 @@ const Header = () => {
         </div>
         <div className="headerActions">
           <NavMenu />
-          {/* <Menu
-            className="headerMenu"
-            mode="horizontal"
-            items={items}
-            onClick={(elem) => {
-              window.location.href = elem.key;
-
-              // TODO: Fix nav (or scroll) on same struct link. Ex: /, /homeStartups, /startups, /wellness
-
-              // const oldPaths = window.location.pathname.split("/");
-              // const oldURL = oldPaths.slice(0, -1).join("/");
-
-              // const newPaths = elem.key.split("/");
-              // const newURL = newPaths.slice(0, -1).join("/");
-
-              // console.log({elem, oldURL, newURL});
-
-              // if (oldURL == newURL) {
-              //   scroller.scrollTo(newPaths.slice(-1)[0], {
-              //     duration: 2000,
-              //     smooth: "easeOutQuint",
-              //   });
-              // } else window.location.href = elem.key;
-            }}
-          /> */}
           <Toggle
             onChange={() => {
               if (theme === themes.light) setTheme(themes.dark);

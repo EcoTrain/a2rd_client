@@ -12,7 +12,6 @@ const Navbar = () => {
   const menuItems = [
     {
       title: t("navHeader.about"),
-      url: "/",
       submenu: [
         {
           title: t("navHeader.main"),
@@ -50,7 +49,6 @@ const Navbar = () => {
     },
     {
       title: t("navHeader.modeling.main"),
-      url: "/modeling/",
       submenu: [
         {
           title: t("navHeader.modeling.multiagent"),
@@ -59,16 +57,6 @@ const Navbar = () => {
         {
           title: t("navHeader.modeling.distribution"),
           url: "/modeling/distribution/",
-          submenu: [
-            {
-              title: t("navHeader.modeling.multiagent"),
-              url: "/modeling/multiagent/",
-            },
-            {
-              title: t("navHeader.modeling.distribution"),
-              url: "/modeling/distribution/",
-            },
-          ],
         },
       ],
     },
@@ -76,12 +64,12 @@ const Navbar = () => {
 
   return (
     <div className="headerMenu">
-      <ul className="menu">
+       <ul className={window.innerWidth > 960 ? "menu" : "menu-min"}>
         {menuItems.map((menu, index) => {
           const depthLevel = 0;
           return <MenuItems items={menu} key={index} depthLevel={depthLevel} />;
         })}
-      </ul>
+      </ul> 
     </div>
   );
 };
