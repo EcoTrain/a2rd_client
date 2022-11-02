@@ -1,6 +1,7 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import MenuItems from "./MenuItems";
+import NavMenuMax from "./Horizontal";
+import NavMenuMin from "./Vertical";
 import "./navmenu.scss";
 
 // https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/
@@ -57,6 +58,16 @@ const Navbar = () => {
         {
           title: t("navHeader.modeling.distribution"),
           url: "/modeling/distribution/",
+          submenu: [
+            {
+              title: t("navHeader.modeling.multiagent"),
+              url: "/modeling/multiagent/",
+            },
+            {
+              title: t("navHeader.modeling.distribution"),
+              url: "/modeling/distribution/",
+            },
+          ],
         },
       ],
     },
@@ -64,12 +75,11 @@ const Navbar = () => {
 
   return (
     <div className="headerMenu">
-       <ul className={window.innerWidth > 960 ? "menu" : "menu-min"}>
-        {menuItems.map((menu, index) => {
-          const depthLevel = 0;
-          return <MenuItems items={menu} key={index} depthLevel={depthLevel} />;
-        })}
-      </ul> 
+      {window.innerWidth > 960 ? (
+        <NavMenuMax menuItems={menuItems} />
+      ) : (
+        <NavMenuMin menuItems={menuItems} />
+      )}
     </div>
   );
 };
