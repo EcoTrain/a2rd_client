@@ -37,11 +37,6 @@ export const textPageConfig = {
       sectionTheme: "section-darkWhite",
       image: {},
     },
-    healthyLifestyle: {
-      title: "healthyLifestyle.title",
-      text: "healthyLifestyle.text",
-      sectionTheme: "section-darkWhite",
-    },
     businessModel: {
       title: "businessModel.title",
       text: "businessModel.text",
@@ -117,6 +112,13 @@ export const textPageConfig = {
         list: "distribution.capabilities.list",
         image: {},
       },
+    },
+  },
+  wellness: {
+    healthyLifestyle: {
+      title: "healthyLifestyle.title",
+      text: "healthyLifestyle.text",
+      sectionTheme: "section-white",
     },
   },
 };

@@ -46,7 +46,6 @@ const Home = () => {
       <HomeStack title="navigation.stack" />
       {/* <HomeCustomers /> */}
 
-      <TextPage {...textPageConfig.home.healthyLifestyle} t={t} />
       <TextPage {...textPageConfig.home.businessModel} t={t} />
 
       <HomeFeedback title="navigation.feedback" />

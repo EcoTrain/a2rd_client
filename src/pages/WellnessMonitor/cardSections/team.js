@@ -11,7 +11,7 @@ import "../../../components/CardPage/lineGridCard.scss";
 const WellnessTeam = () => {
   const {t} = useTranslation("wellness");
   return (
-    <section className="section section-white" id="wellnessTeam">
+    <section className="section section-darkWhite" id="wellnessTeam">
       <div className="section-content">
         <div className="section-title font-title-h1 text-center">
           {t("team.title")}

@@ -9,6 +9,8 @@ import WellnessTeam from "./cardSections/team";
 import WellnessAbout from "./about";
 import WellnessFunctional from "./cardSections/functional";
 import WellnessStack from "./stack";
+import TextPage from "../../components/TextPage";
+import {textPageConfig} from "../../components/TextPage/textPageConfig";
 
 const WellnessMonitor = () => {
   const params = useParams();
@@ -28,6 +30,7 @@ const WellnessMonitor = () => {
       <WellnessAbout />
       <WellnessFunctional />
       <WellnessStack />
+      <TextPage {...textPageConfig.wellness.healthyLifestyle} t={t} />
       <WellnessTeam />
     </PageScroller>
   );
