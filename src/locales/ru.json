@@ -232,7 +232,8 @@
     },
     "wellness": {
         "navigation": {
-            "about": "О проекте"
+            "about": "О проекте",
+            "contacts": "Контакты"
         },
         "about": {
             "title": "Wellness Monitor",

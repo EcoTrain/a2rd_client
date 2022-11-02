@@ -6,7 +6,7 @@ import {Trans, useTranslation} from "react-i18next";
 
 
 
-import PageScroller from "../../components/ScrollPage";
+import PageScroller from "../../components/Section/PageScroller";
 import {startupsCardsInfo} from "../Home/cardSections/cardsConfig";
 
 import "../../App.scss";

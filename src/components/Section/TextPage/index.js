@@ -6,7 +6,7 @@ import {CheckOutlined} from "@ant-design/icons";
 
 
 
-import {splitTextByWords} from "../../fucntions/splitText";
+import {splitTextByWords} from "../../../fucntions/splitText";
 import TweenOne from "rc-tween-one";
 
 const ScrollOverPack = ScrollAnim.OverPack;

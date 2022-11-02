@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 
 import "./preview.scss";
 import {splitTextByWords} from "../../../fucntions/splitText";
-import {renderNextPageBtn} from "../../../components/ScrollPage";
+import {renderNextPageBtn} from "../../../components/Section/PageScroller";
 
 const BgVideo = () => {
   const [opacity, setOpacity] = useState(1);

@@ -233,7 +233,8 @@
     },
     "wellness": {
         "navigation": {
-            "about": "About"
+            "about": "About",
+            "contacts": "Contacts"
         },
         "about": {
             "title": "Wellness Monitor",
