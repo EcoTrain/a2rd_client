@@ -9,6 +9,7 @@
         justify-content: space-between;
         background-color: var(--lightGrayTransparent);
         .headerLogo {
+            height: 100%;
             padding: 7px;
             a {
                 height: 100%;
@@ -19,22 +20,16 @@
                 }
             }
         }
-        .headerActions {
-            display: flex;
+        .headerMenu {
             flex: 1;
             overflow: auto;
-            .toggler {
-                margin: 0 15px;
-            }
-            .headerMenu {
-                display: flex;
-                width: 100%;
-                background-color: initial;
-                justify-content: right;
-                align-items: center;
-                flex-flow: row;
-                border: none;
-            }
+            background-color: initial;
+            justify-content: right;
+            align-items: center;
+            border: none;
+        }
+        .themeToggler {
+            margin: 0 0.5em;
         }
         .lngSelector {
             height: 30px;

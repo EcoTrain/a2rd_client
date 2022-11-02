@@ -2,17 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./index.scss";
 
-import { ReactComponent as Sun } from "../../assets/sun.svg";
-import { ReactComponent as Moon } from "../../assets/moon.svg";
+import {ReactComponent as Sun} from "../../assets/sun.svg";
+import {ReactComponent as Moon} from "../../assets/moon.svg";
 
-const Toggle = ({ value, onChange }) => {
+const Toggle = ({className, value, onChange}) => {
   Toggle.propTypes = {
     value: PropTypes.bool,
     onChange: PropTypes.func,
   };
 
   return (
-    <div className="toggler">
+    <div className={`toggler ${className}`}>
       <label className={"switch"} htmlFor="toggler">
         <input
           id="toggler"

@@ -76,7 +76,6 @@ const Header = () => {
 
   const setTimer = () => {
     if (visibilityTimer.current) stopTimer();
-
     const _timer = setTimeout(() => {
       setVisible(false);
     }, hideDelay);
@@ -133,41 +132,22 @@ const Header = () => {
             {isNarrow ? <LogoMin /> : <LogoMax />}
           </a>
         </div>
-        <div className="headerActions">
-          <Menu
-            className="headerMenu"
-            mode="horizontal"
-            items={items}
-            onClick={(elem) => {
-              window.location.href = elem.key;
-
-              // TODO: Fix nav (or scroll) on same struct link. Ex: /, /homeStartups, /startups, /wellness
-
-              // const oldPaths = window.location.pathname.split("/");
-              // const oldURL = oldPaths.slice(0, -1).join("/");
-
-              // const newPaths = elem.key.split("/");
-              // const newURL = newPaths.slice(0, -1).join("/");
-
-              // console.log({elem, oldURL, newURL});
-
-              // if (oldURL == newURL) {
-              //   scroller.scrollTo(newPaths.slice(-1)[0], {
-              //     duration: 2000,
-              //     smooth: "easeOutQuint",
-              //   });
-              // } else window.location.href = elem.key;
-            }}
-          />
-          <Toggle
-            onChange={() => {
-              if (theme === themes.light) setTheme(themes.dark);
-              if (theme === themes.dark) setTheme(themes.light);
-            }}
-            value={theme === themes.dark}
-          />
-          {/* <LngSelector /> */}
-        </div>
+        <Menu
+          className="headerMenu"
+          mode="horizontal"
+          items={items}
+          onClick={(elem) => {
+            window.location.href = elem.key;
+          }}
+        />
+        <Toggle
+          className="themeToggler"
+          onChange={() => {
+            if (theme === themes.light) setTheme(themes.dark);
+            if (theme === themes.dark) setTheme(themes.light);
+          }}
+          value={theme === themes.dark}
+        />
       </div>
       <div className="headerActivateArea"></div>
     </div>
