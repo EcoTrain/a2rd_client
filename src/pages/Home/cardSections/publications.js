@@ -110,12 +110,12 @@ const renderCard = (info, i) => {
             </div>
           )}
           {hover && (
-            <div className="linkBtnListWrapper">
+            <div className="btnListWrapper">
               {info.links &&
                 Object.values(info.links).map((x, i) => (
                   <button
                     key={i}
-                    className="linkBtn"
+                    className="btn-outline btn-anim"
                     onClick={() => window.open(x.link, "_blank")}
                   >
                     {t(x.title)}

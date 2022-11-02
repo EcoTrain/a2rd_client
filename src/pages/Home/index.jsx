@@ -12,7 +12,7 @@ import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
 import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";
 import HomePublications from "./cardSections/publications";
-import HomeFeedback from "./feedback";
+import Feedback from "./feedback";
 import Contacts from "./contacts";
 import HomeStack from "./stack";
 // import HomeCustomers from "./customers";
@@ -47,7 +47,6 @@ const Home = () => {
 
       <TextPage {...textPageConfig.home.businessModel} t={t} />
 
-      <HomeFeedback title="navigation.feedback" />
       <Contacts title="navigation.contacts" />
     </PageScroller>
   );

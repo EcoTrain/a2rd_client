@@ -9,6 +9,7 @@ import "./header.scss";
 
 import {ReactComponent as LogoMin} from "../../assets/logo_min.svg";
 import {ReactComponent as LogoMax} from "../../assets/logo_max.svg";
+import Feedback from "../../pages/Home/feedback";
 
 const LngSelector = () => {
   const {t, i18n} = useTranslation();
@@ -140,6 +141,7 @@ const Header = () => {
             window.location.href = elem.key;
           }}
         />
+        <Feedback />
         <Toggle
           className="themeToggler"
           onChange={() => {

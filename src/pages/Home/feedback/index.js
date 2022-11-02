@@ -1,43 +1,24 @@
 import React, {useRef, useState, useEffect} from "react";
 import QueueAnim from "rc-queue-anim";
-import {css} from "@emotion/react";
+import {Drawer, Modal} from "antd";
 import ClockLoader from "react-spinners/ClockLoader";
 import {useTranslation} from "react-i18next";
-
 
 import {toast} from "react-toastify";
 
 import "./feedback.scss";
 import FormField from "./FormField";
 
-const override = css`
-  display: block;
-  margin: 0 auto;
-  border-color: black;
-`;
-
-const HomeFeedback = () => {
+const Feedback = () => {
   const {t} = useTranslation("feedback");
-  const isMobile = window.innerWidth < 960;
-  const imgMin =
-    process.env.PUBLIC_URL + "/static/images/index/sections/min/feedback.webp";
-  const imgMax =
-    process.env.PUBLIC_URL + "/static/images/index/sections/max/feedback.webp";
-
-  const [img, setImg] = useState(isMobile ? imgMin : imgMax);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [text, setText] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const isMobile = window.innerWidth < 960;
 
   let [loading, setLoading] = useState(false);
-
-  const handleResize = () => {
-    setImg(isMobile ? imgMin : imgMax);
-  };
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return window.addEventListener("resize", null);
-  }, []);
 
   const isFormValid = () => {
     const validateEmail = (email) => {
@@ -53,6 +34,7 @@ const HomeFeedback = () => {
     } else return true;
   };
 
+  const handleClose = () => setOpen(false);
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -92,63 +74,100 @@ const HomeFeedback = () => {
     }
   };
 
-  const getForm = () => {
+  const getContent = () => {
+    const getForm = () => {
+      return (
+        <form onSubmit={handleSubmit}>
+          <FormField
+            tag={"input"}
+            title={t("feedback.field.email")}
+            type={"email"}
+            value={email}
+            onChange={setEmail}
+          />
+          <FormField
+            tag={"input"}
+            title={t("feedback.field.name")}
+            type={"name"}
+            value={name}
+            onChange={setName}
+          />
+          <FormField
+            tag={"textarea"}
+            title={t("feedback.field.text")}
+            type={"text"}
+            value={text}
+            onChange={setText}
+          />
+          <input type="submit" value={t("feedback.submit")} />
+        </form>
+      );
+    };
+
     return (
-      <form onSubmit={handleSubmit}>
-        <FormField
-          tag={"input"}
-          title={t("feedback.field.email")}
-          type={"email"}
-          value={email}
-          onChange={setEmail}
-        />
-        <FormField
-          tag={"input"}
-          title={t("feedback.field.name")}
-          type={"name"}
-          value={name}
-          onChange={setName}
-        />
-        <FormField
-          tag={"textarea"}
-          title={t("feedback.field.text")}
-          type={"text"}
-          value={text}
-          onChange={setText}
-        />
-        <input type="submit" value={t("feedback.submit")} />
-      </form>
+      <QueueAnim type={["left", "right"]} id="feedback">
+        <div className="description">{t("feedback.label")}</div>
+        {getForm()}
+        {loading && (
+          <div className="waiter">
+            <ClockLoader
+              color={"black"}
+              loading={loading}
+              css={{
+                display: "block",
+                margin: "0 auto",
+                borderColor: "black",
+              }}
+              size={100}
+            />
+          </div>
+        )}
+      </QueueAnim>
     );
   };
+  const getTitle = () => (
+    <div className="font-title-h1">{t("feedback.title")}</div>
+  );
 
   return (
-    <section className="section splitSection" id="homeFeedback">
-      <div className="section-content section-darkWhite">
-        <div className="section-content-block">
-          <div className="section-title font-title-h1 text-center">
-            {t("feedback.title")}
-          </div>
-          <QueueAnim type={["left", "right"]} id="feedback">
-            <div className="description">{t("feedback.label")}</div>
-            {getForm()}
-            {loading && (
-              <div className="waiter">
-                <ClockLoader
-                  color={"black"}
-                  loading={loading}
-                  css={override}
-                  size={100}
-                />
-              </div>
-            )}
-          </QueueAnim>
-        </div>
-      </div>
-      <div className="section-img">
-        <img className="lazy" src={img} alt={t("feedback.label")} title={t("feedback.title")} />
-      </div>
-    </section>
+    <>
+      <button
+        className="btn-outline"
+        style={{
+          fontSize: "0.9rem",
+          height: "1.8rem",
+          margin: "auto 0.5em",
+        }}
+        onClick={() => setOpen(true)}
+      >
+        {t("feedback.title")}
+      </button>
+      {isMobile ? (
+        <Drawer
+          title={getTitle()}
+          placement="right"
+          onClose={handleClose}
+          open={open}
+          width={"100%"}
+          drawerStyle={{
+            background: "var(--darkWhite)",
+          }}
+        >
+          {getContent()}
+        </Drawer>
+      ) : (
+        <Modal
+          title={getTitle()}
+          open={open}
+          onCancel={handleClose}
+          footer={null}
+          bodyStyle={{background: "var(--darkWhite)"}}
+        >
+          {getContent()}
+        </Modal>
+      )}
+    </>
   );
 };
 
-export default HomeFeedback;
+export default Feedback;

@@ -4,8 +4,6 @@ import {scroller} from "react-scroll";
 import PropTypes from "prop-types";
 import {Trans, useTranslation} from "react-i18next";
 
-
-
 import PageScroller from "../../components/Section/PageScroller";
 import {startupsCardsInfo} from "../Home/cardSections/cardsConfig";
 
@@ -78,11 +76,11 @@ export const Startup = ({item, t}) => {
             </div>
           </div>
           {item.links && (
-            <div className="linkBtnListWrapper">
+            <div className="btnListWrapper">
               {Object.values(item.links).map((x, i) => (
                 <button
                   key={i}
-                  className="linkBtn"
+                  className="btn-outline btn-anim"
                   onClick={() => window.open(x.link, "_blank")}
                 >
                   {t(x.title)}

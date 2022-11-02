@@ -94,7 +94,7 @@ const renderCard = (info, i) => {
             <div className="font-title-h3 text-center">{t(info.title)}</div>
             <div className="description">{t(info.preview)}</div>
             <button
-              className="linkBtn"
+              className="btn-outline btn-anim"
               onClick={() => window.open(`/projects/${info.id}`, "_blank")}
             >
               {t("moreBtn")}

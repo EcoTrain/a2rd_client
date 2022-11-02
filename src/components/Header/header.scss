@@ -57,6 +57,12 @@
     }
 }
 .ant-menu {
+    & > * {
+        font-size: 0.9rem;
+    }
+    .ant-menu-item, .ant-menu-submenu {
+        padding: 0 0.8em !important;
+    }
     .ant-menu-item-active,
     .ant-menu-item-selected,
     .ant-menu-submenu-active,

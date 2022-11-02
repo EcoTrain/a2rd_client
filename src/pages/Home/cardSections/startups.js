@@ -64,10 +64,10 @@ const renderCard = (info, i) => {
             <div className="text-center">{t(info.previewText)}</div>
           )}
           {hover && (
-            <div className="linkBtnListWrapper">
+            <div className="btnListWrapper">
               {(!info.links || !info.links.businessCard) && (
                 <button
-                  className="linkBtn"
+                  className="btn-outline btn-anim"
                   onClick={() => window.open(`/startups/${info.id}`, "_blank")}
                 >
                   {t("links.readMore")}
@@ -77,7 +77,7 @@ const renderCard = (info, i) => {
                 Object.values(info.links).map((x, i) => (
                   <button
                     key={i}
-                    className="linkBtn"
+                    className="btn-outline btn-anim"
                     onClick={() => window.open(x.link, "_blank")}
                   >
                     {t(x.title)}
