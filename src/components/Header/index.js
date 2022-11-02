@@ -31,7 +31,7 @@ const LngSelector = () => {
 
 const Header = () => {
   const {t} = useTranslation();
-  const hideDelay = 3000;
+  const hideDelay = 5000;
 
   const headerWrapperRef = useRef();
   const headerRef = useRef();
