@@ -25,6 +25,7 @@ const HamburgerMenu = ({
       height,
       position: "relative",
       transform: `rotate(${rotate}deg)`,
+      cursor: "pointer",
     },
     lineBase: {
       display: "block",

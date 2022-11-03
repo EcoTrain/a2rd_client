@@ -1,8 +1,6 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 
-
-
 import {developersCardsInfo} from "./config/team";
 
 import "../../../components/CardPage/gridCard.scss";
@@ -17,7 +15,7 @@ const WellnessTeam = () => {
           {t("team.title")}
         </div>
         <div
-          className="fixRowDirection"
+          className="gridCardsView fixRowDirection"
           style={{padding: "0 2em"}}
         >
           {developersCardsInfo.map((x, i) => renderCard(x, i, t))}
