@@ -58,16 +58,6 @@ const Navbar = () => {
         {
           title: t("navHeader.modeling.distribution"),
           url: "/modeling/distribution/",
-          submenu: [
-            {
-              title: t("navHeader.modeling.multiagent"),
-              url: "/modeling/multiagent/",
-            },
-            {
-              title: t("navHeader.modeling.distribution"),
-              url: "/modeling/distribution/",
-            },
-          ],
         },
       ],
     },

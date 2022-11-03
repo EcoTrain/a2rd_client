@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState} from "react";
 import TweenOne from "rc-tween-one";
 import TextyAnim from "rc-texty";
 import {useTranslation} from "react-i18next";

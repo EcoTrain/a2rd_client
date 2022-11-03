@@ -22,6 +22,7 @@
             "manual": "User manual"
         },
         "navigation": {
+            "back": "Back",
             "stack": "Technology stack"
         }
     },

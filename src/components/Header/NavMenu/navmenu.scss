@@ -3,13 +3,7 @@
         margin: 0;
     }
     * {
-        color: inherit;
-        font-size: inherit;
-        font-family: inherit;
         font-weight: 300;
-        &:hover {
-            color: inherit;
-        }
     }
 
     .menu-horizontal {
@@ -27,14 +21,14 @@
             position: relative;
             font-size: 0.9rem;
             cursor: pointer;
+            * {
+                cursor: pointer;
+            }
             .menu-item-content {
                 height: 100%;
                 display: flex;
                 align-items: center;
                 padding: 0 1em;
-                .menu-item-title {
-                    cursor: pointer;
-                }
             }
         }
         .menu-item-main {
@@ -61,13 +55,6 @@
         .menu-item-submenu {
             display: block;
             height: 100%;
-            button {
-                height: 100%;
-                display: flex;
-                align-items: center;
-                border: none;
-                background-color: transparent;
-            }
             .dropdown {
                 position: absolute;
                 right: 0;
@@ -92,6 +79,48 @@
                         padding: 0.4em 0.8em;
                     }
                 }
+            }
+        }
+    }
+
+    .menu-vertical {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 40px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: width 0.5s ease-in-out;
+        background-color: var(--lightGray);
+        .menu-back {
+            cursor: pointer;
+            padding: 0.3rem 1rem;
+            &:hover {
+                color: var(--gray) !important;
+            }
+        }
+        .menu-item {
+            position: relative;
+            font-size: 2rem;
+            border-top: 1px solid var(--coldGray);
+            border-bottom: 1px solid var(--coldGray);
+            &:hover {
+                * {
+                    color: var(--gray) !important;
+                }
+            }
+            cursor: pointer;
+            * {
+                cursor: pointer;
+            }
+            .menu-item-content {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.3rem 1rem;
             }
         }
     }

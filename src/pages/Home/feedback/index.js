@@ -1,9 +1,8 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import QueueAnim from "rc-queue-anim";
 import {css} from "@emotion/react";
 import ClockLoader from "react-spinners/ClockLoader";
 import {useTranslation} from "react-i18next";
-
 
 import {toast} from "react-toastify";
 
@@ -145,7 +144,12 @@ const HomeFeedback = () => {
         </div>
       </div>
       <div className="section-img">
-        <img className="lazy" src={img} alt={t("feedback.label")} title={t("feedback.title")} />
+        <img
+          className="lazy"
+          src={img}
+          alt={t("feedback.label")}
+          title={t("feedback.title")}
+        />
       </div>
     </section>
   );
