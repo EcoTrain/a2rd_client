@@ -4,9 +4,9 @@ import { Link } from "react-scroll/modules";
 import TweenOne from "rc-tween-one";
 import { DownOutlined } from "@ant-design/icons";
 
-import useOnScreen from "../../hooks/useOnScreen";
+import useOnScreen from "../../../hooks/useOnScreen";
 
-import "./sections.scss";
+import "../sections.scss";
 import "./scroll.scss";
 
 const PageScroller = ({ children, t }) => {

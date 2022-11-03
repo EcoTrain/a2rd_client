@@ -15,7 +15,7 @@ const WellnessStack = () => {
           {t("navigation.stack")}
         </div>
         <div
-          className="gridCardsView fixRowDirection"
+          className="fixRowDirection"
           style={{padding: "0 2em"}}
         >
           <CategoryIconHexGrid config={gridConfig} />

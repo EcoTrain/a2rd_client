@@ -3,10 +3,10 @@ import {useParams} from "react-router-dom";
 import {scroller} from "react-scroll";
 import {useTranslation} from "react-i18next";
 
-import PageScroller from "../../components/ScrollPage";
+import PageScroller from "../../components/Section/PageScroller";
 
-import TextPage from "../../components/TextPage";
-import {textPageConfig} from "../../components/TextPage/textPageConfig";
+import TextPage from "../../components/Section/TextPage";
+import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
 
 import HomeProjects from "../Home/cardSections/projects";
 

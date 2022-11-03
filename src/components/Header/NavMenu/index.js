@@ -7,7 +7,7 @@ import "./navmenu.scss";
 // https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/
 // https://github.com/Ibaslogic/react-multilevel-dropdown-menu
 
-const Navbar = () => {
+const NavMenu = () => {
   const {t} = useTranslation();
 
   const menuItems = [
@@ -74,4 +74,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavMenu;

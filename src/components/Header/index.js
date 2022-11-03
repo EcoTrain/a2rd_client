@@ -9,6 +9,7 @@ import "./header.scss";
 import {ReactComponent as LogoMin} from "../../assets/logo_min.svg";
 import {ReactComponent as LogoMax} from "../../assets/logo_max.svg";
 import NavMenu from "./NavMenu";
+import {HeaderContext} from "../../contexts/HeaderContext";
 
 const LngSelector = () => {
   const {t, i18n} = useTranslation();
@@ -31,7 +32,8 @@ const LngSelector = () => {
 
 const Header = () => {
   const {t} = useTranslation();
-  const hideDelay = 3000;
+  const {headerFixed, headerBackground} = useContext(HeaderContext);
+  const hideDelay = 5000;
 
   const headerWrapperRef = useRef();
   const headerRef = useRef();
@@ -43,43 +45,14 @@ const Header = () => {
 
   const headerHeight = headerRef.current ? headerRef.current.clientHeight : 0;
 
-  const items = [
-    {
-      key: `/`,
-      label: t("navHeader.about"),
-      children: [
-        {key: "/homeAbout", label: t("navHeader.main")},
-        {key: "/homeProjects", label: t("navHeader.projects")},
-        {key: "/homeStartups", label: t("navHeader.startups")},
-        {key: "/homeStack", label: t("navHeader.stack")},
-        {key: "/homePublications", label: t("navHeader.publications")},
-        {key: "/homeContacts", label: t("navHeader.contacts")},
-      ],
-    },
-    {key: `/projects/`, label: t("navHeader.projects")},
-    {key: `/startups/`, label: t("navHeader.startups")},
-    {
-      key: `/modeling/`,
-      label: t("navHeader.modeling.main"),
-      children: [
-        {
-          key: "/modeling/multiagent/",
-          label: t("navHeader.modeling.multiagent"),
-        },
-        {
-          key: "/modeling/distribution/",
-          label: t("navHeader.modeling.distribution"),
-        },
-      ],
-    },
-  ];
-
   const setTimer = () => {
-    // if (visibilityTimer.current) stopTimer();
-    // const _timer = setTimeout(() => {
-    //   setVisible(false);
-    // }, hideDelay);
-    // visibilityTimer.current = _timer;
+    if (!headerFixed) {
+      if (visibilityTimer.current) stopTimer();
+      const _timer = setTimeout(() => {
+        setVisible(false);
+      }, hideDelay);
+      visibilityTimer.current = _timer;
+    }
   };
   const stopTimer = () => {
     clearTimeout(visibilityTimer.current);
@@ -117,7 +90,6 @@ const Header = () => {
         transform: visible
           ? "translateY(0%)"
           : `translateY(${-headerHeight}px)`,
-        transition: "transform 400ms ease-out",
       }}
       onMouseEnter={() => {
         headerWrapperRef.current.style.transform = `translateY(0%))`;
@@ -126,7 +98,11 @@ const Header = () => {
       }}
       onMouseLeave={() => setTimer()}
     >
-      <div ref={headerRef} className="header">
+      <div
+        ref={headerRef}
+        className="header"
+        style={{background: headerBackground}}
+      >
         <div className="headerLogo">
           <a href={`/`} target={"_self"} aria-label={t("navHeader.about")}>
             {isNarrow ? <LogoMin /> : <LogoMax />}
@@ -135,13 +111,13 @@ const Header = () => {
         <div className="headerActions">
           <NavMenu />
           <Toggle
+            className="themeToggler"
             onChange={() => {
               if (theme === themes.light) setTheme(themes.dark);
               if (theme === themes.dark) setTheme(themes.light);
             }}
             value={theme === themes.dark}
           />
-          {/* <LngSelector /> */}
         </div>
       </div>
       <div className="headerActivateArea"></div>

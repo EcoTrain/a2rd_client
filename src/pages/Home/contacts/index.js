@@ -85,7 +85,7 @@ const ContactsIcons = () => {
   );
 };
 
-const HomeContacts = () => {
+const Contacts = () => {
   return (
     <section className="section splitSection" id="homeContacts">
       <div className="section-content  section-lightGray">
@@ -102,4 +102,4 @@ const HomeContacts = () => {
   );
 };
 
-export default HomeContacts;
+export default Contacts;

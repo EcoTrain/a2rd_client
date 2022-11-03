@@ -17,12 +17,12 @@ const MenuItems = ({items, onNext}) => {
     const subItem = items.url ? (
       getItemLink()
     ) : (
-      <div onClick={() => onNext(items.submenu)}>
+      <div onClick={() => onNext(items.submenu)} style={{width: "100%"}}>
         <div className="menu-item-title">{items.title}</div>
       </div>
     );
 
-    const arrowItem = items.submenu && <span>&raquo;</span>;
+    const arrowItem = items.submenu && <span>&#8250;</span>;
 
     return (
       <div className="menu-item-content">
@@ -32,7 +32,7 @@ const MenuItems = ({items, onNext}) => {
     );
   };
 
-  let classes = ["menu-item"];
+  let classes = ["menu-item", "font-title-h1"];
   if (items.submenu) {
     classes.push("menu-item-submenu");
   }

@@ -5,20 +5,19 @@ import {useTranslation} from "react-i18next";
 
 import HomePreview from "./preview";
 import HomeAbout from "./textSections/about";
-import PageScroller from "../../components/ScrollPage";
-
-import "./home.scss";
-
-import TextPage from "../../components/TextPage";
-import {textPageConfig} from "../../components/TextPage/textPageConfig";
+import PageScroller from "../../components/Section/PageScroller";
+import TextPage from "../../components/Section/TextPage";
+import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
 
 import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";
 import HomePublications from "./cardSections/publications";
-import HomeFeedback from "./feedback";
-import HomeContacts from "./contacts";
+import Feedback from "./feedback";
+import Contacts from "./contacts";
 import HomeStack from "./stack";
 // import HomeCustomers from "./customers";
+
+import "./home.scss";
 
 const Home = () => {
   const params = useParams();
@@ -46,11 +45,9 @@ const Home = () => {
       <HomeStack title="navigation.stack" />
       {/* <HomeCustomers /> */}
 
-      <TextPage {...textPageConfig.home.healthyLifestyle} t={t} />
       <TextPage {...textPageConfig.home.businessModel} t={t} />
 
-      <HomeFeedback title="navigation.feedback" />
-      <HomeContacts title="navigation.contacts" />
+      <Contacts title="navigation.contacts" />
     </PageScroller>
   );
 };

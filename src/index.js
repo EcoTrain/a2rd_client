@@ -9,6 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 
 import ThemeProvider from "./contexts/ThemeContext";
+import HeaderProvider from "./contexts/HeaderContext";
 
 if (process.env.NODE_ENV === "production") {
   console.log = () => {};
@@ -21,7 +22,9 @@ root.render(
   <BrowserRouter basemname={`/${process.env.PUBLIC_URL}`}>
     <ThemeProvider>
       <I18nextProvider i18n={i18n}>
-        <App />
+        <HeaderProvider>
+          <App />
+        </HeaderProvider>
       </I18nextProvider>
     </ThemeProvider>
   </BrowserRouter>

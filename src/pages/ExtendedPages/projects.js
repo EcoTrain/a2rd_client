@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { scroller } from "react-scroll";
 import { useTranslation } from "react-i18next";
 
-import PageScroller from "../../components/ScrollPage";
+import PageScroller from "../../components/Section/PageScroller";
 import { projectsCardsInfo } from "../Home/cardSections/cardsConfig";
-import TextPage from "../../components/TextPage";
+import TextPage from "../../components/Section/TextPage";
 
 const Projects = () => {
   const { t } = useTranslation(["projects"]);

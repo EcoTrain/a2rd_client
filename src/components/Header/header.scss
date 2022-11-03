@@ -3,11 +3,12 @@
     top: 0;
     position: fixed;
     width: 100%;
+    transition: transform 0.4s ease-out;
     .header {
         height: 40px;
         display: flex;
         justify-content: space-between;
-        background-color: var(--lightGrayTransparent);
+        transition: background-color 0.4s ease-in-out;
         .headerLogo {
             padding: 7px;
             a {
@@ -21,23 +22,27 @@
         }
         .headerActions {
             display: flex;
-            flex: 1;
             justify-content: flex-end;
-            .toggler {
-                margin: 0 15px;
+            .headerMenu {
+                display: flex;
+                align-items: center;
+                padding: 0 0.5em;
             }
-        }
-        .lngSelector {
-            height: 30px;
-            align-self: center;
-            margin-right: 15px;
-            background: var(--coldGray);
-            color: var(--textPrimary);
-            border: none;
-            border-radius: 5px;
-            padding: 5px;
-            & > * {
+            .themeToggler {
+                margin: 0 1em 0 0.5em;
+            }
+            .lngSelector {
+                height: 30px;
+                align-self: center;
+                margin-right: 15px;
+                background: var(--coldGray);
                 color: var(--textPrimary);
+                border: none;
+                border-radius: 5px;
+                padding: 5px;
+                & > * {
+                    color: var(--textPrimary);
+                }
             }
         }
     }

@@ -1,7 +1,8 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 
-import {renderNextPageBtn} from "../../components/ScrollPage";
+
+import {renderNextPageBtn} from "../../components/Section/PageScroller";
 import {splitTextByWords} from "../../fucntions/splitText";
 import "./index.scss";
 import TextyAnim from "rc-texty";

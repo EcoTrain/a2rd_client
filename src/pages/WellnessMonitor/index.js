@@ -3,12 +3,16 @@ import {useParams} from "react-router-dom";
 import {scroller} from "react-scroll";
 import {useTranslation} from "react-i18next";
 
-import PageScroller from "../../components/ScrollPage";
 import WellnessIntro from "./intro";
 import WellnessTeam from "./cardSections/team";
 import WellnessAbout from "./about";
 import WellnessFunctional from "./cardSections/functional";
 import WellnessStack from "./stack";
+
+import PageScroller from "../../components/Section/PageScroller";
+import TextPage from "../../components/Section/TextPage";
+import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
+import Contacts from "../Home/contacts";
 
 const WellnessMonitor = () => {
   const params = useParams();
@@ -28,7 +32,9 @@ const WellnessMonitor = () => {
       <WellnessAbout />
       <WellnessFunctional />
       <WellnessStack />
+      <TextPage {...textPageConfig.wellness.healthyLifestyle} t={t} />
       <WellnessTeam />
+      <Contacts title="navigation.contacts" />
     </PageScroller>
   );
 };
