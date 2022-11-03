@@ -101,8 +101,8 @@
     }
     .menu-item {
         position: relative;
-        border-top: 1px solid var(--coldGray);
-        border-bottom: 1px solid var(--coldGray);
+        border-top: 0.5px solid var(--coldGray);
+        border-bottom: 0.5px solid var(--coldGray);
         &:hover {
             * {
                 color: var(--gray) !important;
@@ -116,7 +116,7 @@
             height: 100%;
             display: flex;
             align-items: center;
-            padding: 0.3rem 1rem;
+            padding: 0.5rem 1rem;
         }
     }
 }
