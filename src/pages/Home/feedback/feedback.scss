@@ -1,6 +1,5 @@
 #feedback {
     position: relative;
-    // margin: 2em;
     .waiter {
         position: absolute;
         top: 0;
@@ -26,7 +25,8 @@
         flex-direction: column;
 
         input[type="submit"] {
-            font-size: 1.5em;
+            font-size: 1.4em;
+            padding: 0.2em 0;
             margin-top: 1em;
             background: var(--lightGray);
             color: var(--textPrimary);

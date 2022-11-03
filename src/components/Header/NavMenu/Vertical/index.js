@@ -23,11 +23,13 @@ const NavMenuMin = ({menuItems}) => {
 
   const renderMenu = () => (
     <div className="menu-vertical">
-      <ul style={{margin: "2em"}}>
-        {stack.length > 1 && (
+      <ul>
+        {stack.length > 1 ? (
           <li className="menu-back" onClick={handleBack}>
             {t("navigation.back")}
           </li>
+        ) : (
+          <div className="menu-back-plug" />
         )}
         {stack[stack.length - 1].map((menu, index) => {
           return <MenuItems items={menu} key={index} onNext={handleNext} />;

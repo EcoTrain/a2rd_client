@@ -20,7 +20,7 @@ const CustomModal = ({
     return `customDrawer_${getCount()}`;
   }
   function getCount() {
-    return 1000 + document.querySelectorAll(".customModal").length + 1;
+    return 9000 + document.querySelectorAll(".customModal").length + 1;
   }
 
   useEffect(() => {

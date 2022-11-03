@@ -33,7 +33,6 @@ const ModelingDistribution = loadable(
   }
 );
 
-import "antd/dist/antd.min.css";
 import "./components/Toast.scss";
 import "./App.scss";
 import "./Text.scss";

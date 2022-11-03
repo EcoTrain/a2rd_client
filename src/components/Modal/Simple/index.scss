@@ -6,7 +6,7 @@
     right: 0;
     background-color: black;
     opacity: 0.5;
-    z-index: 1000;
+    z-index: 9000;
 }
 .customModal {
     position: fixed;
@@ -18,7 +18,7 @@
     transition: transform 0.3s ease-in-out;
     background-color: var(--darkWhite);
     border-radius: 0.5rem;
-    z-index: 1000;
+    z-index: 9000;
     .customModal-header {
         display: flex;
         align-items: center;

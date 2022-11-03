@@ -1,5 +1,9 @@
 .formField {
     position: relative;
+    * {
+        line-height: inherit;
+        font-size: inherit;
+    }
     & {
         margin-top: 1.5em;
     }

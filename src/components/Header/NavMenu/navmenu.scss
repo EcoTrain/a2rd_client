@@ -95,6 +95,10 @@
             color: var(--gray) !important;
         }
     }
+    .menu-back-plug {
+       height: 2.15em; // Found experimentally
+       width: 100%; 
+    }
     .menu-item {
         position: relative;
         border-top: 1px solid var(--coldGray);
