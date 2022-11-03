@@ -14,6 +14,9 @@ const NavMenuMax = ({menuItems}) => {
           buttonClass={"btn-outline"}
           buttonStyle={{
             fontSize: "0.9rem",
+            height: "1.6rem",
+            padding: "0.1rem 0.4rem",
+            transition: "all 0.2s ease-in-out",
           }}
         />
       </li>

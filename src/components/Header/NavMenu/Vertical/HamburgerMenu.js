@@ -64,7 +64,7 @@ const HamburgerMenu = ({
 
 HamburgerMenu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   width: PropTypes.number,
   height: PropTypes.number,
   strokeWidth: PropTypes.number,

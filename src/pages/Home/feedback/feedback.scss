@@ -1,5 +1,6 @@
 #feedback {
     position: relative;
+    // margin: 2em;
     .waiter {
         position: absolute;
         top: 0;
@@ -25,6 +26,7 @@
         flex-direction: column;
 
         input[type="submit"] {
+            font-size: 1.5em;
             margin-top: 1em;
             background: var(--lightGray);
             color: var(--textPrimary);
@@ -40,18 +42,5 @@
                 transform: scale(0.99);
             }
         }
-    }
-}
-
-.ant-modal {
-    font-size: initial !important;
-    .ant-modal-header {
-        background-color: var(--darkWhite);
-    }
-    .ant-modal-body {
-        * {
-            font-size: initial !important;
-        }
-        background-color: var(--darkWhite);
     }
 }

@@ -64,7 +64,7 @@ const NavMenu = () => {
   ];
 
   return (
-    <div className="headerMenu">
+    <div className="navMenu">
       {window.innerWidth > 960 ? (
         <NavMenuMax menuItems={menuItems} />
       ) : (

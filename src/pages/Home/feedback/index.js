@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import QueueAnim from "rc-queue-anim";
-import {Drawer, Modal} from "antd";
 import ClockLoader from "react-spinners/ClockLoader";
 import {useTranslation} from "react-i18next";
 
@@ -8,6 +7,8 @@ import {toast} from "react-toastify";
 
 import "./feedback.scss";
 import FormField from "./FormField";
+import CustomDrawer from "../../../components/Modal/Drawer";
+import CustomModal from "../../../components/Modal/Simple";
 
 const Feedback = ({buttonClass, buttonStyle}) => {
   const {t} = useTranslation("feedback");
@@ -139,28 +140,13 @@ const Feedback = ({buttonClass, buttonStyle}) => {
         {t("feedback.title")}
       </div>
       {isMobile ? (
-        <Drawer
-          title={getTitle()}
-          placement="left"
-          onClose={handleClose}
-          open={open}
-          width={"100%"}
-          drawerStyle={{
-            background: "var(--darkWhite)",
-          }}
-        >
+        <CustomDrawer title={getTitle()} open={open} onClose={handleClose}>
           {getContent()}
-        </Drawer>
+        </CustomDrawer>
       ) : (
-        <Modal
-          title={getTitle()}
-          open={open}
-          onCancel={handleClose}
-          footer={null}
-          bodyStyle={{background: "var(--darkWhite)"}}
-        >
+        <CustomModal title={getTitle()} open={open} onClose={handleClose}>
           {getContent()}
-        </Modal>
+        </CustomModal>
       )}
     </>
   );

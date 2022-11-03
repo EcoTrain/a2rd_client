@@ -1,0 +1,27 @@
+.customDrawer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--darkWhite);
+    z-index: 1000;
+    .customDrawer-header {
+        display: flex;
+        align-items: center;
+        padding: 1em;
+        border-bottom: 1px solid var(--lightGray);
+        .customDrawer-header-cross {
+            cursor: pointer;
+            font-size: 2em;
+            padding: 0 0.5em;
+        }
+    }
+    .customDrawer-body {
+        padding: 1em;
+    }
+}
