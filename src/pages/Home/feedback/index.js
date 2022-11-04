@@ -2,13 +2,13 @@ import React, {useState, useEffect} from "react";
 import QueueAnim from "rc-queue-anim";
 import ClockLoader from "react-spinners/ClockLoader";
 import {useTranslation} from "react-i18next";
-
 import {toast} from "react-toastify";
 
-import "./feedback.scss";
 import FormField from "./FormField";
 import CustomDrawer from "../../../components/Modal/Drawer";
 import CustomModal from "../../../components/Modal/Simple";
+
+import "./feedback.scss";
 
 const Feedback = ({buttonClass, buttonStyle}) => {
   const {t} = useTranslation("feedback");

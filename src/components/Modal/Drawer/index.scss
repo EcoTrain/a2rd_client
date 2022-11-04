@@ -8,8 +8,8 @@
     overflow: scroll;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease-in-out;
-    background-color: var(--darkWhite);
+    transition: all 0.3s ease-in-out;
+    background: var(--darkWhite);
     z-index: 1000;
     .customDrawer-header {
         display: flex;

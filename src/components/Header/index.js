@@ -33,7 +33,7 @@ const LngSelector = () => {
 const Header = () => {
   const {t} = useTranslation();
   const {headerFixed, headerBackground} = useContext(HeaderContext);
-  const hideDelay = 5000;
+  const hideDelay = 3000;
 
   const headerWrapperRef = useRef();
   const headerRef = useRef();
@@ -46,7 +46,7 @@ const Header = () => {
   const headerHeight = headerRef.current ? headerRef.current.clientHeight : 0;
 
   const setTimer = () => {
-    if (!headerFixed) {
+    if (!headerFixed && window.pageYOffset > headerHeight) {
       if (visibilityTimer.current) stopTimer();
       const _timer = setTimeout(() => {
         setVisible(false);
@@ -61,10 +61,9 @@ const Header = () => {
   useScrollPosition({
     effect: ({prevPos, currPos}) => {
       const isScrollUp = currPos.y > prevPos.y;
-      if (isScrollUp) {
+      if (isScrollUp && -currPos.y < headerHeight) {
         setVisible(true);
-        setTimer();
-      } else {
+      } else if (!isScrollUp && -currPos.y > headerHeight) {
         setVisible(false);
         stopTimer();
       }
@@ -73,8 +72,6 @@ const Header = () => {
   });
 
   useEffect(() => {
-    setTimer();
-
     const handleResize = () => {
       setNarrow(window.innerWidth < 960);
     };

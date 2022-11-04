@@ -12,10 +12,8 @@ import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
 import HomeProjects from "./cardSections/projects";
 import HomeStartups from "./cardSections/startups";
 import HomePublications from "./cardSections/publications";
-import Feedback from "./feedback";
 import Contacts from "./contacts";
 import HomeStack from "./stack";
-// import HomeCustomers from "./customers";
 
 import "./home.scss";
 
@@ -43,7 +41,6 @@ const Home = () => {
       <HomeStartups title="navigation.startups" />
       <HomePublications title="navigation.publications" />
       <HomeStack title="navigation.stack" />
-      {/* <HomeCustomers /> */}
 
       <TextPage {...textPageConfig.home.businessModel} t={t} />
 

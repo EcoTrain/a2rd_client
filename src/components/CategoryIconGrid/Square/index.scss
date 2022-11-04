@@ -12,12 +12,9 @@
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-gap: 1px;
-        // grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-        // grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
         .categorySquareGridItem {
             width: 100%;
             position: relative;
-            // height: 90px;
             aspect-ratio: 1/1;
             display: flex;
             flex-direction: column;

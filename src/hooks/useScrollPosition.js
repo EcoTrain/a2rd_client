@@ -1,5 +1,4 @@
 import {useRef, useLayoutEffect, useState} from "react";
-import {animateScroll as scroll} from "react-scroll";
 
 const isBrowser = typeof window !== `undefined`;
 
