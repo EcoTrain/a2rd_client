@@ -4,7 +4,6 @@ import {useTranslation} from "react-i18next";
 import {developersCardsInfo} from "./config/team";
 
 import "../../../components/CardPage/gridCard.scss";
-import "../../../components/CardPage/lineGridCard.scss";
 
 const WellnessTeam = () => {
   const {t} = useTranslation("wellness");

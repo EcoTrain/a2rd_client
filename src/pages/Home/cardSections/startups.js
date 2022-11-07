@@ -29,12 +29,6 @@ const renderCard = (info, i) => {
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
-  useEffect(() => {
-    if (cardRef.current) {
-      cardRef.current.style.transition = "all 0.2s ease-in-out";
-    }
-  }, [cardRef.current]);
-
   const onHover = () => {
     cardRef.current.style.background = "var(--darkWhite)";
     setHover(true);
@@ -49,6 +43,7 @@ const renderCard = (info, i) => {
     <div
       key={i}
       className="gridCardWrapper lineGridCardWrapper"
+      style={{transition: "all 0.2s ease-in-out"}}
       ref={cardRef}
       onMouseEnter={onHover}
       onMouseLeave={onUnHover}

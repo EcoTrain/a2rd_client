@@ -33,7 +33,7 @@ const WellnessMonitor = () => {
       <WellnessFunctional />
       <WellnessStack />
       <TextPage {...textPageConfig.wellness.healthyLifestyle} t={t} />
-      <WellnessTeam />
+      {/* <WellnessTeam /> */}
       <Contacts title="navigation.contacts" />
     </PageScroller>
   );
