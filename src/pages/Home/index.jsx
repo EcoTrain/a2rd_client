@@ -42,7 +42,7 @@ const Home = () => {
       <HomePublications title="navigation.publications" />
       <HomeStack title="navigation.stack" />
 
-      <TextPage {...textPageConfig.home.businessModel} t={t} />
+      {/* <TextPage {...textPageConfig.home.businessModel} t={t} /> */}
 
       <Contacts title="navigation.contacts" />
     </PageScroller>
