@@ -7,32 +7,25 @@ const CustomDrawer = ({
   children, // Body element
   title = "", // Header element or text
   open = false, // Trigger to show/hide
-  headerShown = true,
   onClose = () => {}, // Callback on close modal
-  placement = "left",
+  style = {},
   width = "100vw",
 }) => {
-  const el = React.useMemo(() => document.createElement("div"), []);
-
   const {setHeaderFixed, setHeaderBackground, dropHeaderBackground} =
     useContext(HeaderContext);
   const [zCount, setCount] = useState(getCount());
   const [zClass, setClass] = useState(getClass());
   const [isOpen, setOpen] = useState(open);
 
-  function getClass() {
-    return `customDrawer_${getCount()}`;
-  }
-  function getCount() {
-    return 1000 + document.querySelectorAll(".customDrawer").length + 1;
-  }
+  const el = React.useMemo(() => document.createElement("div"), []);
+  const drawer = React.useMemo(() => ReactDOM.createPortal(getContent(), el));
 
   useEffect(() => {
     document.body.appendChild(el);
     return () => {
       document.body.removeChild(el);
     };
-  }, [el, children]);
+  }, [el]);
 
   useEffect(() => {
     if (open) {
@@ -53,26 +46,20 @@ const CustomDrawer = ({
     setOpen(open);
   }, [open, children]);
 
-  const handlerClose = () => {
-    setOpen(false);
-    onClose();
-  };
-
-  return (
-    isOpen &&
-    ReactDOM.createPortal(
+  function getContent() {
+    return (
       <>
         <div
           className={`customDrawer ${zClass}`}
           style={{
+            visibility: isOpen ? "visible" : "hidden",
             width: width,
-            transform: isOpen
-              ? "translateX(0%)"
-              : `translateX(-${window.innerWidth}px)`,
+            transform: isOpen ? "translateX(0%)" : `translateX(-${width})`,
             zIndex: zCount,
+            ...style,
           }}
         >
-          {headerShown && (
+          {title && (
             <div className="customDrawer-header">
               {
                 <div
@@ -87,10 +74,23 @@ const CustomDrawer = ({
           )}
           <div className="customDrawer-body">{children}</div>
         </div>
-      </>,
-      el
-    )
-  );
+      </>
+    );
+  }
+
+  function getClass() {
+    return `customDrawer_${getCount()}`;
+  }
+  function getCount() {
+    return 1000 + document.querySelectorAll(".customDrawer").length + 1;
+  }
+
+  function handlerClose() {
+    setOpen(false);
+    onClose();
+  }
+
+  return drawer;
 };
 
 export default CustomDrawer;

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import QueueAnim from "rc-queue-anim";
 import ClockLoader from "react-spinners/ClockLoader";
 import {useTranslation} from "react-i18next";
 import {toast} from "react-toastify";
@@ -52,7 +51,7 @@ const Feedback = ({buttonClass, buttonStyle}) => {
       toast.error(t("feedback.fail"));
     };
 
-    const url = +"/api/send_email";
+    const url = "/api/send_email";
     const body = {
       email,
       name,
@@ -106,7 +105,7 @@ const Feedback = ({buttonClass, buttonStyle}) => {
     };
 
     return (
-      <QueueAnim type={["left", "right"]} id="feedback">
+      <div id="feedback">
         <div className="description">{t("feedback.label")}</div>
         {getForm()}
         {loading && (
@@ -123,7 +122,7 @@ const Feedback = ({buttonClass, buttonStyle}) => {
             />
           </div>
         )}
-      </QueueAnim>
+      </div>
     );
   };
   const getTitle = () => (

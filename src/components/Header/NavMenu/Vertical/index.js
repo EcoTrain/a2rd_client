@@ -76,7 +76,6 @@ const NavMenuMin = ({menuItems}) => {
       />
       <CustomDrawer
         open={isOpen}
-        headerShown={false}
         onClose={() => setOpen(false)}
       >
         {renderMenu()}

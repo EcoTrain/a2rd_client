@@ -6,29 +6,21 @@ const CustomModal = ({
   children, // Body element
   title = "", // Header element or text
   open = false, // Trigger to show/hide
-  headerShown = true,
   onClose = () => {}, // Callback on close modal
-  width,
 }) => {
-  const el = React.useMemo(() => document.createElement("div"), []);
-
   const [zCount, setCount] = useState(getCount());
   const [zClass, setClass] = useState(getClass());
   const [isOpen, setOpen] = useState(open);
 
-  function getClass() {
-    return `customDrawer_${getCount()}`;
-  }
-  function getCount() {
-    return 9000 + document.querySelectorAll(".customModal").length + 1;
-  }
+  const el = React.useMemo(() => document.createElement("div"), []);
+  const modal = React.useMemo(() => ReactDOM.createPortal(getContent(), el));
 
   useEffect(() => {
     document.body.appendChild(el);
     return () => {
       document.body.removeChild(el);
     };
-  }, [el, children]);
+  }, [el]);
 
   useEffect(() => {
     if (open) {
@@ -38,24 +30,17 @@ const CustomModal = ({
     setOpen(open);
   }, [open]);
 
-  const handlerClose = () => {
-    setOpen(false);
-    onClose();
-  };
-
-  return (
-    isOpen &&
-    ReactDOM.createPortal(
-      <>
-        <div className="customModal-overlay" onClick={handlerClose}></div>
-        <div
-          className={`customModal ${zClass}`}
-          style={{
-            width,
-            zIndex: zCount,
-          }}
-        >
-          {headerShown && (
+  function getContent() {
+    return (
+      <div
+        style={{
+          visibility: isOpen ? "visible" : "hidden",
+          zIndex: zCount,
+        }}
+      >
+        <div className="customModal-overlay" onClick={handlerClose} />
+        <div className={`customModal ${zClass}`}>
+          {title && (
             <div className="customModal-header">
               {
                 <div
@@ -70,10 +55,24 @@ const CustomModal = ({
           )}
           <div className="customModal-body">{children}</div>
         </div>
-      </>,
-      el
-    )
-  );
+      </div>
+    );
+  }
+
+  function getClass() {
+    return `customDrawer_${getCount()}`;
+  }
+
+  function getCount() {
+    return 9000 + document.querySelectorAll(".customModal").length + 1;
+  }
+
+  function handlerClose() {
+    setOpen(false);
+    onClose();
+  }
+
+  return modal;
 };
 
 export default CustomModal;
