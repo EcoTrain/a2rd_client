@@ -8,9 +8,9 @@ const CustomModal = ({
   open = false, // Trigger to show/hide
   onClose = () => {}, // Callback on close modal
 }) => {
-  const [zCount, setCount] = useState(getCount());
-  const [zClass, setClass] = useState(getClass());
   const [isOpen, setOpen] = useState(open);
+  const [zCount, setCount] = useState(getCount());
+  const [classList, setClassList] = useState(getClass());
 
   const el = React.useMemo(() => document.createElement("div"), []);
   const modal = React.useMemo(() => ReactDOM.createPortal(getContent(), el));
@@ -24,9 +24,15 @@ const CustomModal = ({
 
   useEffect(() => {
     if (open) {
-      setClass(getClass());
       setCount(getCount());
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      const count = document.querySelectorAll(".customModal-open").length;
+      if (count > 1) {
+        document.documentElement.style.overflow = "unset";
+      }
     }
+    setClassList(getClass());
     setOpen(open);
   }, [open]);
 
@@ -39,7 +45,7 @@ const CustomModal = ({
         }}
       >
         <div className="customModal-overlay" onClick={handlerClose} />
-        <div className={`customModal ${zClass}`}>
+        <div className={classList}>
           {title && (
             <div className="customModal-header">
               {
@@ -60,11 +66,15 @@ const CustomModal = ({
   }
 
   function getClass() {
-    return `customDrawer_${getCount()}`;
+    let classList = ["customModal", `customModal_${zCount}`];
+    if (isOpen) {
+      classList.push("customModal-open");
+    }
+    return classList.join(" ");
   }
 
   function getCount() {
-    return 9000 + document.querySelectorAll(".customModal").length + 1;
+    return 9000 + document.querySelectorAll(".customModal-open").length + 1;
   }
 
   function handlerClose() {
