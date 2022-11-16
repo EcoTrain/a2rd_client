@@ -11,7 +11,7 @@ import "../../../components/CardPage/lineGridCard.scss";
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const HomePublications = () => {
-  const {t} = useTranslation("home");
+  const {t} = useTranslation(["home"]);
   return (
     <section className="section section-darkWhite" id="homePublications">
       <div className="section-content">
@@ -25,7 +25,7 @@ const HomePublications = () => {
           {publicationsCardsInfo.map((x, i) => (
             <ScrollOverPack key={i} replay always={false} playScale={0.2}>
               <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
-                {renderCard(x, i)}
+                {renderCard(x, i, t)}
               </TweenOne>
             </ScrollOverPack>
           ))}
@@ -44,8 +44,7 @@ const HomePublications = () => {
   );
 };
 
-const renderCard = (info, i) => {
-  const {t} = useTranslation("home");
+const renderCard = (info, i, t) => {
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 

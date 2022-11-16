@@ -15,10 +15,19 @@ const HeaderProvider = ({children}) => {
     children: PropTypes.element,
   };
 
+  const [visible, setVisible] = useState(true);
   const [fixed, setFixed] = useState(false);
   const [background, setBackground] = useState("var(--lightGrayTransparent)");
 
+  useEffect(() => {
+    if (fixed) {
+      setVisible(true);
+    }
+  }, [fixed]);
+
   const contextValues = {
+    headerVisible: visible,
+    setHeaderVisible: setVisible,
     headerFixed: fixed,
     setHeaderFixed: setFixed,
     headerBackground: background,

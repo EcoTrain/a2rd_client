@@ -1,14 +1,35 @@
-import React from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 import NavMenuMax from "./Horizontal";
 import NavMenuMin from "./Vertical";
 import "./navmenu.scss";
+import {HeaderContext} from "../../../contexts/HeaderContext";
 
 // https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/
 // https://github.com/Ibaslogic/react-multilevel-dropdown-menu
 
 const NavMenu = () => {
   const {t} = useTranslation();
+  const [isNarrow, setNarrow] = useState(window.innerWidth < 960);
+  const {setHeaderFixed, setHeaderVisible, dropHeaderBackground} =
+    useContext(HeaderContext);
+
+  useEffect(() => {
+    if (!isNarrow) {
+      dropHeaderBackground();
+      setHeaderFixed(false);
+      setHeaderVisible(false);
+      document.documentElement.style.overflow = "unset";
+    }
+  }, [isNarrow]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setNarrow(window.innerWidth < 960);
+    };
+    window.addEventListener("resize", handleResize);
+    return window.addEventListener("resize", null);
+  }, []);
 
   const menuItems = [
     {
@@ -65,10 +86,10 @@ const NavMenu = () => {
 
   return (
     <div className="navMenu">
-      {window.innerWidth > 960 ? (
-        <NavMenuMax menuItems={menuItems} />
-      ) : (
+      {isNarrow ? (
         <NavMenuMin menuItems={menuItems} />
+      ) : (
+        <NavMenuMax menuItems={menuItems} />
       )}
     </div>
   );

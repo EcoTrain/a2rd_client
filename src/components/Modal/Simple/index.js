@@ -8,9 +8,8 @@ const CustomModal = ({
   open = false, // Trigger to show/hide
   onClose = () => {}, // Callback on close modal
 }) => {
-  const [isOpen, setOpen] = useState(open);
-  const [zCount, setCount] = useState(getCount());
-  const [classList, setClassList] = useState(getClass());
+  const startZ = 9000;
+  const [index, setIndex] = useState();
 
   const el = React.useMemo(() => document.createElement("div"), []);
   const modal = React.useMemo(() => ReactDOM.createPortal(getContent(), el));
@@ -24,28 +23,26 @@ const CustomModal = ({
 
   useEffect(() => {
     if (open) {
-      setCount(getCount());
+      setIndex(getCount() + startZ);
       document.documentElement.style.overflow = "hidden";
     } else {
-      const count = document.querySelectorAll(".customModal-open").length;
-      if (count > 1) {
+      const _count = document.querySelectorAll(".customDrawer-open").length;
+      if (!_count) {
         document.documentElement.style.overflow = "unset";
       }
     }
-    setClassList(getClass());
-    setOpen(open);
   }, [open]);
 
   function getContent() {
     return (
       <div
         style={{
-          visibility: isOpen ? "visible" : "hidden",
-          zIndex: zCount,
+          visibility: open ? "visible" : "hidden",
+          zIndex: index,
         }}
       >
         <div className="customModal-overlay" onClick={handlerClose} />
-        <div className={classList}>
+        <div className={getClass()}>
           {title && (
             <div className="customModal-header">
               {
@@ -66,19 +63,18 @@ const CustomModal = ({
   }
 
   function getClass() {
-    let classList = ["customModal", `customModal_${zCount}`];
-    if (isOpen) {
+    let classList = ["customModal"];
+    if (open) {
       classList.push("customModal-open");
     }
     return classList.join(" ");
   }
 
   function getCount() {
-    return 9000 + document.querySelectorAll(".customModal-open").length + 1;
+    return document.querySelectorAll(".customModal-open").length + 1;
   }
 
   function handlerClose() {
-    setOpen(false);
     onClose();
   }
 

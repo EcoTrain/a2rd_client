@@ -1,14 +1,36 @@
-import React, {useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 import HamburgerMenu from "./HamburgerMenu";
 import MenuItems from "./MenuItems";
 import Feedback from "../../../../pages/Home/feedback";
 import CustomDrawer from "../../../Modal/Drawer";
+import {HeaderContext} from "../../../../contexts/HeaderContext";
 
 const NavMenuMin = ({menuItems}) => {
   const [isOpen, setOpen] = useState(false);
   const [stack, setStack] = useState([menuItems]);
   const {t} = useTranslation();
+
+  const {
+    setHeaderFixed,
+    setHeaderVisible,
+    setHeaderBackground,
+    dropHeaderBackground,
+  } = useContext(HeaderContext);
+
+  useEffect(() => {
+    if (isOpen) {
+      setHeaderBackground("var(--darkWhite)");
+      setHeaderFixed(true);
+      setHeaderVisible(true);
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      dropHeaderBackground();
+      setHeaderFixed(false);
+      setHeaderVisible(false);
+      document.documentElement.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   const handleNext = (newItems) => {
     let newStack = [...stack];
@@ -74,10 +96,7 @@ const NavMenuMin = ({menuItems}) => {
         borderRadius={0}
         animationDuration={0.5}
       />
-      <CustomDrawer
-        open={isOpen}
-        onClose={() => setOpen(false)}
-      >
+      <CustomDrawer open={isOpen} onClose={() => setOpen(false)}>
         {renderMenu()}
       </CustomDrawer>
     </>

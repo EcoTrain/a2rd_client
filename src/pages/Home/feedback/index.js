@@ -15,10 +15,23 @@ const Feedback = ({buttonClass, buttonStyle}) => {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 960);
 
-  const isMobile = window.innerWidth < 960;
-
-  let [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const resizeHandler = () => {
+      const isWide = window.innerWidth > 960;
+      if (isMobile && isWide) {
+        setIsMobile(false);
+      } else if (!isMobile && !isWide) {
+        setIsMobile(true);
+      }
+    };
+    window.addEventListener("resize", resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, [isMobile]);
 
   const isFormValid = () => {
     const validateEmail = (email) => {

@@ -32,13 +32,13 @@ const LngSelector = () => {
 
 const Header = () => {
   const {t} = useTranslation();
-  const {headerFixed, headerBackground} = useContext(HeaderContext);
+  const {headerFixed, headerBackground, headerVisible, setHeaderVisible} =
+    useContext(HeaderContext);
   const hideDelay = 3000;
 
   const headerWrapperRef = useRef();
   const headerRef = useRef();
 
-  const [visible, setVisible] = useState(true);
   const [isNarrow, setNarrow] = useState(window.innerWidth < 960);
   const {theme, setTheme} = useContext(ThemeContext);
   const visibilityTimer = useRef();
@@ -49,7 +49,7 @@ const Header = () => {
     if (!headerFixed && window.pageYOffset > headerHeight) {
       if (visibilityTimer.current) stopTimer();
       const _timer = setTimeout(() => {
-        setVisible(false);
+        setHeaderVisible(false);
       }, hideDelay);
       visibilityTimer.current = _timer;
     }
@@ -62,13 +62,13 @@ const Header = () => {
     effect: ({prevPos, currPos}) => {
       const isScrollUp = currPos.y > prevPos.y;
       if (isScrollUp && -currPos.y < headerHeight) {
-        setVisible(true);
+        setHeaderVisible(true);
       } else if (!isScrollUp && -currPos.y > headerHeight) {
-        setVisible(false);
+        setHeaderVisible(false);
         stopTimer();
       }
     },
-    deps: [visible],
+    deps: [headerVisible],
   });
 
   useEffect(() => {
@@ -84,13 +84,13 @@ const Header = () => {
       ref={headerWrapperRef}
       className="headerWraper"
       style={{
-        transform: visible
+        transform: headerVisible
           ? "translateY(0%)"
           : `translateY(${-headerHeight}px)`,
       }}
       onMouseEnter={() => {
         headerWrapperRef.current.style.transform = `translateY(0%))`;
-        setVisible(true);
+        setHeaderVisible(true);
         stopTimer();
       }}
       onMouseLeave={() => setTimer()}

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import ReactDOM from "react-dom";
 import {HeaderContext} from "../../../contexts/HeaderContext";
 import "./index.scss";
@@ -11,11 +11,8 @@ const CustomDrawer = ({
   style = {},
   width = "100vw",
 }) => {
-  const {setHeaderFixed, setHeaderBackground, dropHeaderBackground} =
-    useContext(HeaderContext);
-  const [isOpen, setOpen] = useState(open);
-  const [zCount, setCount] = useState(getCount());
-  const [classList, setClassList] = useState(getClass());
+  const startZ = 1000;
+  const [index, setIndex] = useState();
 
   const el = React.useMemo(() => document.createElement("div"), []);
   const drawer = React.useMemo(() => ReactDOM.createPortal(getContent(), el));
@@ -29,32 +26,20 @@ const CustomDrawer = ({
 
   useEffect(() => {
     if (open) {
-      setCount(getCount());
-
-      setHeaderFixed(true);
-      setHeaderBackground("var(--darkWhite)");
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      const count = document.querySelectorAll(".customDrawer-open").length;
-      if (count > 1) {
-        setHeaderFixed(false);
-        dropHeaderBackground();
-        document.documentElement.style.overflow = "unset";
-      }
+      setIndex(getCount() + startZ);
     }
-    setClassList(getClass());
-    setOpen(open);
-  }, [open, children]);
+  }, [open]);
+
 
   function getContent() {
     return (
       <div
-        className={classList}
+        className={getClass()}
         style={{
-          visibility: isOpen ? "visible" : "hidden",
+          visibility: open ? "visible" : "hidden",
+          zIndex: index,
           width: width,
-          transform: isOpen ? "translateX(0%)" : `translateX(-${width})`,
-          zIndex: zCount,
+          transform: open ? "translateX(0%)" : `translateX(-${width})`,
           ...style,
         }}
       >
@@ -74,7 +59,7 @@ const CustomDrawer = ({
   }
 
   function getClass() {
-    let classList = ["customDrawer", `customDrawer_${zCount}`];
+    let classList = ["customDrawer"];
     if (open) {
       classList.push("customDrawer-open");
     }
@@ -82,11 +67,10 @@ const CustomDrawer = ({
   }
 
   function getCount() {
-    return 1000 + document.querySelectorAll(".customDrawer-open").length + 1;
+    return document.querySelectorAll(".customDrawer-open").length;
   }
 
   function handlerClose() {
-    setOpen(false);
     onClose();
   }
 
