@@ -3,7 +3,7 @@ import {renderNextPageBtn} from "../../../components/Section/PageScroller";
 import "./preview.scss";
 
 const BgVideo = () => {
-  const defaultOpacity = 0.6;
+  const defaultOpacity = 1;
   const [opacity, setOpacity] = useState(defaultOpacity);
 
   // Opacity observer
@@ -26,7 +26,7 @@ const BgVideo = () => {
       muted
       poster={process.env.PUBLIC_URL + "/static/images/city_logo.webp"}
       id="previewBg"
-      style={{opacity: opacity}}
+      style={{opacity}}
     >
       <source
         src={process.env.PUBLIC_URL + "/static/videos/main_video.webm"}
@@ -53,7 +53,7 @@ const HomeIntoNextBtn = () => {
   useEffect(() => {
     const handleScroll = () => {
       const position = window.pageYOffset;
-      setOpacity(defaultOpacity - position / window.screen.height * 2);
+      setOpacity(defaultOpacity - (position / window.screen.height) * 2);
     };
     window.addEventListener("scroll", handleScroll, {passive: true});
     return () => {
@@ -71,7 +71,13 @@ const HomePreview = () => {
   return (
     <section id="homePreview" className="section section-fullscreen">
       {video}
-      <div className="previewOverlay" />
+      <div
+        className="previewOverlay"
+        style={{
+          backgroundImage:
+            "linear-gradient(45deg, var(--bgPrimaryTransparent), transparent)",
+        }}
+      />
       <div className="section-content">
         <div className="font-title font-size-1" style={{marginBottom: "1rem"}}>
           We offer comprehensive solutions for your industries
