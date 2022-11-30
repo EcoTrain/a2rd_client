@@ -10,7 +10,7 @@ import FormField from "./FormField";
 import "./feedback.scss";
 import config from "../../../config";
 
-const FeedbackOrder = ({children, className, style}) => {
+const Feedback = ({children, className, style}) => {
   const {t} = useTranslation("feedback");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -163,4 +163,4 @@ const FeedbackOrder = ({children, className, style}) => {
   );
 };
 
-export default FeedbackOrder;
+export default Feedback;

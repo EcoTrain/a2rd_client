@@ -12,7 +12,7 @@ const BgElement = Element.BgElement;
 const ProjectScroller = ({activeIndex, close, t}) => {
   const bannerRef = useRef();
   const bgGradient = [
-    "linear-gradient(var(--lightGrayTransparent), var(--lightGrayTransparent))",
+    "linear-gradient(var(--darkWhiteTransparent), var(--darkWhiteTransparent))",
   ].join(",");
 
   useEffect(() => {

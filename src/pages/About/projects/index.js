@@ -92,7 +92,6 @@ const ProjectItem = ({info, i, onClick}) => {
     // "linear-gradient(var(--lightGrayTransparent), var(--lightGrayTransparent))",
     // "linear-gradient(var(--darkWhiteTransparent), var(--lightGrayTransparent))",
     "linear-gradient(var(--lightGrayTransparent), var(--darkWhiteTransparent))",
-    // "linear-gradient(var(--grayTransparent), var(--grayTransparent))",
   ].join(",");
   const bg = `${bgGradient}, url(${
     isMobile ? info.image.min : info.image.src

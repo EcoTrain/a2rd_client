@@ -1,16 +1,21 @@
 .nextPageBtn {
     position: absolute;
     bottom: 5vh;
-    pointer-events: auto;
+    left: 50%;
+    transform: translateX(-50%);
     cursor: pointer;
+    z-index: 2;
     .nextPageBtnContent {
-        height: 30px;
-        width: 30px;
-        border-radius: 15px;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 1rem;
         background-color: var(--lightGrayTransparent);
+        box-shadow: 0px 0px 0.2rem 0px var(--darkGray);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--textInverse);
+        & > * {
+            fill: var(--textInverse);
+        }
     }
 }
