@@ -10,11 +10,11 @@ const WellnessTeam = () => {
   return (
     <section className="section section-darkWhite" id="wellnessTeam">
       <div className="section-content">
-        <div className="section-title font-title-h1 text-center">
+        <div className="section-title font-size-2 font-title text-align-center">
           {t("team.title")}
         </div>
         <div
-          className="gridCardsView fixRowDirection"
+          className="gridCardsView"
           style={{padding: "0 2em"}}
         >
           {developersCardsInfo.map((x, i) => renderCard(x, i, t))}
@@ -43,12 +43,12 @@ const renderCard = (info, i, t) => {
             style={{width: "100%", maxWidth: 150, borderRadius: "50%"}}
           />
           <div
-            className="gridCardViewTitle font-title-h3 text-center"
+            className="gridCardViewTitle font-size-3 font-title text-align-center"
             style={{marginTop: "1em", marginBottom: 0}}
           >
             {t(info.title)}
           </div>
-          <div className="text-center">{t(info.previewText)}</div>
+          <div className="text-align-center">{t(info.previewText)}</div>
         </div>
       </div>
     </div>

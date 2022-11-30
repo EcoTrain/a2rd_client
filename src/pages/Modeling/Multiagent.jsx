@@ -8,7 +8,8 @@ import PageScroller from "../../components/Section/PageScroller";
 import TextPage from "../../components/Section/TextPage";
 import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
 
-import HomeProjects from "../Home/cardSections/projects";
+import Projects from "../About/projects";
+import Contacts from "../Contacts";
 
 const ModelingMultiagent = () => {
   const params = useParams();
@@ -40,14 +41,12 @@ const ModelingMultiagent = () => {
         t={t}
       />
       <TextPage
-        {...textPageConfig.modeling.multiagent.payload}
         position={"sticky"}
+        {...textPageConfig.modeling.multiagent.payload}
         t={t}
       />
-      <HomeProjects
-        filter={"multiagent"}
-        text={t("multiagent.projects.text")}
-      />
+      <Projects filter={"multiagent"} text={t("multiagent.projects.text")} />
+      <Contacts />
     </PageScroller>
   );
 };

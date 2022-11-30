@@ -22,7 +22,13 @@ const BgVideo = () => {
     };
   }, []);
 
-  // TODO: rm video for mobiles (slow load)
+  // return (
+  //   <img
+  //     id="previewBg"
+  //     style={{opacity: opacity}}
+  //     src={process.env.PUBLIC_URL + "/static/images/city_logo.webp"}
+  //   />
+  // );
   return (
     <video
       loop
@@ -218,7 +224,7 @@ const HomePreview = () => {
       {video}
       <div className="previewOverlay">
         {renderBanner()}
-        {renderNextPageBtn({id: "homeAbout"})}
+        {renderNextPageBtn({id: "ourAim"})}
       </div>
     </section>
   );

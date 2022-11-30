@@ -1,0 +1,18 @@
+@import "../../../components/CardPage/lineGridCard.scss";
+
+#publications {
+    @include setLineGridColumn;
+    .gridCardsView {
+        .gridCardWrapper {
+            min-height: 25vh;
+            margin: 0;
+            .gridCard {
+                .gridCardView {
+                    .font-title {
+                        // margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

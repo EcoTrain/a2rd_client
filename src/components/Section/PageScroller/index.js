@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-scroll/modules";
+import {scroller} from "react-scroll";
 import TweenOne from "rc-tween-one";
-import { DownOutlined } from "@ant-design/icons";
+import {DownOutlined} from "@ant-design/icons";
 
 import useOnScreen from "../../../hooks/useOnScreen";
 
 import "../sections.scss";
 import "./scroll.scss";
 
-const PageScroller = ({ children, t }) => {
+const PageScroller = ({children, t}) => {
   PageScroller.propTypes = {
     children: PropTypes.array,
   };
@@ -25,14 +25,14 @@ const PageScroller = ({ children, t }) => {
   );
 };
 
-const Page = ({ children, index, t }) => {
+const Page = ({children, index, t}) => {
   Page.propTypes = {
     children: PropTypes.element,
     index: PropTypes.number,
   };
 
   const elemRef = useRef();
-  const onScreen = useOnScreen({ ref: elemRef });
+  const onScreen = useOnScreen({ref: elemRef});
 
   const getWrappedPage = () => {
     return (
@@ -61,8 +61,13 @@ const Page = ({ children, index, t }) => {
   return wrappedChild;
 };
 
-export const renderNextPageBtn = ({ id }) => (
-  <Link className="nextPageBtn" to={id} smooth={true} duration={500}>
+export const renderNextPageBtn = ({id}) => (
+  <div
+    className="nextPageBtn"
+    onClick={() =>
+      scroller.scrollTo(id, {duration: 500, smooth: "easeInQuint"})
+    }
+  >
     <TweenOne
       className="nextPageBtnContent"
       animation={{
@@ -75,7 +80,7 @@ export const renderNextPageBtn = ({ id }) => (
     >
       <DownOutlined />
     </TweenOne>
-  </Link>
+  </div>
 );
 
 export default PageScroller;

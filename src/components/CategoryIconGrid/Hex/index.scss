@@ -1,6 +1,6 @@
 @import "../../../Functions.scss";
 
-$hex-width: calcFluidSize(80, 100, 976, 1280);
+$hex-width: calcFluidSize(80, 100, 960, 1280);
 $hex-between: $hex-width / 10;
 
 $hex-height: calc($hex-width / 1.73 /* sqrt(3) */); // 70%
@@ -116,10 +116,10 @@ $color-hex-default: var(--darkWhite);
     }
 }
 
-@media (max-width: 976px) {
+@media (max-width: 960px) {
     .categoryHexGrid {
         .categoryHexGridContent {
-            $hex-width: calcFluidSize(45, 100, 480, 976) !global;
+            $hex-width: calcFluidSize(45, 100, 480, 960) !global;
 
             @include initRow(8);
             @include setHexSize;

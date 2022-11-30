@@ -1,7 +1,6 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 
-
 import CategoryIconHexGrid from "../../../components/CategoryIconGrid/Hex";
 import {gridConfig} from "./gridConfig";
 
@@ -11,13 +10,10 @@ const WellnessStack = () => {
   return (
     <section className="section section-darkWhite" id="wellnessStack">
       <div className="section-content">
-        <div className="section-title font-title-h1 text-center">
+        <div className="section-title font-size-2 font-title text-align-center">
           {t("navigation.stack")}
         </div>
-        <div
-          className="fixRowDirection"
-          style={{padding: "0 2em"}}
-        >
+        <div style={{padding: "0 2em"}}>
           <CategoryIconHexGrid config={gridConfig} />
         </div>
       </div>

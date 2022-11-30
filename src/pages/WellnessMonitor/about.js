@@ -1,31 +1,30 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {Startup} from "../ExtendedPages/startups";
+import {StartupPage} from "../About/startups/startupsPageScroller/startupPage";
 
 const WellnessAbout = () => {
   const {t} = useTranslation(["wellness"]);
 
   const config = {
-    title: "about.title",
-    shortText: "about.shortText",
+    // title: "about.title",
     text: "about.text",
     bg: "var(--darkWhite)",
-    links: [
-      {
+    links: {
+      manual: {
         title: "links.manual",
         link: "https://ecotrain.github.io/WM_doc/",
       },
-      {
+      website: {
         title: "links.website",
         link: "https://wellness.a2rd.com/",
       },
-    ],
+    },
   };
 
   return (
     // TODO: change config format: list -> dict
     <div id="wellnessAbout">
-      <Startup item={config} t={t} />
+      <StartupPage item={config} t={t} />
     </div>
   );
 };

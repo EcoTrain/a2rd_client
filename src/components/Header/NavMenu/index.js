@@ -11,14 +11,16 @@ import {HeaderContext} from "../../../contexts/HeaderContext";
 const NavMenu = () => {
   const {t} = useTranslation();
   const [isNarrow, setNarrow] = useState(window.innerWidth < 960);
-  const {setHeaderFixed, setHeaderVisible, dropHeaderBackground} =
-    useContext(HeaderContext);
+  const {
+    dropHeaderBackground,
+    // setHeaderFixed, setHeaderVisible,
+  } = useContext(HeaderContext);
 
   useEffect(() => {
     if (!isNarrow) {
       dropHeaderBackground();
-      setHeaderFixed(false);
-      setHeaderVisible(false);
+      // setHeaderFixed(false);
+      // setHeaderVisible(false);
       document.documentElement.style.overflow = "unset";
     }
   }, [isNarrow]);
@@ -34,40 +36,25 @@ const NavMenu = () => {
   const menuItems = [
     {
       title: t("navHeader.about"),
+      url: "/about/",
       submenu: [
         {
-          title: t("navHeader.main"),
-          url: "/homeAbout",
-        },
-        {
           title: t("navHeader.projects"),
-          url: "/homeProjects",
+          url: "/about/projects",
         },
         {
           title: t("navHeader.startups"),
-          url: "/homeStartups",
+          url: "/about/startups",
         },
         {
           title: t("navHeader.stack"),
-          url: "/homeStack",
+          url: "/about/stack",
         },
         {
           title: t("navHeader.publications"),
-          url: "/homePublications",
-        },
-        {
-          title: t("navHeader.contacts"),
-          url: "/homeContacts",
+          url: "/about/publications",
         },
       ],
-    },
-    {
-      title: t("navHeader.projects"),
-      url: "/projects/",
-    },
-    {
-      title: t("navHeader.startups"),
-      url: "/startups/",
     },
     {
       title: t("navHeader.modeling.main"),
@@ -81,6 +68,10 @@ const NavMenu = () => {
           url: "/modeling/distribution/",
         },
       ],
+    },
+    {
+      title: t("navHeader.contacts"),
+      url: "/contacts",
     },
   ];
 

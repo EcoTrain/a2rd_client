@@ -23,7 +23,6 @@
     }
     .menu-item {
         position: relative;
-        font-size: 0.9rem;
         cursor: pointer;
         * {
             cursor: pointer;
@@ -51,6 +50,17 @@
             }
         }
     }
+    .menu-item-active {
+        &::after {
+            border-bottom: 4px solid var(--primary);
+            bottom: 0;
+            content: "";
+            position: absolute;
+            right: 1.5em;
+            left: 1.5em;
+            transition: border-color 0.3s ease-in-out;
+        }
+    }
     .menu-item-sub {
         &:hover {
             background-color: var(--coldGray);
@@ -59,10 +69,18 @@
     .menu-item-submenu {
         display: block;
         height: 100%;
+
+        .menu-item-subitem {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
         .dropdown {
             position: absolute;
-            right: 0;
-            left: auto;
+            left: 0;
+            right: auto;
             box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08);
             font-size: 0.875rem;
             z-index: 9999;
@@ -75,12 +93,16 @@
             }
             .dropdown-submenu {
                 position: absolute;
-                left: 100%;
-                top: -7px;
+                // left: 100%;
+                // top: -7px;
+                top: 100%;
+                left: 35px;
             }
             .menu-item {
+                padding: 0.5em 1em;
                 .menu-item-content {
-                    padding: 0.5em 1em;
+                    padding: 0;
+                    color: var(--textPrimary);
                 }
             }
         }
@@ -88,6 +110,8 @@
 }
 
 .menu-vertical {
+    margin: 1em;
+    margin-bottom: 4em;
     .menu-back {
         cursor: pointer;
         padding: 0.3rem 1rem;
@@ -96,8 +120,8 @@
         }
     }
     .menu-back-plug {
-       height: 2.15em; // Found experimentally
-       width: 100%; 
+        height: 2.15em; // Found experimentally
+        width: 100%;
     }
     .menu-item {
         position: relative;
@@ -115,8 +139,9 @@
         .menu-item-content {
             height: 100%;
             display: flex;
-            align-items: center;
             padding: 0.5rem 1rem;
+            align-items: center;
+            justify-content: space-between;
         }
     }
 }

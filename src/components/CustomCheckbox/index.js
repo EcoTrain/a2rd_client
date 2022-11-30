@@ -3,7 +3,7 @@ import "./index.scss";
 
 const CustomCheckbox = ({label, isChecked, onClick, style}) => {
   return (
-    <label className="customCheckbox font-text-small">
+    <label className="customCheckbox font-size-5">
       <input
         type="checkbox"
         checked={isChecked}

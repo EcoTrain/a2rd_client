@@ -13,27 +13,27 @@
     --primary: hsl(180, 33%, 30%);
     --primarySecond: hsl(180, 33%, 50%);
 
-    --white: white;
-    --bgWhite: rgba(245, 245, 245);
+    --bgPrimary: rgba(245, 245, 245);
+    --bgPrimaryTransparent: rgba(245, 245, 245, 0.9);
     --darkWhite: rgba(235, 235, 235);
+    --darkWhiteTransparent: rgba(235, 235, 235, 0.9);
     --lightGray: rgba(215, 215, 215);
     --lightGrayTransparent: rgba(210, 210, 210, 0.9);
     --coldGray: rgba(190, 190, 190);
+    --coldGrayTransparent: rgba(190, 190, 190, 0.7);
     --gray: rgba(160, 160, 160);
-    --grayTransparent: rgba(160, 160, 160, 0.6);
+    --grayTransparent: rgba(160, 160, 160, 0.7);
     --darkGray: rgb(130, 130, 130);
     --coldBlack: rgb(40, 40, 40);
-    --black: black;
 
     --textPrimary: rgb(40, 40, 40);
-    --textInverse: rgba(220, 220, 220);
+    --textInverse: rgba(240, 240, 240);
 }
 :root[data-theme="dark"] {
     --primary: hsl(180, 33%, 60%);
     --primarySecond: hsl(180, 33%, 40%);
 
-    --white: black;
-    --bgWhite: rgb(30, 30, 30);
+    --bgPrimary: rgb(30, 30, 30);
     --darkWhite: rgb(40, 40, 40);
     --lightGray: rgb(60, 60, 60);
     --lightGrayTransparent: rgba(60, 60, 60, 0.9);
@@ -42,15 +42,14 @@
     --grayTransparent: rgba(120, 120, 120, 0.6);
     --darkGray: rgba(140, 140, 140);
     --coldBlack: rgba(160, 160, 160);
-    --black: white;
 
-    --textPrimary: rgba(200, 200, 200);
+    --textPrimary: rgba(240, 240, 240);
     --textInverse: rgb(40, 40, 40);
 }
 
 html,
 body {
-    background-color: var(--bgWhite);
+    background-color: var(--bgPrimary);
     margin: 0;
     overscroll-behavior: none;
     * {
@@ -113,26 +112,45 @@ a {
     align-items: center;
     justify-content: center;
 }
-
 .btn-outline {
     background: transparent;
-    border: 1px solid;
-    border-radius: 1em;
-    padding: 0.2em 0.5em;
+    border: 2px solid var(--primary);
+    border-radius: 2em;
     margin: 0.3em;
+    padding: 0.1em 1em;
+    transition: all 0.2s ease-in-out;
+
+    color: var(--primary);
 
     font-family: inherit;
     line-height: inherit;
     font-size: 0.9em;
 
     cursor: pointer;
+
+    &:hover {
+        background: var(--primary);
+        color: var(--textInverse);
+    }
 }
 .btn-anim {
-    transition: scale 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     &:hover {
         transform: scale(1.05);
     }
     &:active {
         transform: scale(0.99);
     }
+}
+
+.background-parallax {
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background-fill {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--bgPrimary)), to(var(--bgPrimary)));
+    background-image: linear-gradient(180deg, var(--bgPrimary), var(--bgPrimary));
 }

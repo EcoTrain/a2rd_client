@@ -1,0 +1,30 @@
+#projects {
+    .gridCardWrapper {
+        .gridCard {
+            cursor: pointer;
+            min-height: 30vh;
+            transition: all 0.2s ease-in-out;
+            * {
+                color: var(--textPrimary);
+                text-shadow: 0px 0px 0.3em var(--textInverse);
+
+                // color: var(--textInverse);
+                // text-shadow: 0px 0px 0.3em var(--textPrimary);
+            }
+            &:hover {
+                transform: scale(1.01);
+                box-shadow: 0px 0px 0.5rem 0px var(--darkGray);
+            }
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    #projects {
+        .gridCardWrapper {
+            .gridCard {
+                min-height: 15vh;
+            }
+        }
+    }
+}

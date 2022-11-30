@@ -6,23 +6,27 @@ const MenuItems = ({items, onNext}) => {
       <a
         className={!items.submenu ? "menu-item-content" : ""}
         href={items.url}
-        target="_blank"
         rel="noreferrer noopener"
       >
-        <div className="menu-item-title">{items.title}</div>
+        <div className="menu-item-title" style={{fontWeight: "normal"}}>
+          {items.title}
+        </div>
       </a>
     );
   };
   const getItemSubmenu = () => {
-    const subItem = items.url ? (
-      getItemLink()
-    ) : (
-      <div onClick={() => onNext(items.submenu)} style={{width: "100%"}}>
+    let submenuItems = [...items.submenu];
+    if (items.url && !items.notIntro) {
+      submenuItems.unshift({title: "Introduction", url: items.url});
+    }
+
+    const subItem = (
+      <div onClick={() => onNext(submenuItems)} style={{width: "100%"}}>
         <div className="menu-item-title">{items.title}</div>
       </div>
     );
 
-    const arrowItem = items.submenu && <span>&#8250;</span>;
+    const arrowItem = <span>&#8250;</span>;
 
     return (
       <div className="menu-item-content">
@@ -32,7 +36,7 @@ const MenuItems = ({items, onNext}) => {
     );
   };
 
-  let classes = ["menu-item", "font-title-h1"];
+  let classes = ["menu-item", "font-size-2"];
   if (items.submenu) {
     classes.push("menu-item-submenu");
   }

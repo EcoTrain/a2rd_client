@@ -1,0 +1,46 @@
+#startups {
+    .section-content {
+        .gridCardsView {
+            width: 100%;
+            .spanLineDelim {
+                background: var(--coldGray);
+                align-self: center;
+                height: 50%;
+                width: 1px;
+                margin: 0 0.5rem;
+            }
+            .gridCardWrapper {
+                margin: 0;
+                .gridCard {
+                    min-height: 35vh;
+                    transition: all 0.2s ease-in-out;
+                    &:hover {
+                        background-color: var(--darkWhite);
+                        box-shadow: 0px 0px 0.5rem 0px var(--gray);
+                    }
+                    .gridCardView {
+                        margin: 0;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    #startups {
+        .section-content {
+            .gridCardsView {
+                .spanLineDelim {
+                    width: 50%;
+                    height: 1px;
+                    margin: 0.5rem 0;
+                }
+                .gridCard {
+                    min-height: 15vh;
+                }
+            }
+        }
+    }
+}
