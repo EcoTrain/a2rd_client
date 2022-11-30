@@ -81,7 +81,8 @@
             position: absolute;
             left: 0;
             right: auto;
-            box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08);
+            // box-shadow: 0 10px 15px -3px var(--grayTransparent);
+            box-shadow: 0px 0.2rem 0.5rem -2px var(--grayTransparent);
             font-size: 0.875rem;
             z-index: 9999;
             min-width: max-content;
