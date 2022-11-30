@@ -82,7 +82,7 @@ const TextPage = ({
           : "inset 0px 15px 15px -17px var(--coldGray)",
       }}
     >
-      <ScrollOverPack replay always={false} playScale={0}>
+      <ScrollOverPack replay always={false} playScale={0.4}>
         <TweenOne
           className="section-title font-size-2 font-title text-center"
           animation={{opacity: 1}}
@@ -92,7 +92,7 @@ const TextPage = ({
         </TweenOne>
       </ScrollOverPack>
       {textItems.map((x, i) => (
-        <ScrollOverPack key={i} replay always={false} playScale={0}>
+        <ScrollOverPack key={i} replay always={false} playScale={0.4}>
           <TweenOne
             className="font-size-4"
             animation={{opacity: 1}}
@@ -104,7 +104,7 @@ const TextPage = ({
       ))}
 
       {note && (
-        <ScrollOverPack replay always={false} playScale={0}>
+        <ScrollOverPack replay always={false} playScale={0.4}>
           <TweenOne
             className="font-size-5"
             animation={{opacity: 1}}
@@ -121,7 +121,7 @@ const TextPage = ({
             <ScrollOverPack key={i} replay always={false} playScale={0}>
               <TweenOne
                 className="font-size-4"
-                animation={{opacity: 1}}
+                animation={{opacity: 1, duration: 300, delay: i * 300}}
                 style={{opacity: 0.001}}
               >
                 <li key={i} style={{display: "flex"}}>
