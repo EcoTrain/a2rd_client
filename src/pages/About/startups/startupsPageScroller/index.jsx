@@ -110,6 +110,19 @@ const StartupCard = ({info, close, t}) => {
               </div>
             </div>
             <div>{t(info.note)}</div>
+            {info.links && (
+              <div className="btnListWrapper" style={{marginTop: "1rem"}}>
+                {Object.values(info.links).map((x, i) => (
+                  <button
+                    key={i}
+                    className="btn-outline btn-anim font-size-4"
+                    onClick={() => window.open(x.link)}
+                  >
+                    {t(x.title)}
+                  </button>
+                ))}
+              </div>
+            )}
           </TweenOne>
         </div>
       </div>

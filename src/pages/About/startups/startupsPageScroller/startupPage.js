@@ -45,6 +45,7 @@ export const StartupPage = ({item, t}) => {
             />
           </div>
         </div>
+        <div>{t(item.note)}</div>
         {item.links && (
           <div className="btnListWrapper" style={{marginTop: "1rem"}}>
             {Object.values(item.links).map((x, i) => (

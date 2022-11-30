@@ -98,15 +98,22 @@ const StartupItem = ({info, i, onClick}) => {
   };
 
   return (
-    <div
+    <ScrollOverPack
       key={i}
-      className="gridCardWrapper lineGridCardWrapper"
-      style={{transition: "all 0.2s ease-in-out"}}
+      className="gridCardWrapper"
+      replay
+      always={false}
+      playScale={0.2}
       onMouseEnter={onHover}
       onMouseLeave={onUnHover}
       onClick={onClick}
     >
-      <div ref={cardRef} className="gridCard lineGridCard">
+      <TweenOne
+        ref={cardRef}
+        className="gridCard"
+        style={{opacity: 0.001}}
+        animation={{opacity: 1, duration: 1000}}
+      >
         <div className="gridCardView">
           <div className="gridCardViewTitle font-size-3 font-title">
             {t(info.title)}
@@ -136,8 +143,8 @@ const StartupItem = ({info, i, onClick}) => {
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </TweenOne>
+    </ScrollOverPack>
   );
 };
 

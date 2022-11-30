@@ -2,14 +2,25 @@
 
 #publications {
     @include setLineGridColumn;
-    .gridCardsView {
-        .gridCardWrapper {
-            min-height: 25vh;
-            margin: 0;
-            .gridCard {
-                .gridCardView {
-                    .font-title {
-                        // margin-bottom: 0;
+    .section-content {
+        .gridCardsView {
+            .gridCardWrapper {
+                margin: 0;
+                .gridCard {
+                    min-height: 25vh;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 960px) and (orientation: portrait) {
+    #publications {
+        .section-content {
+            .gridCardsView {
+                .gridCardWrapper {
+                    .gridCard {
+                        min-height: 15vh;
                     }
                 }
             }

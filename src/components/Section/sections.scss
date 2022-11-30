@@ -82,6 +82,9 @@
 @media (max-width: 960px) {
     .splitSection {
         flex-direction: column !important;
+        .section-content {
+            justify-content: flex-start;
+        }
         .section-img {
             order: -1;
             min-height: 20vh;

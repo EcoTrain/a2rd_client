@@ -44,7 +44,7 @@ const renderCard = (info, i) => {
   return (
     <ScrollOverPack
       key={i}
-      className="gridCardWrapper lineGridCardWrapper"
+      className="gridCardWrapper"
       replay
       always={false}
       playScale={0.2}

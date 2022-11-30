@@ -44,7 +44,7 @@ const Projects = ({filter, text}) => {
             {t("title")}
           </TweenOne>
         </ScrollOverPack>
-        <ScrollOverPack replay always={false} playScale={0}>
+        <ScrollOverPack replay always={false} playScale={0.2}>
           <TextyAnim
             type="mask-top"
             split={splitTextByWords}
