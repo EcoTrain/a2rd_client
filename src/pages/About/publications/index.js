@@ -69,12 +69,10 @@ const renderCard = (info, i, t) => {
   }, [cardRef.current]);
 
   const onHover = () => {
-    cardRef.current.style.background = "var(--lightGray)";
     setHover(true);
   };
 
   const onUnHover = () => {
-    cardRef.current.style.background = null;
     setHover(false);
   };
 
@@ -91,8 +89,8 @@ const renderCard = (info, i, t) => {
       <TweenOne
         ref={cardRef}
         className="gridCard"
-        animation={{opacity: 1}}
-        style={{opacity: 0.001}}
+        animation={{opacity: 1, top: "0px"}}
+        style={{opacity: 0.001, top: "60px", position: 'relative'}}
       >
         <div className="gridCardIcon">
           {info.icon ? (

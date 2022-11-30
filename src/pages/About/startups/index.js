@@ -65,7 +65,18 @@ const Startups = () => {
                 onClick={() => setActiveIndex(i)}
               />
               {i != startupValues.length - 1 && (
-                <span className="spanLineDelim" />
+                <ScrollOverPack
+                  replay
+                  always={false}
+                  playScale={0}
+                  style={{display: "flex", justifyContent: "center"}}
+                >
+                  <TweenOne
+                    animation={{opacity: 1, duration: 1500}}
+                    style={{opacity: 0.001}}
+                    className="spanLineDelim"
+                  />
+                </ScrollOverPack>
               )}
             </>
           ))}

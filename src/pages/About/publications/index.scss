@@ -8,6 +8,9 @@
                 margin: 0;
                 .gridCard {
                     min-height: 25vh;
+                    &:hover {
+                        background: var(--lightGray);
+                    }
                 }
             }
         }

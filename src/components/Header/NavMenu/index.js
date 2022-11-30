@@ -11,16 +11,11 @@ import {HeaderContext} from "../../../contexts/HeaderContext";
 const NavMenu = () => {
   const {t} = useTranslation();
   const [isNarrow, setNarrow] = useState(window.innerWidth < 960);
-  const {
-    dropHeaderBackground,
-    // setHeaderFixed, setHeaderVisible,
-  } = useContext(HeaderContext);
+  const {dropHeaderBackground} = useContext(HeaderContext);
 
   useEffect(() => {
     if (!isNarrow) {
       dropHeaderBackground();
-      // setHeaderFixed(false);
-      // setHeaderVisible(false);
       document.documentElement.style.overflow = "unset";
     }
   }, [isNarrow]);

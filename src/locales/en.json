@@ -186,7 +186,7 @@
             },
             "payload": {
                 "title": "Payload of Results",
-                "texts": "We reuse the results of multi-agent simulations in our other projects due to the extensive data set of these results. So, for example, taking into account the additional parameter of the volume of vehicle emissions allows us to analyze environmental situations and the spread of pollutants using Lagrangian mathematics and mathematical packages GRAM/GRAL."
+                "texts": "We reuse the results of multi-agent simulations in our other projects due to the extensive data set of these results. So, for example, taking into account the additional parameter of the volume of vehicle emissions allows us to analyze environmental situations and the spread of pollutants using Lagrangian mathematics and mathematical packages."
             },
             "capabilities": {
                 "title": "Capabilities",
