@@ -19,7 +19,7 @@ const Feedback = ({children, className, style}) => {
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [isVerified, setVerified] = useState(true);
+  const [isVerified, setVerified] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 960);
   const recaptchaRef = useRef();
   const {theme} = useContext(ThemeContext);
@@ -134,7 +134,7 @@ const Feedback = ({children, className, style}) => {
             className="btn-outline formBtn cancelBtn"
             onClick={(e) => {
               e.preventDefault();
-              setOpen(false);
+              handleClose();
             }}
           >
             {"Cancel"}
