@@ -3,13 +3,14 @@ import {renderNextPageBtn} from "../../../components/Section/PageScroller";
 import "./preview.scss";
 
 const BgVideo = () => {
-  const [opacity, setOpacity] = useState(1);
+  const defaultOpacity = 0.6;
+  const [opacity, setOpacity] = useState(defaultOpacity);
 
   // Opacity observer
   useEffect(() => {
     const handleScroll = () => {
       const position = window.pageYOffset;
-      setOpacity(1 - position / window.screen.height);
+      setOpacity(defaultOpacity - position / window.screen.height);
     };
     window.addEventListener("scroll", handleScroll, {passive: true});
     return () => {
@@ -44,6 +45,27 @@ const BgVideo = () => {
   );
 };
 
+const HomeIntoNextBtn = () => {
+  const defaultOpacity = 1;
+  const [opacity, setOpacity] = useState(defaultOpacity);
+
+  // Opacity observer
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setOpacity(defaultOpacity - position / window.screen.height * 2);
+    };
+    window.addEventListener("scroll", handleScroll, {passive: true});
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <div style={{opacity: opacity}}>{renderNextPageBtn({id: "ourAim"})}</div>
+  );
+};
+
 const HomePreview = () => {
   const video = BgVideo();
   return (
@@ -75,8 +97,8 @@ const HomePreview = () => {
             Contact us
           </div>
         </div>
+        <HomeIntoNextBtn />
       </div>
-      {renderNextPageBtn({id: "ourAim"})}
     </section>
   );
 };

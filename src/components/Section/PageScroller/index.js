@@ -65,7 +65,7 @@ export const renderNextPageBtn = ({id}) => (
   <div
     className="nextPageBtn"
     onClick={() =>
-      scroller.scrollTo(id, {duration: 500, smooth: "easeInQuint"})
+      scroller.scrollTo(id, {duration: 1000, smooth: "easeInQuint"})
     }
   >
     <TweenOne

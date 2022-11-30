@@ -15,7 +15,11 @@ export const OurAim = () => {
   );
 
   return (
-    <section id={"ourAim"} className="section section-fullscreen section-white">
+    <section
+      id={"ourAim"}
+      className="section section-fullscreen section-white"
+      style={{boxShadow: "unset"}}
+    >
       <div className="section-content" style={{maxWidth: 800}}>
         <ScrollOverPack replay always={false} playScale={0.4}>
           <TweenOne

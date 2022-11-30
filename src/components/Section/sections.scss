@@ -71,13 +71,6 @@
 .section-lightGray {
     background-color: var(--lightGray);
 }
-.section-coldGray {
-    background-color: var(--coldGray);
-}
-.section-gray {
-    background-color: var(--gray);
-    color: var(--textInverse);
-}
 
 @media (max-width: 960px) {
     .splitSection {
