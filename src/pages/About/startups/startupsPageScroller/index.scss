@@ -34,43 +34,54 @@
     }
 }
 
-.banner-anim-arrow-default {
-    position: absolute;
-    min-width: 2rem;
-    max-width: calc((100vw - 850px) / 2);
-    width: 100%;
-    height: unset;
-    top: 0;
-    bottom: 0;
-    transition: all 0.2s ease-in-out;
-    background: transparent;
-    &:hover {
-        background: rgba(0, 0, 0, 0.2);
-    }
-    &.prev {
-        &::before,
-        &::after {
-            left: calc(95% - 0.75rem);
-            height: 1.5rem;
+.startupScroller {
+    .banner-anim-arrow-default {
+        position: absolute;
+        min-width: 2rem;
+        max-width: calc((100vw - 850px) / 2);
+        width: 100%;
+        height: unset;
+        top: 0;
+        bottom: 0;
+        transition: all 0.2s ease-in-out;
+        background: transparent;
+        &:hover {
+            background: var(--grayTransparent2);
         }
-        &::before {
-            top: calc(50% - 1.28rem);
+        &.prev {
+            &::before,
+            &::after {
+                left: calc(95% - 0.75rem);
+                height: 1.5rem;
+            }
+            &::before {
+                top: calc(50% - 1.28rem);
+            }
+            &::after {
+                bottom: calc(50% - 1.28rem);
+            }
         }
-        &::after {
-            bottom: calc(50% - 1.28rem);
+        &.next {
+            &::before,
+            &::after {
+                left: calc(5% + 0.75rem);
+                height: 1.5rem;
+            }
+            &::before {
+                top: calc(50% - 1.28rem);
+            }
+            &::after {
+                bottom: calc(50% - 1.28rem);
+            }
         }
-    }
-    &.next {
-        &::before,
-        &::after {
-            left: calc(5% + 0.75rem);
-            height: 1.5rem;
-        }
-        &::before {
-            top: calc(50% - 1.28rem);
-        }
-        &::after {
-            bottom: calc(50% - 1.28rem);
-        }
+        // &.next,
+        // &.prev {
+        //     &:hover {
+        //         &::before,
+        //         &::after {
+        //             background: var(--textInverse);
+        //         }
+        //     }
+        // }
     }
 }

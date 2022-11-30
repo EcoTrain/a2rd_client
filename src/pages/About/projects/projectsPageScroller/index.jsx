@@ -38,6 +38,7 @@ const ProjectScroller = ({activeIndex, close, t}) => {
       type="across"
       initShow={activeIndex}
       style={{height: "100vh"}}
+      className={"projectScroller"}
     >
       {projectsCardsInfo.map((x, i) => (
         <Element key={i} name={i}>

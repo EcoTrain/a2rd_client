@@ -39,6 +39,7 @@ const StartupScroller = ({activeIndex, close, t}) => {
       type="across"
       initShow={activeIndex}
       style={{height: "100vh"}}
+      className={"startupScroller"}
     >
       {Object.values(startupsCardsInfo).map((x, i) => (
         <Element key={i} name={i}>
