@@ -124,7 +124,7 @@ const StartupItem = ({info, i, onClick}) => {
         ref={cardRef}
         className="gridCard"
         style={{opacity: 0.001}}
-        animation={{opacity: 1, duration: 1000}}
+        animation={{opacity: 1}}
       >
         <div className="gridCardView">
           <div className="gridCardViewTitle font-size-3 font-title">

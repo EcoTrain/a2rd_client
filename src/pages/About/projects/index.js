@@ -110,7 +110,7 @@ const ProjectItem = ({info, i, onClick}) => {
         className="gridCard"
         ref={cardRef}
         style={{opacity: 0.001, background: bg}}
-        animation={{opacity: 1, duration: 1000}}
+        animation={{opacity: 1}}
       >
         <div className="gridCardView">
           <div

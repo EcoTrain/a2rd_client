@@ -82,7 +82,7 @@ const renderCard = (info, i, t) => {
       className="gridCardWrapper"
       replay
       always={false}
-      playScale={0.2}
+      playScale={0.4}
       onMouseEnter={onHover}
       onMouseLeave={onUnHover}
     >
@@ -90,7 +90,7 @@ const renderCard = (info, i, t) => {
         ref={cardRef}
         className="gridCard"
         animation={{opacity: 1, top: "0px"}}
-        style={{opacity: 0.001, top: "60px", position: 'relative'}}
+        style={{opacity: 0.001, top: "2rem", position: 'relative'}}
       >
         <div className="gridCardIcon">
           {info.icon ? (
