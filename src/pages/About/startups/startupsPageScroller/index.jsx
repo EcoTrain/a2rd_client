@@ -4,7 +4,7 @@ import BannerAnim, {Element} from "rc-banner-anim";
 import "rc-banner-anim/assets/index.css";
 import {Trans} from "react-i18next";
 
-import projectsCardsInfo from "../config";
+import startupsCardsInfo from "../config";
 
 import "./index.scss";
 
@@ -40,7 +40,7 @@ const StartupScroller = ({activeIndex, close, t}) => {
       initShow={activeIndex}
       style={{height: "100vh"}}
     >
-      {projectsCardsInfo.map((x, i) => (
+      {Object.values(startupsCardsInfo).map((x, i) => (
         <Element key={i} name={i}>
           <BgElement
             key={i}
@@ -94,7 +94,7 @@ const StartupCard = ({info, close, t}) => {
                   i18nKey={t(info.text)}
                   components={[
                     <a
-                      key={`linkWM`}
+                      key={`linkStartup`}
                       href={
                         (info.links &&
                           info.links.website &&
@@ -109,7 +109,7 @@ const StartupCard = ({info, close, t}) => {
                 />
               </div>
             </div>
-            <div>{t(info.note)}</div>
+            {info.note && <div>{t(info.note)}</div>}
             {info.links && (
               <div className="btnListWrapper" style={{marginTop: "1rem"}}>
                 {Object.values(info.links).map((x, i) => (
