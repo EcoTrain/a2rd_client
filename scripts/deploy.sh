@@ -1,3 +1,3 @@
 git pull origin master
-sudo service a2rd_server restart
+yarn
 sudo service a2rd_client restart
