@@ -5,16 +5,13 @@ import {ToastContainer} from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
-const Home = loadable(() => import("./pages/Home"), {
-  fallback: <Waiter />,
-});
 const Header = loadable(() => import("./components/Header"), {
   fallback: <Waiter />,
 });
-const Projects = loadable(() => import("./pages/ExtendedPages/projects"), {
+const Home = loadable(() => import("./pages/Home"), {
   fallback: <Waiter />,
 });
-const Startups = loadable(() => import("./pages/ExtendedPages/startups"), {
+const About = loadable(() => import("./pages/About"), {
   fallback: <Waiter />,
 });
 const WellnessMonitor = loadable(() => import("./pages/WellnessMonitor"), {
@@ -32,6 +29,9 @@ const ModelingDistribution = loadable(
     fallback: <Waiter />,
   }
 );
+const Contacts = loadable(() => import("./pages/Contacts"), {
+  fallback: <Waiter />,
+});
 
 import "./components/Toast.scss";
 import "./App.scss";
@@ -67,46 +67,14 @@ function App() {
     });
   }, []);
 
-  // Lazy load image (async)
-  useEffect(() => {
-    document.addEventListener("DOMContentLoaded", function () {
-      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-      if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function (
-          entries,
-          observer
-        ) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              let lazyImage = entry.target;
-              lazyImage.src = lazyImage.dataset.src;
-              lazyImage.srcset = lazyImage.dataset.srcset;
-              lazyImage.classList.remove("lazy");
-              lazyImageObserver.unobserve(lazyImage);
-            }
-          });
-        });
-
-        lazyImages.forEach(function (lazyImage) {
-          lazyImageObserver.observe(lazyImage);
-        });
-      } else {
-        // Possibly fall back to event handlers here
-      }
-    });
-  }, []);
-
   return (
     <section>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<Home />} />
-        <Route path="/projects/" element={<Projects />} />
-        <Route path="/projects/:id" element={<Projects />} />
-        <Route path="/startups/" element={<Startups />} />
-        <Route path="/startups/:id" element={<Startups />} />
+        <Route path="/about/" element={<About />} />
+        <Route path="/about/:id" element={<About />} />
         <Route path="/modeling/multiagent" element={<ModelingMultiagent />} />
         <Route
           path="/modeling/distribution"
@@ -114,6 +82,7 @@ function App() {
         />
         <Route path="/wellness/" element={<WellnessMonitor />} />
         <Route path="/wellness/:id" element={<WellnessMonitor />} />
+        <Route path="/contacts/" element={<Contacts />} />
       </Routes>
       <ToastContainer
         position="bottom-right"

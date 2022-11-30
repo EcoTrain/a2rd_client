@@ -4,18 +4,16 @@ import {scroller} from "react-scroll";
 import {useTranslation} from "react-i18next";
 
 import HomePreview from "./preview";
-import HomeAbout from "./textSections/about";
 import PageScroller from "../../components/Section/PageScroller";
-import TextPage from "../../components/Section/TextPage";
-import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
 
-import HomeProjects from "./cardSections/projects";
-import HomeStartups from "./cardSections/startups";
-import HomePublications from "./cardSections/publications";
-import Contacts from "./contacts";
-import HomeStack from "./stack";
+import Projects from "../About/projects";
+import Startups from "../About/startups";
+import Publications from "../About/publications";
+import HomeStack from "../About/stack";
+import Contacts from "../Contacts";
 
 import "./home.scss";
+import { OurAim } from "./aim";
 
 const Home = () => {
   const params = useParams();
@@ -32,17 +30,13 @@ const Home = () => {
   return (
     <PageScroller t={t}>
       <HomePreview />
-      <HomeAbout title="navigation.about" />
+      <OurAim />
 
-      <TextPage position={"sticky"} {...textPageConfig.home.activities} t={t} />
-      <TextPage position={"sticky"} {...textPageConfig.home.solutions} t={t} />
-
-      <HomeProjects title="navigation.projects" />
-      <HomeStartups title="navigation.startups" />
-      <HomePublications title="navigation.publications" />
+      <Projects title="navigation.projects" />
+      <Startups title="navigation.startups" />
+      <Publications title="navigation.publications" />
       <HomeStack title="navigation.stack" />
-
-      {/* <TextPage {...textPageConfig.home.businessModel} t={t} /> */}
+      {/* <Team /> */}
 
       <Contacts title="navigation.contacts" />
     </PageScroller>

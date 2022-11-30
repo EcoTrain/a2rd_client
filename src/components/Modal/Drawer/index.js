@@ -1,6 +1,5 @@
-import React, {useContext, useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
-import {HeaderContext} from "../../../contexts/HeaderContext";
 import "./index.scss";
 
 const CustomDrawer = ({
@@ -9,8 +8,8 @@ const CustomDrawer = ({
   open = false, // Trigger to show/hide
   onClose = () => {}, // Callback on close modal
   style = {},
-  width = "100vw",
 }) => {
+  const width = style.width || "100vw";
   const startZ = 1000;
   const [index, setIndex] = useState();
 
@@ -27,9 +26,15 @@ const CustomDrawer = ({
   useEffect(() => {
     if (open) {
       setIndex(getCount() + startZ);
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      const _count = document.querySelectorAll(".customDrawer-open").length;
+      if (!_count) {
+        document.documentElement.style.overflow = "unset";
+      }
     }
+    // return () => (document.documentElement.style.overflow = "unset");
   }, [open]);
-
 
   function getContent() {
     return (

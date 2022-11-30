@@ -8,7 +8,8 @@ import PageScroller from "../../components/Section/PageScroller";
 import TextPage from "../../components/Section/TextPage";
 import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
 
-import HomeProjects from "../Home/cardSections/projects";
+import Projects from "../About/projects";
+import Contacts from "../Contacts";
 
 const ModelingDistribution = () => {
   const params = useParams();
@@ -39,10 +40,11 @@ const ModelingDistribution = () => {
         position={"sticky"}
         t={t}
       />
-      <HomeProjects
+      <Projects
         filter={"distribution"}
         text={t("distribution.projects.text")}
       />
+      <Contacts />
     </PageScroller>
   );
 };

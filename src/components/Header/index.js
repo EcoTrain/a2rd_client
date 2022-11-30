@@ -34,16 +34,22 @@ const Header = () => {
   const {t} = useTranslation();
   const {headerFixed, headerBackground, headerVisible, setHeaderVisible} =
     useContext(HeaderContext);
-  const hideDelay = 3000;
 
+  const visibilityTimer = useRef();
   const headerWrapperRef = useRef();
   const headerRef = useRef();
 
   const [isNarrow, setNarrow] = useState(window.innerWidth < 960);
   const {theme, setTheme} = useContext(ThemeContext);
-  const visibilityTimer = useRef();
 
+  const hideDelay = 3000;
   const headerHeight = headerRef.current ? headerRef.current.clientHeight : 0;
+
+  useEffect(() => {
+    if (window.scrollY > headerHeight) {
+      setTimer();
+    }
+  }, []);
 
   const setTimer = () => {
     if (!headerFixed && window.pageYOffset > headerHeight) {

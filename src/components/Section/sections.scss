@@ -1,77 +1,69 @@
-.ant-layout {
-    background: none;
-}
-
 @for $i from 1 through 100 {
     .sectionPage:nth-child(#{$i}) {
         z-index: ($i);
     }
 }
 
-.sectionPageScroller {
-    .sectionPage {
-        top: 0;
-        pointer-events: none;
+.sectionPage {
+    top: 0;
+    // pointer-events: none;
+}
 
-        .section {
-            display: flex;
-            flex-wrap: wrap;
-            min-height: 100vh;
-            position: relative;
-            flex-direction: row;
-            .section-content {
-                flex: 1;
-                padding-top: 2em;
-                padding-bottom: 2em;
-                pointer-events: all;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                box-shadow: inset 0px 15px 15px -17px var(--coldGray);
-                & > .section-content-block {
-                    padding: 0em 2em;
-                    margin: auto;
-                }
+.section {
+    display: flex;
+    position: relative;
+    justify-content: center;
 
-                .section-content-block {
-                    max-width: 1200px;
-                }
-                .section-title {
-                    margin-top: 0.5em;
-                    margin-bottom: 0.5em;
-                }
-                li {
-                    .icon {
-                        margin: 0 10px;
-                    }
-                }
-            }
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0px 15px 15px -17px var(--coldGray);
+
+    &.splitSection {
+        height: 100vh;
+        .section-content {
+            flex-grow: 1;
+            flex-basis: 50%;
+            max-height: 100vh;
+            overflow: scroll;
         }
-        .splitSection {
-            height: 100vh;
-            .section-content {
-                flex-grow: 1;
-                flex-basis: 50%;
-                max-height: 100vh;
-                overflow: scroll;
-            }
-            .section-img {
-                flex-grow: 1;
-                flex-basis: 50%;
-                position: relative;
-                img {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
+        .section-img {
+            flex-grow: 1;
+            flex-basis: 50%;
+            position: relative;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
+
+    .section-content {
+        padding: 2rem 1rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 1200px;
+
+        .section-title {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .section-note {
+            max-width: 800px;
+        }
+    }
 }
+.section-fullscreen {
+    min-height: 100vh;
+}
+
 .section-white {
-    background-color: var(--bgWhite);
+    background-color: var(--bgPrimary);
 }
 .section-darkWhite {
     background-color: var(--darkWhite);
@@ -88,23 +80,13 @@
 }
 
 @media (max-width: 960px) {
-    .sectionPageScroller {
-        .sectionPage {
-            .splitSection {
-                flex-direction: column !important;
-                .section-content {
-                    & > .section-content-block {
-                        margin: unset;
-                        height: 100%;
-                    }
-                }
-                .section-img {
-                    order: -1;
-                    min-height: 20vh;
-                    max-height: 20vh;
-                    width: 100vw;
-                }
-            }
+    .splitSection {
+        flex-direction: column !important;
+        .section-img {
+            order: -1;
+            min-height: 20vh;
+            max-height: 20vh;
+            width: 100vw;
         }
     }
 }

@@ -1,0 +1,78 @@
+.projectCard {
+    .projectCard-content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 90%;
+        max-width: 800px;
+        padding: 2rem 0;
+        .projectCard-info {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            margin-left: 2rem;
+        }
+        .closeButton {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            line-height: 1em;
+            cursor: pointer;
+            border-radius: 50%;
+            height: 1.2em;
+            width: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                background: var(--coldGrayTransparent);
+                color: var(--textPrimary);
+                box-shadow: 0px 0px 0.5rem 0px var(--darkGray);
+            }
+        }
+    }
+}
+
+.banner-anim-arrow-default {
+    position: absolute;
+    min-width: 2rem;
+    max-width: calc((100vw - 850px) / 2);
+    width: 100%;
+    height: unset;
+    top: 0;
+    bottom: 0;
+    transition: all 0.2s ease-in-out;
+    background: transparent;
+    &:hover {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    &.prev {
+        &::before,
+        &::after {
+            left: calc(95% - 0.75rem);
+            height: 1.5rem;
+        }
+        &::before {
+            top: calc(50% - 1.28rem);
+        }
+        &::after {
+            bottom: calc(50% - 1.28rem);
+        }
+    }
+    &.next {
+        &::before,
+        &::after {
+            left: calc(5% + 0.75rem);
+            height: 1.5rem;
+        }
+        &::before {
+            top: calc(50% - 1.28rem);
+        }
+        &::after {
+            bottom: calc(50% - 1.28rem);
+        }
+    }
+}

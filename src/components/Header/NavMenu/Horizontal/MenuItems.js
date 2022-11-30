@@ -25,7 +25,6 @@ const MenuItems = ({items, depthLevel}) => {
       <a
         className="menu-item-content"
         href={items.url}
-        target="_blank"
         rel="noreferrer noopener"
       >
         <div className="menu-item-title">{items.title}</div>
@@ -40,11 +39,12 @@ const MenuItems = ({items, depthLevel}) => {
         <div className="menu-item-title">{items.title}</div>
       </div>
     );
-    const arrowItem = depthLevel > 0 && <span>&raquo;</span>;
+    // const arrowItem = depthLevel > 0 && <span>&#10095;</span>;
+    const arrowItem = depthLevel > 0 && <span>&#9660;</span>;
 
     return (
       <>
-        <div style={{height: "100%"}}>
+        <div className="menu-item-subitem">
           {subItem}
           {arrowItem}
         </div>

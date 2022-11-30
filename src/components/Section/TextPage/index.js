@@ -4,8 +4,6 @@ import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
 import {CheckOutlined} from "@ant-design/icons";
 
-
-
 import {splitTextByWords} from "../../../fucntions/splitText";
 import TweenOne from "rc-tween-one";
 
@@ -68,68 +66,75 @@ const TextPage = ({
   const getImage = () =>
     hasImageArea && (
       <div key={`${(title || "").toLowerCase()}_image`} className="section-img">
-        {img.src && <img className="lazy" src={img.src} alt={img.alt} title={img.title} />}
+        {img.src && (
+          <img className="lazy" src={img.src} alt={img.alt} title={img.title} />
+        )}
       </div>
     );
 
   const getContent = () => (
     <div
       key={`${(title || "").toLowerCase()}_content`}
-      className={`section-content  ${sectionTheme}`}
+      className={`section-content ${sectionTheme}`}
+      style={{
+        boxShadow: !hasImageArea
+          ? ""
+          : "inset 0px 15px 15px -17px var(--coldGray)",
+      }}
     >
-      <div className="section-content-block">
-        <ScrollOverPack replay always={false} playScale={0}>
+      <ScrollOverPack replay always={false} playScale={0}>
+        <TweenOne
+          className="section-title font-size-2 font-title text-center"
+          animation={{opacity: 1}}
+          style={{opacity: 0.001}}
+        >
+          {t(title)}
+        </TweenOne>
+      </ScrollOverPack>
+      {textItems.map((x, i) => (
+        <ScrollOverPack key={i} replay always={false} playScale={0}>
           <TweenOne
-            className="section-title font-title-h1 text-center"
+            className="font-size-4"
             animation={{opacity: 1}}
             style={{opacity: 0.001}}
           >
-            {t(title)}
+            {getTextAnim(x, i)}
           </TweenOne>
         </ScrollOverPack>
-        {textItems.map((x, i) => (
-          <ScrollOverPack key={i} replay always={false} playScale={0}>
-            <TweenOne
-              className="font-text-big"
-              animation={{opacity: 1}}
-              style={{opacity: 0.001}}
-            >
-              {getTextAnim(x, i)}
-            </TweenOne>
-          </ScrollOverPack>
-        ))}
+      ))}
 
+      {note && (
         <ScrollOverPack replay always={false} playScale={0}>
           <TweenOne
-            className="font-text-small"
+            className="font-size-5"
             animation={{opacity: 1}}
             style={{opacity: 0.001}}
           >
             {getTextAnim(t(note))}
           </TweenOne>
         </ScrollOverPack>
+      )}
 
-        {listItems && (
-          <ul style={{marginTop: "1em"}}>
-            {listItems.map((text, i) => (
-              <ScrollOverPack key={i} replay always={false} playScale={0}>
-                <TweenOne
-                  className="font-text-big"
-                  animation={{opacity: 1}}
-                  style={{opacity: 0.001}}
-                >
-                  <li key={i} style={{display: "flex"}}>
-                    <div className="icon">
-                      <CheckOutlined />
-                    </div>
-                    <div>{text}</div>
-                  </li>
-                </TweenOne>
-              </ScrollOverPack>
-            ))}
-          </ul>
-        )}
-      </div>
+      {listItems && (
+        <ul style={{width: "100%"}}>
+          {listItems.map((text, i) => (
+            <ScrollOverPack key={i} replay always={false} playScale={0}>
+              <TweenOne
+                className="font-size-4"
+                animation={{opacity: 1}}
+                style={{opacity: 0.001}}
+              >
+                <li key={i} style={{display: "flex"}}>
+                  <div style={{marginRight: "0.5em", marginLeft: "1.5em"}}>
+                    <CheckOutlined />
+                  </div>
+                  <div>{text}</div>
+                </li>
+              </TweenOne>
+            </ScrollOverPack>
+          ))}
+        </ul>
+      )}
     </div>
   );
 
@@ -137,8 +142,17 @@ const TextPage = ({
 
   return (
     <section
-      className={["section", hasImageArea && "splitSection"].join(" ")}
+      className={[
+        "section",
+        hasImageArea && "splitSection",
+        "section-fullscreen",
+      ].join(" ")}
       id={id}
+      style={{
+        boxShadow: hasImageArea
+          ? "unset"
+          : "inset 0px 15px 15px -17px var(--coldGray)",
+      }}
     >
       {direction == "left" ? sectionChilds : sectionChilds.reverse()}
     </section>

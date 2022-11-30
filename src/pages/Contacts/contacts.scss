@@ -1,0 +1,25 @@
+#contacts {
+    .section-content {
+        padding-top: 2em;
+        padding-bottom: 2em;
+        a {
+            color: var(--textPrimary);
+        }
+        #contactsIcons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 1em 0;
+            .contactIcon {
+                margin: 0 0.3rem;
+                height: 4em;
+                width: 4em;
+                svg {
+                    height: 100%;
+                    width: 100%;
+                    fill: var(--textPrimary);
+                }
+            }
+        }
+    }
+}

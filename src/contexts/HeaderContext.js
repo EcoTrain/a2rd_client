@@ -2,10 +2,13 @@ import React, {createContext, useEffect, useState} from "react";
 import PropTypes from "prop-types";
 
 export const defaultValues = {
-  fixed: false,
-  setFixed: () => {},
-  background: "var(--lightGrayTransparent)",
-  setBackground: () => {},
+  headerVisible: true,
+  setHeaderVisible: () => {},
+  headerFixed: false,
+  setHeaderFixed: () => {},
+  headerBackground: "var(--lightGrayTransparent)",
+  setHeaderBackground: () => {},
+  dropHeaderBackground: () => {},
 };
 
 export const HeaderContext = createContext(defaultValues);
