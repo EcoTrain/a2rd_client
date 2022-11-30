@@ -11,12 +11,13 @@
             }
             .gridCardWrapper {
                 margin: 0;
+                cursor: pointer;
                 .gridCard {
                     min-height: 35vh;
                     transition: all 0.2s ease-in-out;
                     &:hover {
                         background-color: var(--darkWhite);
-                        box-shadow: 0px 0px 0.5rem 0px var(--gray);
+                        box-shadow: 0px 0px 0.5rem 0px var(--coldGray);
                     }
                     .gridCardView {
                         margin: 0;

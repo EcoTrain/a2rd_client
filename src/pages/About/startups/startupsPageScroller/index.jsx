@@ -63,6 +63,7 @@ const StartupScroller = ({activeIndex, close, t}) => {
   );
 };
 
+// TODO: Combine with startupPage
 const StartupCard = ({info, close, t}) => {
   return (
     <section className="section section-fullscreen startupCard">
@@ -94,7 +95,12 @@ const StartupCard = ({info, close, t}) => {
                   components={[
                     <a
                       key={`linkWM`}
-                      href={(info.links && info.links.website) || ""}
+                      href={
+                        (info.links &&
+                          info.links.website &&
+                          info.links.website.link) ||
+                        ""
+                      }
                       rel="noreferrer noopener"
                       target="_blank"
                       aria-label={t(info.text)}

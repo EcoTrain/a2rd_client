@@ -32,8 +32,9 @@ const Publications = () => {
           href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
           target="_blank"
           rel="noreferrer noopener"
-          style={{margin: "1rem"}}
+          style={{margin: "1rem", fontWeight: "normal"}}
           aria-label={t("publications.google_scholar")}
+          className={"btn-outline"}
         >
           {t("publications.google_scholar")}
         </a>

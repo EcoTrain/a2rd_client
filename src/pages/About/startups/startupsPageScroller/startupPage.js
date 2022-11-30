@@ -31,7 +31,12 @@ export const StartupPage = ({item, t}) => {
               components={[
                 <a
                   key={`linkWM`}
-                  href={(item.links && item.links.website) || ""}
+                  href={
+                    (item.links &&
+                      item.links.website &&
+                      item.links.website.link) ||
+                    ""
+                  }
                   rel="noreferrer noopener"
                   target="_blank"
                   aria-label={t(item.text)}
