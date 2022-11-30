@@ -1,5 +1,5 @@
-const startupsCardsInfo = [
-  {
+const startupsCardsInfo = {
+  wm: {
     title: "item.wm.title",
     previewText: "item.wm.previewText",
     shortText: "item.wm.shortText",
@@ -21,7 +21,7 @@ const startupsCardsInfo = [
       },
     },
   },
-  // {
+  // framework: {
   //   title: "item.framework.title",
   //   previewText: "item.framework.previewText",
   //   shortText: "item.framework.shortText",
@@ -29,7 +29,7 @@ const startupsCardsInfo = [
   //   bg: "var(--darkWhite)",
   //   id: "startup_xwm",
   // },
-  {
+  airflow: {
     title: "item.airflows.title",
     previewText: "item.airflows.previewText",
     shortText: "item.airflows.shortText",
@@ -43,6 +43,6 @@ const startupsCardsInfo = [
       },
     },
   },
-];
+};
 
 export default startupsCardsInfo;

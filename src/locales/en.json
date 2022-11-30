@@ -43,7 +43,7 @@
         },
         "about": {
             "title": "About Us",
-            "text": "At the A2 Research and Development lab we are motivated by more than the simple pursuit of business success. Our aim is to make the world sustainable and better than it was before, improve the lives of millions of people worldwide.\n\tThe main commercial projects are start-up initiatives wellness monitor and airflow modelling, which are related impact investments aimed at developing a sustainable society.",
+            "text": "At the A2 Research and Development lab we are motivated by more than the simple pursuit of business success. Our aim is to make the world sustainable and better than it was before, improve the lives of millions of people worldwide.\n\tThe main commercial projects are start-up initiatives <0>wellness monitor</0> and <1>airflow modelling</1>, which are related impact investments aimed at developing a sustainable society.",
             "signature": "Thank you for visiting our website.\n\tWith the highest consideration from the A2 Research and Development lab",
             "name": "Aleksey A. ROMANOV",
             "position": "CEO, founder"

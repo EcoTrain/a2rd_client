@@ -16,6 +16,7 @@ const ScrollOverPack = ScrollAnim.OverPack;
 const Startups = () => {
   const {t} = useTranslation("startups");
   const [activeIndex, setActiveIndex] = useState(null);
+  const startupValues = Object.values(startupsCardsInfo);
 
   useEffect(() => {
     const handleEsc = (event) => {
@@ -55,7 +56,7 @@ const Startups = () => {
           </TweenOne>
         </ScrollOverPack>
         <div className="gridCardsView lineGridCardsView">
-          {startupsCardsInfo.map((x, i) => (
+          {startupValues.map((x, i) => (
             <>
               <StartupItem
                 key={i}
@@ -63,7 +64,7 @@ const Startups = () => {
                 info={x}
                 onClick={() => setActiveIndex(i)}
               />
-              {i != startupsCardsInfo.length - 1 && (
+              {i != startupValues.length - 1 && (
                 <span className="spanLineDelim" />
               )}
             </>
