@@ -34,7 +34,16 @@ const Projects = ({filter, text}) => {
   return (
     <section className="section section-darkWhite" id="projects">
       <div className="section-content" style={{height: "100%"}}>
-        <div className="section-title font-size-2 font-title">{t("title")}</div>
+        <ScrollOverPack
+          className="section-title font-size-2 font-title text-align-center"
+          replay
+          always={false}
+          playScale={0.2}
+        >
+          <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
+            {t("title")}
+          </TweenOne>
+        </ScrollOverPack>
         <ScrollOverPack replay always={false} playScale={0}>
           <TextyAnim
             type="mask-top"

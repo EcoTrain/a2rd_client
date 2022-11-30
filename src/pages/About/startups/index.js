@@ -1,4 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
+import ScrollAnim from "rc-scroll-anim";
+import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
 
 import startupsCardsInfo from "./config";
@@ -8,6 +10,8 @@ import "../../../components/CardPage/lineGridCard.scss";
 import "./index.scss";
 import CustomDrawer from "../../../components/Modal/Drawer";
 import StartupScroller from "./startupsPageScroller";
+
+const ScrollOverPack = ScrollAnim.OverPack;
 
 const Startups = () => {
   const {t} = useTranslation("startups");
@@ -28,9 +32,28 @@ const Startups = () => {
   return (
     <section className="section section-white" id="startups">
       <div className="section-content">
-        <div className="section-title font-size-2 font-title text-align-center">
-          {t("title")}
-        </div>
+        <ScrollOverPack
+          className="section-title font-size-2 font-title text-align-center"
+          replay
+          always={false}
+          playScale={0.2}
+        >
+          <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
+            {t("title")}
+          </TweenOne>
+        </ScrollOverPack>
+        <ScrollOverPack
+          replay
+          always={false}
+          playScale={0.2}
+          className="text-align-center"
+          style={{marginBottom: "1rem", maxWidth: 700}}
+        >
+          <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
+            We also implement our own start-up initiatives related to impact
+            investments aimed at developing a sustainable society
+          </TweenOne>
+        </ScrollOverPack>
         <div className="gridCardsView lineGridCardsView">
           {startupsCardsInfo.map((x, i) => (
             <>

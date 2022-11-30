@@ -16,15 +16,30 @@ const Publications = () => {
   return (
     <section className="section section-darkWhite" id="publications">
       <div className="section-content">
-        <div className="section-title font-size-2 font-title text-align-center">
-          {t("publications.title")}
-        </div>
-        <div
-          className="description"
+        <ScrollOverPack
+          className="section-title font-size-2 font-title text-align-center"
+          replay
+          always={false}
+          playScale={0.2}
+        >
+          <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
+            {t("publications.title")}
+          </TweenOne>
+        </ScrollOverPack>
+        <ScrollOverPack
+          replay
+          always={false}
+          playScale={0.2}
           style={{marginBottom: "1rem", maxWidth: 900}}
         >
-          {t("publications.label")}
-        </div>
+          <TweenOne
+            className="description"
+            animation={{opacity: 1}}
+            style={{opacity: 0.001}}
+          >
+            {t("publications.label")}
+          </TweenOne>
+        </ScrollOverPack>
         <div className="gridCardsView lineGridCardsView">
           {publicationsCardsInfo.map((x, i) => renderCard(x, i, t))}
         </div>
