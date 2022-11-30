@@ -1,6 +1,7 @@
-import React, {useCallback, useEffect, useMemo, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import ClockLoader from "react-spinners/ClockLoader";
 import {useTranslation} from "react-i18next";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import {toast} from "react-toastify";
 
@@ -9,6 +10,7 @@ import CustomModal from "../../../components/Modal/Simple";
 import FormField from "./FormField";
 import "./feedback.scss";
 import config from "../../../config";
+import {ThemeContext} from "../../../contexts/ThemeContext";
 
 const Feedback = ({children, className, style}) => {
   const {t} = useTranslation("feedback");
@@ -17,7 +19,10 @@ const Feedback = ({children, className, style}) => {
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isVerified, setVerified] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 960);
+  const recaptchaRef = useRef();
+  const {theme} = useContext(ThemeContext);
 
   useEffect(() => {
     const resizeHandler = () => {
@@ -52,18 +57,6 @@ const Feedback = ({children, className, style}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const onSuccess = () => {
-      setEmail("");
-      setName("");
-      setText("");
-      toast.success(t("success"));
-    };
-
-    const onError = (err) => {
-      console.log("Feedback error", err);
-      toast.error(t("fail"));
-    };
-
     const url = config.SERVER_URL + "/api/send_email";
     const body = {
       email,
@@ -81,10 +74,22 @@ const Feedback = ({children, className, style}) => {
         },
         body: JSON.stringify(body),
       })
-        .then(onSuccess)
-        .catch(onError)
+        .then(() => {
+          setEmail("");
+          setName("");
+          setText("");
+          toast.success(t("success"));
+        })
+        .catch((err) => {
+          console.log("Feedback error", err);
+          toast.error(t("fail"));
+        })
         .finally(() => setLoading(false));
     }
+  };
+  const handleCaptcha = (value) => {
+    // console.log("handleCaptcha", value);
+    setVerified(true);
   };
 
   const getContent = () => {
@@ -112,7 +117,28 @@ const Feedback = ({children, className, style}) => {
             value={text}
             onChange={setText}
           />
-          <input type="submit" value={t("submit")} className="font-size-4" />
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey="6LcAMEgjAAAAACp_64RvVlFoBKerl3-HdG_GzevH"
+            theme={theme}
+            onChange={handleCaptcha} // on success
+            style={{alignSelf: "center", marginTop: "1rem"}}
+          />
+          <input
+            disabled={!isVerified}
+            type="submit"
+            value={t("submit")}
+            className="btn-outline formBtn font-size-4"
+          />
+          <button
+            className="btn-outline formBtn cancelBtn"
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+            }}
+          >
+            {"Cancel"}
+          </button>
         </form>
       );
     };
@@ -155,7 +181,7 @@ const Feedback = ({children, className, style}) => {
           {getContent()}
         </CustomDrawer>
       ) : (
-        <CustomModal title={getTitle()} open={open} onClose={handleClose}>
+        <CustomModal open={open} onClose={handleClose}>
           {getContent()}
         </CustomModal>
       )}

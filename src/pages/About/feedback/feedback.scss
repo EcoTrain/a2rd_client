@@ -27,21 +27,27 @@
         display: flex;
         flex-direction: column;
 
-        input[type="submit"] {
-            margin-top: 1em;
-            color: var(--textPrimary);
-            background: var(--lightGray);
-            outline: none;
-            border: none;
-            border-radius: 0.3em;
-            padding: 0.5em 0;
+        .formBtn {
+            border-radius: 0.5rem;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
-            &:hover {
-                background: var(--coldGray);
-            }
             &:active {
                 transform: scale(0.99);
+            }
+        }
+        input[type="submit"] {
+            font-weight: bold;
+            margin-top: 1rem;
+            &[disabled] {
+                pointer-events: none;
+                opacity: 0.6;
+            }
+        }
+        .cancelBtn {
+            border: none;
+            color: var(--textPrimary);
+            &:hover {
+                background: var(--lightGray);
             }
         }
     }
