@@ -13,7 +13,7 @@
                 margin: 0;
                 cursor: pointer;
                 .gridCard {
-                    min-height: 35vh;
+                    min-height: 30vh;
                     transition: all 0.2s ease-in-out;
                     &:hover {
                         background-color: var(--darkWhite);
@@ -43,13 +43,13 @@
     }
 }
 
-@media only screen and (max-width: 960px) and (orientation: portrait) {
+@media screen and (max-width: 960px) and (orientation: portrait) {
     #startups {
         .section-content {
             .gridCardsView {
                 .gridCardWrapper {
                     .gridCard {
-                        min-height: 15vh;
+                        min-height: 10rem;
                     }
                 }
             }

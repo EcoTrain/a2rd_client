@@ -16,16 +16,20 @@ const PageScroller = ({children, t}) => {
 
   return (
     <div className="sectionPageScroller">
-      {children.map((elem, i) => (
-        <Page key={i} index={i} t={t}>
-          {elem}
-        </Page>
-      ))}
+      {Array.isArray(children) ? (
+        children.map((elem, i) => (
+          <Page key={i} index={i} t={t}>
+            {elem}
+          </Page>
+        ))
+      ) : (
+        <Page t={t}>{children}</Page>
+      )}
     </div>
   );
 };
 
-const Page = ({children, index, t}) => {
+const Page = ({children, index = 0, t}) => {
   Page.propTypes = {
     children: PropTypes.element,
     index: PropTypes.number,
@@ -34,23 +38,6 @@ const Page = ({children, index, t}) => {
   const elemRef = useRef();
   const onScreen = useOnScreen({ref: elemRef});
 
-  const getWrappedPage = () => {
-    return (
-      <div
-        id={`section${index}`}
-        className={"sectionPage"}
-        ref={elemRef}
-        style={{
-          position: children.props.position || "relative",
-        }}
-      >
-        {children}
-      </div>
-    );
-  };
-
-  const wrappedChild = getWrappedPage();
-
   useEffect(() => {
     if (onScreen) {
       const title = children.props.title;
@@ -58,7 +45,18 @@ const Page = ({children, index, t}) => {
     }
   }, [onScreen]);
 
-  return wrappedChild;
+  return (
+    <div
+      id={`section${index}`}
+      className={"sectionPage"}
+      ref={elemRef}
+      style={{
+        position: children.props.position || "relative",
+      }}
+    >
+      {children}
+    </div>
+  );
 };
 
 export const renderNextPageBtn = ({id}) => (

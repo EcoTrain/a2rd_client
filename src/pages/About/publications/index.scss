@@ -4,6 +4,13 @@
     @include setLineGridColumn;
     .section-content {
         .gridCardsView {
+            .spanLineDelim {
+                background: var(--coldGray);
+                align-self: center;
+                width: 50%;
+                height: 1px;
+                // margin: 0.5rem 0;
+            }
             .gridCardWrapper {
                 margin: 0;
                 .gridCard {
@@ -23,7 +30,41 @@
             .gridCardsView {
                 .gridCardWrapper {
                     .gridCard {
-                        min-height: 15vh;
+                        min-height: 10rem;
+                        .gridCardIcon {
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    #publications {
+        .section-content {
+            .gridCardsView {
+                .spanLineDelim {
+                    width: 50%;
+                    height: 1px;
+                    margin: 0.5rem 0;
+                }
+                .gridCardWrapper {
+                    .gridCard {
+                        flex-direction: column;
+                        align-items: center;
+                        .gridCardIcon {
+                            margin: 0;
+                            width: 90%;
+                            max-width: 150px;
+                        }
+                        .gridCardView {
+                            align-items: center;
+                            & > * {
+                                text-align: center;
+                            }
+                        }
                     }
                 }
             }

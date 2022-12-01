@@ -13,6 +13,20 @@ const ScrollOverPack = ScrollAnim.OverPack;
 
 const Publications = () => {
   const {t} = useTranslation(["home"]);
+  const getLineDelim = () => (
+    <ScrollOverPack
+      replay
+      always={false}
+      playScale={0}
+      style={{display: "flex", justifyContent: "center"}}
+    >
+      <TweenOne
+        animation={{opacity: 1, duration: 1500}}
+        style={{opacity: 0.001}}
+        className="spanLineDelim"
+      />
+    </ScrollOverPack>
+  );
   return (
     <section className="section section-darkWhite" id="publications">
       <div className="section-content">
@@ -41,7 +55,12 @@ const Publications = () => {
           </TweenOne>
         </ScrollOverPack>
         <div className="gridCardsView lineGridCardsView">
-          {publicationsCardsInfo.map((x, i) => renderCard(x, i, t))}
+          {publicationsCardsInfo.map((x, i) => (
+            <>
+              {i > 0 && i < publicationsCardsInfo.length && getLineDelim()}
+              <PublicationItem key={i} i={i} info={x} t={t} />
+            </>
+          ))}
         </div>
         <a
           href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
@@ -58,7 +77,7 @@ const Publications = () => {
   );
 };
 
-const renderCard = (info, i, t) => {
+const PublicationItem = ({info, i, t}) => {
   const cardRef = useRef();
   const [hover, setHover] = useState(false);
 
@@ -90,7 +109,7 @@ const renderCard = (info, i, t) => {
         ref={cardRef}
         className="gridCard"
         animation={{opacity: 1, top: "0px"}}
-        style={{opacity: 0.001, top: "2rem", position: 'relative'}}
+        style={{opacity: 0.001, top: "2rem", position: "relative"}}
       >
         <div className="gridCardIcon">
           {info.icon ? (

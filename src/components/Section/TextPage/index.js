@@ -82,7 +82,7 @@ const TextPage = ({
           : "inset 0px 15px 15px -17px var(--coldGray)",
       }}
     >
-      <ScrollOverPack replay always={false} playScale={0.4}>
+      <ScrollOverPack replay always={false} playScale={0.2}>
         <TweenOne
           className="section-title font-size-2 font-title text-center"
           animation={{opacity: 1}}
@@ -92,7 +92,7 @@ const TextPage = ({
         </TweenOne>
       </ScrollOverPack>
       {textItems.map((x, i) => (
-        <ScrollOverPack key={i} replay always={false} playScale={0.4}>
+        <ScrollOverPack key={i} replay always={false} playScale={0.2}>
           <TweenOne
             className="font-size-4"
             animation={{opacity: 1}}
@@ -104,7 +104,7 @@ const TextPage = ({
       ))}
 
       {note && (
-        <ScrollOverPack replay always={false} playScale={0.4}>
+        <ScrollOverPack replay always={false} playScale={0.2}>
           <TweenOne
             className="font-size-5"
             animation={{opacity: 1}}

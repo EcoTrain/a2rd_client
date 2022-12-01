@@ -32,8 +32,13 @@ const LngSelector = () => {
 
 const Header = () => {
   const {t} = useTranslation();
-  const {headerFixed, headerBackground, headerVisible, setHeaderVisible} =
-    useContext(HeaderContext);
+  const {
+    headerHeight,
+    headerFixed,
+    headerBackground,
+    headerVisible,
+    setHeaderVisible,
+  } = useContext(HeaderContext);
 
   const visibilityTimer = useRef();
   const headerWrapperRef = useRef();
@@ -43,7 +48,7 @@ const Header = () => {
   const {theme, setTheme} = useContext(ThemeContext);
 
   const hideDelay = 3000;
-  const headerHeight = headerRef.current ? headerRef.current.clientHeight : 0;
+  // const headerHeight = headerRef.current ? headerRef.current.clientHeight : 0;
 
   useEffect(() => {
     if (window.scrollY > headerHeight) {

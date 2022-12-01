@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
 import {scroller} from "react-scroll";
 import {Trans, useTranslation} from "react-i18next";
 import startupsCardsInfo from "../startups/config";
+import {HeaderContext} from "../../../contexts/HeaderContext";
 
 const AboutDescription = ({t}) => {
   const link_wm = startupsCardsInfo.wm.links.website.link || "";
@@ -65,8 +66,16 @@ const AboutFounder = ({t}) => {
 
 const AboutPreview = () => {
   const {t} = useTranslation(["home"]);
+  const {headerHeight} = useContext(HeaderContext);
   return (
-    <section id="about" className="section section-fullscreen section-white">
+    <section
+      id="about"
+      className="section section-fullscreen section-white"
+      style={{
+        paddingTop: headerHeight,
+        paddingBottom: headerHeight,
+      }}
+    >
       <div
         className="section-content text-align-center"
         style={{padding: "0 2rem"}}

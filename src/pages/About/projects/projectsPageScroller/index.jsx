@@ -37,7 +37,7 @@ const ProjectScroller = ({activeIndex, close, t}) => {
       ref={bannerRef}
       type="across"
       initShow={activeIndex}
-      style={{height: "100vh"}}
+      // style={{height: "100vh"}}
       className={"projectScroller"}
     >
       {projectsCardsInfo.map((x, i) => (
@@ -81,13 +81,13 @@ const ProjectCard = ({info, close, t}) => {
             style={{opacity: 0.001}}
           >
             <div
-              className="font-title font-size-2"
+              className="font-title font-size-3 text-align-center"
               style={{marginBottom: "1rem"}}
             >
               {t(info.title)}
             </div>
-            <div className="font-size-3">{t(info.text)}</div>
-            <div>{t(info.note)}</div>
+            <div className="font-size-4 description">{t(info.text)}</div>
+            <div className="font-size-5">{t(info.note)}</div>
           </TweenOne>
         </div>
       </div>

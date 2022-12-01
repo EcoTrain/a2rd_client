@@ -2,6 +2,7 @@ import React, {createContext, useEffect, useState} from "react";
 import PropTypes from "prop-types";
 
 export const defaultValues = {
+  headerHeight: 40,
   headerVisible: true,
   setHeaderVisible: () => {},
   headerFixed: false,
@@ -29,6 +30,7 @@ const HeaderProvider = ({children}) => {
   }, [fixed]);
 
   const contextValues = {
+    headerHeight: 40,
     headerVisible: visible,
     setHeaderVisible: setVisible,
     headerFixed: fixed,

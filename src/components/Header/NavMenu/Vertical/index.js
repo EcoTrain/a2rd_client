@@ -11,6 +11,7 @@ const NavMenuMin = ({menuItems}) => {
   const {t} = useTranslation();
 
   const {
+    headerHeight,
     setHeaderFixed,
     setHeaderVisible,
     setHeaderBackground,
@@ -18,8 +19,6 @@ const NavMenuMin = ({menuItems}) => {
   } = useContext(HeaderContext);
 
   useEffect(() => {
-    // TODO: share headerHeight
-    const headerHeight = 40;
     if (isOpen) {
       setHeaderBackground("var(--darkWhite)");
       setHeaderFixed(true);

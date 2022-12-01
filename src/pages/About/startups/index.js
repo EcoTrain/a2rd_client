@@ -30,6 +30,21 @@ const Startups = () => {
     };
   }, [activeIndex]);
 
+  const getLineDelim = () => (
+    <ScrollOverPack
+      replay
+      always={false}
+      playScale={0}
+      style={{display: "flex", justifyContent: "center"}}
+    >
+      <TweenOne
+        animation={{opacity: 1, duration: 1500}}
+        style={{opacity: 0.001}}
+        className="spanLineDelim"
+      />
+    </ScrollOverPack>
+  );
+
   return (
     <section className="section section-white" id="startups">
       <div className="section-content">
@@ -58,26 +73,13 @@ const Startups = () => {
         <div className="gridCardsView lineGridCardsView">
           {startupValues.map((x, i) => (
             <>
+              {i > 0 && i < startupValues.length && getLineDelim()}
               <StartupItem
                 key={i}
                 i={i}
                 info={x}
                 onClick={() => setActiveIndex(i)}
               />
-              {i != startupValues.length - 1 && (
-                <ScrollOverPack
-                  replay
-                  always={false}
-                  playScale={0}
-                  style={{display: "flex", justifyContent: "center"}}
-                >
-                  <TweenOne
-                    animation={{opacity: 1, duration: 1500}}
-                    style={{opacity: 0.001}}
-                    className="spanLineDelim"
-                  />
-                </ScrollOverPack>
-              )}
             </>
           ))}
         </div>
