@@ -26,10 +26,11 @@ const WellnessFunctional = () => {
           href="https://ecotrain.github.io/WM_doc"
           target="_blank"
           rel="noreferrer noopener"
-          style={{margin: "2em 1em 3em 1em"}}
+          style={{margin: "1rem", fontWeight: "normal"}}
           aria-label={t("functional.user_guide")}
+          className={"btn-outline font-size-4"}
         >
-          {t("functional.user_guide")}
+        {t("functional.user_guide")}
         </a>
       </div>
     </section>

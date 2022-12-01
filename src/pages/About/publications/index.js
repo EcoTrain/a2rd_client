@@ -68,7 +68,7 @@ const Publications = () => {
           rel="noreferrer noopener"
           style={{margin: "1rem", fontWeight: "normal"}}
           aria-label={t("publications.google_scholar")}
-          className={"btn-outline"}
+          className={"btn-outline font-size-4"}
         >
           {t("publications.google_scholar")}
         </a>
