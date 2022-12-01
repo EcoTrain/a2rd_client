@@ -63,7 +63,7 @@ const Startups = () => {
           always={false}
           playScale={0.2}
           className="text-align-center"
-          style={{marginBottom: "1rem", maxWidth: 700}}
+          style={{maxWidth: 700}}
         >
           <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
             We also implement our own start-up initiatives related to impact

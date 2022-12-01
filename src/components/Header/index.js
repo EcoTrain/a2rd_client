@@ -48,7 +48,6 @@ const Header = () => {
   const {theme, setTheme} = useContext(ThemeContext);
 
   const hideDelay = 3000;
-  // const headerHeight = headerRef.current ? headerRef.current.clientHeight : 0;
 
   useEffect(() => {
     if (window.scrollY > headerHeight) {

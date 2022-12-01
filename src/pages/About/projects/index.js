@@ -119,7 +119,7 @@ const ProjectItem = ({info, i, onClick}) => {
           >
             {t(info.title)}
           </div>
-          <div className="">{t(info.preview)}</div>
+          <div className="cropText">{t(info.preview)}</div>
         </div>
       </TweenOne>
     </ScrollOverPack>

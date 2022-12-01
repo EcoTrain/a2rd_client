@@ -75,7 +75,7 @@ const TextPage = ({
   const getContent = () => (
     <div
       key={`${(title || "").toLowerCase()}_content`}
-      className={`section-content ${sectionTheme}`}
+      className={`section-content ${hasImageArea && sectionTheme}`}
       style={{
         boxShadow: !hasImageArea
           ? ""
@@ -144,7 +144,7 @@ const TextPage = ({
     <section
       className={[
         "section",
-        hasImageArea && "splitSection",
+        hasImageArea ? "splitSection" : sectionTheme,
         "section-fullscreen",
       ].join(" ")}
       id={id}

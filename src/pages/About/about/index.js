@@ -9,7 +9,10 @@ const AboutDescription = ({t}) => {
   const link_atmos = startupsCardsInfo.airflow.links.website.link || "";
   return (
     <div key="aboutDescription">
-      <div className="section-title font-size-2 font-title text-align-center">
+      <div
+        className="section-title font-size-2 font-title text-align-center"
+        style={{marginTop: "1rem"}}
+      >
         {t("about.title")}
       </div>
       <div className="font-size-3 description">
@@ -68,17 +71,10 @@ const AboutPreview = () => {
   const {t} = useTranslation(["home"]);
   const {headerHeight} = useContext(HeaderContext);
   return (
-    <section
-      id="about"
-      className="section section-fullscreen section-white"
-      style={{
-        paddingTop: headerHeight,
-        paddingBottom: headerHeight,
-      }}
-    >
+    <section id="about" className="section section-fullscreen section-white">
       <div
         className="section-content text-align-center"
-        style={{padding: "0 2rem"}}
+        style={{paddingTop: headerHeight}}
       >
         {AboutDescription({t})}
         {AboutFounder({t})}
