@@ -40,33 +40,6 @@ import Waiter from "./components/Waiter";
 
 // TODO: Waiter anim. Suspence main on init
 function App() {
-  // Change viewport
-  useEffect(() => {
-    /* Для того чтобы контент не сжимался при появлении клавиатуры на Android
-    Из-за сжатия onBlur переносит в середину страницы при ее "разжимании"
-    Клавиатура на андроид меняет vh на высоту клавиатуры
-    */
-    // TODO: Попробовать без viewScale на Android
-    const setViewboxHeight = () => {
-      setTimeout(function () {
-        let viewHeight = screen.height * 0.9;
-        let viewPort = document.querySelector("meta[name=viewport]");
-        viewPort.setAttribute(
-          "content",
-          `height=${viewHeight}px, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5`
-        );
-      }, 300);
-    };
-    import("react-device-detect").then(({isAndroid}) => {
-      console.log({isAndroid});
-      if (isAndroid) {
-        setViewboxHeight();
-        // screen.orientation.addEventListener("resize", setViewboxHeight);
-        // screen.orientation.onchange = setViewboxHeight();
-      }
-    });
-  }, []);
-
   return (
     <section>
       <Header />
