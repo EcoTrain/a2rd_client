@@ -37,15 +37,19 @@ const CategoryFilter = ({config, selectedCategories, onClickByCategory}) => {
 
   return (
     <div style={{marginBottom: "1em"}} className="categoryHexGridFilter">
-      {categories.map((x, i) => (
-        <CustomCheckbox
-          key={i}
-          label={x}
-          isChecked={selectedCategories.includes(x)}
-          onClick={(e) => onClickByCategory(x)}
-          style={{background: config[x].color}}
-        />
-      ))}
+      {categories.map((x, i) => {
+        const isCheched = selectedCategories.includes(x);
+        return (
+          <CustomCheckbox
+            key={i}
+            label={x}
+            isChecked={isCheched}
+            onClick={(e) => onClickByCategory(x)}
+            style={{opacity: selectedCategories.length && !isCheched ? 0.6 : 1}}
+            boxStyle={{background: config[x].color}}
+          />
+        );
+      })}
     </div>
   );
 };
