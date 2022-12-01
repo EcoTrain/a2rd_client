@@ -1,6 +1,10 @@
+import ScrollAnim from "rc-scroll-anim";
+import TweenOne from "rc-tween-one";
 import React, {useEffect, useState} from "react";
 import {renderNextPageBtn} from "../../../components/Section/PageScroller";
 import "./preview.scss";
+
+const ScrollOverPack = ScrollAnim.OverPack;
 
 const BgVideo = () => {
   const defaultOpacity = 1;
@@ -78,33 +82,60 @@ const HomePreview = () => {
             "linear-gradient(45deg, var(--bgPrimaryTransparent), transparent)",
         }}
       />
-      <div className="section-content">
-        <div className="font-title font-size-1" style={{marginBottom: "1rem"}}>
+
+      <ScrollOverPack
+        replay
+        always={false}
+        playScale={0}
+        className="section-content"
+        style={{display: "flex", justifyContent: "center"}}
+      >
+        <TweenOne
+          animation={{opacity: 1, duration: 1000}}
+          style={{opacity: 0.001, marginBottom: "1rem"}}
+          className="font-title font-size-1"
+        >
           We offer comprehensive solutions for your industries
-        </div>
-        <div className="font-size-4">
+        </TweenOne>
+        <TweenOne
+          animation={{opacity: 1, delay: 300, duration: 500}}
+          style={{opacity: 0.001, marginBottom: "1rem"}}
+          className="font-size-4"
+        >
           Complete development cycle: services, mobile applications, design,
           testing, integration, research and development.
-        </div>
+        </TweenOne>
 
         <div className="btnListWrapper">
-          <div
+          <TweenOne
+            animation={{opacity: 1, delay: 800, top: "0px"}}
+            style={{
+              opacity: 0.001,
+              marginTop: "1em",
+              top: "1rem",
+              position: "relative",
+            }}
             className="btn-outline btn-outline-fill btn-anim font-size-4"
             onClick={() => window.open("/about", "_self")}
-            style={{marginTop: "1em"}}
           >
             Learn more
-          </div>
-          <div
+          </TweenOne>
+          <TweenOne
+            animation={{opacity: 1, delay: 1000, top: "0px"}}
+            style={{
+              opacity: 0.001,
+              marginTop: "1em",
+              top: "1rem",
+              position: "relative",
+            }}
             className="btn-outline btn-anim font-size-4"
             onClick={() => window.open("/contacts", "_self")}
-            style={{marginTop: "1em"}}
           >
             Contact us
-          </div>
+          </TweenOne>
         </div>
         <HomeIntoNextBtn />
-      </div>
+      </ScrollOverPack>
     </section>
   );
 };
