@@ -84,7 +84,7 @@ const TextPage = ({
     >
       <ScrollOverPack replay always={false} playScale={0.2}>
         <TweenOne
-          className="section-title font-size-2 font-title text-center"
+          className="section-title font-size-2 font-subtitle text-center"
           animation={{opacity: 1}}
           style={{opacity: 0.001}}
         >

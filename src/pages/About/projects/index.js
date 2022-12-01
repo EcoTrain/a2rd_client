@@ -114,7 +114,7 @@ const ProjectItem = ({info, i, onClick}) => {
       >
         <div className="gridCardView">
           <div
-            className="font-size-3 font-title"
+            className="font-size-3 font-subtitle"
             style={{marginBottom: "0.5rem"}}
           >
             {t(info.title)}

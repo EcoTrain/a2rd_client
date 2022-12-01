@@ -5,18 +5,18 @@ html {
 }
 body {
     font-family: "Roboto", sans-serif;
+    font-weight: 300;
     line-height: 1.5;
     color: var(--textPrimary);
 }
 
 .font-title {
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1.2em;
 }
-
-.font-title-preview {
-    font-weight: bold;
-    font-size: calcFluidSize(4.5, 5.35, 480, 1280, rem);
+.font-subtitle {
+    font-weight: 400;
+    line-height: 1.2em;
 }
 
 .font-size-1 {

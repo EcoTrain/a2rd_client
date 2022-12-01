@@ -33,6 +33,12 @@ const StartupScroller = ({activeIndex, close, t}) => {
     };
   }, [activeIndex]);
 
+  useEffect(() => {
+    window.history.pushState(null, null, window.location.href);
+    window.addEventListener("popstate", close);
+    return () => window.removeEventListener("popstate", close);
+  }, [activeIndex]);
+
   return (
     <BannerAnim
       ref={bannerRef}
@@ -43,20 +49,19 @@ const StartupScroller = ({activeIndex, close, t}) => {
     >
       {Object.values(startupsCardsInfo).map((x, i) => (
         <Element key={i} name={i}>
-          <BgElement
-            key={i}
-            style={{
-              backgroundImage: [
-                bgGradient,
-                x.image && `url(${x.image.src})`,
-              ].join(","),
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              height: "100%",
-              width: "100%",
-              position: "absolute",
-            }}
-          />
+          {x.image && (
+            <BgElement
+              key={i}
+              style={{
+                backgroundImage: [bgGradient, `url(${x.image.src})`].join(","),
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: "100%",
+                width: "100%",
+                position: "absolute",
+              }}
+            />
+          )}
           <StartupCard info={x} close={close} t={t} />
         </Element>
       ))}
@@ -72,7 +77,7 @@ const StartupCard = ({info, close, t}) => {
         <div className="startupCard-content">
           <div
             onClick={close}
-            className="font-size-3 closeButton"
+            className="font-size-2 closeButton"
             style={{zIndex: 2}}
           >
             &#215;
@@ -83,7 +88,7 @@ const StartupCard = ({info, close, t}) => {
             style={{opacity: 0.001}}
           >
             <div
-              className="font-title font-size-2 text-align-center"
+              className="font-subtitle font-size-2 text-align-center"
               style={{marginBottom: "1rem"}}
             >
               {t(info.title)}

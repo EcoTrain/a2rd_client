@@ -101,7 +101,7 @@ const PublicationItem = ({info, i, t}) => {
       className="gridCardWrapper"
       replay
       always={false}
-      playScale={0.4}
+      playScale={0.2}
       onMouseEnter={onHover}
       onMouseLeave={onUnHover}
     >
@@ -141,7 +141,7 @@ const PublicationItem = ({info, i, t}) => {
           className="gridCardView lineGridViewLeft"
           style={{textAlign: "left"}}
         >
-          <div className="font-size-4 font-title">{t(info.title)}</div>
+          <div className="font-size-4 font-subtitle">{t(info.title)}</div>
           {info.journal && (
             <div style={{marginBottom: "0.5rem"}}>
               {t("journal")}: {info.journal}

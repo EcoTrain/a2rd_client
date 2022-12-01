@@ -43,7 +43,7 @@ const renderCard = (info, i, t) => {
             style={{width: "100%", maxWidth: 150, borderRadius: "50%"}}
           />
           <div
-            className="gridCardViewTitle font-size-3 font-title text-align-center"
+            className="gridCardViewTitle font-size-3 font-subtitle text-align-center"
             style={{marginTop: "1em", marginBottom: 0}}
           >
             {t(info.title)}

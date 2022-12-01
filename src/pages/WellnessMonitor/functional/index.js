@@ -65,7 +65,7 @@ const renderCard = (info, i) => {
         </div>
 
         <div className="gridCardView lineGridViewLeft">
-          <div className="font-size-3 font-title" style={{textAlign: "left"}}>
+          <div className="font-size-3 font-subtitle" style={{textAlign: "left"}}>
             {t(info.title)}
           </div>
           <div style={{textAlign: "left"}}>{t(info.text)}</div>

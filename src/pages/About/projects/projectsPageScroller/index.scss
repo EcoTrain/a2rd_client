@@ -12,29 +12,29 @@
             flex: 1;
             flex-direction: column;
         }
-        .closeButton {
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: 1;
-            line-height: 1em;
-            cursor: pointer;
-            border-radius: 50%;
-            height: 1.2em;
-            width: 1.2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease-in-out;
-            &:hover {
-                background: var(--lightGrayTransparent);
-                box-shadow: 0px 0px 0.5rem 0px var(--darkGray);
-            }
-        }
     }
 }
 
 .projectScroller {
+    .closeButton {
+        position: absolute;
+        right: 0;
+        top: -0.5em;
+        z-index: 1;
+        line-height: 1em;
+        cursor: pointer;
+        border-radius: 50%;
+        height: 1.2em;
+        width: 1.2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            background: var(--lightGrayTransparent);
+            box-shadow: 0px 0px 0.5rem 0px var(--darkGray);
+        }
+    }
     .banner-anim-arrow-default {
         position: absolute;
         min-width: 2rem;
@@ -52,20 +52,18 @@
             &::before,
             &::after {
                 left: calc(95% - 0.75rem);
-                height: 1.5rem;
-                background: var(--textPrimary);
-            }
-            &::before {
-                top: calc(50% - 1.28rem);
-            }
-            &::after {
-                bottom: calc(50% - 1.28rem);
             }
         }
         &.next {
             &::before,
             &::after {
                 left: calc(5% + 0.75rem);
+            }
+        }
+        &.next,
+        &.prev {
+            &::before,
+            &::after {
                 height: 1.5rem;
                 background: var(--textPrimary);
             }
@@ -76,14 +74,5 @@
                 bottom: calc(50% - 1.28rem);
             }
         }
-        // &.next,
-        // &.prev {
-        //     &:hover {
-        //         &::before,
-        //         &::after {
-        //             background: var(--textInverse);
-        //         }
-        //     }
-        // }
     }
 }

@@ -129,7 +129,7 @@ const StartupItem = ({info, i, onClick}) => {
         animation={{opacity: 1}}
       >
         <div className="gridCardView">
-          <div className="gridCardViewTitle font-size-3 font-title">
+          <div className="gridCardViewTitle font-size-3 font-subtitle">
             {t(info.title)}
           </div>
           {hover ? (
