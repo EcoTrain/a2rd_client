@@ -21,7 +21,7 @@ export const OurAim = () => {
       style={{boxShadow: "unset"}}
     >
       <div className="section-content" style={{maxWidth: 800}}>
-        <ScrollOverPack replay always={false} playScale={0.4}>
+        <ScrollOverPack replay always={false} playScale={0.2}>
           <TweenOne
             className="section-title font-size-1 font-title text-align-center"
             animation={{opacity: 1}}
@@ -30,7 +30,7 @@ export const OurAim = () => {
             Our aim
           </TweenOne>
         </ScrollOverPack>
-        <ScrollOverPack replay always={false} playScale={0.4}>
+        <ScrollOverPack replay always={false} playScale={0.2}>
           <TweenOne
             className="font-size-2 text-align-center"
             animation={{opacity: 1}}
