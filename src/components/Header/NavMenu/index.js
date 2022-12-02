@@ -42,12 +42,12 @@ const NavMenu = () => {
           url: "/about/startups",
         },
         {
-          title: t("navHeader.stack"),
-          url: "/about/stack",
-        },
-        {
           title: t("navHeader.publications"),
           url: "/about/publications",
+        },
+        {
+          title: t("navHeader.stack"),
+          url: "/about/stack",
         },
       ],
     },
