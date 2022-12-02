@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState, useContext} from "react";
 import {useTranslation} from "react-i18next";
 
 import {ThemeContext, themes} from "../../contexts/ThemeContext";
-import Toggle from "../Toggle";
+import Toggle from "./Toggle";
 import {useScrollPosition} from "../../hooks/useScrollPosition";
 import "./header.scss";
 
@@ -104,6 +104,11 @@ const Header = () => {
         stopTimer();
       }}
       onMouseLeave={() => setTimer()}
+      onTouchStart={() => {
+        headerWrapperRef.current.style.transform = `translateY(0%))`;
+        setHeaderVisible(true);
+        stopTimer();
+      }}
     >
       <div
         ref={headerRef}
@@ -127,7 +132,7 @@ const Header = () => {
           />
         </div>
       </div>
-      <div className="headerActivateArea"></div>
+      <div className="headerActivateArea" />
     </div>
   );
 };

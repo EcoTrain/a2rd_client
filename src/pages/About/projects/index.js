@@ -4,7 +4,7 @@ import ScrollAnim from "rc-scroll-anim";
 import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
 
-import ProjectScroller from "./projectsPageScroller";
+import BannerTextScroller from "../../../components/BannerTextScroller";
 import {splitTextByWords} from "../../../fucntions/splitText";
 import CustomDrawer from "../../../components/Modal/Drawer";
 import projectsCardsInfo from "./config";
@@ -49,7 +49,7 @@ const Projects = ({filter, text}) => {
             type="mask-top"
             split={splitTextByWords}
             interval={10}
-            className="description"
+            className="font-size-4 description"
             style={{margin: "0 1em", maxWidth: 900}}
           >
             {text || t("label")}
@@ -71,7 +71,8 @@ const Projects = ({filter, text}) => {
 
         <CustomDrawer open={activeIndex != null}>
           {activeIndex != null && (
-            <ProjectScroller
+            <BannerTextScroller
+              cardsConfig={projectsCardsInfo}
               activeIndex={activeIndex}
               close={() => setActiveIndex(null)}
               t={t}

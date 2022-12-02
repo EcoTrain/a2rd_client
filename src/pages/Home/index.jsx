@@ -13,7 +13,7 @@ import HomeStack from "../About/stack";
 import Contacts from "../Contacts";
 
 import "./home.scss";
-import { OurAim } from "./aim";
+import {OurAim} from "./aim";
 
 const Home = () => {
   const params = useParams();

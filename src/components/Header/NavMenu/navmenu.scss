@@ -63,7 +63,7 @@
     }
     .menu-item-sub {
         &:hover {
-            background-color: var(--coldGray);
+            background-color: var(--lightGray);
         }
     }
     .menu-item-submenu {
@@ -87,7 +87,7 @@
             z-index: 9999;
             min-width: max-content;
             list-style: none;
-            background-color: var(--lightGray);
+            background-color: var(--darkWhite);
             display: none;
             &.show {
                 display: block;

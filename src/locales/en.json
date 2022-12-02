@@ -67,7 +67,7 @@
         },
         "publications": {
             "title": "Publications",
-            "label": "At the A2 Research and Development lab, we are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
+            "label": "We are open to collaborating with investment companies and the research community, so some of our study results have already been published in scientific journals. Others are submitted for peer review.",
             "item": {
                 "forest": "Catastrophic Pm2.5 emissions from Siberian Forest Fires: Impacting Factors Analysis",
                 "gral": "Graz Lagrangian Model (GRAL) for Pollutants Tracking and Estimating Sources Partial Contributions to Atmospheric Pollution in Highly Urbanized Areas",
@@ -130,7 +130,7 @@
                 "title": "Wellness Monitor",
                 "previewText": "Intelligent assistant to support the quality of life",
                 "shortText": "Intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs",
-                "text": "<0>Wellness Monitor</0> – intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs.\n\tThe assistant is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users.",
+                "text": "<0>Wellness Monitor</0> – intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs.\n\tThe assistant is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users.",
                 "text_full": "<0>Wellness Monitor</0> – intelligent assistant to support the quality of life, which allows for tracking the status of key health indicators and therapeutic protocols and support for people with special needs.\n\tThe assistant is designed to support and accompany users and maintain communication with doctors, medical services, insurance, and other companies. You just need to register to use the assistant, which takes less than a minute. This assistant helps you monitor your health indicators, plan your treatment, nutrition, and medication program, and communicate with other users.\n\tWellness Monitor is a part of the x-Health&Wellness framework – an interface for interaction with the medical sector (hospitals), insurance companies, airlines, and travel services. Our goal is to develop and maintain Wellness Monitor as a convenient intelligent assistant that provides a safe, fast, and reliable service of equal opportunities for all categories of users."
             },
             "framework": {
@@ -143,7 +143,7 @@
                 "title": "Urban airflows modeling",
                 "previewText": "Modeling of air flows and estimation of pollutant concentrations",
                 "shortText": "Modeling of surface air flows and estimation of pollutant concentrations based on Lagrangian mathematics",
-                "text": "<0>Surface airflows modeling and pollutant concentrations estimation</0> are very complex processes requiring the development of unique mathematical models that consider regional features and many other factors. We use the best approaches to model and evaluate the negative impact of pollutants on the environment and public health by tracking them from the source to a specific point in space.\n\tThe core of our solution is Lagrangian mathematics; technical solutions are implemented based on Python, C++, PostgreSQL, QGIS. We are ready to implement our solutions in the information environment of your company."
+                "text": "<0>Surface airflows modeling and pollutant concentrations estimation</0> are very complex processes requiring the development of unique mathematical models that consider regional features and many other factors. We use the best approaches to model and evaluate the negative impact of pollutants on the environment and public health by tracking them from the source to a specific point in space.\n\tThe core of our solution is Lagrangian mathematics; technical solutions are implemented based on Python, C++, PostgreSQL, QGIS."
             }
         }
     },

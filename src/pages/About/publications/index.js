@@ -47,7 +47,7 @@ const Publications = () => {
           style={{marginBottom: "1rem", maxWidth: 900}}
         >
           <TweenOne
-            className="description"
+            className="font-size-4 description"
             animation={{opacity: 1}}
             style={{opacity: 0.001}}
           >

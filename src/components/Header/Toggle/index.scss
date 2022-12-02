@@ -23,7 +23,7 @@ $padding: 4px;
     left: 0;
     z-index: 1;
     overflow: hidden;
-    background-color: var(--coldGray);
+    background-color: var(--lightGray);
     border-radius: $sliderHeight / 2;
     cursor: pointer;
     transition: all 1.4s;
@@ -76,6 +76,6 @@ $padding: 4px;
   }
   input:checked ~ .wave {
     display: block;
-    background-color: var(--coldBlack);
+    background-color: var(--lightGray);
   }
 }

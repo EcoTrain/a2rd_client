@@ -7,7 +7,8 @@ export const defaultValues = {
   setHeaderVisible: () => {},
   headerFixed: false,
   setHeaderFixed: () => {},
-  headerBackground: "var(--lightGrayTransparent)",
+  // headerBackground: "var(--lightGrayTransparent)",
+  headerBackground: "var(--darkWhiteTransparent)",
   setHeaderBackground: () => {},
   dropHeaderBackground: () => {},
 };
@@ -21,7 +22,7 @@ const HeaderProvider = ({children}) => {
 
   const [visible, setVisible] = useState(true);
   const [fixed, setFixed] = useState(false);
-  const [background, setBackground] = useState("var(--lightGrayTransparent)");
+  const [background, setBackground] = useState(defaultValues.headerBackground);
 
   useEffect(() => {
     if (fixed) {
@@ -37,7 +38,7 @@ const HeaderProvider = ({children}) => {
     setHeaderFixed: setFixed,
     headerBackground: background,
     setHeaderBackground: setBackground,
-    dropHeaderBackground: () => setBackground("var(--lightGrayTransparent)"),
+    dropHeaderBackground: () => setBackground(defaultValues.headerBackground),
   };
 
   return (

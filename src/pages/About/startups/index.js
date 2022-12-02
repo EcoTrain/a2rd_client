@@ -3,8 +3,8 @@ import ScrollAnim from "rc-scroll-anim";
 import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
 
+import BannerTextScroller from "../../../components/BannerTextScroller";
 import CustomDrawer from "../../../components/Modal/Drawer";
-import StartupScroller from "./startupsPageScroller";
 import startupsCardsInfo from "./config";
 
 import "../../../components/CardPage/gridCard.scss";
@@ -62,7 +62,7 @@ const Startups = () => {
           replay
           always={false}
           playScale={0.2}
-          className="text-align-center"
+          className="font-size-4 text-align-center"
           style={{maxWidth: 700}}
         >
           <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
@@ -86,7 +86,8 @@ const Startups = () => {
 
         <CustomDrawer open={activeIndex != null}>
           {activeIndex != null && (
-            <StartupScroller
+            <BannerTextScroller
+              cardsConfig={startupsCardsInfo}
               activeIndex={activeIndex}
               close={() => setActiveIndex(null)}
               t={t}
@@ -149,7 +150,10 @@ const StartupItem = ({info, i, onClick}) => {
                   <button
                     key={i}
                     className="btn-outline btn-anim"
-                    onClick={() => window.open(x.link)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(x.link);
+                    }}
                   >
                     {t(x.title)}
                   </button>

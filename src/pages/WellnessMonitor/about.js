@@ -1,6 +1,6 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {StartupPage} from "../About/startups/startupsPageScroller/startupPage";
+import {StartupPage} from "./startupPage";
 
 const WellnessAbout = () => {
   const {t} = useTranslation(["wellness"]);

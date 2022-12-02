@@ -38,11 +38,29 @@
             flex: auto;
             justify-content: flex-end;
             .themeToggler {
-                margin: 0 1em 0 0.5em;
+                margin-right: 1em;
+                margin-left: 0.5em;
             }
         }
     }
     .headerActivateArea {
-        height: 2em;
+        height: 2rem;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .headerWraper {
+        .header {
+            .headerActions {
+                .themeToggler {
+                    order: -1;
+                    margin: 0px;
+                }
+            }
+        }
+        .headerActivateArea {
+            height: 6rem;
+            min-height: 30px;
+        }
     }
 }

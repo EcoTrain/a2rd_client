@@ -1,5 +1,5 @@
-.startupCard {
-    .startupCard-content {
+.bannerTextCard {
+    .bannerTextCard-content {
         position: relative;
         display: flex;
         flex-direction: row;
@@ -7,7 +7,7 @@
         width: 90%;
         max-width: 800px;
         padding: 2rem 0;
-        .startupCard-info {
+        .bannerTextCard-info {
             display: flex;
             flex: 1;
             flex-direction: column;
@@ -15,7 +15,7 @@
     }
 }
 
-.startupScroller {
+.bannerTextScroller {
     .closeButton {
         position: absolute;
         right: 0;
@@ -73,6 +73,14 @@
             &::after {
                 bottom: calc(50% - 1.28rem);
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .bannerTextScroller {
+        .banner-anim-arrow-default {
+            display: none;
         }
     }
 }
