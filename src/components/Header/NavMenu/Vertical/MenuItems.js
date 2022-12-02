@@ -8,9 +8,7 @@ const MenuItems = ({items, onNext}) => {
         href={items.url}
         rel="noreferrer noopener"
       >
-        <div className="menu-item-title" style={{fontWeight: "normal"}}>
-          {items.title}
-        </div>
+        <div className="menu-item-title">{items.title}</div>
       </a>
     );
   };
@@ -20,16 +18,11 @@ const MenuItems = ({items, onNext}) => {
       submenuItems.unshift({title: "Introduction", url: items.url});
     }
 
-    const subItem = (
-      <div onClick={() => onNext(submenuItems)} style={{width: "100%"}}>
-        <div className="menu-item-title">{items.title}</div>
-      </div>
-    );
-
+    const subItem = <div className="menu-item-title">{items.title}</div>;
     const arrowItem = <span>&#8250;</span>;
 
     return (
-      <div className="menu-item-content">
+      <div className="menu-item-content" onClick={() => onNext(submenuItems)}>
         {subItem}
         {arrowItem}
       </div>

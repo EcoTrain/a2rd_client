@@ -38,8 +38,26 @@ import "./App.scss";
 import "./Text.scss";
 import Waiter from "./components/Waiter";
 
-// TODO: Waiter anim. Suspence main on init
 function App() {
+  // Set fixed viewport height on Android on show keyboard
+  useEffect(() => {
+    const setViewboxHeight = () => {
+      let viewPort = document.querySelector("meta[name=viewport]");
+      viewPort.setAttribute(
+        "content",
+        viewPort.content.replace(
+          "height=device-height",
+          `height=${window.innerHeight}px`
+        )
+      );
+    };
+    import("react-device-detect").then(({isAndroid}) => {
+      if (isAndroid) {
+        setViewboxHeight();
+      }
+    });
+  }, []);
+
   return (
     <section>
       <Header />
