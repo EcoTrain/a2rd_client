@@ -3,13 +3,13 @@ import ScrollAnim from "rc-scroll-anim";
 import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
 
+import CustomDrawer from "../../../components/Modal/Drawer";
+import StartupScroller from "./startupsPageScroller";
 import startupsCardsInfo from "./config";
 
 import "../../../components/CardPage/gridCard.scss";
 import "../../../components/CardPage/lineGridCard.scss";
 import "./index.scss";
-import CustomDrawer from "../../../components/Modal/Drawer";
-import StartupScroller from "./startupsPageScroller";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 

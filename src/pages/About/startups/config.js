@@ -4,8 +4,11 @@ const startupsCardsInfo = {
     previewText: "item.wm.previewText",
     shortText: "item.wm.shortText",
     text: "item.wm.text",
-    bg: "var(--bgPrimary)",
-    id: "startup_wm",
+    // image: {
+    //   alt: "card.wm.text",
+    //   title: "card.wm.title",
+    //   src: process.env.PUBLIC_URL + "/static/images/wellness/diaries.webp",
+    // },
     links: {
       businessCard: {
         title: "links.businessCard",
@@ -26,16 +29,12 @@ const startupsCardsInfo = {
   //   previewText: "item.framework.previewText",
   //   shortText: "item.framework.shortText",
   //   text: "item.framework.text",
-  //   bg: "var(--darkWhite)",
-  //   id: "startup_xwm",
   // },
   airflow: {
     title: "item.airflows.title",
     previewText: "item.airflows.previewText",
     shortText: "item.airflows.shortText",
     text: "item.airflows.text",
-    bg: "var(--bgPrimary)",
-    id: "startup_atmos",
     links: {
       website: {
         title: "links.website",

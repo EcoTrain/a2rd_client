@@ -13,7 +13,8 @@ const BgElement = Element.BgElement;
 const StartupScroller = ({activeIndex, close, t}) => {
   const bannerRef = useRef();
   const bgGradient = [
-    "linear-gradient(var(--lightGrayTransparent), var(--lightGrayTransparent))",
+    "linear-gradient(var(--darkWhiteTransparent), var(--darkWhiteTransparent))",
+    // "linear-gradient(var(--lightGrayTransparent), var(--lightGrayTransparent))",
   ].join(",");
 
   useEffect(() => {

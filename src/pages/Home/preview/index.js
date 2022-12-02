@@ -114,6 +114,7 @@ const HomePreview = () => {
               marginTop: "1em",
               top: "1rem",
               position: "relative",
+              fontWeight: 400,
             }}
             className="btn-outline btn-outline-fill btn-anim font-size-4"
             onClick={() => window.open("/about", "_self")}
@@ -127,6 +128,7 @@ const HomePreview = () => {
               marginTop: "1em",
               top: "1rem",
               position: "relative",
+              fontWeight: 400,
             }}
             className="btn-outline btn-anim font-size-4"
             onClick={() => window.open("/contacts", "_self")}
