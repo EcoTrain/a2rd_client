@@ -108,7 +108,7 @@ const HomePreview = () => {
 
         <div className="btnListWrapper">
           <TweenOne
-            animation={{opacity: 1, delay: 800, top: "0px"}}
+            animation={{opacity: 1, delay: 500, top: "0px"}}
             style={{
               opacity: 0.001,
               marginTop: "1em",
@@ -122,7 +122,7 @@ const HomePreview = () => {
             Learn more
           </TweenOne>
           <TweenOne
-            animation={{opacity: 1, delay: 1000, top: "0px"}}
+            animation={{opacity: 1, delay: 700, top: "0px"}}
             style={{
               opacity: 0.001,
               marginTop: "1em",

@@ -62,16 +62,20 @@ const Publications = () => {
             </>
           ))}
         </div>
-        <a
-          href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
-          target="_blank"
-          rel="noreferrer noopener"
-          style={{margin: "1rem", fontWeight: "normal"}}
-          aria-label={t("publications.google_scholar")}
-          className={"btn-outline font-size-4"}
-        >
-          {t("publications.google_scholar")}
-        </a>
+        <ScrollOverPack replay always={false} playScale={0.2} style={{marginTop: '1em'}}>
+          <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
+            <a
+              href="https://scholar.google.com/citations?hl=ru&user=c5EL0qQAAAAJ&view_op=list_works&sortby=pubdate"
+              target="_blank"
+              rel="noreferrer noopener"
+              style={{margin: "1rem", fontWeight: "normal"}}
+              aria-label={t("publications.google_scholar")}
+              className={"btn-outline font-size-4"}
+            >
+              {t("publications.google_scholar")}
+            </a>
+          </TweenOne>
+        </ScrollOverPack>
       </div>
     </section>
   );
