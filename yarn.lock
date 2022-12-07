@@ -1339,6 +1339,18 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@floating-ui/core@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.0.4.tgz#03066eaea8e9b2a2cd3f5aaa60f1e0f580ebe88e"
+  integrity sha512-FPFLbg2b06MIw1dqk2SOEMAMX3xlrreGjcui5OTxfBDtaKTmh0kioOVjT8gcfl58juawL/yF+S+gnq8aUYQx/Q==
+
+"@floating-ui/dom@^1.0.4":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.0.9.tgz#3ae1d3e776bc90b9d33b1922f9498fb6f80f3b12"
+  integrity sha512-nF9P6/BoARdt+h+CdUW3td4EUVngeDONCGuzRgnZveRZiJETx63cxhinE0JaPPC2tbcdTY9IGZocS5/7ag3xRg==
+  dependencies:
+    "@floating-ui/core" "^1.0.4"
+
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.7.tgz#38aec044c6c828f6ed51d5d7ae3d9b9faf6dbb0f"
@@ -3198,7 +3210,7 @@ cjs-module-lexer@^1.0.0:
   resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
   integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
 
-classnames@^2.2.6:
+classnames@^2.2.6, classnames@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
@@ -7791,6 +7803,14 @@ react-toastify@^9.0.1:
   integrity sha512-63i/5SROvfYz9yzdkmxIrpndtggTdif/5ZpswY3VH+s2/S1Hxo/hiv+oGXnPH6UO2pJBOgfcLNeyVh7okRmnhg==
   dependencies:
     clsx "^1.1.1"
+
+react-tooltip@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-5.0.0.tgz#5e68f2ebd46e47ad03ee348050ed444b603b657b"
+  integrity sha512-e7V+Umk8nKPIiyDqnFfwnx+5kYvwHyowwmqaKHkLU6plF6mwMFfDeh4pr+xe7urqWt2pyWmI2p5h2zPJTNGmRQ==
+  dependencies:
+    "@floating-ui/dom" "^1.0.4"
+    classnames "^2.3.2"
 
 react@^18.2.0:
   version "18.2.0"

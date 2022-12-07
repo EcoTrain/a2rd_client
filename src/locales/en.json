@@ -43,27 +43,49 @@
         },
         "about": {
             "title": "About Us",
-            "text": "At the A2 Research and Development lab we are motivated by more than the simple pursuit of business success. Our aim is to make the world sustainable and better than it was before, improve the lives of millions of people worldwide.\n\tThe main commercial projects are start-up initiatives <0>wellness monitor</0> and <1>airflow modelling</1>, which are related impact investments aimed at developing a sustainable society.",
+            "text": "We are motivated by more than the simple pursuit of business success. Our aim is to make the world sustainable and better than it was before, improve the lives of millions of people worldwide.\n\tThe main commercial projects are start-up initiatives <0>wellness monitor</0> and <1>airflow modelling</1>, which are related impact investments aimed at developing a sustainable society.",
             "signature": "Thank you for visiting our website.\n\tWith the highest consideration from the A2 Research and Development lab",
             "name": "Aleksey A. ROMANOV",
             "position": "CEO, founder"
         },
         "activities": {
             "title": "Activities",
-            "text": "We work in various fields using our background to solve industrial, environmental challenges and a variety of issues.",
+            "text": "We work in various fields using our background to solve industrial, environmental challenges and a variety of issues",
             "list": [
-                "RAW/BIG data processing and analysis",
-                "Computational modeling",
-                "Machine Learning (AI) and Neural networks",
-                "Predictive Analytics",
-                "Spatial analysis (geographic information technology and remote sensing)",
-                "Technology consulting",
-                "App development"
+                {
+                    "text": "RAW/BIG data processing and analysis",
+                    "note": ""
+                },
+                {
+                    "text": "Computational modeling",
+                    "note": ""
+                },
+                {
+                    "text": "Machine Learning (AI) and Neural networks",
+                    "note": ""
+                },
+                {
+                    "text": "Predictive Analytics",
+                    "note": ""
+                },
+                {
+                    "text": "Spatial analysis",
+                    "note": "geographic information technology and remote sensing"
+                },
+                {
+                    "text": "Technology consulting",
+                    "note": ""
+                },
+                {
+                    "text": "App development",
+                    "note": ""
+                }
             ]
         },
         "solutions": {
             "title": "Solutions",
-            "text": "Our analytics, cutting edge reviews and models help companies from the energy, industrial, medical, financial, insurance and other sectors improve their ESG strategies and development programs based on up-to-date reviews (scientific reports, IP research, publications).\n\tOur solutions facilitate routine procedures and enhance security through user-friendly software assistants and a wide network of partners from various sectors."
+            "text": "Our solutions facilitate routine procedures and enhance security through user-friendly software assistants and a wide network of partners from various sectors",
+            "text4": "Our analytics, cutting edge reviews and models help companies from the energy, industrial, medical, financial, insurance and other sectors improve their ESG strategies and development programs based on up-to-date reviews (scientific reports, IP research, publications).\n\tOur solutions facilitate routine procedures and enhance security through user-friendly software assistants and a wide network of partners from various sectors"
         },
         "publications": {
             "title": "Publications",

@@ -15,28 +15,6 @@
 
 export const textPageConfig = {
   home: {
-    activities: {
-      title: "activities.title",
-      text: "activities.text",
-      image: {
-        alt: "activities.text",
-        title: "activities.title",
-        src:
-          process.env.PUBLIC_URL +
-          "/static/images/index/sections/max/activities.webp",
-        min:
-          process.env.PUBLIC_URL +
-          "/static/images/index/sections/min/activities.webp",
-      },
-      list: "activities.list",
-      sectionTheme: "section-darkWhite",
-    },
-    solutions: {
-      title: "solutions.title",
-      text: "solutions.text",
-      sectionTheme: "section-darkWhite",
-      image: {},
-    },
     businessModel: {
       title: "businessModel.title",
       text: "businessModel.text",

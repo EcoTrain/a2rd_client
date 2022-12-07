@@ -25,7 +25,7 @@
     --grayTransparent: rgba(160, 160, 160, 0.9);
     --grayTransparent2: rgba(160, 160, 160, 0.2);
     --darkGray: rgb(130, 130, 130);
-    --coldBlack: rgb(40, 40, 40);
+    --coldBlack: rgb(90, 90, 90);
 
     --textPrimary: rgb(40, 40, 40);
     --textInverse: rgba(240, 240, 240);
@@ -46,7 +46,7 @@
     --grayTransparent: rgba(120, 120, 120, 0.9);
     --grayTransparent2: rgba(120, 120, 120, 0.2);
     --darkGray: rgba(140, 140, 140);
-    --coldBlack: rgba(160, 160, 160);
+    --coldBlack: rgba(200, 200, 200);
 
     --textPrimary: rgba(240, 240, 240);
     --textInverse: rgb(40, 40, 40);
@@ -163,3 +163,4 @@ a {
     background-image: -webkit-gradient(linear, left top, left bottom, from(var(--bgPrimary)), to(var(--bgPrimary)));
     background-image: linear-gradient(180deg, var(--bgPrimary), var(--bgPrimary));
 }
+

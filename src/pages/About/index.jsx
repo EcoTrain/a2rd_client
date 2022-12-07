@@ -15,6 +15,8 @@ import Contacts from "../Contacts";
 import HomeStack from "./stack";
 
 import "./index.scss";
+import Activities from "./activities";
+import Solutions from "./solutions";
 
 const About = () => {
   const params = useParams();
@@ -31,10 +33,8 @@ const About = () => {
   return (
     <PageScroller t={t}>
       <AboutPreview title="navigation.about" />
-
-      <TextPage position={"sticky"} {...textPageConfig.home.activities} t={t} />
-      <TextPage position={"sticky"} {...textPageConfig.home.solutions} t={t} />
-
+      <Solutions />
+      <Activities />
       <Projects title="navigation.projects" />
       <Startups title="navigation.startups" />
       <Publications title="navigation.publications" />
