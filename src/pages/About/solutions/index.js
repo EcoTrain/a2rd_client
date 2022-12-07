@@ -17,31 +17,6 @@ const config = {
 const Solutions = () => {
   const {t} = useTranslation("home");
 
-  const getContent = () => (
-    <div className={`section-content`}>
-      <ScrollOverPack replay always={false} playScale={0.2}>
-        <TweenOne
-          className="section-title font-size-2 font-title text-center"
-          animation={{opacity: 1}}
-          style={{opacity: 0.001}}
-        >
-        {t(config.title)}
-        </TweenOne>
-      </ScrollOverPack>
-      <ScrollOverPack replay always={false} playScale={0.2}>
-        <TextyAnim
-          className="font-size-3 text-align-center"
-          type="bottom"
-          split={splitTextByWords}
-          interval={2}
-          style={{maxWidth: 800}}
-        >
-        {t(config.text)}
-        </TextyAnim>
-      </ScrollOverPack>
-    </div>
-  );
-
   return (
     <section
       className={"section section-darkWhite"}
@@ -49,7 +24,33 @@ const Solutions = () => {
         boxShadow: "inset 0px 15px 15px -17px var(--coldGray)",
       }}
     >
-      {getContent()}
+      <div className={`section-content`}>
+        <ScrollOverPack replay always={false} playScale={0.2}>
+          <TweenOne
+            className="section-title font-size-2 font-title text-center"
+            animation={{opacity: 1}}
+            style={{opacity: 0.001}}
+          >
+            {t(config.title)}
+          </TweenOne>
+        </ScrollOverPack>
+        <ScrollOverPack replay always={false} playScale={0.2}>
+          <TweenOne
+            className="font-size-3 text-align-center"
+            animation={{opacity: 1}}
+            style={{opacity: 0.001}}
+          >
+            <TextyAnim
+              type="bottom"
+              split={splitTextByWords}
+              interval={20}
+              style={{maxWidth: 900}}
+            >
+              {t(config.text)}
+            </TextyAnim>
+          </TweenOne>
+        </ScrollOverPack>
+      </div>
     </section>
   );
 };
