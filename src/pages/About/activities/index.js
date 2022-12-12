@@ -80,6 +80,7 @@ const Activities = () => {
 
   return (
     <section
+      id="activities"
       className={"section section-white"}
       style={{
         boxShadow: "inset 0px 15px 15px -17px var(--coldGray)",

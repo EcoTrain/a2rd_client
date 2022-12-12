@@ -95,7 +95,7 @@ const HomePreview = () => {
           style={{opacity: 0.001, marginBottom: "1rem", fontWeight: 600}}
           className="font-title font-size-1"
         >
-          We offer comprehensive solutions for your industries
+          We offer comprehensive solutions for your industry
         </TweenOne>
         <TweenOne
           animation={{opacity: 1, delay: 300, duration: 500}}

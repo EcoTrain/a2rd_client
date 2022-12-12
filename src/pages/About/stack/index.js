@@ -23,7 +23,7 @@ const HomeStack = () => {
           always={false}
           playScale={0.2}
           className="font-size-4 description"
-          style={{maxWidth: 700, marginBottom: "2rem"}}
+          style={{maxWidth: 900, marginBottom: "2rem"}}
         >
           <TweenOne animation={{opacity: 1}} style={{opacity: 0.001}}>
             We have extensive experience and adapt to the information environment of the customer and take
