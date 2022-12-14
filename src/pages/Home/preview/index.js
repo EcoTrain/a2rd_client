@@ -72,14 +72,18 @@ const HomeIntoNextBtn = () => {
 
 const HomePreview = () => {
   const video = BgVideo();
+  const bgGradient = [
+    "linear-gradient(30deg, var(--bgPrimary), var(--bgPrimaryTransparent), var(--bgPrimaryTransparent6))",
+    // "linear-gradient(30deg, var(--bgPrimary), var(--bgPrimaryTransparent) 40%, var(--bgPrimaryTransparent6) 80%)",
+  ];
   return (
     <section id="homePreview" className="section section-fullscreen">
       {video}
       <div
         className="previewOverlay"
         style={{
-          backgroundImage:
-            "linear-gradient(45deg, var(--bgPrimaryTransparent), transparent)",
+          // backgroundColor: "var(--bgPrimaryTransparent)",
+          backgroundImage: bgGradient,
         }}
       />
 
@@ -88,7 +92,7 @@ const HomePreview = () => {
         always={false}
         playScale={0}
         className="section-content"
-        style={{display: "flex", justifyContent: "center"}}
+        style={{display: "flex", justifyContent: "center",}}
       >
         <TweenOne
           animation={{opacity: 1, duration: 1000}}
