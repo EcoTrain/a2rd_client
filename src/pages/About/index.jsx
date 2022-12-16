@@ -33,8 +33,8 @@ const About = () => {
   return (
     <PageScroller t={t}>
       <AboutPreview title="navigation.about" />
-      <Solutions />
-      <Activities />
+      <Solutions title="Our aim" />
+      <Activities title="Activities" />
       <Projects title="navigation.projects" />
       <Startups title="navigation.startups" />
       <Publications title="navigation.publications" />

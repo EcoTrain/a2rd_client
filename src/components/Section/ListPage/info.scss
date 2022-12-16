@@ -1,0 +1,21 @@
+.list-infoBtn {
+    font-size: 0.6em;
+    margin-left: 0.2em;
+    width: 1em;
+    height: 1em;
+    padding: 0.6em;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--coldBlack);
+    border-radius: 1em;
+}
+.tooltip {
+    width: unset !important;
+    color: var(--textInverse) !important;
+    background: var(--textPrimary) !important;
+    * {
+        background: var(--textPrimary) !important;
+    }
+}

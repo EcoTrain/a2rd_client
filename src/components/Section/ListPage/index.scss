@@ -1,0 +1,19 @@
+.listPage-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+    margin-top: 1em;
+    max-width: 900px;
+    .listPage-list-item {
+        .list-index {
+            margin-right: 0.5em;
+            min-width: 2em;
+            height: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--primary);
+            border-radius: 1em;
+        }
+    }
+}

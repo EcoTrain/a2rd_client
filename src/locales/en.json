@@ -52,34 +52,16 @@
             "title": "Activities",
             "text": "We work in various fields using our background to solve industrial, environmental challenges and a variety of issues",
             "list": [
-                {
-                    "text": "RAW/BIG data processing and analysis",
-                    "note": ""
-                },
-                {
-                    "text": "Computational modeling",
-                    "note": ""
-                },
-                {
-                    "text": "Machine Learning (AI) and Neural networks",
-                    "note": ""
-                },
-                {
-                    "text": "Predictive Analytics",
-                    "note": ""
-                },
+                "RAW/BIG data processing and analysis",
+                "Computational modeling",
+                "Machine Learning (AI) and Neural networks",
+                "Predictive Analytics",
                 {
                     "text": "Spatial analysis",
                     "note": "geographic information technology and remote sensing"
                 },
-                {
-                    "text": "Technology consulting",
-                    "note": ""
-                },
-                {
-                    "text": "App development",
-                    "note": ""
-                }
+                "Technology consulting",
+                "App development"
             ]
         },
         "solutions": {
@@ -187,28 +169,22 @@
     },
     "modeling": {
         "navigation": {
-            "about": "Multiagent modeling",
+            "about": "Multi-agent modeling",
             "projects": "Projects"
         },
         "multiagent": {
             "about": {
-                "title": "Multiagent modeling",
-                "texts": [
-                    "We use multi-agent modeling to analyze urban mobility and road traffic. This allows us to simulate and analyze the movement of vehicles and pedestrians within an entire city.",
-                    "The results of these simulations are used in our other solutions, from the analysis of infrastructure projects to the assessment of the effects of pollutant emissions."
-                ]
+                "title": "Multi-agent modeling",
+                "text": "We apply it to analyze urban mobility and road traffic. This allows us to simulate and analyze the movement of vehicles and pedestrians within an entire city"
             },
             "analysis": {
                 "title": "Multicriteria analysis",
-                "texts": [
-                    "We take into account many parameters of urban infrastructure and vehicles to increase the reliability of modeling and bring the simulated situation closer to the real one.",
-                    "The distribution of agents and their movements are close to the real movements of road and pedestrian traffic participants.",
-                    "This ensures the relevance and reliability of our analytics."
-                ]
+                "text": "We take into account many parameters of urban infrastructure and vehicles to increase the reliability of modeling and bring the simulated situation closer to the real one"
             },
             "payload": {
                 "title": "Payload of Results",
-                "texts": "We reuse the results of multi-agent simulations in our other projects due to the extensive data set of these results. So, for example, taking into account the additional parameter of the volume of vehicle emissions allows us to analyze environmental situations and the spread of pollutants using Lagrangian mathematics and mathematical packages."
+                "text": "The results of these simulations are used in our other solutions due to the extensive data set of these results, from the analysis of infrastructure projects to the assessment of the effects of pollutant emissions",
+                "note": "For example, taking into account the additional parameter of the volume of vehicle emissions allows us to analyze environmental situations and the spread of pollutants using Lagrangian mathematics and mathematical packages"
             },
             "capabilities": {
                 "title": "Capabilities",
@@ -227,15 +203,11 @@
         "distribution": {
             "about": {
                 "title": "Particle Distribution Modeling",
-                "texts": [
-                    "We apply particle propagation modeling in environmental projects to take into account the modeling and prediction of the distribution of pollutants in the surface layers of the atmosphere."
-                ]
+                "text": "We apply it in environmental projects to take into account modeling and forecasting the spread of pollutants in the surface layers of the atmosphere"
             },
-            "tools": {
+            "solution": {
                 "title": "Solutions",
-                "texts": [
-                    "Our solutions allow us to take into account and predict the movement of each particle of a particular substance in the simulation area."
-                ]
+                "text": "Our solutions allow us to take into account and predict the movement of each particle of a particular substance in the simulation area"
             },
             "capabilities": {
                 "title": "Capabilities",

@@ -1,23 +1,23 @@
 import React from "react";
 import TextyAnim from "rc-texty";
 import ScrollAnim from "rc-scroll-anim";
-
-import {splitTextByWords} from "../../../fucntions/splitText";
 import TweenOne from "rc-tween-one";
 import {useTranslation} from "react-i18next";
+
+import {splitTextByWords} from "../../../fucntions/splitText";
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
 const config = {
-  title: "solutions.title",
-  text: "solutions.text",
+  title: "distribution.solution.title",
+  text: "distribution.solution.text",
 };
 
-const Solutions = () => {
-  const {t} = useTranslation("home");
+const DistributionSolution = () => {
+  const {t} = useTranslation("modeling");
 
   return (
-    <section className={"section section-darkWhite"}>
+    <section id="distributionSolution" className={"section section-darkWhite"}>
       <div className={`section-content`}>
         <ScrollOverPack replay always={false} playScale={0.2}>
           <TweenOne
@@ -49,4 +49,4 @@ const Solutions = () => {
   );
 };
 
-export default Solutions;
+export default DistributionSolution;

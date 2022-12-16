@@ -42,6 +42,9 @@ const Page = ({children, index = 0, t}) => {
     if (onScreen) {
       const title = children.props.title;
       document.title = title ? `A2RD Lab: ${t(title)}` : "A2RD Lab";
+      // if (title) {
+      //   document.title = `A2RD Lab: ${t(title)}`;
+      // }
     }
   }, [onScreen]);
 

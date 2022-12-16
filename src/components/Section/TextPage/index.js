@@ -20,9 +20,6 @@ const TextPage = ({
   direction,
   t,
 }) => {
-  // TODO: Избавиться от массива. Добавить в css перенос абзацев по \n
-  const _texts = t(text, {returnObjects: true}) || [];
-  const textItems = Array.isArray(_texts) ? _texts : [_texts];
   const listItems = t(list, {returnObjects: true});
   const hasImageArea = ["object", "string"].includes(typeof image);
   const [img, setImg] = useState(getImageSrc());
@@ -91,17 +88,17 @@ const TextPage = ({
           {t(title)}
         </TweenOne>
       </ScrollOverPack>
-      {textItems.map((x, i) => (
-        <ScrollOverPack key={i} replay always={false} playScale={0.2}>
+      {text && (
+        <ScrollOverPack replay always={false} playScale={0.2}>
           <TweenOne
             className="font-size-4"
             animation={{opacity: 1}}
             style={{opacity: 0.001}}
           >
-            {getTextAnim(x, i)}
+            {getTextAnim(t(text))}
           </TweenOne>
         </ScrollOverPack>
-      ))}
+      )}
 
       {note && (
         <ScrollOverPack replay always={false} playScale={0.2}>
