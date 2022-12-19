@@ -38,7 +38,7 @@ const startupsCardsInfo = {
     links: {
       website: {
         title: "links.website",
-        link: "http://80.65.20.243:61726",
+        link: "http://5.189.197.178:61726",
       },
     },
   },
