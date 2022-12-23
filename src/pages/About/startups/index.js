@@ -146,16 +146,21 @@ const StartupItem = ({info, i, onClick}) => {
                 </button>
               )}
               {info.links &&
-                Object.values(info.links).map((x, i) => (
+                Object.keys(info.links).map((key, i) => (
                   <button
                     key={i}
                     className="btn-outline btn-anim"
                     onClick={(e) => {
                       e.stopPropagation();
-                      window.open(x.link);
+                      window.open(
+                        info.links[key].link,
+                        info.links[key].link.includes("http")
+                          ? "_blank"
+                          : "_self"
+                      );
                     }}
                   >
-                    {t(x.title)}
+                    {t(info.links[key].title)}
                   </button>
                 ))}
             </div>

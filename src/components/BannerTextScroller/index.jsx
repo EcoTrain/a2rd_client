@@ -68,7 +68,6 @@ const BannerTextScroller = ({cardsConfig, activeIndex, close, t}) => {
   );
 };
 
-// TODO: Combine with startupPage
 const StartupCard = ({info, close, t}) => {
   return (
     <section className="section section-fullscreen bannerTextCard">
