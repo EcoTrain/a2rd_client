@@ -75,25 +75,25 @@ const publicationsCardsInfo = [
       },
     },
   },
-  {
-    title: "publications.item.gral",
-    journal: "Atmosphere",
-    icon: {
-      src: "https://www.scimagojr.com/journal_img.php?id=15838",
-      alt: "SCImago Journal & Country Rank",
-      link: "https://www.scimagojr.com/journalsearch.php?q=15838&tip=sid&exact=no",
-    },
-    links: {
-      article: {
-        title: "publications.links.article",
-        link: "https://doi.org/10.3390/atmos11121375",
-      },
-      score: {
-        title: "publications.links.score",
-        link: "https://www.scimagojr.com/journalsearch.php?q=15838&tip=sid&exact=no",
-      },
-    },
-  },
+  // {
+  //   title: "publications.item.gral",
+  //   journal: "Atmosphere",
+  //   icon: {
+  //     src: "https://www.scimagojr.com/journal_img.php?id=15838",
+  //     alt: "SCImago Journal & Country Rank",
+  //     link: "https://www.scimagojr.com/journalsearch.php?q=15838&tip=sid&exact=no",
+  //   },
+  //   links: {
+  //     article: {
+  //       title: "publications.links.article",
+  //       link: "https://doi.org/10.3390/atmos11121375",
+  //     },
+  //     score: {
+  //       title: "publications.links.score",
+  //       link: "https://www.scimagojr.com/journalsearch.php?q=15838&tip=sid&exact=no",
+  //     },
+  //   },
+  // },
 ];
 
 export default publicationsCardsInfo;
