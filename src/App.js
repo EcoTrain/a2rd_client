@@ -2,8 +2,12 @@ import React, {useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
 import loadable from "@loadable/component";
 import {ToastContainer} from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.min.css";
+
+import "./components/Toast.scss";
+import "./App.scss";
+import "./Text.scss";
+import Waiter from "./components/Waiter";
 
 const Header = loadable(() => import("./components/Header"), {
   fallback: <Waiter />,
@@ -32,11 +36,6 @@ const ModelingDistribution = loadable(
 const Contacts = loadable(() => import("./pages/Contacts"), {
   fallback: <Waiter />,
 });
-
-import "./components/Toast.scss";
-import "./App.scss";
-import "./Text.scss";
-import Waiter from "./components/Waiter";
 
 function App() {
   // Set fixed viewport height on Android on show keyboard

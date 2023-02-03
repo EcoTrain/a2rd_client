@@ -5,8 +5,6 @@ import {useTranslation} from "react-i18next";
 
 import AboutPreview from "./about";
 import PageScroller from "../../components/Section/PageScroller";
-import TextPage from "../../components/Section/TextPage";
-import {textPageConfig} from "../../components/Section/TextPage/textPageConfig";
 
 import Projects from "./projects";
 import Startups from "./startups";

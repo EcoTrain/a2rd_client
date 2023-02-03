@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import PropTypes from "prop-types";
 import {scroller} from "react-scroll";
 import TweenOne from "rc-tween-one";
@@ -62,26 +62,44 @@ const Page = ({children, index = 0, t}) => {
   );
 };
 
-export const renderNextPageBtn = ({id}) => (
-  <div
-    className="nextPageBtn"
-    onClick={() =>
-      scroller.scrollTo(id, {duration: 1000, smooth: "easeInQuint"})
-    }
-  >
-    <TweenOne
-      className="nextPageBtnContent"
-      animation={{
-        y: "-=20",
-        yoyo: true,
-        repeat: -1,
-        duration: 1000,
-      }}
-      key="icon"
+export const renderNextPageBtn = ({id}) => {
+  const defaultOpacity = 1;
+  const [opacity, setOpacity] = useState(defaultOpacity);
+
+  // Opacity observer
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setOpacity(defaultOpacity - (position / window.screen.height) * 2);
+    };
+    window.addEventListener("scroll", handleScroll, {passive: true});
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <div
+      className="nextPageBtn"
+      onClick={() =>
+        scroller.scrollTo(id, {duration: 1000, smooth: "easeInQuint"})
+      }
+      style={{opacity: opacity}}
     >
-      <DownOutlined />
-    </TweenOne>
-  </div>
-);
+      <TweenOne
+        className="nextPageBtnContent"
+        animation={{
+          y: "-=20",
+          yoyo: true,
+          repeat: -1,
+          duration: 1000,
+        }}
+        key="icon"
+      >
+        <DownOutlined />
+      </TweenOne>
+    </div>
+  );
+};
 
 export default PageScroller;

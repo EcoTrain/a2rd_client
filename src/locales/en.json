@@ -190,10 +190,22 @@
                 "title": "Capabilities",
                 "text": "Multi-agent modeling ensures the reliability of the simulation through features such as:",
                 "list": [
-                    "Distribution of agents based on multicriteria analysis of the parameters of buildings and areas",
-                    "Accounting for 'points of interest' in the urban environment such as shopping malls and other public buildings",
-                    "Accounting for behavior scenarios and parameters of each agent",
-                    "Accounting for the interaction of agents with each other and with infrastructure objects"
+                    {
+                        "text": "Distribution of agents based on multicriteria analysis",
+                        "note": "of the parameters of buildings and areas"
+                    },
+                    {
+                        "text": "Accounting for 'points of interest' in the urban environment",
+                        "note": "such as shopping malls and other public buildings"
+                    },
+                    {
+                        "text": "Accounting for behavior scenarios and parameters of each agent",
+                        "note": ""
+                    },
+                    {
+                        "text": "Accounting for the interaction of agents",
+                        "note": "with each other and with infrastructure objects"
+                    }
                 ]
             },
             "projects": {

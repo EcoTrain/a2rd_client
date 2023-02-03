@@ -49,27 +49,6 @@ const BgVideo = () => {
   );
 };
 
-const HomeIntoNextBtn = () => {
-  const defaultOpacity = 1;
-  const [opacity, setOpacity] = useState(defaultOpacity);
-
-  // Opacity observer
-  useEffect(() => {
-    const handleScroll = () => {
-      const position = window.pageYOffset;
-      setOpacity(defaultOpacity - (position / window.screen.height) * 2);
-    };
-    window.addEventListener("scroll", handleScroll, {passive: true});
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return (
-    <div style={{opacity: opacity}}>{renderNextPageBtn({id: "ourAim"})}</div>
-  );
-};
-
 const HomePreview = () => {
   const video = BgVideo();
   const bgGradient = [
@@ -92,7 +71,7 @@ const HomePreview = () => {
         always={false}
         playScale={0}
         className="section-content"
-        style={{display: "flex", justifyContent: "center",}}
+        style={{display: "flex", justifyContent: "center"}}
       >
         <TweenOne
           animation={{opacity: 1, duration: 1000}}
@@ -140,7 +119,7 @@ const HomePreview = () => {
             Contact us
           </TweenOne>
         </div>
-        <HomeIntoNextBtn />
+        {renderNextPageBtn({id: "ourAim"})}
       </ScrollOverPack>
     </section>
   );
