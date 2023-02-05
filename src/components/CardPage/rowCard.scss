@@ -1,25 +1,17 @@
-.lineGridCardsView {
-    .gridCardWrapper {
-        flex: 1;
-        width: 100%;
-        // flex-basis: 50%;
-    }
-}
-
-@mixin setLineGridColumn {
-    .gridCardsView {
+@mixin setGridCardsToRows {
+    .gridCards {
         width: 100%;
         max-width: 100%;
         flex-direction: column;
         padding: 0 1rem;
-        .gridCardWrapper {
+        .gridCard-wrapper {
             padding: 0;
             margin: 0 0 1em 0;
             flex: 1;
 
             .gridCard {
                 flex-direction: row;
-                .gridCardIcon {
+                .gridCard-icon {
                     width: 15%;
                     margin: 0;
                     padding: 0;
@@ -28,7 +20,7 @@
                         padding: 0.5em;
                     }
                 }
-                .gridCardView {
+                .gridCard-view {
                     align-items: flex-start;
                     & > * {
                         text-align: left;
@@ -43,5 +35,5 @@
 }
 
 @media screen and (max-width: 960px) {
-    @include setLineGridColumn;
+    @include setGridCardsToRows;
 }

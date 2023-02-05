@@ -13,7 +13,7 @@ $color-hex-default: var(--darkWhite);
     // Init row columns
     grid-template-columns: repeat($countRowItems, $hex-width);
     $hex-between: $hex-width / ($countRowItems * 3); // Horizontal
-    .categoryHexGridHex {
+    .categoryHexGrid-hex {
         // Reset row margin
         &:nth-child(n) {
             margin-left: 0;
@@ -35,7 +35,7 @@ $color-hex-default: var(--darkWhite);
     grid-auto-rows: calc($hex-width - calc($hex-width / 100 * 28.87) / 2);
     margin-right: calc($hex-width / 2);
 
-    .categoryHexGridHex {
+    .categoryHexGrid-hex {
         width: $hex-width;
         height: $hex-height;
         margin: $hex-border 0;
@@ -63,13 +63,13 @@ $color-hex-default: var(--darkWhite);
 
 .categoryHexGrid {
     max-width: 1280px;
-    .categoryHexGridFilter {
+    .categoryHexGrid-filter {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 0.5em;
     }
-    .categoryHexGridContent {
+    .categoryHexGrid-content {
         display: grid;
         grid-gap: 0.2em;
         padding-bottom: $hex-border;
@@ -78,14 +78,14 @@ $color-hex-default: var(--darkWhite);
         @include initRow(10);
         @include setHexSize;
 
-        .categoryHexGridHex {
+        .categoryHexGrid-hex {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
 
-            .categoryHexGridItem {
+            .categoryHexGrid-item {
                 width: 100%;
                 aspect-ratio: 1/1.1;
                 position: relative;
@@ -118,7 +118,7 @@ $color-hex-default: var(--darkWhite);
 
 @media (max-width: 960px) {
     .categoryHexGrid {
-        .categoryHexGridContent {
+        .categoryHexGrid-content {
             $hex-width: calcFluidSize(45, 100, 480, 960) !global;
 
             @include initRow(8);
@@ -129,14 +129,14 @@ $color-hex-default: var(--darkWhite);
 
 @media (max-width: 768px) {
     .categoryHexGrid {
-        .categoryHexGridContent {
+        .categoryHexGrid-content {
             $hex-width: calcFluidSize(60, 90, 568, 768) !global;
 
             @include initRow(7);
             @include setHexSize;
 
-            .categoryHexGridHex {
-                .categoryHexGridItem {
+            .categoryHexGrid-hex {
+                .categoryHexGrid-item {
                     & > svg {
                         height: 24px;
                         width: 24px;
@@ -149,14 +149,14 @@ $color-hex-default: var(--darkWhite);
 
 @media (max-width: 568px) {
     .categoryHexGrid {
-        .categoryHexGridContent {
+        .categoryHexGrid-content {
             $hex-width: calcFluidSize(40, 70, 420, 568) !global;
 
             @include initRow(6);
             @include setHexSize;
 
-            .categoryHexGridHex {
-                .categoryHexGridItem {
+            .categoryHexGrid-hex {
+                .categoryHexGrid-item {
                     & > svg {
                         height: 20px;
                         width: 20px;
@@ -169,7 +169,7 @@ $color-hex-default: var(--darkWhite);
 
 @media (max-width: 468px) {
     .categoryHexGrid {
-        .categoryHexGridContent {
+        .categoryHexGrid-content {
             $hex-width: calcFluidSize(45, 65, 320, 468) !global;
             grid-template-columns: repeat(5, $hex-width);
 

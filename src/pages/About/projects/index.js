@@ -10,7 +10,7 @@ import CustomDrawer from "../../../components/Modal/Drawer";
 import projectsCardsInfo from "./config";
 
 import "../../../components/CardPage/gridCard.scss";
-import "../../../components/CardPage/lineGridCard.scss";
+import "../../../components/CardPage/rowCard.scss";
 import "./index.scss";
 
 const ScrollOverPack = ScrollAnim.OverPack;
@@ -55,7 +55,7 @@ const Projects = ({filter, text}) => {
             {text || t("label")}
           </TextyAnim>
         </ScrollOverPack>
-        <div className="gridCardsView">
+        <div className="gridCards">
           {projectsCardsInfo.map(
             (x, i) =>
               (!filter || (filter && x[filter])) && (
@@ -101,7 +101,7 @@ const ProjectItem = ({info, i, onClick}) => {
   return (
     <ScrollOverPack
       key={i}
-      className="gridCardWrapper"
+      className="gridCard-wrapper"
       replay
       always={false}
       playScale={0.2}
@@ -113,7 +113,7 @@ const ProjectItem = ({info, i, onClick}) => {
         style={{opacity: 0.001, background: bg}}
         animation={{opacity: 1}}
       >
-        <div className="gridCardView">
+        <div className="gridCard-view">
           <div
             className="font-size-3 font-subtitle"
             style={{marginBottom: "0.5rem"}}

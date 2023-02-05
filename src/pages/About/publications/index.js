@@ -6,7 +6,7 @@ import {useTranslation} from "react-i18next";
 import publicationsCardsInfo from "./config";
 
 import "../../../components/CardPage/gridCard.scss";
-import "../../../components/CardPage/lineGridCard.scss";
+import "../../../components/CardPage/rowCard.scss";
 import "./index.scss";
 
 const ScrollOverPack = ScrollAnim.OverPack;
@@ -54,7 +54,7 @@ const Publications = () => {
             {t("publications.label")}
           </TweenOne>
         </ScrollOverPack>
-        <div className="gridCardsView lineGridCardsView">
+        <div className="gridCards">
           {publicationsCardsInfo.map((x, i) => (
             <>
               {i > 0 && i < publicationsCardsInfo.length && getLineDelim()}
@@ -102,7 +102,7 @@ const PublicationItem = ({info, i, t}) => {
   return (
     <ScrollOverPack
       key={i}
-      className="gridCardWrapper"
+      className="gridCard-wrapper"
       replay
       always={false}
       playScale={0.2}
@@ -115,7 +115,7 @@ const PublicationItem = ({info, i, t}) => {
         animation={{opacity: 1, top: "0px"}}
         style={{opacity: 0.001, top: "2rem", position: "relative"}}
       >
-        <div className="gridCardIcon">
+        <div className="gridCard-icon">
           {info.icon ? (
             <a
               href={info.icon.link}
@@ -142,7 +142,7 @@ const PublicationItem = ({info, i, t}) => {
         </div>
 
         <div
-          className="gridCardView lineGridViewLeft"
+          className="gridCard-view lineGridViewLeft"
           style={{textAlign: "left"}}
         >
           <div className="font-size-4 font-subtitle">{t(info.title)}</div>

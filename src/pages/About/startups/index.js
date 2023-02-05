@@ -8,7 +8,7 @@ import CustomDrawer from "../../../components/Modal/Drawer";
 import startupsCardsInfo from "./config";
 
 import "../../../components/CardPage/gridCard.scss";
-import "../../../components/CardPage/lineGridCard.scss";
+import "../../../components/CardPage/rowCard.scss";
 import "./index.scss";
 
 const ScrollOverPack = ScrollAnim.OverPack;
@@ -70,7 +70,7 @@ const Startups = () => {
             investments aimed at developing a sustainable society
           </TweenOne>
         </ScrollOverPack>
-        <div className="gridCardsView lineGridCardsView">
+        <div className="gridCards">
           {startupValues.map((x, i) => (
             <>
               {i > 0 && i < startupValues.length && getLineDelim()}
@@ -115,7 +115,7 @@ const StartupItem = ({info, i, onClick}) => {
   return (
     <ScrollOverPack
       key={i}
-      className="gridCardWrapper"
+      className="gridCard-wrapper"
       replay
       always={false}
       playScale={0.2}
@@ -129,7 +129,7 @@ const StartupItem = ({info, i, onClick}) => {
         style={{opacity: 0.001}}
         animation={{opacity: 1}}
       >
-        <div className="gridCardView">
+        <div className="gridCard-view">
           <div className="gridCardViewTitle font-size-3 font-subtitle">
             {t(info.title)}
           </div>

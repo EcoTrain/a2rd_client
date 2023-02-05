@@ -1,6 +1,6 @@
 #startups {
     .section-content {
-        .gridCardsView {
+        .gridCards {
             width: 100%;
             .spanLineDelim {
                 background: var(--coldGray);
@@ -9,7 +9,7 @@
                 width: 1px;
                 margin: 0 0.5rem;
             }
-            .gridCardWrapper {
+            .gridCard-wrapper {
                 margin: 0;
                 cursor: pointer;
                 .gridCard {
@@ -19,7 +19,7 @@
                         background-color: var(--darkWhite);
                         box-shadow: 0px 0px 0.5rem 0px var(--coldGray);
                     }
-                    .gridCardView {
+                    .gridCard-view {
                         margin: 0;
                         align-items: center;
                     }
@@ -32,13 +32,13 @@
 @media (max-width: 960px) {
     #startups {
         .section-content {
-            .gridCardsView {
+            .gridCards {
                 .spanLineDelim {
                     width: 50%;
                     height: 1px;
                     margin: 0.5rem 0;
                 }
-                .gridCardWrapper {
+                .gridCard-wrapper {
                     .gridCard {
                         min-height: 10rem;
                     }

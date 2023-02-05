@@ -1,6 +1,4 @@
-import React from "react";
-
-// functional
+// Functional
 import {ReactComponent as DiaryIcon} from "./wellness/functional/diary.svg";
 import {ReactComponent as MedicineIcon} from "./wellness/functional/medicine.svg";
 import {ReactComponent as SchedulerIcon} from "./wellness/functional/calendar.svg";
@@ -90,11 +88,7 @@ import {ReactComponent as TsIcon} from "./stack/typescript.svg";
 import {ReactComponent as WebIcon} from "./stack/web.svg";
 import {ReactComponent as WebpackIcon} from "./stack/webpack.svg";
 
-// Customers
-import {ReactComponent as EurochemLogo} from "./customers/eurochem.svg";
-import {ReactComponent as SuekLogo} from "./customers/suek.svg";
-import {ReactComponent as SgkLogo} from "./customers/sgk.svg";
-
+// TODO: Use Fontello for custom svg font
 export const assets = {
   wellness: {
     stack: {
@@ -109,7 +103,7 @@ export const assets = {
       medicine: MedicineIcon,
       scheduler: SchedulerIcon,
       chat: ChatIcon,
-      sync: SyncIcon, 
+      sync: SyncIcon,
       offline: OfflineIcon,
     },
   },
@@ -153,7 +147,7 @@ export const assets = {
     jenkins: JenkinsIcon,
     jira: JiraIcon,
     js: JsIcon,
-    jupyter:  JupyterIcon,
+    jupyter: JupyterIcon,
     kafka: KafkaIcon,
     kotlin: KotlinIcon,
     luigi: LuigiIcon,
@@ -194,10 +188,5 @@ export const assets = {
     ts: TsIcon,
     web: WebIcon,
     webpack: WebpackIcon,
-  },
-  customers: {
-    suek: SuekLogo,
-    sgk: SgkLogo,
-    eurochem: EurochemLogo,
   },
 };

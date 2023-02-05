@@ -1,5 +1,5 @@
-@import "../../../components/CardPage/lineGridCard.scss";
+@import "../../../components/CardPage/rowCard.scss";
 
 #wellnessFunctional {
-    @include setLineGridColumn;
+    @include setGridCardsToRows;
 }

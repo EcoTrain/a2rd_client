@@ -1,9 +1,9 @@
-@import "../../../components/CardPage/lineGridCard.scss";
+@import "../../../components/CardPage/rowCard.scss";
 
 #publications {
-    @include setLineGridColumn;
+    @include setGridCardsToRows;
     .section-content {
-        .gridCardsView {
+        .gridCards {
             .spanLineDelim {
                 background: var(--coldGray);
                 align-self: center;
@@ -11,7 +11,7 @@
                 height: 1px;
                 // margin: 0.5rem 0;
             }
-            .gridCardWrapper {
+            .gridCard-wrapper {
                 margin: 0;
                 .gridCard {
                     min-height: 25vh;
@@ -27,11 +27,11 @@
 @media only screen and (max-width: 960px){
     #publications {
         .section-content {
-            .gridCardsView {
-                .gridCardWrapper {
+            .gridCards {
+                .gridCard-wrapper {
                     .gridCard {
                         min-height: 10rem;
-                        .gridCardIcon {
+                        .gridCard-icon {
                             width: 20%;
                         }
                     }
@@ -44,22 +44,22 @@
 @media only screen and (max-width: 560px) {
     #publications {
         .section-content {
-            .gridCardsView {
+            .gridCards {
                 .spanLineDelim {
                     width: 50%;
                     height: 1px;
                     margin: 0.5rem 0;
                 }
-                .gridCardWrapper {
+                .gridCard-wrapper {
                     .gridCard {
                         flex-direction: column;
                         align-items: center;
-                        .gridCardIcon {
+                        .gridCard-icon {
                             margin: 0;
                             width: 90%;
                             max-width: 150px;
                         }
-                        .gridCardView {
+                        .gridCard-view {
                             align-items: center;
                             & > * {
                                 text-align: center;

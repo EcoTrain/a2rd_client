@@ -14,7 +14,7 @@ const WellnessTeam = () => {
           {t("team.title")}
         </div>
         <div
-          className="gridCardsView"
+          className="gridCards"
           style={{padding: "0 2em"}}
         >
           {developersCardsInfo.map((x, i) => renderCard(x, i, t))}
@@ -28,7 +28,7 @@ const renderCard = (info, i, t) => {
   return (
     <div
       key={i}
-      className="gridCardWrapper"
+      className="gridCard-wrapper"
       style={{flexBasis: "33%", minWidth: 150, minHeight: 150}}
     >
       <div
@@ -37,7 +37,7 @@ const renderCard = (info, i, t) => {
           alignItems: "flex-start",
         }}
       >
-        <div className="gridCardView">
+        <div className="gridCard-view">
           <img
             src={info.image}
             style={{width: "100%", maxWidth: 150, borderRadius: "50%"}}

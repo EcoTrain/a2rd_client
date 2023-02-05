@@ -115,12 +115,12 @@ const Header = () => {
         className="header"
         style={{background: headerBackground}}
       >
-        <div className="headerLogo">
+        <div className="header-logo">
           <a href={`/`} target={"_self"} aria-label={t("navHeader.about")}>
             {isNarrow ? <LogoMin /> : <LogoMax />}
           </a>
         </div>
-        <div className="headerActions">
+        <div className="header-actions">
           <NavMenu />
           <Toggle
             className="themeToggler"
@@ -132,7 +132,7 @@ const Header = () => {
           />
         </div>
       </div>
-      <div className="headerActivateArea" />
+      <div className="header-activateArea" />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import {ThemeContext} from "../../../contexts/ThemeContext";
 import CustomCheckbox from "../../CustomCheckbox";
 import "./index.scss";
 
-const CategoryIconSquareGrid = ({config}) => {
+const CategoryIconHexGrid = ({config}) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const onClickByCategory = (cat) => {
@@ -36,7 +36,7 @@ const CategoryFilter = ({config, selectedCategories, onClickByCategory}) => {
   const categories = Object.keys(config);
 
   return (
-    <div style={{marginBottom: "1em"}} className="categoryHexGridFilter">
+    <div style={{marginBottom: "1em"}} className="categoryHexGrid-filter">
       {categories.map((x, i) => {
         const isCheched = selectedCategories.includes(x);
         return (
@@ -70,14 +70,14 @@ const GridItems = ({config, selectedCategories, onClickByCategory}) => {
       return (
         <div
           key={i}
-          className="categoryHexGridHex"
+          className="categoryHexGrid-hex"
           onClick={() => onClickByCategory(cat)}
           style={{
             color: color,
             opacity: isActiveFilter && !isSelected ? 0.2 : 1,
           }}
         >
-          <div className="categoryHexGridItem">
+          <div className="categoryHexGrid-item">
             <Icon />
             <span>{catItem.name}</span>
           </div>
@@ -87,10 +87,10 @@ const GridItems = ({config, selectedCategories, onClickByCategory}) => {
   };
 
   return (
-    <div className="categoryHexGridContent">
+    <div className="categoryHexGrid-content">
       {categories.map((cat) => renderCategoryItems(cat))}
     </div>
   );
 };
 
-export default CategoryIconSquareGrid;
+export default CategoryIconHexGrid;

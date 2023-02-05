@@ -6,7 +6,7 @@ import {useTranslation} from "react-i18next";
 import {functionalCardsInfo} from "./config";
 
 import "../../../components/CardPage/gridCard.scss";
-import "../../../components/CardPage/lineGridCard.scss";
+import "../../../components/CardPage/rowCard.scss";
 import "./index.scss";
 
 const ScrollOverPack = ScrollAnim.OverPack;
@@ -19,7 +19,7 @@ const WellnessFunctional = () => {
         <div className="section-title font-size-2 font-title text-align-center">
           {t("functional.title")}
         </div>
-        <div className="gridCardsView lineGridCardsView">
+        <div className="gridCards">
           {functionalCardsInfo.map((x, i) => renderCard(x, i))}
         </div>
         <a
@@ -45,7 +45,7 @@ const renderCard = (info, i) => {
   return (
     <ScrollOverPack
       key={i}
-      className="gridCardWrapper"
+      className="gridCard-wrapper"
       replay
       always={false}
       playScale={0.2}
@@ -55,7 +55,7 @@ const renderCard = (info, i) => {
         animation={{opacity: 1}}
         style={{opacity: 0.001}}
       >
-        <div className="gridCardIcon">
+        <div className="gridCard-icon">
           <Icon
             style={{
               maxWidth: 100,
@@ -64,7 +64,7 @@ const renderCard = (info, i) => {
           />
         </div>
 
-        <div className="gridCardView lineGridViewLeft">
+        <div className="gridCard-view lineGridViewLeft">
           <div className="font-size-3 font-subtitle" style={{textAlign: "left"}}>
             {t(info.title)}
           </div>

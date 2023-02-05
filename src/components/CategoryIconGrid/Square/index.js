@@ -3,7 +3,7 @@ import {ThemeContext} from "../../../contexts/ThemeContext";
 import CustomCheckbox from "../../CustomCheckbox";
 import "./index.scss";
 
-const CategoryIconHexGrid = ({config}) => {
+const CategoryIconSquareGrid = ({config}) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const onClickByCategory = (cat) => {
@@ -36,7 +36,7 @@ const CategoryFilter = ({config, selectedCategories, onClickByCategory}) => {
   const categories = Object.keys(config);
 
   return (
-    <div style={{marginBottom: "1em"}} className="categorySquareGridFilter">
+    <div style={{marginBottom: "1em"}} className="categorySquareGrid-filter">
       {categories.map((x, i) => {
         const isCheched = selectedCategories.includes(x);
         return (
@@ -71,7 +71,7 @@ const GridItems = ({config, selectedCategories, onClickByCategory}) => {
         <div
           key={i}
           onClick={() => onClickByCategory(cat)}
-          className="categorySquareGridItem"
+          className="categorySquareGrid-item"
           style={{
             background: color,
             opacity: isActiveFilter && !isSelected ? 0.2 : 1,
@@ -85,10 +85,10 @@ const GridItems = ({config, selectedCategories, onClickByCategory}) => {
   };
 
   return (
-    <div className="categorySquareGridContent">
+    <div className="categorySquareGrid-content">
       {categories.map((cat) => renderCategoryItems(cat))}
     </div>
   );
 };
 
-export default CategoryIconHexGrid;
+export default CategoryIconSquareGrid;
